@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Login.css";
+// import "./Login.css";
 
 const Login = () => {
   return (
@@ -31,6 +31,7 @@ const Login = () => {
               <button>Sign Up</button>
             </form>
           </div> */}
+
           <div className="form-container sign-in-container">
             <form action="#">
               <h1>Sign in</h1>
@@ -75,6 +76,7 @@ const Login = () => {
                   Sign In
                 </button>
               </div> */}
+
               <div className="overlay-panel overlay-right">
                 <h1>Hello, Friend!</h1>
                 <p>Enter your personal details and start journey with us</p>
