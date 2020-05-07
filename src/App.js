@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import '@fortawesome/react-fontawesome';
+
 import Navbars from "./pages/Navbar/Navbar";
 import Event from "./pages//Home/Event/Event";
 import Footer from "./pages/Footer/Footer";

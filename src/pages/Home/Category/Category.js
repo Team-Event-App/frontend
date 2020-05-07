@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Container, Row, Card, CardDeck, Button } from "react-bootstrap";
 
+import './Category.css'
+
 class Category extends Component {
   render() {
     return (
-      <div style={{ backgroundColor: "#c4c4c4" }}>
+      <div >
         <Container>
-          <h2 className="pt-3">CATEGORY</h2>
+          <h2 className="text-center pt-3 titleCategory">CATEGORY</h2>
           <Row>
             <CardDeck className="mt-3">
               <Card>
@@ -82,7 +84,7 @@ class Category extends Component {
           </Row>
 
           <Row>
-            <Button className="mt-4 mb-4 mx-auto">
+            <Button className="buttonMore mt-4 mb-4 mx-auto">
               <h5>See More</h5>
             </Button>
           </Row>

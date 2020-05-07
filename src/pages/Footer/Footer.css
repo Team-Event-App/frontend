@@ -1,0 +1,18 @@
+.buttonSubscribe{
+    background-color: white !important;
+    color: black !important;
+    border-color: #FF001F !important;
+}
+.buttonSubscribe:hover{
+    border-color: white !important;
+    color: white !important;
+    background-color: rgba(255, 0, 31, 0.85) !important;
+}
+.jumbotronNewsLetter{
+    background-color: #FF001F !important;
+    color: white;
+}
+.jumbotronFooter{
+    background-color: #C70039 !important;
+    color: white;
+}
