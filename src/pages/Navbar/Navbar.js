@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, NavDropdown, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 
 import "./Navbar.css";
 
@@ -8,8 +8,8 @@ class Navbars extends Component {
     return (
       <div>
         <Navbar bg="light" variant="light">
-          <Navbar.Brand to="#" className="mx-auto">
-            Brand Logo
+          <Navbar.Brand to="#" className="mx-auto pl-5">
+            Brand Name
           </Navbar.Brand>
           <Button>Sign In</Button>
           <NavDropdown
@@ -32,6 +32,30 @@ class Navbars extends Component {
               <i className="fas fa-sign-out-alt "></i> Logout
             </NavDropdown.Item>
           </NavDropdown>
+        </Navbar>
+
+        <Navbar
+          bg="light"
+          expand="lg"
+          style={{ borderTop: "1px solid #c4c4c4" }}
+        >
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mx-auto">
+              <Nav.Link to="#" className="mr-3 ml-3">
+                Home
+              </Nav.Link>
+              <Nav.Link to="#" className="mr-3 ml-3">
+                Events
+              </Nav.Link>
+              <Nav.Link to="#" className="mr-3 ml-3">
+                Book
+              </Nav.Link>
+              <Nav.Link to="#" className="mr-3 ml-3">
+                About
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar>
       </div>
     );
