@@ -1,0 +1,20 @@
+
+.inputText{
+    border:1px solid #FF001F !important;
+}
+.subLabel{
+    font-size: 25px;
+}
+.toggleButton{
+    background-color: #FF001F !important;
+    border-color: #FF001F !important;
+}
+.inputPrepand{
+    border:1px solid #FF001F !important;
+    background-color: #FF001F !important;
+    color: white !important;
+}
+.save{
+    background: linear-gradient(90deg, #FF001F 50%, rgba(255, 0, 31, 0.85) 120%);
+    border-color: #FF001F !important;
+}

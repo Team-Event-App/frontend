@@ -5,4 +5,5 @@ html,body{
 .card{
     border:1px solid #FF001F !important;
     border-radius: 10px !important;
+    overflow: hidden;
 }
