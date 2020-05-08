@@ -46,8 +46,12 @@ class Main extends Component {
         </Jumbotron>
 
         <Container>
-          <h2 className="mb-4">BROWSE EVENTS</h2>
-
+          <Row>
+          <h2>BROWSE EVENTS</h2>
+          </Row>
+          <Row>
+          <div class="underline mb-4"></div>
+        </Row>
           <Row>
             <CardDeck>
               <Card>

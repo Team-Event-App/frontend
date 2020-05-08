@@ -18,3 +18,18 @@
     background: linear-gradient(90deg, #FF001F 50%, rgba(255, 0, 31, 0.85) 120%);
     border-color: #FF001F !important;
 }
+.underline{
+    width: 115px; 
+    height:2px; 
+    background-color: #ff001f;
+  }
+  .underlineLocation{
+    width: 100px; 
+    height:2px; 
+    background-color: #ff001f;
+  }
+  .underlineDetail{
+    width: 120px; 
+    height:2px; 
+    background-color: #ff001f;
+  }

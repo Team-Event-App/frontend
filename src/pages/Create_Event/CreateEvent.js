@@ -21,9 +21,9 @@ class createEvent extends Component {
         <Form className="justify-content-center align-items-center">
           <Form.Row>
             <Container>
-              <Formik>
               <Form.Group as={Col} md={6} controlId="formBasicEmail">
-                <Form.Label className="subLabel pb-2">Event Info</Form.Label>
+                <Form.Label className="subLabel">Event Info</Form.Label>
+          <div class="underline mb-4"></div>
                 <Form.Control
                   type="email"
                   placeholder="Title"
@@ -77,7 +77,14 @@ class createEvent extends Component {
                   <Form.Control as="textarea" rows="3" className="inputText" />
                 </Form.Group>
               </Form.Row>
-              <Form.Label className="subLabel pl-3 pb-2">Location</Form.Label>
+              <Form.Row>
+              <Form.Label className="subLabel pl-4">Location</Form.Label>
+              </Form.Row>
+
+              <Form.Row className="pl-4">
+              <div class="underlineLocation mb-4"></div>
+              </Form.Row>
+
               <Form.Row className="pl-3 " as={Col} md={8}>
                 <ButtonGroup toggle className="pl-2">
                   <ToggleButton
@@ -115,9 +122,14 @@ class createEvent extends Component {
               </Form.Row>
               <Form.Row className="pl-3">
                 <Form.Group as={Col} md={6} controlId="formBasicEmail">
-                  <Form.Label className="subLabel pb-2">
+                  <Form.Row className="pl-1">
+                  <Form.Label className="subLabel">
                     Detail Event
                   </Form.Label>
+                  </Form.Row>
+                  <Form.Row className="pl-2">
+              <div class="underlineDetail mb-4"></div>
+              </Form.Row>
                   <Form.Control
                     type="email"
                     placeholder="Title"
@@ -165,7 +177,6 @@ class createEvent extends Component {
               <Form.Group className="pl-3">
               <Button className="save">Save</Button>
               </Form.Group>
-              </Formik>
             </Container>
           </Form.Row>
         </Form>

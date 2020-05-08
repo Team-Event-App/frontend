@@ -5,3 +5,8 @@
 .buttonMore::hover{
     background-color: rgba(255, 0, 31, 0.85) !important;
 }
+.underlineCategory{
+    width: 160px; 
+    height:2px; 
+    background-color: #ff001f;
+  }

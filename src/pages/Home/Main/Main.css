@@ -4,11 +4,28 @@ body {
   padding: 0;
 }
 .card {
-  border: 1px solid #ff001f !important;
+  border: 1.5px solid #ff001f !important;
   border-radius: 10px 10px 0px 0px!important;
   overflow: hidden;
 }
 
 .buttonSearch {
   border-radius: 20rem !important;
+}
+.underline{
+  width: 255px; 
+  height:2px; 
+  background-color: #ff001f;
+}
+img{
+  height: 300px;
+}
+img{
+  transition: transform 1s, filter 2s ease-in-out;
+  filter: blur(2px);
+  transform: scale(1.1);
+}
+img:hover{
+  filter: blur(0);
+  transform: scale(1);
 }

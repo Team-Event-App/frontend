@@ -8,7 +8,12 @@ class Category extends Component {
     return (
       <div >
         <Container>
-          <h2 className="text-center pt-3 titleCategory">CATEGORY</h2>
+          <Row>
+          <h2 className="titleCategory">CATEGORY</h2>
+          </Row>
+          <Row>
+          <div class="underlineCategory mb-4"></div>
+        </Row>
           <Row>
             <CardDeck className="mt-3">
               <Card>
