@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendar} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import {
   Container,
   Row,
@@ -12,16 +12,20 @@ import {
   CardDeck,
 } from "react-bootstrap";
 
-import '../Event/Event.css';
+import "../Main/Main.css";
 
-import imageCards from '../../../image/eventposter.jpg';
+import imageCards from "../../../image/eventposter.jpg";
 
+<<<<<<< HEAD:src/pages/Home/Event/Event.js
 // import quoteImage from '../../../image/quoteimages.jpg';
+=======
+// import quoteImage from "../../../image/quoteimages.jpg";
+>>>>>>> f0f266dc70dcce465f72fdf12ffa1b9885541ec9:src/pages/Home/Main/Main.js
 
-import Trend from "./../Trend/Trend";
-import Category from "./../Category/Category";
+import Trend from "../Trend/Trend";
+import Category from "../Category/Category";
 
-class Event extends Component {
+class Main extends Component {
   render() {
     return (
       <div>
@@ -31,16 +35,18 @@ class Event extends Component {
               “What you need, is an Event, to remember for a lifetime.” ― Rehan
               Waris ―
             </h1>
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-              />
-              <Button variant="outline-success" class="buttonSearch">
-                <i class="fas fa-search"></i>
-              </Button>
-            </Form>
+            <Row>
+              <Form inline className="mx-auto">
+                <FormControl
+                  type="text"
+                  placeholder="Search Events"
+                  className="mr-sm-2 formInput"
+                />
+                <Button variant="outline-success" className="buttonSearch">
+                  <i class="fas fa-search"></i>
+                </Button>
+              </Form>
+            </Row>
           </Container>
         </Jumbotron>
 
@@ -52,7 +58,9 @@ class Event extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <Card.Title><FontAwesomeIcon icon={ faCalendar }/> 05-06-2020 : 12.00 PM</Card.Title>
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
@@ -63,7 +71,7 @@ class Event extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <Card.Title>05-06-2020 : 12.00 PM</Card.Title>
+                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
                   <Card.Text>
                     This card has supporting text below as a natural lead-in to
                     additional content.
@@ -73,7 +81,7 @@ class Event extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <Card.Title>05-06-2020 : 12.00 PM</Card.Title>
+                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This card has even longer
@@ -89,7 +97,7 @@ class Event extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <Card.Title>05-06-2020 : 12.00 PM</Card.Title>
+                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
@@ -100,7 +108,7 @@ class Event extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <Card.Title>05-06-2020 : 12.00 PM</Card.Title>
+                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
                   <Card.Text>
                     This card has supporting text below as a natural lead-in to
                     additional content.{" "}
@@ -110,7 +118,7 @@ class Event extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <Card.Title>05-06-2020 : 12.00 PM</Card.Title>
+                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This card has even longer
@@ -135,4 +143,4 @@ class Event extends Component {
   }
 }
 
-export default Event;
+export default Main;

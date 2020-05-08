@@ -1,0 +1,14 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.card {
+  border: 1px solid #ff001f !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.buttonSearch {
+  border-radius: 20rem !important;
+}
