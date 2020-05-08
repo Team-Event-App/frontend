@@ -9,7 +9,9 @@ class Navbars extends Component {
   render() {
     return (
       <Navbar bg="light" variant="light" className="navbar">
-        <Link to="/">Brand Name</Link>
+        <Link to="/" className="ml-3 brand">
+          Brand Name
+        </Link>
 
         <Nav className="ml-auto">
           <Button className="signInButton" href="/login">
