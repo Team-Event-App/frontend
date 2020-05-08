@@ -9,6 +9,10 @@ import {
   CardDeck,
 } from "react-bootstrap";
 
+import './Trend.css'
+
+import imageCards from '../../../image/eventposter.jpg';
+
 class Trend extends Component {
   render() {
     return (
@@ -17,7 +21,7 @@ class Trend extends Component {
           <Container>
             <h1 className="text-center mb-4">Host Your Own Events</h1>
             <Form inline>
-              <Button variant="primary" className="mx-auto">
+              <Button className="buttonCreate mx-auto">
                 Create Events
               </Button>
             </Form>
@@ -25,11 +29,11 @@ class Trend extends Component {
         </Jumbotron>
 
         <Container>
-          <h2 className="mb-4">TOP TRENDINGS</h2>
+          <h2 className="mb-4">TOP TRENDINGS EVENTS</h2>
           <Row>
             <CardDeck className="mb-4">
               <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Title>Card title</Card.Title>
                   <Card.Text>
@@ -40,7 +44,7 @@ class Trend extends Component {
                 </Card.Body>
               </Card>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Title>Card title</Card.Title>
                   <Card.Text>
@@ -50,7 +54,7 @@ class Trend extends Component {
                 </Card.Body>
               </Card>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Title>Card title</Card.Title>
                   <Card.Text>
