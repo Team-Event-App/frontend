@@ -1,7 +1,7 @@
-.buttonCreate.mx-auto{
+.buttonMore{
     background: linear-gradient(90deg, #FF001F 50%, rgba(255, 0, 31, 0.85) 120%);
     border-color: #FF001F !important;
 }
-.buttonCreate.mx-auto:hover{
+.buttonMore::hover{
     background-color: rgba(255, 0, 31, 0.85) !important;
 }

@@ -11,7 +11,7 @@ class Navbars extends Component {
           <Navbar.Brand to="#" className="mx-auto pl-5">
             Brand Name
           </Navbar.Brand>
-          <Button>Sign In</Button>
+          <Button className="signInButton">Sign In</Button>
           <NavDropdown
             className="mr-5 ml-3"
             title={
@@ -42,16 +42,16 @@ class Navbars extends Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto">
-              <Nav.Link to="#" className="mr-3 ml-3">
+              <Nav.Link to="#" className="navButton mr-3 ml-3">
                 Home
               </Nav.Link>
-              <Nav.Link to="#" className="mr-3 ml-3">
+              <Nav.Link to="#" className="navButton mr-3 ml-3">
                 Events
               </Nav.Link>
-              <Nav.Link to="#" className="mr-3 ml-3">
+              <Nav.Link to="#" className="navButton mr-3 ml-3">
                 Book
               </Nav.Link>
-              <Nav.Link to="#" className="mr-3 ml-3">
+              <Nav.Link to="#" className="navButton mr-3 ml-3">
                 About
               </Nav.Link>
             </Nav>
