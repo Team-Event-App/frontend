@@ -9,48 +9,49 @@ import {
   Button,
 } from "react-bootstrap";
 
-import './Footer.css';
-
-
+import "./Footer.css";
 
 class Footer extends Component {
   render() {
     return (
       <div>
-        <Jumbotron fluid className="jumbotronNewsLetter">
-          <Container>
-            <h1 className="text-center">SUBSCRIBE TO OUR NEWSLETTER</h1>
-            <Row>
-              <Form inline className="mx-auto mt-3 mb-3">
-                <FormControl
-                  type="text"
-                  placeholder="Your Email"
-                  style={{ width: "30rem" }}
-                  className="textFieldNewsLetter"
-                />
-              </Form>
-            </Row>
-            <p className="text-center">
-              GET NOTIFICATION FOR NEW EVENTS AND OFFERS.
-            </p>
-            <Row>
-              <Button variant="primary" className="buttonSubscribe mx-auto">
-                SUBSCRIBE
-              </Button>
-            </Row>
-          </Container>
-        </Jumbotron>
-
         <Jumbotron fluid className="jumbotronFooter">
           <Container>
             <Row className="text-center">
               <Col md={4} sm={12}>
-                About
+                <div className="bg-secondary mt-5" style={{ opacity: "0.5" }}>
+                  <h2 className="mb-3">About</h2>
+                  <p>
+                    Duis nostrud culpa velit ipsum aliquip elit aliquip
+                    consequat ut exercitation labore dolore pariatur elit. Duis
+                    nostrud culpa velit ipsum aliquip elit aliquip consequat ut
+                    exercitation labore dolore pariatur elit.
+                  </p>
+                </div>
               </Col>
               <Col md={4} sm={12}>
+                <div className="mt-5">
+                  <h5>About Us</h5>
+                  <h5>Contact Us</h5>
+                </div>
               </Col>
               <Col md={4} sm={12}>
-                Contact
+                <div className="text-left mt-5">
+                  <h5>
+                    <b>Subscribe to our Newsletter</b>
+                  </h5>
+                  <h6>Get Notification for new Events or Offers</h6>
+                  <Form inline className="mx-auto mt-3 mb-3">
+                    <FormControl
+                      type="text"
+                      placeholder="Enter your email here"
+                      className="formInput"
+                    />
+                    <Button variant="primary" className="buttonSubscribe ml-2">
+                      SUBSCRIBE
+                    </Button>
+                  </Form>
+                </div>
               </Col>
             </Row>
 

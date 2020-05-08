@@ -1,15 +1,19 @@
-.navButton{
-    display: block;
-    padding: 10px !important;
+.navbar {
+  height: 5rem;
 }
-.navButton:hover{
-    background-color: #E9ECEF;
-    color: #FF001F !important;   
+
+.navButton {
+  display: block;
+  padding: 10px !important;
 }
-.signInButton{
-    background: linear-gradient(90deg, #FF001F 50%, rgba(255, 0, 31, 0.85) 120%);
-    border-color: #FF001F !important;
+.navButton:hover {
+  background-color: #e9ecef;
+  color: #ff001f !important;
 }
-.signInButton:hover{
-    background-color: rgba(255, 0, 31, 0.85) !important;
+.signInButton {
+  background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+  border-color: #ff001f !important;
+}
+.signInButton:hover {
+  background-color: rgba(255, 0, 31, 0.85) !important;
 }
