@@ -16,7 +16,7 @@ import '../Event/Event.css';
 
 import imageCards from '../../../image/eventposter.jpg';
 
-import quoteImage from '../../../image/quoteimages.jpg';
+// import quoteImage from '../../../image/quoteimages.jpg';
 
 import Trend from "./../Trend/Trend";
 import Category from "./../Category/Category";

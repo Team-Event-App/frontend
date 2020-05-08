@@ -7,6 +7,7 @@ import Navbars from "./pages/Navbar/Navbar";
 import Event from "./pages//Home/Event/Event";
 import Footer from "./pages/Footer/Footer";
 
+
 function App() {
   return (
     <Router>
