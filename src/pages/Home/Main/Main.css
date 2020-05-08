@@ -5,7 +5,7 @@ body {
 }
 .card {
   border: 1px solid #ff001f !important;
-  border-radius: 10px !important;
+  border-radius: 10px 10px 0px 0px!important;
   overflow: hidden;
 }
 

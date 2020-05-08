@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Formik } from 'formik';
 
 import {
   Container,
@@ -20,6 +21,7 @@ class createEvent extends Component {
         <Form className="justify-content-center align-items-center">
           <Form.Row>
             <Container>
+              <Formik>
               <Form.Group as={Col} md={6} controlId="formBasicEmail">
                 <Form.Label className="subLabel pb-2">Event Info</Form.Label>
                 <Form.Control
@@ -163,6 +165,7 @@ class createEvent extends Component {
               <Form.Group className="pl-3">
               <Button className="save">Save</Button>
               </Form.Group>
+              </Formik>
             </Container>
           </Form.Row>
         </Form>

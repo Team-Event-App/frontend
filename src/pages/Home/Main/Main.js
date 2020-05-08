@@ -16,11 +16,6 @@ import "../Main/Main.css";
 
 import imageCards from "../../../image/eventposter.jpg";
 
-<<<<<<< HEAD:src/pages/Home/Event/Event.js
-// import quoteImage from '../../../image/quoteimages.jpg';
-=======
-// import quoteImage from "../../../image/quoteimages.jpg";
->>>>>>> f0f266dc70dcce465f72fdf12ffa1b9885541ec9:src/pages/Home/Main/Main.js
 
 import Trend from "../Trend/Trend";
 import Category from "../Category/Category";
