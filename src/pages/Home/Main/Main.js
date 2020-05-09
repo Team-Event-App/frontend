@@ -60,7 +60,10 @@ class Main extends Component {
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Title>
-                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                    <Card.Title>
+                      <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00
+                      PM
+                    </Card.Title>
                   </Card.Title>
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
@@ -72,7 +75,9 @@ class Main extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
                   <Card.Text>
                     This card has supporting text below as a natural lead-in to
                     additional content.
@@ -82,7 +87,9 @@ class Main extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This card has even longer
@@ -98,7 +105,9 @@ class Main extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
@@ -109,17 +118,21 @@ class Main extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
                   <Card.Text>
                     This card has supporting text below as a natural lead-in to
-                    additional content.{" "}
+                    additional content.
                   </Card.Text>
                 </Card.Body>
               </Card>
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This card has even longer
