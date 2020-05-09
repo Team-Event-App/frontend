@@ -27,7 +27,12 @@ class Trend extends Component {
         </Jumbotron>
 
         <Container>
-          <h2 className="mb-4">TOP TRENDINGS EVENTS</h2>
+          <Row>
+            <h2 className="mb-4">TOP TRENDINGS EVENTS</h2>
+          </Row>
+          <Row>
+            <div class="underlineTrend mb-4"></div>
+          </Row>
           <Row>
             <CardDeck className="mb-4">
               <Card>
