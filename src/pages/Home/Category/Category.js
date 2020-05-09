@@ -39,7 +39,7 @@ class Category extends Component {
               <Card>
                 <Card.Img variant="top" className="category-card" src={art} />
                 <Card.Body>
-                  <Card.Title className="text-center">Card title</Card.Title>
+                  <Card.Title className="text-center">Visual Arts</Card.Title>
                   <Card.Text className="text-justify">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This card has even longer
@@ -50,10 +50,10 @@ class Category extends Component {
               <Card>
                 <Card.Img variant="top" className="category-card" src={film} />
                 <Card.Body>
-                  <Card.Title className="text-center">Card title</Card.Title>
+                  <Card.Title className="text-center">Film</Card.Title>
                   <Card.Text className="text-justify">
                     This card has supporting text below as a natural lead-in to
-                    additional content.{" "}
+                    additional content.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -64,7 +64,7 @@ class Category extends Component {
                   src={fashion}
                 />
                 <Card.Body>
-                  <Card.Title className="text-center">Card title</Card.Title>
+                  <Card.Title className="text-center">Fashion</Card.Title>
                   <Card.Text className="text-justify">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This card has even longer
@@ -80,7 +80,7 @@ class Category extends Component {
               <Card>
                 <Card.Img variant="top" className="category-card" src={sport} />
                 <Card.Body>
-                  <Card.Title className="text-center">Card title</Card.Title>
+                  <Card.Title className="text-center">Sports</Card.Title>
                   <Card.Text className="text-justify">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
@@ -95,7 +95,9 @@ class Category extends Component {
                   src={festival}
                 />
                 <Card.Body>
-                  <Card.Title className="text-center">Card title</Card.Title>
+                  <Card.Title className="text-center">
+                    Festival & Fairs
+                  </Card.Title>
                   <Card.Text className="text-justify">
                     This card has supporting text below as a natural lead-in to
                     additional content.
@@ -109,7 +111,7 @@ class Category extends Component {
                   src={nightlife}
                 />
                 <Card.Body>
-                  <Card.Title className="text-center">Card title</Card.Title>
+                  <Card.Title className="text-center">Nightlife</Card.Title>
                   <Card.Text className="text-justify">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This card has even longer
@@ -124,7 +126,9 @@ class Category extends Component {
                   src={charity}
                 />
                 <Card.Body>
-                  <Card.Title className="text-center">Card title</Card.Title>
+                  <Card.Title className="text-center">
+                    Charity & Causes
+                  </Card.Title>
                   <Card.Text className="text-justify">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This card has even longer
