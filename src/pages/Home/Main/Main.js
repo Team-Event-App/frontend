@@ -14,6 +14,9 @@ import {
 
 import "../Main/Main.css";
 
+import Navbars from "../../../components/Navbar/Navbar";
+import Footer from "../../../components/Footer/Footer";
+
 import imageCards from "../../../image/eventposter.jpg";
 
 import Trend from "../Trend/Trend";
@@ -23,6 +26,7 @@ class Main extends Component {
   render() {
     return (
       <div>
+        <Navbars />
         <Jumbotron fluid className="main-background">
           <Container>
             <h1>
@@ -152,6 +156,7 @@ class Main extends Component {
         <Trend />
         <br />
         <Category />
+        <Footer />
       </div>
     );
   }

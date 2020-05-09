@@ -12,10 +12,14 @@ import {
 
 import "./CreateEvent.css";
 
+import Navbars from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+
 class createEvent extends Component {
   render() {
     return (
-      <div>
+      <div className="mainEvent">
+        <Navbars />
         <h2 className="text-center pt-5 titleCategory">Create Event</h2>
         <Form className="justify-content-center align-items-center">
           <Form.Row>
@@ -166,6 +170,7 @@ class createEvent extends Component {
             </Container>
           </Form.Row>
         </Form>
+        <Footer />
       </div>
     );
   }
