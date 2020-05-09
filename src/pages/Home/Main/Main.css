@@ -30,6 +30,7 @@ body {
   width: 35rem !important;
   padding: 1.7rem 4rem !important;
   border-radius: 20rem !important;
+  border: 1px solid black !important;
 }
 
 .mainSearch {
@@ -41,4 +42,27 @@ body {
 .mainSearch:hover {
   color: #ff001f;
   background-color: #ff001f !important;
+}
+
+.underlineMain {
+  width: 255px;
+  height: 2px;
+  background-color: #ff001f;
+}
+
+img {
+  height: 300px;
+}
+
+.card {
+  padding: 5px;
+  border: solid 1px #efefef;
+  box-shadow: 1px 1px 5px #ff001f;
+  transform: scale(1);
+}
+.card:hover {
+  border: solid 1px #ccc;
+  box-shadow: 2px 2px 20px #ff001f;
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
 }

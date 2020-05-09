@@ -48,10 +48,60 @@ class Main extends Component {
         </Jumbotron>
 
         <Container>
-          <h2 className="mb-4">BROWSE EVENTS</h2>
-
+          <Row>
+            <h2 className="mb-4">BROWSE EVENTS</h2>
+          </Row>
+          <Row>
+            <div class="underlineMain mb-4"></div>
+          </Row>
           <Row>
             <CardDeck>
+              <Card>
+                <Card.Img variant="top" src={imageCards} />
+                <Card.Body>
+                  <Card.Title>
+                    <Card.Title>
+                      <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00
+                      PM
+                    </Card.Title>
+                  </Card.Title>
+                  <Card.Text>
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Card>
+                <Card.Img variant="top" src={imageCards} />
+                <Card.Body>
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
+                  <Card.Text>
+                    This card has supporting text below as a natural lead-in to
+                    additional content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Card>
+                <Card.Img variant="top" src={imageCards} />
+                <Card.Body>
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
+                  <Card.Text>
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This card has even longer
+                    content than the first to show that equal height action.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </CardDeck>
+          </Row>
+
+          <Row>
+            <CardDeck className="mt-3">
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
@@ -68,7 +118,9 @@ class Main extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
                   <Card.Text>
                     This card has supporting text below as a natural lead-in to
                     additional content.
@@ -78,44 +130,9 @@ class Main extends Component {
               <Card>
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
-                  <Card.Text>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer
-                    content than the first to show that equal height action.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </CardDeck>
-          </Row>
-
-          <Row>
-            <CardDeck className="mt-3">
-              <Card>
-                <Card.Img variant="top" src={imageCards} />
-                <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
-                  <Card.Text>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              <Card>
-                <Card.Img variant="top" src={imageCards} />
-                <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
-                  <Card.Text>
-                    This card has supporting text below as a natural lead-in to
-                    additional content.{" "}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              <Card>
-                <Card.Img variant="top" src={imageCards} />
-                <Card.Body>
-                  <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  <Card.Title>
+                    <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00 PM
+                  </Card.Title>
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This card has even longer
