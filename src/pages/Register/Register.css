@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
-.main-login {
+.main-register {
   box-sizing: border-box;
   overflow-y: hidden;
 }
 
-.container-login {
+.container-register {
   background: #f6f5f7;
   display: flex;
   justify-content: center;
@@ -17,12 +17,12 @@
   width: 50rem;
 }
 
-.container-login h1 {
+.container-register h1 {
   font-weight: bold;
   margin: 0;
 }
 
-.container-login p {
+.container-register p {
   font-size: 14px;
   font-weight: 100;
   line-height: 20px;
@@ -30,22 +30,22 @@
   margin: 20px 0 30px;
 }
 
-.container-login span {
+.container-register span {
   font-size: 12px;
 }
 
-.container-login a {
+.container-register a {
   color: #333;
   font-size: 14px;
   text-decoration: none !important;
   margin: 15px 0;
 }
 
-.container-login button {
+.container-register button {
   border-radius: 20px;
   border: 1px solid #ff4b2b;
   background-color: #ff4b2b;
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
@@ -54,20 +54,20 @@
   transition: transform 80ms ease-in;
 }
 
-.container-login button:active {
+.container-register button:active {
   transform: scale(0.95);
 }
 
-.container-login button:focus {
+.container-register button:focus {
   outline: none;
 }
 
-.container-login button.ghost {
+.container-register button.ghost {
   background-color: transparent;
   border-color: #ffffff;
 }
 
-.login-form {
+.register-form {
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@
   text-align: center;
 }
 
-.login- input {
+.register-input {
   background-color: #eee;
   border: none;
   padding: 12px 15px;
@@ -90,7 +90,7 @@
   border: 1px solid grey;
 }
 
-.container-login {
+.container-register {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);

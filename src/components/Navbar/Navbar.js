@@ -8,7 +8,7 @@ import "./Navbar.css";
 class Navbars extends Component {
   render() {
     return (
-      <Navbar bg="light" variant="light" className="navbar shadow p-4 mb-2 rounded">
+      <Navbar bg="light" variant="light" className="navbar fixed-top">
         <Link to="/" className="ml-3 brand">
           Event Web
         </Link>

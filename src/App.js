@@ -3,34 +3,31 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "@fortawesome/react-fontawesome";
 
-import Navbars from "./pages/Navbar/Navbar";
 import Main from "./pages/Home/Main/Main";
-import Footer from "./pages/Footer/Footer";
 
 import CreateEvent from "./pages/Create_Event/CreateEvent";
-import Book from "./pages/Book/Book";
 
-import Login from "./components/Login/Login";
+import Login from "./pages/Login/Login";
+
+import Register from "./pages/Register/Register";
 
 function App() {
   return (
     <Router>
-      <Navbars />
       <Switch>
+        <Route exact path="/login" component={Login}>
+          <Login />
+        </Route>
         <Route exact path="/" component={Main}>
           <Main />
         </Route>
         <Route exact path="/event" component={CreateEvent}>
           <CreateEvent />
         </Route>
-        <Route exact path="/book" component={Book}>
-          <Book />
-        </Route>
-        <Route exact path="/login" component={Login}>
-          <Login />
+        <Route exact path="/register" component={Register}>
+          <Register/>
         </Route>
       </Switch>
-      <Footer />
     </Router>
   );
 }

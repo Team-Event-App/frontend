@@ -14,6 +14,9 @@ import {
 
 import "../Main/Main.css";
 
+import Navbars from "../../../components/Navbar/Navbar";
+import Footer from "../../../components/Footer/Footer";
+
 import imageCards from "../../../image/eventposter.jpg";
 
 import Trend from "../Trend/Trend";
@@ -23,10 +26,14 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Jumbotron fluid className="main-background">
+        <Navbars />
+        <Jumbotron fluid className="main-background mt-5">
           <Container className="pt-3">
-            <h1>
-              “What you need, is an Event, to remember for a lifetime.” ― Rehan
+            <h1 className="text-center">
+              “What you need, is an Event, to remember for a lifetime.” 
+            </h1>
+            <h1 className="text-center">
+            ― Rehan
               Waris ―
             </h1>
             <Row>
@@ -43,8 +50,18 @@ class Main extends Component {
                   <i class="fas fa-search"></i>
                 </Button>
               </Form>
+              
             </Row>
+
           </Container>
+          <div className="text-center pt-5">
+          <Button
+            className="signInButton mr-3 btn both-line-dark"
+            href="/event"
+          >
+            Booking Events
+          </Button>
+          </div>
         </Jumbotron>
 
         <Container className="browseContainer">
@@ -152,6 +169,7 @@ class Main extends Component {
         <Trend />
         <br />
         <Category />
+        <Footer />
       </div>
     );
   }
