@@ -21,7 +21,10 @@ class Trend extends Component {
           <Container>
             <h1 className="text-center mb-4">Host Your Own Events</h1>
             <Form inline>
-              <Button className="buttonCreate mx-auto" href="/event">
+              <Button
+                className="buttonCreate both-line-light mx-auto"
+                href="/event"
+              >
                 Create Events
               </Button>
             </Form>
