@@ -1,7 +1,12 @@
-.buttonMore{
-    background: linear-gradient(90deg, #FF001F 50%, rgba(255, 0, 31, 0.85) 120%);
-    border-color: #FF001F !important;
+.buttonMore {
+  background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+  border-color: #ff001f !important;
 }
-.buttonMore::hover{
-    background-color: rgba(255, 0, 31, 0.85) !important;
+.buttonMore::hover {
+  background-color: rgba(255, 0, 31, 0.85) !important;
+}
+
+.category-card {
+  width: 18rem !important;
+  max-height: 200px;
 }

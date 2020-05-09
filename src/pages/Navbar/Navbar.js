@@ -14,8 +14,13 @@ class Navbars extends Component {
         </Link>
 
         <Nav className="ml-auto">
+          <Button className="signInButton mr-3" href="/event">
+            <i class="fas fa-plus mr-2"></i>
+            Create Events
+          </Button>
           <Button className="signInButton" href="/login">
             Sign In
+            <i class="fas fa-sign-in-alt ml-2"></i>
           </Button>
           <NavDropdown
             className="mr-5 ml-3"

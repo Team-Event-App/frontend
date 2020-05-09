@@ -10,7 +10,7 @@ import Footer from "./pages/Footer/Footer";
 import CreateEvent from "./pages/Create_Event/CreateEvent";
 import Book from "./pages/Book/Book";
 
-// import Login from "./components/Login/Login";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
@@ -26,9 +26,9 @@ function App() {
         <Route exact path="/book" component={Book}>
           <Book />
         </Route>
-        {/* <Route exact path="/login" component={Login}>
+        <Route exact path="/login" component={Login}>
           <Login />
-        </Route> */}
+        </Route>
       </Switch>
       <Footer />
     </Router>

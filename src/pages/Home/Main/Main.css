@@ -12,3 +12,33 @@ body {
 .buttonSearch {
   border-radius: 20rem !important;
 }
+
+.main-background {
+  background: url(./../../../image/quoteimages.jpg) no-repeat;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 23rem;
+}
+
+.main-background h1 {
+  color: white;
+  font-weight: 700;
+}
+
+.mainInput {
+  width: 35rem !important;
+  padding: 1.7rem 4rem !important;
+  border-radius: 20rem !important;
+}
+
+.mainSearch {
+  margin-left: -34rem;
+  color: black;
+  border: none !important;
+}
+
+.mainSearch:hover {
+  color: #ff001f;
+  background-color: #ff001f !important;
+}
