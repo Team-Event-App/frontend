@@ -161,7 +161,7 @@ class createEvent extends Component {
                 </Form.Group>
               </Form.Row>
               <Form.Group className="pl-3">
-              <Button className="save">Save</Button>
+                <Button className="save">Save</Button>
               </Form.Group>
             </Container>
           </Form.Row>

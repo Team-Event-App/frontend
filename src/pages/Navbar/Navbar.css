@@ -2,14 +2,16 @@
   height: 5rem;
 }
 
-.navButton {
-  display: block;
-  padding: 10px !important;
+.brand {
+  color: #000000;
+  font-size: 2rem;
+  text-decoration: none !important;
 }
-.navButton:hover {
-  background-color: #e9ecef;
-  color: #ff001f !important;
+
+.brand:hover {
+  color: #ff001f;
 }
+
 .signInButton {
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
