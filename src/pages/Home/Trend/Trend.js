@@ -21,19 +21,23 @@ class Trend extends Component {
           <Container>
             <h1 className="text-center mb-4">Host Your Own Events</h1>
             <Form inline>
-              <Button className="buttonCreate mx-auto">Create Events</Button>
+              <Button
+                className="buttonCreate both-line-light mx-auto"
+                href="/event"
+              >
+                Create Events
+              </Button>
             </Form>
           </Container>
         </Jumbotron>
 
         <Container>
           <Row>
-
-          <h2>TOP TRENDINGS EVENTS</h2>
+            <h2 className="mb-4">TOP TRENDINGS EVENTS</h2>
           </Row>
           <Row>
-          <div class="underlineTrend mb-4"></div>
-        </Row>
+            <div class="underlineTrend mb-4"></div>
+          </Row>
           <Row>
             <CardDeck className="mb-4">
               <Card>
@@ -53,7 +57,7 @@ class Trend extends Component {
                   <Card.Title>Card title</Card.Title>
                   <Card.Text>
                     This card has supporting text below as a natural lead-in to
-                    additional content.{" "}
+                    additional content.
                   </Card.Text>
                 </Card.Body>
               </Card>

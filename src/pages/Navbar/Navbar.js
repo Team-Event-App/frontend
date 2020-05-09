@@ -8,17 +8,20 @@ import "./Navbar.css";
 class Navbars extends Component {
   render() {
     return (
-      <Navbar bg="light" variant="light" className="navbar">
+      <Navbar bg="light" variant="light" className="navbar shadow p-4 mb-2 rounded">
         <Link to="/" className="ml-3 brand">
-          Brand Name
+          Event Web
         </Link>
 
         <Nav className="ml-auto">
-          <Button className="signInButton mr-3" href="/event">
+          <Button
+            className="signInButton mr-3 btn both-line-dark"
+            href="/event"
+          >
             <i class="fas fa-plus mr-2"></i>
             Create Events
           </Button>
-          <Button className="signInButton" href="/login">
+          <Button className="signInButton btn both-line-dark" href="/login">
             Sign In
             <i class="fas fa-sign-in-alt ml-2"></i>
           </Button>

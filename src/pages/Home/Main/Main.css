@@ -4,28 +4,66 @@ body {
   padding: 0;
 }
 .card {
-  border: 1.5px solid #ff001f !important;
-  border-radius: 10px 10px 0px 0px!important;
+  border: 1px solid #ff001f !important;
+  border-radius: 10px !important;
   overflow: hidden;
+  color: black;
 }
-
+.card-body{
+  background-color: #E3E3E3;
+}
 .buttonSearch {
   border-radius: 20rem !important;
 }
-.underline{
-  width: 255px; 
-  height:2px; 
-  background-color: #ff001f;
+.main-background {
+  background: url(./../../../image/quoteimages.jpg) no-repeat;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 23rem;
 }
-img{
-  height: 300px;
+
+.main-background h1 {
+  color: white;
+  font-weight: 700;
 }
-img{
-  transition: transform 1s, filter 2s ease-in-out;
-  filter: blur(2px);
-  transform: scale(1.1);
+
+.mainInput {
+  width: 35rem !important;
+  padding: 1.7rem 4rem !important;
+  border-radius: 20rem !important;
+  /* border: 1px solid black !important; */
 }
-img:hover{
-  filter: blur(0);
+
+.mainSearch {
+  margin-left: -34rem;
+  color: black;
+  border: none !important;
+}
+
+.mainSearch:hover {
+  color: #ff001f;
+  background-color: #ff001f !important;
+}
+
+.underlineMain {
+  width: 255px;
+  height: 2px;
+  background-color: #FF001F;
+}
+
+.card-deck img {
+  height: 280px;
+}
+
+.card {
+  border: solid 1px #efefef;
+  box-shadow: 1px 1px 5px #ff001f;
   transform: scale(1);
+}
+.card:hover {
+  border: solid 1px #ccc;
+  box-shadow: 2px 2px 20px #ff001f;
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
 }

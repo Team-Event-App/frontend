@@ -6,9 +6,11 @@ import "@fortawesome/react-fontawesome";
 import Navbars from "./pages/Navbar/Navbar";
 import Main from "./pages/Home/Main/Main";
 import Footer from "./pages/Footer/Footer";
+
 import CreateEvent from "./pages/Create_Event/CreateEvent";
-import Book from './pages/Book/Book';
-import Login from './components/Login/Login';
+import Book from "./pages/Book/Book";
+
+import Login from "./components/Login/Login";
 
 function App() {
   return (
