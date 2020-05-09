@@ -1,3 +1,5 @@
+@import "~hover-on/hover-on.css";
+
 .trend-background {
   background: url(./../../../image/AGU-stock-man-presenting-audience.jpg)
     no-repeat;
@@ -18,10 +20,8 @@
 .buttonCreate.mx-auto {
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
-  width: 10rem;
-}
-.buttonCreate.mx-auto:hover {
-  background-color: rgba(255, 0, 31, 0.85) !important;
+  width: 12rem;
+  font-size: 1.5rem !important;
 }
 
 .underlineTrend {
