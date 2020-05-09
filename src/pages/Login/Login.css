@@ -45,7 +45,7 @@
   border-radius: 20px;
   border: 1px solid #ff4b2b;
   background-color: #ff4b2b;
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
@@ -78,7 +78,7 @@
   text-align: center;
 }
 
-.login- input {
+.login-input {
   background-color: #eee;
   border: none;
   padding: 12px 15px;
