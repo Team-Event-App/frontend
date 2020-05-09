@@ -16,7 +16,6 @@ import "../Main/Main.css";
 
 import imageCards from "../../../image/eventposter.jpg";
 
-
 import Trend from "../Trend/Trend";
 import Category from "../Category/Category";
 
@@ -24,20 +23,23 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Jumbotron fluid>
+        <Jumbotron fluid className="main-background">
           <Container>
             <h1>
               “What you need, is an Event, to remember for a lifetime.” ― Rehan
               Waris ―
             </h1>
             <Row>
-              <Form inline className="mx-auto">
+              <Form inline className="mx-auto mt-5">
                 <FormControl
                   type="text"
                   placeholder="Search Events"
-                  className="mr-sm-2 formInput"
+                  className="mainInput "
                 />
-                <Button variant="outline-success" className="buttonSearch">
+                <Button
+                  variant="outline-success"
+                  className="buttonSearch mainSearch"
+                >
                   <i class="fas fa-search"></i>
                 </Button>
               </Form>

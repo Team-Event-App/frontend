@@ -24,9 +24,9 @@ function App() {
         <Route exact path="/book" component={Book}>
           <Book />
         </Route>
-        {/* <Route exact path="/login" component={Login}>
+        <Route exact path="/login" component={Login}>
           <Login />
-        </Route> */}
+        </Route>
       </Switch>
       <Footer />
     </Router>

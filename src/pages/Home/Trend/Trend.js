@@ -9,27 +9,26 @@ import {
   CardDeck,
 } from "react-bootstrap";
 
-import './Trend.css'
+import "./Trend.css";
 
-import imageCards from '../../../image/eventposter.jpg';
+import imageCards from "../../../image/eventposter.jpg";
 
 class Trend extends Component {
   render() {
     return (
       <div>
-        <Jumbotron fluid>
+        <Jumbotron fluid className="trend-background">
           <Container>
             <h1 className="text-center mb-4">Host Your Own Events</h1>
             <Form inline>
-              <Button className="buttonCreate mx-auto">
-                Create Events
-              </Button>
+              <Button className="buttonCreate mx-auto">Create Events</Button>
             </Form>
           </Container>
         </Jumbotron>
 
         <Container>
           <Row>
+
           <h2>TOP TRENDINGS EVENTS</h2>
           </Row>
           <Row>
