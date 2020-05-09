@@ -52,12 +52,16 @@ body {
 img {
   height: 300px;
 }
-img {
-  transition: transform 1s, filter 2s ease-in-out;
-  filter: blur(2px);
-  transform: scale(1.1);
-}
-img:hover {
-  filter: blur(0);
+
+.card {
+  padding: 5px;
+  border: solid 1px #efefef;
+  box-shadow: 1px 1px 5px #ff001f;
   transform: scale(1);
+}
+.card:hover {
+  border: solid 1px #ccc;
+  box-shadow: 2px 2px 20px #ff001f;
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
 }
