@@ -27,10 +27,13 @@ class Main extends Component {
     return (
       <div>
         <Navbars />
-        <Jumbotron fluid className="main-background">
-          <Container>
-            <h1>
-              “What you need, is an Event, to remember for a lifetime.” ― Rehan
+        <Jumbotron fluid className="main-background mt-5">
+          <Container className="pt-3">
+            <h1 className="text-center">
+              “What you need, is an Event, to remember for a lifetime.” 
+            </h1>
+            <h1 className="text-center">
+            ― Rehan
               Waris ―
             </h1>
             <Row>
@@ -47,11 +50,21 @@ class Main extends Component {
                   <i class="fas fa-search"></i>
                 </Button>
               </Form>
+              
             </Row>
+
           </Container>
+          <div className="text-center pt-5">
+          <Button
+            className="signInButton mr-3 btn both-line-dark"
+            href="/event"
+          >
+            Booking Events
+          </Button>
+          </div>
         </Jumbotron>
 
-        <Container>
+        <Container className="browseContainer">
           <Row>
             <h2 className="mb-4">BROWSE EVENTS</h2>
           </Row>
@@ -59,10 +72,10 @@ class Main extends Component {
             <div class="underlineMain mb-4"></div>
           </Row>
           <Row>
-            <CardDeck>
-              <Card>
+            <CardDeck className="card-deck">
+              <Card className="card">
                 <Card.Img variant="top" src={imageCards} />
-                <Card.Body>
+                <Card.Body className="card-body">
                   <Card.Title>
                     <Card.Title>
                       <FontAwesomeIcon icon={faCalendar} /> 05-06-2020 : 12.00

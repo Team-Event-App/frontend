@@ -5,23 +5,24 @@ body {
   overflow-x: hidden;
 }
 .card {
-  border: 1px solid #ff001f !important;
+  /* border: 1px solid #ff001f !important; */
   border-radius: 10px !important;
   overflow: hidden;
   color: black;
+  
 }
-.card-body {
-  background-color: #e3e3e3;
+.card-body{
+  background-color: #E3E3E3;
 }
 .buttonSearch {
   border-radius: 20rem !important;
 }
 .main-background {
-  background: url(./../../../image/quoteimages.jpg) no-repeat;
+  background: url(./../../../image/backgroundhome.jpeg) no-repeat;
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 23rem;
+  height: 35rem;
 }
 
 .main-background h1 {
@@ -33,24 +34,25 @@ body {
   width: 35rem !important;
   padding: 1.7rem 4rem !important;
   border-radius: 20rem !important;
-  border: 1px solid black !important;
+  /* border: 1px solid black !important; */
 }
 
 .mainSearch {
   margin-left: -34rem;
   color: black;
   border: none !important;
+  color: #ff001f !important;
 }
 
 .mainSearch:hover {
-  color: #ff001f;
+  color: white !important;
   background-color: #ff001f !important;
 }
 
 .underlineMain {
   width: 255px;
   height: 2px;
-  background-color: #ff001f;
+  background-color: #FF001F;
 }
 
 .card-deck img {
@@ -58,12 +60,12 @@ body {
 }
 
 .card {
-  border: solid 1px #efefef;
+  /* border: solid 1px #efefef; */
   box-shadow: 1px 1px 5px #ff001f;
   transform: scale(1);
 }
 .card:hover {
-  border: solid 1px #ccc;
+  /* border: solid 1px #ccc; */
   box-shadow: 2px 2px 20px #ff001f;
   transition: transform 0.5s ease;
   transform: scale(1.1);

@@ -1,14 +1,41 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import axios from 'axios';
 import "./Login.css";
 
 const Login = () => {
+  const [email,setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const history = useHistory();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios({
+      url:"http://localhost:8000/user/login",
+      method:"POST",
+      data:{
+        email,
+        password
+      },
+      headers:{
+        "Content-Type" : "application/json"
+      }
+    })
+    .then(res => {
+      localStorage.setItem("access-token",res.data);
+
+      history.push("/")
+    })
+    .catch(err => {
+      console.log("Login Failed.")
+    })
+  }
   return (
     <div className="main-login">
       <div class="container-login">
         <div class="container" id="container">
           <div class="form-container sign-in-container">
-            <form action="#" className="login-form">
+            <form onSubmit={handleSubmit} className="login-form">
               <h1>Sign in</h1>
               <div class="social-container">
                 <a href="/#" class="social">
@@ -22,11 +49,20 @@ const Login = () => {
                 </a>
               </div>
               <span>or use your account</span>
-              <input type="email" placeholder="Email" className="login-input" />
+              <input type="email" placeholder="Email" className="login-input" 
+                name="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
               <input
                 type="password"
                 placeholder="Password"
                 className="login-input"
+                name="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <a href="/#">Forgot your password?</a>
               <button>Sign In</button>

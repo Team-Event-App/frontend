@@ -9,6 +9,8 @@ import CreateEvent from "./pages/Create_Event/CreateEvent";
 
 import Login from "./pages/Login/Login";
 
+import Register from "./pages/Register/Register";
+
 function App() {
   return (
     <Router>
@@ -21,6 +23,9 @@ function App() {
         </Route>
         <Route exact path="/event" component={CreateEvent}>
           <CreateEvent />
+        </Route>
+        <Route exact path="/register" component={Register}>
+          <Register/>
         </Route>
       </Switch>
     </Router>
