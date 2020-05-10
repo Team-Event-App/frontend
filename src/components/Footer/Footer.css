@@ -21,3 +21,12 @@
   background-color: #c70039 !important;
   color: white;
 }
+
+.footerNav {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.footerNav:hover {
+  color: black !important;
+}

@@ -10,6 +10,8 @@ import CreateEvent from "./pages/Create_Event/CreateEvent";
 import Login from "./pages/Form/Login/Login";
 
 import Register from "./pages/Form/Register/Register";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -26,6 +28,12 @@ function App() {
         </Route>
         <Route exact path="/register" component={Register}>
           <Register />
+        </Route>
+        <Route exact path="/about" component={About}>
+          <About />
+        </Route>
+        <Route exact path="/contact" component={Contact}>
+          <Contact />
         </Route>
       </Switch>
     </Router>
