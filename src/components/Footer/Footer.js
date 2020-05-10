@@ -8,6 +8,7 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
@@ -31,8 +32,12 @@ class Footer extends Component {
               </Col>
               <Col md={4} sm={12}>
                 <div className="mt-5">
-                  <h5>About Us</h5>
-                  <h5>Contact Us</h5>
+                  <Link to="/about" className="footerNav">
+                    <h5>About Us</h5>
+                  </Link>
+                  <Link to="/contact" className="footerNav">
+                    <h5>Contact Us</h5>
+                  </Link>
                 </div>
               </Col>
               <Col md={4} sm={12}>

@@ -30,12 +30,9 @@ class Main extends Component {
         <Jumbotron fluid className="main-background mt-5">
           <Container className="pt-3">
             <h1 className="text-center">
-              “What you need, is an Event, to remember for a lifetime.” 
+              “What you need, is an Event, to remember for a lifetime.”
             </h1>
-            <h1 className="text-center">
-            ― Rehan
-              Waris ―
-            </h1>
+            <h1 className="text-center">― Rehan Waris ―</h1>
             <Row>
               <Form inline className="mx-auto mt-5">
                 <FormControl
@@ -50,17 +47,15 @@ class Main extends Component {
                   <i class="fas fa-search"></i>
                 </Button>
               </Form>
-              
             </Row>
-
           </Container>
           <div className="text-center pt-5">
-          <Button
-            className="signInButton mr-3 btn both-line-dark"
-            href="/event"
-          >
-            Booking Events
-          </Button>
+            <Button
+              className="signInButton mr-3 btn both-line-dark"
+              href="/event"
+            >
+              Booking Events
+            </Button>
           </div>
         </Jumbotron>
 

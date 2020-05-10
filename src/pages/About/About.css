@@ -1,0 +1,28 @@
+.underlineAbout {
+  width: 180px;
+  height: 2px;
+  background-color: #ff001f;
+}
+
+.calender-img {
+  width: 36rem;
+}
+
+.about-text {
+  margin-top: 8rem !important;
+}
+
+.rounded-image {
+  width: 20rem;
+  margin-right: 2rem !important;
+  border-radius: 10rem !important;
+  box-shadow: 2px 2px 20px #c4c4c4;
+}
+
+.about-card {
+  width: 68rem !important;
+}
+
+.social-icons {
+  width: 3rem !important;
+}
