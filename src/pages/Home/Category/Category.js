@@ -25,51 +25,46 @@ class Category extends Component {
           </Row>
           <Row>
             <CardDeck className="mt-3">
-              <Card>
-                <Card.Img variant="top" className="category-card" src={music} />
-                <Card.Body>
-                  <Card.Title className="text-center">Music</Card.Title>
-                  <Card.Text className="text-justify">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              <Card>
-                <Card.Img variant="top" className="category-card" src={art} />
-                <Card.Body>
-                  <Card.Title className="text-center">Visual Arts</Card.Title>
-                  <Card.Text className="text-justify">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer
-                    content than the first to show that equal height action.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              <Card>
-                <Card.Img variant="top" className="category-card" src={film} />
-                <Card.Body>
-                  <Card.Title className="text-center">Film</Card.Title>
-                  <Card.Text className="text-justify">
-                    This card has supporting text below as a natural lead-in to
-                    additional content.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              <Card>
+              <Card border="danger" className="category-card">
                 <Card.Img
                   variant="top"
-                  className="category-card"
+                  className="category-image"
+                  src={music}
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">Music</Card.Title>
+                </Card.Body>
+              </Card>
+              <Card border="danger" className="category-card">
+                <Card.Img variant="top" className="category-image" src={art} />
+                <Card.Body>
+                  <Card.Title className="text-center">Visual Arts</Card.Title>
+                </Card.Body>
+              </Card>
+              <Card border="danger" className="category-card">
+                <Card.Img variant="top" className="category-image" src={film} />
+                <Card.Body>
+                  <Card.Title className="text-center">Film</Card.Title>
+                </Card.Body>
+              </Card>
+              <Card border="danger" className="category-card">
+                <Card.Img
+                  variant="top"
+                  className="category-image"
                   src={fashion}
                 />
                 <Card.Body>
                   <Card.Title className="text-center">Fashion</Card.Title>
-                  <Card.Text className="text-justify">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer
-                    content than the first to show that equal height action.
-                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Card border="danger" className="category-card">
+                <Card.Img
+                  variant="top"
+                  className="category-image"
+                  src={fashion}
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">Fashion</Card.Title>
                 </Card.Body>
               </Card>
             </CardDeck>
@@ -77,63 +72,58 @@ class Category extends Component {
 
           <Row>
             <CardDeck className="mt-3">
-              <Card>
-                <Card.Img variant="top" className="category-card" src={sport} />
-                <Card.Body>
-                  <Card.Title className="text-center">Sports</Card.Title>
-                  <Card.Text className="text-justify">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              <Card>
+              <Card border="danger" className="category-card">
                 <Card.Img
                   variant="top"
-                  className="category-card"
+                  className="category-image"
+                  src={sport}
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">Sports</Card.Title>
+                </Card.Body>
+              </Card>
+              <Card border="danger" className="category-card">
+                <Card.Img
+                  variant="top"
+                  className="category-image"
                   src={festival}
                 />
                 <Card.Body>
                   <Card.Title className="text-center">
                     Festival & Fairs
                   </Card.Title>
-                  <Card.Text className="text-justify">
-                    This card has supporting text below as a natural lead-in to
-                    additional content.
-                  </Card.Text>
                 </Card.Body>
               </Card>
-              <Card>
+              <Card border="danger" className="category-card">
                 <Card.Img
                   variant="top"
-                  className="category-card"
+                  className="category-image"
                   src={nightlife}
                 />
                 <Card.Body>
                   <Card.Title className="text-center">Nightlife</Card.Title>
-                  <Card.Text className="text-justify">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer
-                    content than the first to show that equal height action.
-                  </Card.Text>
                 </Card.Body>
               </Card>
-              <Card>
+              <Card border="danger" className="category-card">
                 <Card.Img
                   variant="top"
-                  className="category-card"
+                  className="category-image"
                   src={charity}
                 />
                 <Card.Body>
                   <Card.Title className="text-center">
                     Charity & Causes
                   </Card.Title>
-                  <Card.Text className="text-justify">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer
-                    content than the first to show that equal height action.
-                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Card border="danger" className="category-card">
+                <Card.Img
+                  variant="top"
+                  className="category-image"
+                  src={fashion}
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">Fashion</Card.Title>
                 </Card.Body>
               </Card>
             </CardDeck>
