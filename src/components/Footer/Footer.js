@@ -31,7 +31,7 @@ class Footer extends Component {
                 </div>
               </Col>
               <Col md={4} sm={12}>
-                <div className="mt-5">
+                <div className="mt-5 ml-5 pt-3 pl-5 text-left">
                   <Link to="/about" className="footerNav">
                     <h5>About Us</h5>
                   </Link>

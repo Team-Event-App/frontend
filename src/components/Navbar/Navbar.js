@@ -10,7 +10,7 @@ class Navbars extends Component {
     return (
       <Navbar bg="light" variant="light" className="navbar fixed-top">
         <Link to="/" className="ml-3 brand">
-          Event Web
+          Evenity
         </Link>
 
         <Nav className="ml-auto">
