@@ -5,6 +5,8 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
+import Logo from "../../image/logo.png";
+
 import "./Contact.css";
 
 class Contact extends Component {
@@ -44,7 +46,7 @@ class Contact extends Component {
                   <Row className="justify-content-center">
                     <Col md={6}>
                       <Card className="p-5 mt-5">
-                        <img src="{}" alt="Logo" />
+                        <img src={Logo} alt="Logo" />
                         <hr />
                         <Form>
                           <div className="form-group">

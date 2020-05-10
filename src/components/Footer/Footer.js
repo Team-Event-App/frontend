@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
+import Logo from "../../image/logo2.png";
+
 class Footer extends Component {
   render() {
     return (
@@ -20,9 +22,11 @@ class Footer extends Component {
           <Container>
             <Row className="text-center">
               <Col md={4} sm={12}>
-                <div className="bg-secondary mt-5" style={{ opacity: "0.5" }}>
-                  <h2 className="mb-3">About</h2>
-                  <p>
+                <div className="bg-light mt-5">
+                  <Link to="/">
+                    <img src={Logo} alt="logo" className="mx-auto d-block " />
+                  </Link>
+                  <p className="text-black-50">
                     Duis nostrud culpa velit ipsum aliquip elit aliquip
                     consequat ut exercitation labore dolore pariatur elit. Duis
                     nostrud culpa velit ipsum aliquip elit aliquip consequat ut
@@ -62,7 +66,7 @@ class Footer extends Component {
 
             <Row>
               <Col md={{ span: 6, offset: 5 }} className="mt-4">
-                © 2020 Brand Name
+                © 2020 Evenity
               </Col>
             </Row>
           </Container>

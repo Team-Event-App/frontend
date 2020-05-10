@@ -58,14 +58,13 @@ body {
   height: 280px;
 }
 
-.card {
-  /* border: solid 1px #efefef; */
-  box-shadow: 1px 1px 5px #ff001f;
+.main-card {
+  box-shadow: 1px 1px 5px #c4c4c4;
   transform: scale(1);
 }
-.card:hover {
+.main-card:hover {
   /* border: solid 1px #ccc; */
-  box-shadow: 2px 2px 20px #ff001f;
+  box-shadow: 2px 2px 20px #c4c4c4;
   transition: transform 0.5s ease;
   transform: scale(1.1);
 }

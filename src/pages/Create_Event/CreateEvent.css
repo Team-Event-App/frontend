@@ -1,3 +1,9 @@
+.underlineEvent {
+  width: 220px;
+  height: 2px;
+  background-color: #ff001f;
+}
+
 .inputText {
   border: 1px solid #ff001f !important;
 }

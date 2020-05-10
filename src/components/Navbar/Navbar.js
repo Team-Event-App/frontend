@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 
 import "./Navbar.css";
+import Logo from "./../../image/logo.png";
 
 class Navbars extends Component {
   render() {
     return (
-      <Navbar bg="light" variant="light" className="navbar fixed-top">
+      <Navbar bg="white" variant="light" className="navbar fixed-top">
         <Link to="/" className="ml-3 brand">
-          Evenity
+          <img src={Logo} alt="logo" />
         </Link>
 
         <Nav className="ml-auto">
