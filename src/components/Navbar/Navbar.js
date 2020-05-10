@@ -26,7 +26,7 @@ class Navbars extends Component {
             <i class="fas fa-sign-in-alt ml-2"></i>
           </Button>
           <NavDropdown
-            className="mr-5 ml-3"
+            className="mr-5 pr-4 ml-4"
             title={
               <span>
                 <i className="fa fa-user fa-fw"></i>Profile
