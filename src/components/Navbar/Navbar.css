@@ -11,10 +11,6 @@
   text-transform: uppercase;
 }
 
-.brand:hover {
-  color: #ff001f;
-}
-
 .signInButton {
   color: white !important;
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);

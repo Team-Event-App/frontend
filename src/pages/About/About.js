@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -30,7 +30,7 @@ class About extends Component {
 
           <Row>
             <Col md={6} sm={12}>
-              <p className="about-text">
+              <p className="about-text text-justify">
                 Velit cupidatat enim nostrud incididunt pariatur ex. Amet
                 laboris veniam enim mollit duis pariatur veniam magna et
                 consectetur velit do id. Sint do incididunt Lorem aliqua in non
@@ -79,136 +79,160 @@ class About extends Component {
 
         <Container>
           <Row>
-            <div className="card mb-3 mt-3 about-card">
-              <div className="row no-gutters">
-                <div className="col-md-4">
+            <Card className="mb-3 mt-3 about-card">
+              <Row className="no-gutters">
+                <Col md={4}>
                   <img src="..." className="card-img" alt="..." />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title">Evan Charles</h5>
-                    <h6 className="card-title">Frontend Developer</h6>
-                    <p className="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <p className="card-text">
-                      <small className="text-muted">
-                        <img
-                          src={fb}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                        <img
-                          src={ig}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                        <img
-                          src={lin}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                        <img
-                          src={wa}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </Col>
+                <Col md={8}>
+                  <Card.Body>
+                    <Card.Title>
+                      <h5>Evan Charles</h5>
+                    </Card.Title>
+                    <Card.Title>
+                      <h6>Frontend Developer</h6>
+                    </Card.Title>
+                    <Card.Text>
+                      <p>
+                        This is a wider card with supporting text below as a
+                        natural lead-in to additional content. This content is a
+                        little bit longer.
+                      </p>
+                    </Card.Text>
+                    <Card.Text>
+                      <p>
+                        <small className="text-muted">
+                          <img
+                            src={fb}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                          <img
+                            src={ig}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                          <img
+                            src={lin}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                          <img
+                            src={wa}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                        </small>
+                      </p>
+                    </Card.Text>
+                  </Card.Body>
+                </Col>
+              </Row>
+            </Card>
           </Row>
           <Row>
-            <div className="card mb-3 mt-3 about-card">
-              <div className="row no-gutters">
-                <div className="col-md-4">
+            <Card className="mb-3 mt-3 about-card">
+              <Row className="no-gutters">
+                <Col md={4}>
                   <img src="..." className="card-img" alt="..." />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title">Indra Kawasan</h5>
-                    <h6 className="card-title">Backend Developer</h6>
-                    <p className="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <p className="card-text">
-                      <small className="text-muted">
-                        <img
-                          src={fb}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                        <img
-                          src={ig}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                        <img
-                          src={lin}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                        <img
-                          src={wa}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </Col>
+                <Col md={8}>
+                  <Card.Body>
+                    <Card.Title>
+                      <h5>Indra Kawasan</h5>
+                    </Card.Title>
+                    <Card.Title>
+                      <h6>Backend Developer</h6>
+                    </Card.Title>
+                    <Card.Text>
+                      <p>
+                        This is a wider card with supporting text below as a
+                        natural lead-in to additional content. This content is a
+                        little bit longer.
+                      </p>
+                    </Card.Text>
+                    <Card.Text>
+                      <p>
+                        <small className="text-muted">
+                          <img
+                            src={fb}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                          <img
+                            src={ig}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                          <img
+                            src={lin}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                          <img
+                            src={wa}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                        </small>
+                      </p>
+                    </Card.Text>
+                  </Card.Body>
+                </Col>
+              </Row>
+            </Card>
           </Row>
           <Row>
-            <div className="card mb-3 mt-3 about-card">
-              <div className="row no-gutters">
-                <div className="col-md-4">
+            <Card className="mb-3 mt-3 about-card">
+              <Row className="no-gutters">
+                <Col md={4}>
                   <img src="..." className="card-img" alt="..." />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title">Ariq Bimantoro</h5>
-                    <h6 className="card-title">Frontend Developer</h6>
-                    <p className="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <p className="card-text">
-                      <small className="text-muted">
-                        <img
-                          src={fb}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                        <img
-                          src={ig}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                        <img
-                          src={lin}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                        <img
-                          src={wa}
-                          alt="social-icon"
-                          className="social-icons"
-                        />
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </Col>
+                <Col md={8}>
+                  <Card.Body>
+                    <Card.Title>
+                      <h5>Ariq Bimantoro</h5>
+                    </Card.Title>
+                    <Card.Title>
+                      <h6>Frontend Developer</h6>
+                    </Card.Title>
+                    <Card.Text>
+                      <p>
+                        This is a wider card with supporting text below as a
+                        natural lead-in to additional content. This content is a
+                        little bit longer.
+                      </p>
+                    </Card.Text>
+                    <Card.Text>
+                      <p>
+                        <small className="text-muted">
+                          <img
+                            src={fb}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                          <img
+                            src={ig}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                          <img
+                            src={lin}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                          <img
+                            src={wa}
+                            alt="social-icon"
+                            className="social-icons"
+                          />
+                        </small>
+                      </p>
+                    </Card.Text>
+                  </Card.Body>
+                </Col>
+              </Row>
+            </Card>
           </Row>
         </Container>
         <Footer />

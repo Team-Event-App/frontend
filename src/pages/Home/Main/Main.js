@@ -68,7 +68,7 @@ class Main extends Component {
           </Row>
           <Row>
             <CardDeck className="card-deck">
-              <Card border="secondary">
+              <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body className="card-body">
                   <Card.Text>
@@ -86,7 +86,7 @@ class Main extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card border="secondary">
+              <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body className="card-body">
                   <Card.Text>
@@ -104,7 +104,7 @@ class Main extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card border="secondary">
+              <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Text>
@@ -119,7 +119,7 @@ class Main extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card border="secondary">
+              <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Text>
@@ -140,7 +140,7 @@ class Main extends Component {
 
           <Row>
             <CardDeck className="mt-5 pt-2">
-              <Card border="secondary">
+              <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body className="card-body">
                   <Card.Text>
@@ -158,7 +158,7 @@ class Main extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card border="secondary">
+              <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Text>
@@ -174,7 +174,7 @@ class Main extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card border="secondary">
+              <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Text>
@@ -189,7 +189,7 @@ class Main extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card border="secondary">
+              <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Text>

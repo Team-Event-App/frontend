@@ -40,7 +40,7 @@ class Trend extends Component {
           </Row>
           <Row>
             <CardDeck className="mb-4">
-              <Card border="secondary">
+              <Card border="secondary" className="trend-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Title>Card title</Card.Title>
@@ -51,7 +51,7 @@ class Trend extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card border="secondary">
+              <Card border="secondary" className="trend-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Title>Card title</Card.Title>
@@ -62,7 +62,7 @@ class Trend extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card border="secondary">
+              <Card border="secondary" className="trend-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Title>Card title</Card.Title>
@@ -72,7 +72,7 @@ class Trend extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card border="secondary">
+              <Card border="secondary" className="trend-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body>
                   <Card.Title>Card title</Card.Title>
