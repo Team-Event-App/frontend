@@ -26,7 +26,7 @@ class ShowAll extends Component {
           </Row>
 
           <Row>
-            <CardDeck className="mt-4">
+            <CardDeck className="mt-5 pt-2">
               <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body className="card-body">

@@ -1,0 +1,22 @@
+.carousel-image {
+  width: 70rem !important;
+  max-height: 25rem;
+  border-radius: 2rem !important;
+}
+
+.control-arrow {
+  padding: 1.5rem !important;
+  background-color: #ff001f !important;
+}
+
+.legend {
+  bottom: 0 !important;
+  width: 70rem !important;
+  font-size: 26px !important;
+  left: 31.2rem !important;
+}
+
+.carousel .thumb img {
+  width: 10rem !important;
+  max-height: 5rem !important;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -24,6 +25,7 @@ import imageCards from "../../../image/eventposter.jpg";
 
 import Trend from "../Trend/Trend";
 import Category from "../Category/Category";
+import Slider from "../Carousel/Carousel";
 
 class Main extends Component {
   render() {
@@ -53,6 +55,16 @@ class Main extends Component {
             </Row>
           </Container>
         </Jumbotron>
+
+        <Container>
+          <Row>
+            <h2 className="mb-2 mt-4">CATEGORY</h2>
+          </Row>
+          <Row>
+            <div class="underlineCategory mb-4 "></div>
+          </Row>
+        </Container>
+        <Slider />
 
         <Container className="browseContainer">
           <Row>
