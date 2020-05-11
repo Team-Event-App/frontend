@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import { Link } from "react-router-dom";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 import Navbar from "../../components/Navbar/Navbar";
@@ -9,6 +10,10 @@ import "./About.css";
 
 import calender from "../../image/calender.png";
 import profile from "../../image/profile.png";
+
+import contact from "../../image/about/contact.jpg";
+import host from "../../image/about/host.jpg";
+import event from "../../image/about/event.jpg";
 
 import fb from "../../image/icon/fb.png";
 import ig from "../../image/icon/ig.png";
@@ -56,6 +61,60 @@ class About extends Component {
           </Row>
         </Container>
 
+        <Container className="mb-5 pb-3">
+          <Row>
+            <Col md={4} sm={12}>
+              <div className="photo-grid">
+                <div className="grid-item">
+                  <Link to="/event">
+                    <figure>
+                      <img src={host} height="100%" width="100%" alt="host" />
+                      <figcaption>
+                        <p>Organize an Event</p>
+                      </figcaption>
+                    </figure>
+                  </Link>
+                </div>
+              </div>
+            </Col>
+
+            <Col md={4} sm={12}>
+              <div className="photo-grid">
+                <div className="grid-item">
+                  <Link to="/">
+                    <figure>
+                      <img src={event} height="100%" width="100%" alt="event" />
+                      <figcaption>
+                        <p>Find your next Experience</p>
+                      </figcaption>
+                    </figure>
+                  </Link>
+                </div>
+              </div>
+            </Col>
+
+            <Col md={4} sm={12}>
+              <div className="photo-grid">
+                <div className="grid-item">
+                  <Link to="/contact">
+                    <figure>
+                      <img
+                        src={contact}
+                        height="100%"
+                        width="100%"
+                        alt="contact"
+                      />
+                      <figcaption>
+                        <p>Contact Us for more Information</p>
+                      </figcaption>
+                    </figure>
+                  </Link>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+
         <Container>
           <Row>
             <Col>
@@ -82,7 +141,7 @@ class About extends Component {
             <Card className="mb-3 mt-3 about-card">
               <Row className="no-gutters">
                 <Col md={4}>
-                  <img src="..." className="card-img" alt="..." />
+                  <img src="..." className="about-card-img" alt="..." />
                 </Col>
                 <Col md={8}>
                   <Card.Body>
@@ -92,12 +151,12 @@ class About extends Component {
                     <Card.Title>
                       <h6>Frontend Developer</h6>
                     </Card.Title>
-                    <Card.Text>
-                      <p>
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
+                    <Card.Text className="mt-3">
+                      <h5>
+                        “Styles come and go. Good design is a language, not a
+                        Style.” <br />
+                        -Massimo Vignelli
+                      </h5>
                     </Card.Text>
                     <Card.Text>
                       <p>
@@ -134,7 +193,7 @@ class About extends Component {
             <Card className="mb-3 mt-3 about-card">
               <Row className="no-gutters">
                 <Col md={4}>
-                  <img src="..." className="card-img" alt="..." />
+                  <img src="..." className="about-card-img" alt="..." />
                 </Col>
                 <Col md={8}>
                   <Card.Body>
@@ -186,7 +245,7 @@ class About extends Component {
             <Card className="mb-3 mt-3 about-card">
               <Row className="no-gutters">
                 <Col md={4}>
-                  <img src="..." className="card-img" alt="..." />
+                  <img src="..." className="about-card-img" alt="..." />
                 </Col>
                 <Col md={8}>
                   <Card.Body>
