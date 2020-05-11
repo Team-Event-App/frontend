@@ -37,6 +37,11 @@ class Navbars extends Component {
             <NavDropdown.Item>
               <i className="fas fa-envelope fa-fw"></i> User Profile
             </NavDropdown.Item>
+
+            <NavDropdown.Item>
+              <i className="fas fa-bookmark mr-2"></i>Bookmark
+            </NavDropdown.Item>
+
             <NavDropdown.Item>
               <i className="far fa-clock mr-2"></i>History Purchase
             </NavDropdown.Item>

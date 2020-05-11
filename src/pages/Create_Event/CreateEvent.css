@@ -6,6 +6,7 @@
 
 .inputText {
   border: 1px solid #ff001f !important;
+  width: 15rem;
 }
 .subLabel {
   font-size: 25px;
