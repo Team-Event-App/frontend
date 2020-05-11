@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios({
-      url: "http://localhost:8000/user/login",
+      url: "https://api.indrakawasan.com/user/login",
       method: "POST",
       data: {
         email,
@@ -25,12 +25,13 @@ const Login = () => {
       },
     })
       .then((res) => {
-        localStorage.setItem("access-token", res.data);
-
+        localStorage.setItem('token',res.data)
+      
         history.push("/");
       })
       .catch((err) => {
         console.log("Login Failed.");
+        history.push("/login");
       });
   };
   return (

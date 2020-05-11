@@ -1,45 +1,48 @@
-import React from "react";
+import React,{Component} from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import { Formik, Field } from "formik";
-import { Form, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // import * as Yup from 'yup';
 
 import "./Register.css";
 
-const Register = () => {
-  const history = useHistory();
-  return (
-    <div className="main-register">
+class Register extends Component{
+  // history = useHistory();
+
+  state = {
+    username:"",
+    fullname:"",
+    phone:"",
+    email:"",
+    password:"",
+    imageUrl:null
+  }
+  fileHandler = event => {
+    this.setState({
+      imageUrl:event.target.files[0]
+    })
+  }
+
+  fileUploadHandler = () => {
+    const image = new FormData();
+    image.append('image',this.state.imageUrl,this.state.imageUrl.name);
+    axios.post('https://api.indrakawasan.com/user/register',image,{
+      onUploadProgress:ProgressEvent => {
+        console.log('Upload Progress: ' + Math.round(ProgressEvent.loaded / ProgressEvent.total) * 100 + '%')
+      }
+    })
+    .then(res => {
+      console.log(res);
+    })
+  }
+  render(){
+    return(
+      <div className="main-register">
       <div className="container-register">
         <div className="container" id="container">
           <div className="form-container sign-in-container">
-            <Formik
-              initialValues={{
-                username: "",
-                fullname: "",
-                phone: "",
-                email: "",
-                password: "",
-                imageUrl: "",
-              }}
-              onSubmit={(values, actions) => {
-                axios({
-                  method: "POST",
-                  url: "http://localhost:8000/user/register",
-                  data: values,
-                });
-                setTimeout(() => {
-                  alert(JSON.stringify(values, null, 2));
-                  actions.setSubmitting(false);
-                  actions.resetForm();
-                  history.push("/login");
-                });
-              }}
-            >
-              {(props) => (
-                <form onSubmit={props.handleSubmit} className="register-form">
+                <form className="register-form">
                   <h1>Register</h1>
                   <div className="social-container">
                     <a href="/#" className="social">
@@ -53,62 +56,54 @@ const Register = () => {
                     </a>
                   </div>
                   <span>or use your account</span>
-                  <Field
+                  <input
                     type="text"
                     placeholder="User Name"
                     className="register-input"
                     name="username"
                     id="username"
-                    value={props.values.username}
-                    onChange={props.handleChange}
-                    onBlur={props.handleBlur}
+
                   />
-                  <Field
+                  <input
                     type="text"
                     placeholder="Full Name"
                     className="register-input"
                     name="fullname"
                     id="fullname"
-                    value={props.values.fullname}
-                    onChange={props.handleChange}
-                    onBlur={props.handleBlur}
+
                   />
-                  <Field
+                  <input
                     type="text"
                     placeholder="Phone Number"
                     className="register-input"
                     name="phone"
                     id="phone"
-                    value={props.values.phone}
-                    onChange={props.handleChange}
-                    onBlur={props.handleBlur}
+
                   />
-                  <Field
+                  <input
                     type="email"
                     placeholder="Email"
                     className="register-input"
                     name="email"
                     id="email"
-                    value={props.values.email}
-                    onChange={props.handleChange}
-                    onBlur={props.handleBlur}
+
                   />
-                  <Field
+                  <input
                     type="text"
                     placeholder="Password"
                     className="register-input"
                     name="password"
                     id="password"
-                    value={props.values.password}
-                    onChange={props.handleChange}
-                    onBlur={props.handleBlur}
+
                   />
-                  <Form.File
+                  <input
+                    type="file"
                     id="custom-file"
                     label="Upload Image"
+                    className="register-input"
                     custom
                     name="imageUrl"
-                    value={props.values.imageUrl}
+                    onChange={this.fileHandler}
                   />
                   <Button variant="danger" type="submit" className="mt-3">
                     Sign Up
@@ -119,8 +114,6 @@ const Register = () => {
                     </Button>
                   </Link>
                 </form>
-              )}
-            </Formik>
           </div>
           <div className="overlay-container">
             <div className="overlay-panel overlay-right">
@@ -134,7 +127,8 @@ const Register = () => {
         </div>
       </div>
     </div>
-  );
-};
+    )
+  }
+}
 
 export default Register;
