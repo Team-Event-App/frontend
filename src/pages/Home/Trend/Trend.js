@@ -19,7 +19,7 @@ class Trend extends Component {
       <div>
         <Jumbotron fluid className="trend-background">
           <Container>
-            <h1 className="text-center mb-4">Host Your Own Events</h1>
+            <h1 className="text-center mb-4 hostEvent">Host Your Own Events</h1>
             <Form inline>
               <Button
                 className="buttonCreate both-line-light mx-auto"

@@ -4,6 +4,7 @@ import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
 import {
   Container,
   Row,
+  Col,
   Jumbotron,
   Button,
   Form,
@@ -11,6 +12,8 @@ import {
   Card,
   CardDeck,
 } from "react-bootstrap";
+
+import { Link } from "react-router-dom";
 
 import "../Main/Main.css";
 
@@ -29,7 +32,7 @@ class Main extends Component {
         <Navbars />
         <Jumbotron fluid className="main-background mt-5">
           <Container className="pt-3">
-            <h1 className="text-center">
+            <h1 className="text-center mt-5 ">
               “What you need, is an Event, to remember for a lifetime.”
             </h1>
             <h1 className="text-center">― Rehan Waris ―</h1>
@@ -49,14 +52,6 @@ class Main extends Component {
               </Form>
             </Row>
           </Container>
-          <div className="text-center pt-5">
-            <Button
-              className="signInButton mr-3 btn both-line-dark"
-              href="/event"
-            >
-              Booking Events
-            </Button>
-          </div>
         </Jumbotron>
 
         <Container className="browseContainer">
@@ -207,10 +202,15 @@ class Main extends Component {
               </Card>
             </CardDeck>
           </Row>
+
           <Row>
-            <Button className="buttonMore mt-4 mb-4 mx-auto">
-              <h5>More Events</h5>
-            </Button>
+            <Col className="text-center">
+              <Link to="/showall">
+                <Button className="buttonMore mt-4 mb-4">
+                  <h5>More Events</h5>
+                </Button>
+              </Link>
+            </Col>
           </Row>
         </Container>
 

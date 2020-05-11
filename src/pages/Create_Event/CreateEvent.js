@@ -89,6 +89,7 @@ class createEvent extends Component {
                       as="textarea"
                       rows="3"
                       className="inputText"
+                      style={{ width: "33rem" }}
                     />
                   </Form.Group>
                 </Form.Row>
@@ -158,7 +159,10 @@ class createEvent extends Component {
                         name="price"
                         className="inputText"
                       />
-                      <input type="date" className="pl-3 inputText"></input>
+                      <input
+                        type="date"
+                        className="pl-3 ml-3 inputText"
+                      ></input>
                     </InputGroup>
                   </Form.Group>
                 </Form.Row>

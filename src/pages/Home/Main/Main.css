@@ -5,7 +5,6 @@ body {
   overflow-x: hidden;
 }
 .card {
-  /* border: 1px solid #ff001f !important; */
   border-radius: 10px !important;
   overflow: hidden;
   color: black;
@@ -21,7 +20,7 @@ body {
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 35rem;
+  height: 30rem;
 }
 
 .main-background h1 {
