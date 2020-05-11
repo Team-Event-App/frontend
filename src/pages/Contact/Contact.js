@@ -20,7 +20,6 @@ class Contact extends Component {
               fullName: "",
               email: "",
               phone: "",
-              password: "",
               message: "",
             }}
             validate={(values) => {
@@ -75,15 +74,6 @@ class Contact extends Component {
                               type="number"
                               name="phone"
                               placeholder="Your Phone number"
-                              className="form-control"
-                            />
-                          </div>
-                          <div className="form-group">
-                            Password
-                            <Field
-                              type="password"
-                              name="password"
-                              placeholder="Enter your Password"
                               className="form-control"
                             />
                           </div>
