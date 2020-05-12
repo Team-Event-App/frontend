@@ -18,7 +18,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <Jumbotron fluid className="jumbotronFooter">
+        <Jumbotron fluid className="jumbotronFooter mb-0">
           <Container>
             <Row className="text-center">
               <Col md={4} sm={12}>

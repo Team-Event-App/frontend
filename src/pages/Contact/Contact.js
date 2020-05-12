@@ -79,16 +79,6 @@ class Contact extends Component {
                             />
                           </div>
                           <div className="form-group">
-                            Password
-                            <Field
-                              type="password"
-                              name="password"
-                              placeholder="Enter your Password"
-                              className="form-control"
-                            />
-                          </div>
-
-                          <div className="form-group">
                             Message
                             <Field
                               name="message"
