@@ -16,11 +16,11 @@ body {
   border-radius: 20rem !important;
 }
 .main-background {
-  background: url(./../../../image/backgroundhome.jpeg) no-repeat;
+  background: url(./../../../image/backgroundhome.jpg) no-repeat;
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 30rem;
+  height: 32rem;
 }
 
 .main-background h1 {

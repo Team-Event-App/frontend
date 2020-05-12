@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
-import Logo from "../../image/logo2.png";
+import Logo from "../../image/logo2-1.png";
 
 class Footer extends Component {
   render() {
@@ -22,11 +22,11 @@ class Footer extends Component {
           <Container>
             <Row className="text-center">
               <Col md={4} sm={12}>
-                <div className="bg-light mt-5">
+                <div className="mt-5">
                   <Link to="/">
                     <img src={Logo} alt="logo" className="mx-auto d-block " />
                   </Link>
-                  <p className="text-black-50">
+                  <p className="text-whiet-50">
                     Duis nostrud culpa velit ipsum aliquip elit aliquip
                     consequat ut exercitation labore dolore pariatur elit. Duis
                     nostrud culpa velit ipsum aliquip elit aliquip consequat ut

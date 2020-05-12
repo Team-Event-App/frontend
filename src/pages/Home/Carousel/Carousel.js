@@ -19,7 +19,7 @@ export default class CategoryCarousel extends Component {
   render() {
     return (
       <div>
-        <Container className="containerCarousel">
+        <Container className="containerCarousel mb-5">
           <Carousel centered infinite arrows slidesPerPage={3}>
             <a href="#" className="text-center"><img src={music} className="carouselImg"/><Button className="buttonImg">Music</Button></a>
             <a href="#" className="text-center"><img src={art} className="carouselImg"/><Button className="buttonImg">Art</Button></a>
