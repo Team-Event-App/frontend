@@ -20,7 +20,6 @@ class Contact extends Component {
               fullName: "",
               email: "",
               phone: "",
-              password: "",
               message: "",
             }}
             validate={(values) => {

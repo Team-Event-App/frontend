@@ -3,7 +3,9 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Formik } from "formik";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+import axios from "axios";
+
 // import * as Yup from 'yup';
 
 import "./Register.css";
