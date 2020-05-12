@@ -12,8 +12,8 @@
   align-items: center;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  height: 100vh;
-  margin: -20px 0 50px;
+  height: 50vh;
+  margin: 14rem 0 50px;
   width: 50rem;
 }
 
@@ -114,23 +114,12 @@
   z-index: 2;
 }
 
-/* .container-login.right-panel-active .sign-in-container {
-  transform: translateX(100%);
-} */
-
 .sign-up-container {
   left: 0;
   width: 50%;
   opacity: 0;
   z-index: 1;
 }
-
-/* .container-login.right-panel-active .sign-up-container {
-  transform: translateX(100%);
-  opacity: 1;
-  z-index: 5;
-  animation: show 0.6s;
-} */
 
 @keyframes show {
   0%,
@@ -157,13 +146,8 @@
   z-index: 100;
 }
 
-/* .container-login.right-panel-active .overlay-container {
-  transform: translateX(-100%);
-} */
-
 .overlay {
   background: #ff416c;
-  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
   background: linear-gradient(to right, #ff4b2b, #ff416c);
   background-repeat: no-repeat;
   background-size: cover;
