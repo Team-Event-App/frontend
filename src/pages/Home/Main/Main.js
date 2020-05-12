@@ -63,10 +63,10 @@ class Main extends Component {
           <Row>
             <div class="underlineCategory mb-4 "></div>
           </Row>
-        </Container>
-        <Slider /> */}
+        </Container> */}
+        <Slider />
 
-        <Container className="browseContainer">
+        <Container className="browseContainer mt-5 pt-5">
           <Row>
             <h2 className="mb-4">BROWSE EVENTS</h2>
           </Row>

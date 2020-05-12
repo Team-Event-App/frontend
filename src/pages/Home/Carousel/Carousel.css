@@ -1,16 +1,16 @@
-.carouselImg{
+.carouselImg {
   height: 200px;
-  width:350px;
+  width: 350px;
 }
-.BrainhubCarousel__arrowRight{
+.BrainhubCarousel__arrowRight {
   background-color: #ff4b2b;
 }
-.BrainhubCarousel__arrowLeft{
+.BrainhubCarousel__arrowLeft {
   background-color: #ff4b2b;
 }
-.buttonImg{
+.buttonImg {
   width: 50%;
-  color:white;
+  color: white;
   background-color: #ff4b2b !important;
   border-color: #ff4b2b !important;
 }
