@@ -56,7 +56,7 @@ class Main extends Component {
           </Container>
         </Jumbotron>
 
-        <Container>
+        {/* <Container>
           <Row>
             <h2 className="mb-2 mt-4">CATEGORY</h2>
           </Row>
@@ -64,7 +64,7 @@ class Main extends Component {
             <div class="underlineCategory mb-4 "></div>
           </Row>
         </Container>
-        <Slider />
+        <Slider /> */}
 
         <Container className="browseContainer">
           <Row>
@@ -216,7 +216,7 @@ class Main extends Component {
           </Row>
 
           <Row>
-            <Col className="text-center">
+            <Col className="text-center mt-4 mb-3">
               <Link to="/showall">
                 <Button className="buttonMore mt-4 mb-4">
                   <h5>More Events</h5>

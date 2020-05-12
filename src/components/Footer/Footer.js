@@ -66,7 +66,7 @@ class Footer extends Component {
 
             <Row>
               <Col md={{ span: 6, offset: 5 }} className="mt-4">
-                © 2020 Evenity
+                © 2020 Copyright Evenity
               </Col>
             </Row>
           </Container>
