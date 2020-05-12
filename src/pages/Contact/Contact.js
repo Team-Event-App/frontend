@@ -35,6 +35,16 @@ class Contact extends Component {
                     Email Address is required
                   </small>
                 );
+                errors.phone = (
+                  <small className="form-text text-danger">
+                    Phone number is required
+                  </small>
+                );
+                errors.message = (
+                  <small className="form-text text-danger">
+                    Write your message here.
+                  </small>
+                );
                 return errors;
               }
             }}
@@ -76,8 +86,8 @@ class Contact extends Component {
                               placeholder="Your Phone number"
                               className="form-control"
                             />
+                            <ErrorMessage name="phone" />
                           </div>
-
                           <div className="form-group">
                             Message
                             <Field
@@ -87,6 +97,7 @@ class Contact extends Component {
                               className="form-control"
                               placeholder="Send your Message Here"
                             />
+                            <ErrorMessage name="message" />
                           </div>
 
                           <Button variant="outline-danger" block type="submit">
