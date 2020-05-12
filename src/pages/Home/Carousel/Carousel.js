@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import { Carousel } from "react-responsive-carousel";
 
 import { Container } from "react-bootstrap";
 
-import music from "../../../image/music.jpg";
-import art from "../../../image/art.jpeg";
-import film from "../../../image/film.jpeg";
-import fashion from "../../../image/fashion.jpeg";
-import sport from "../../../image/sport.jpeg";
-import festival from "../../../image/festival.jpeg";
-import nightlife from "../../../image/nightlife.jpeg";
-import charity from "../../../image/charity.jpg";
+// import music from "../../../image/music.jpg";
+// import art from "../../../image/art.jpeg";
+// import film from "../../../image/film.jpeg";
+// import fashion from "../../../image/fashion.jpeg";
+// import sport from "../../../image/sport.jpeg";
+// import festival from "../../../image/festival.jpeg";
+// import nightlife from "../../../image/nightlife.jpeg";
+// import charity from "../../../image/charity.jpg";
 
 import "./Carousel.css";
 
@@ -20,7 +20,7 @@ class Slider extends Component {
     return (
       <div>
         <Container>
-          <Carousel>
+          {/* <Carousel>
             <div>
               <img src={music} className="carousel-image" />
               <p className="legend">Music</p>
@@ -53,7 +53,7 @@ class Slider extends Component {
               <img src={charity} className="carousel-image" />
               <p className="legend">Charity & Fairs</p>
             </div>
-          </Carousel>
+          </Carousel> */}
         </Container>
       </div>
     );

@@ -3,9 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Formik } from "formik";
 import { Button } from "react-bootstrap";
-// import { useHistory } from "react-router-dom";
-import axios from "axios";
-
+import { Link } from "react-router-dom";
 // import * as Yup from 'yup';
 
 import "./Register.css";
@@ -37,7 +35,7 @@ class Register extends Component {
 
                   const res = await axios(
                     "https://api.indrakawasan.com/user/register",
-                    { method: "POST", body: formData,data:formData }
+                    { method: "POST", data: formData }
                   );
                   console.log(res);
                     alert("Register Success!");
