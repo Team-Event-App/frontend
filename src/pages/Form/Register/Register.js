@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-// import { useHistory } from "react-router-dom";
+
 import axios from "axios";
 import { Formik } from "formik";
-import { Container, Row, Col, Button ,Alert} from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
+
 import "./Register.css";
 
 class Register extends Component {
-
   render() {
     return (
       <Container>
@@ -18,7 +16,7 @@ class Register extends Component {
             <div className="main-register">
               <div className="container-register mx-auto">
                 <div className="form-container sign-in-container">
-                  {/* <Formik
+                  <Formik
                     initialValues={{
                       username: "",
                       fullname: "",
@@ -41,11 +39,11 @@ class Register extends Component {
                           console.log(err);
                         });
                     }}
-                  > */}
-                    {/* {(props) => ( */}
+                  >
+                    {(props) => (
                       <form
                         className="register-form"
-                        onSubmit={this.onSubmit}
+                        onSubmit={props.handleSubmit}
                       >
                         <h1>Register</h1>
                         <div className="social-container">
@@ -66,7 +64,9 @@ class Register extends Component {
                           className="register-input"
                           name="username"
                           id="username"
-                          onChange={this.onChange}
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                          value={props.values.username}
                         />
                         <input
                           type="text"
@@ -74,7 +74,9 @@ class Register extends Component {
                           className="register-input"
                           name="fullname"
                           id="fullname"
-                          onChange={this.onChange}
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                          value={props.values.fullname}
                         />
                         <input
                           type="email"
@@ -82,7 +84,9 @@ class Register extends Component {
                           className="register-input"
                           name="email"
                           id="email"
-                          onChange={this.onChange}
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                          value={props.values.email}
                         />
                         <input
                           type="text"
@@ -90,7 +94,9 @@ class Register extends Component {
                           className="register-input"
                           name="phone"
                           id="phone"
-                          onChange={this.onChange}
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                          value={props.values.phone}
                         />
                         <input
                           type="password"
@@ -98,7 +104,9 @@ class Register extends Component {
                           className="register-input"
                           name="password"
                           id="password"
-                          onChange={this.onChange}
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                          value={props.values.password}
                         />
 
                         <Button variant="danger" type="submit" className="mt-3">
@@ -106,7 +114,7 @@ class Register extends Component {
                         </Button>
                       </form>
                     )}
-                  {/* </Formik> */}
+                  </Formik>
                 </div>
                 <div className="overlay-container-regis">
                   <div className="overlay">
@@ -131,6 +139,5 @@ class Register extends Component {
     );
   }
 }
-
 
 export default Register;
