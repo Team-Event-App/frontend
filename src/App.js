@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { loadUser } from "./actions/authActions";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import reducers from "./reducers";
-
 import "@fortawesome/react-fontawesome";
 
 import Main from "./pages/Home/Main/Main";
@@ -18,9 +12,13 @@ import Login from "./pages/Form/Login/Login";
 import Register from "./pages/Form/Register/Register";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
-
-import ShowAll from "./pages/Show_All/ShowAll";
 import Detail from "./pages/Detail/Detail";
+
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import reducers from "./reducers";
+import ShowAll from "./pages/Show_All/ShowAll";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
@@ -29,44 +27,39 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-class App extends Component {
-  componentDidMount() {
-    store.dispatch(loadUser());
-  }
-  render() {
-    return (
-      <Provider store={store}>
-        <Router>
-          <Switch>
-            <Route exact path="/login" component={Login}>
-              <Login />
-            </Route>
-            <Route exact path="/" component={Main}>
-              <Main />
-            </Route>
-            <Route exact path="/event" component={CreateEvent}>
-              <CreateEvent />
-            </Route>
-            <Route exact path="/register" component={Register}>
-              <Register />
-            </Route>
-            <Route exact path="/about" component={About}>
-              <About />
-            </Route>
-            <Route exact path="/contact" component={Contact}>
-              <Contact />
-            </Route>
-            <Route exact path="/showall" component={ShowAll}>
-              <ShowAll />
-            </Route>
-            <Route exact path="/detail" component={Detail}>
-              <Detail />
-            </Route>
-          </Switch>
-        </Router>
-      </Provider>
-    );
-  }
+function App() {
+  return (
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path="/login" component={Login}>
+            <Login />
+          </Route>
+          <Route exact path="/" component={Main}>
+            <Main />
+          </Route>
+          <Route exact path="/event" component={CreateEvent}>
+            <CreateEvent />
+          </Route>
+          <Route exact path="/register" component={Register}>
+            <Register />
+          </Route>
+          <Route exact path="/about" component={About}>
+            <About />
+          </Route>
+          <Route exact path="/contact" component={Contact}>
+            <Contact />
+          </Route>
+          <Route exact path="/showall" component={ShowAll}>
+            <ShowAll />
+          </Route>
+          <Route exact path="/detail" component={Detail}>
+            <Detail />
+          </Route>
+        </Switch>
+      </Router>
+    </Provider>
+  );
 }
 
 export default App;

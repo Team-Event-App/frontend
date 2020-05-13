@@ -1,20 +1,29 @@
 import React, { useState } from "react";
-
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 import "./Login.css";
 import { connect } from "react-redux";
+import { login } from "../../../actions/loginActions";
 
 const Login = (props) => {
-  const [data,setData] =useState({
-    email:'',
-    password:''
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  const handleChange = (event) => {
+    const { name, value } = event.currentTarget;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+  const history = useHistory();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.login(data);
+    history.push("/");
   };
   return (
     <Container>
@@ -44,7 +53,7 @@ const Login = (props) => {
                     name="email"
                     id="email"
                     value={data.email}
-                    onChange={(e) => setData(e.target.value)}
+                    onChange={handleChange}
                   />
                   <input
                     type="password"
@@ -53,7 +62,7 @@ const Login = (props) => {
                     name="password"
                     id="password"
                     value={data.password}
-                    onChange={(e) => setData(e.target.value)}
+                    onChange={handleChange}
                   />
                   <a href="/#">Forgot your password?</a>
                   <button>Sign In</button>
@@ -90,6 +99,6 @@ const Login = (props) => {
     </Container>
   );
 };
+const mapDispatchToProps = { login };
 
-
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);

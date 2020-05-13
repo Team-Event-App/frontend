@@ -18,3 +18,8 @@
 .signInButton:hover {
   background-color: rgba(255, 0, 31, 0.85) !important;
 }
+
+.logout-button {
+  text-decoration: none !important;
+  font-size: 24px;
+}
