@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import {Button} from 'react-bootstrap';
-import { Container } from "react-bootstrap";
+
+import { Jumbotron, Button } from "react-bootstrap";
 
 import music from "../../../image/music.jpg";
 import art from "../../../image/art.jpeg";
@@ -19,7 +19,7 @@ export default class CategoryCarousel extends Component {
   render() {
     return (
       <div>
-        <Container className="containerCarousel mb-5">
+        <Jumbotron className="containerCarousel mb-5">
           <Carousel centered infinite arrows slidesPerPage={3}>
             <a href="/#" className="text-center"><img src={music} alt="Music Category" className="carouselImg"/><Button className="buttonImg">Music</Button></a>
             <a href="/#" className="text-center"><img src={art} alt="Art Category" className="carouselImg"/><Button className="buttonImg">Art</Button></a>
@@ -30,7 +30,7 @@ export default class CategoryCarousel extends Component {
             <a href="/#" className="text-center"><img src={nightlife} alt="Nightlife Category" className="carouselImg"/><Button className="buttonImg">Nightlife</Button></a>
             <a href="/#" className="text-center"><img src={charity} alt="Charity" className="carouselImg"/><Button className="buttonImg">Charity</Button></a>
           </Carousel>
-        </Container>
+        </Jumbotron>
       </div>
     );
   }

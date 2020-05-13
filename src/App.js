@@ -13,7 +13,7 @@ import Register from "./pages/Form/Register/Register";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 
-import {loadUser} from './actions/authActions';
+
 import {Provider} from 'react-redux';
 import {createStore,applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
@@ -27,11 +27,7 @@ store.subscribe(() => {
   console.log(store.getState());
 })
 
-class App extends Component{
-  componentDidMount(){
-    store.dispatch(loadUser());
-  }
-  render(){
+function App(){
     return(
       <Provider store={store}>
       <Router>
@@ -61,7 +57,6 @@ class App extends Component{
     </Router>
     </Provider>
     )
-  }
 }
 
 
