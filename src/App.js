@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "@fortawesome/react-fontawesome";
@@ -13,11 +13,28 @@ import Register from "./pages/Form/Register/Register";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 
+import {loadUser} from './actions/authActions';
+import {Provider} from 'react-redux';
+import {createStore,applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import reducers from './reducers'
 import ShowAll from "./pages/Show_All/ShowAll";
 
-function App() {
-  return (
-    <Router>
+const store = createStore(reducers,applyMiddleware(thunk));
+
+store.subscribe(() => {
+  console.log('data')
+  console.log(store.getState());
+})
+
+class App extends Component{
+  componentDidMount(){
+    store.dispatch(loadUser());
+  }
+  render(){
+    return(
+      <Provider store={store}>
+      <Router>
       <Switch>
         <Route exact path="/login" component={Login}>
           <Login />
@@ -42,7 +59,10 @@ function App() {
         </Route>
       </Switch>
     </Router>
-  );
+    </Provider>
+    )
+  }
 }
+
 
 export default App;
