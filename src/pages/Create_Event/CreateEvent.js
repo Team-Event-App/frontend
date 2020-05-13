@@ -1,15 +1,6 @@
 import React, { Component } from "react";
 
-import {
-  Container,
-  Row,
-  Col,
-  ButtonGroup,
-  ToggleButton,
-  Button,
-  Form,
-  InputGroup,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, Form, InputGroup } from "react-bootstrap";
 
 import "./CreateEvent.css";
 
@@ -52,7 +43,7 @@ class createEvent extends Component {
                       value="Choose..."
                       className="inputText"
                     >
-                      <option></option>
+                      <option>Category</option>
                       <option>...</option>
                     </Form.Control>
                   </Form.Group>
@@ -74,8 +65,12 @@ class createEvent extends Component {
                     />
                   </Form.Group>
                   <Form.Group as={Col} md={3} controlId="formBasicEmail">
-                    <Form.Label>Penanggung Jawab Event</Form.Label>
-                    <Form.Control type="email" className="inputText" />
+                    <Form.Label>Dependent Event</Form.Label>
+                    <Form.Control
+                      type="email"
+                      className="inputText"
+                      placeholder="Dependent"
+                    />
                   </Form.Group>
                 </Form.Row>
                 <Form.Row className="pl-3">
@@ -88,59 +83,25 @@ class createEvent extends Component {
                     <Form.Control
                       as="textarea"
                       rows="3"
+                      placeholder="Description"
                       className="inputText"
                       style={{ width: "33rem" }}
                     />
                   </Form.Group>
                 </Form.Row>
-                <Form.Label className="subLabel pl-3 pb-2">Location</Form.Label>
-                <Form.Row className="pl-3 " as={Col} md={8}>
-                  <ButtonGroup toggle className="pl-2">
-                    <ToggleButton
-                      type="radio"
-                      name="online"
-                      defaultChecked
-                      value="1"
-                      className="toggleButton"
-                    >
-                      Online
-                    </ToggleButton>
-                    <ToggleButton
-                      type="radio"
-                      name="offline"
-                      value="2"
-                      className="toggleButton"
-                    >
-                      Offline
-                    </ToggleButton>
-                    <ToggleButton
-                      type="radio"
-                      name="tbd"
-                      value="3"
-                      className="toggleButton"
-                    >
-                      TBD
-                    </ToggleButton>
-                  </ButtonGroup>
-                </Form.Row>
+
                 <Form.Row className="pl-3 pt-3">
                   <Form.Group as={Col} md={6} controlId="formBasicEmail">
                     <Form.Label className="pb-2">Venue Location</Form.Label>
-                    <Form.Control type="email" className="inputText" />
-                  </Form.Group>
-                </Form.Row>
-                <Form.Row className="pl-3">
-                  <Form.Group as={Col} md={6} controlId="formBasicEmail">
-                    <Form.Label className="subLabel pb-2">
-                      Detail Event
-                    </Form.Label>
                     <Form.Control
                       type="email"
-                      placeholder="Title"
                       className="inputText"
+                      placeholder="Location"
                     />
                   </Form.Group>
                 </Form.Row>
+
+                <Form.Row className="pl-3 mt-3"></Form.Row>
                 <Form.Row className="pl-4">
                   <Form.Group>
                     <Form.Label>Price</Form.Label>
@@ -182,6 +143,7 @@ class createEvent extends Component {
                       as="textarea"
                       rows="3"
                       className="inputText"
+                      placeholder="Description Detail Event"
                     />
                   </Form.Group>
                 </Form.Row>
