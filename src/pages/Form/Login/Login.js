@@ -1,38 +1,20 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
+
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 import "./Login.css";
+import { connect } from "react-redux";
 
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = (props) => {
+  const [data,setData] =useState({
+    email:'',
+    password:''
+  })
 
-  const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios({
-      url: "https://api.indrakawasan.com/user/login",
-      method: "POST",
-      data: {
-        email,
-        password,
-      },
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        localStorage.setItem("token", res.data);
 
-        history.push("/");
-      })
-      .catch((err) => {
-        console.log("Login Failed.");
-        history.push("/login");
-      });
   };
   return (
     <Container>
@@ -61,8 +43,8 @@ const Login = () => {
                     className="login-input"
                     name="email"
                     id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={data.email}
+                    onChange={(e) => setData(e.target.value)}
                   />
                   <input
                     type="password"
@@ -70,10 +52,10 @@ const Login = () => {
                     className="login-input"
                     name="password"
                     id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={data.password}
+                    onChange={(e) => setData(e.target.value)}
                   />
-                  <a href="#">Forgot your password?</a>
+                  <a href="/#">Forgot your password?</a>
                   <button>Sign In</button>
                 </form>
               </div>
@@ -108,5 +90,6 @@ const Login = () => {
     </Container>
   );
 };
+
 
 export default Login;

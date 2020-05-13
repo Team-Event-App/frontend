@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Carousel, { Dots } from "@brainhubeu/react-carousel";
+import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import {Button} from 'react-bootstrap';
 import { Container } from "react-bootstrap";
@@ -21,14 +21,14 @@ export default class CategoryCarousel extends Component {
       <div>
         <Container className="containerCarousel mb-5">
           <Carousel centered infinite arrows slidesPerPage={3}>
-            <a href="#" className="text-center"><img src={music} className="carouselImg"/><Button className="buttonImg">Music</Button></a>
-            <a href="#" className="text-center"><img src={art} className="carouselImg"/><Button className="buttonImg">Art</Button></a>
-            <a href="#" className="text-center"><img src={film} className="carouselImg"/><Button className="buttonImg">Film</Button></a>
-            <a href="#" className="text-center"><img src={fashion} className="carouselImg"/><Button className="buttonImg">Fashion</Button></a>
-            <a href="#" className="text-center"><img src={sport} className="carouselImg"/><Button className="buttonImg">Sport</Button></a>
-            <a href="#" className="text-center"><img src={festival} className="carouselImg"/><Button className="buttonImg">Festival</Button></a>
-            <a href="#" className="text-center"><img src={nightlife} className="carouselImg"/><Button className="buttonImg">Nightlife</Button></a>
-            <a href="#" className="text-center"><img src={charity} className="carouselImg"/><Button className="buttonImg">Charity</Button></a>
+            <a href="/#" className="text-center"><img src={music} alt="Music Category" className="carouselImg"/><Button className="buttonImg">Music</Button></a>
+            <a href="/#" className="text-center"><img src={art} alt="Art Category" className="carouselImg"/><Button className="buttonImg">Art</Button></a>
+            <a href="/#" className="text-center"><img src={film} alt="Film Category" className="carouselImg"/><Button className="buttonImg">Film</Button></a>
+            <a href="/#" className="text-center"><img src={fashion} alt="Fashion Category" className="carouselImg"/><Button className="buttonImg">Fashion</Button></a>
+            <a href="/#" className="text-center"><img src={sport} alt="Sport Category" className="carouselImg"/><Button className="buttonImg">Sport</Button></a>
+            <a href="/#" className="text-center"><img src={festival} alt="Festival Category" className="carouselImg"/><Button className="buttonImg">Festival</Button></a>
+            <a href="/#" className="text-center"><img src={nightlife} alt="Nightlife Category" className="carouselImg"/><Button className="buttonImg">Nightlife</Button></a>
+            <a href="/#" className="text-center"><img src={charity} alt="Charity" className="carouselImg"/><Button className="buttonImg">Charity</Button></a>
           </Carousel>
         </Container>
       </div>
