@@ -17,6 +17,19 @@
 .signInButton:hover {
   background-color: rgba(255, 0, 31, 0.85) !important;
 }
-.navDropItem:active{
-  background-color:#ff001f !important;
+
+.logout-button {
+  text-decoration: none !important;
+  font-size: 24px;
+  color: black;
+}
+
+.logout-button:hover {
+  text-decoration: none !important;
+  font-size: 24px;
+  color: #ff001f;
+}
+
+.navDropItem:active {
+  background-color: #ff001f !important;
 }

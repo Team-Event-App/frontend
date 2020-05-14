@@ -1,28 +1,30 @@
 import React, { useState } from "react";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 import "./Login.css";
 import { connect } from "react-redux";
-import {login} from '../../../actions/loginActions';
+import { login } from "../../../actions/loginActions";
 
 const Login = (props) => {
-  const [data,setData] =useState({
-    email:'',
-    password:''
-  })
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
   const handleChange = (event) => {
-    const {name,value} = event.currentTarget;
+    const { name, value } = event.currentTarget;
     setData({
-      ...data,[name]:value
-    })
-  }
+      ...data,
+      [name]: value,
+    });
+  };
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.login(data)
-    history.push('/')
+
+    props.login(data);
+    history.push("/");
   };
   return (
     <Container className="registerMainContainer">
@@ -75,7 +77,7 @@ const Login = (props) => {
                     </button>
                   </div>
                   <div className="overlay-panel overlay-right">
-                  <h1>Welcome Back!</h1>
+                    <h1>Welcome Back!</h1>
                     <p>
                       To keep connected with us please login with your personal
                       info
@@ -96,6 +98,6 @@ const Login = (props) => {
     </Container>
   );
 };
-const mapDispatchToProps = {login};
+const mapDispatchToProps = { login };
 
-export default connect(null,mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Login);

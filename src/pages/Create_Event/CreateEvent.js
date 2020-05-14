@@ -1,15 +1,6 @@
-import React, { useState , useEffect} from "react";
-import axios from 'axios';
-import {
-  Container,
-  Row,
-  Col,
-  ButtonGroup,
-  ToggleButton,
-  Button,
-  Form,
-  InputGroup,
-} from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Container, Row, Col, Button, Form, InputGroup } from "react-bootstrap";
 
 import "./CreateEvent.css";
 
@@ -23,20 +14,19 @@ const Index = () => {
     limitPeople: "",
     organizerName: "",
     responsibleName: "",
-    typeEvent:"",
+    typeEvent: "",
     description: "",
     location: "",
     price: "",
     date: "",
     detail: "",
-    
   });
   const [image, setImage] = useState("");
 
-  const [formData , setFormData] = useState('')
+  const [formData, setFormData] = useState("");
   useEffect(() => {
-    setFormData(new FormData())
-  },[])
+    setFormData(new FormData());
+  }, []);
 
   const handleImage = (e) => {
     const file = e.target.files[0];
@@ -44,28 +34,29 @@ const Index = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    formData.set('title',data.title)
-    formData.set('category',data.category)
-    formData.set('limitPeople',data.limitPeople)
-    formData.set('organizerName',data.organizerName)
-    formData.set('responsibleName',data.responsibleName)
-    formData.set('typeEvent',data.typeEvent)
-    formData.set('description',data.description)
-    formData.set('location',data.location)
-    formData.set('price',data.price)
-    formData.set('date',data.date)
-    formData.append('imageEvent',image)
-    formData.set('detail',data.detail)
+    formData.set("title", data.title);
+    formData.set("category", data.category);
+    formData.set("limitPeople", data.limitPeople);
+    formData.set("organizerName", data.organizerName);
+    formData.set("responsibleName", data.responsibleName);
+    formData.set("typeEvent", data.typeEvent);
+    formData.set("description", data.description);
+    formData.set("location", data.location);
+    formData.set("price", data.price);
+    formData.set("date", data.date);
+    formData.append("imageEvent", image);
+    formData.set("detail", data.detail);
 
-    axios.post('http://api.indrakawasan.com/event/create',formData,{
-      headers:{
-        'Content-Type' : 'multipart/form-data'
-      }
-    })
-    .then(res => {
-      console.log('result',res)
-    })
-  }
+    axios
+      .post("http://api.indrakawasan.com/event/create", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        console.log("result", res);
+      });
+  };
   return (
     <div className="mt-5 pt-5">
       <Navbars />
@@ -78,7 +69,10 @@ const Index = () => {
             <div className="underlineEvent mx-auto"></div>
           </Col>
         </Row>
-        <Form className="justify-content-center align-items-center" onSubmit={handleSubmit}>
+        <Form
+          className="justify-content-center align-items-center"
+          onSubmit={handleSubmit}
+        >
           <Form.Row>
             <Container>
               <Form.Group as={Col} md={6} controlId="formBasicEmail">
@@ -211,6 +205,7 @@ const Index = () => {
                         Rp.
                       </InputGroup.Text>
                     </InputGroup.Prepend>
+                    >>>>>>> 2620fa77c227e0dec58de55273c9366fa056c1b9
                     <Form.Control
                       type="text"
                       aria-describedby="inputGroupPrepend"
@@ -226,7 +221,7 @@ const Index = () => {
               <Form.Row className="pl-4">
                 <Form.Group className="inputText">
                   <Form.File
-                    id="file"       
+                    id="file"
                     name="imageEvent"
                     onChange={handleImage}
                   />

@@ -43,13 +43,17 @@ const Navbars = (props) => {
               <i className="far fa-clock mr-2"></i>History Purchase
             </NavDropdown.Item>
             <NavDropdown.Item className="navDropItem">
-              <Link className="fas fa-sign-out-alt i-logout" onClick={logOut}></Link>{" "}
+              <Link
+                className="fas fa-sign-out-alt i-logout"
+                onClick={logOut}
+              ></Link>{" "}
               Logout
             </NavDropdown.Item>
             <NavDropdown.Divider />
           </NavDropdown>
         </>
       );
+
       setData(privateRoute);
     } else {
       setData();
@@ -89,5 +93,7 @@ const mapStateToProps = (state) => {
     viaLogin: state.login.viaLogin,
   };
 };
+
 const mapDispatchToProps = { logout };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Navbars);

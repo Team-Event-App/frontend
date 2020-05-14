@@ -14,3 +14,9 @@
   background-color: #ff4b2b !important;
   border-color: #ff4b2b !important;
 }
+
+.underlineCarousel {
+  width: 180px;
+  height: 2px;
+  background-color: #ff001f;
+}
