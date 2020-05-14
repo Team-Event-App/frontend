@@ -1,6 +1,5 @@
 .trend-background {
-  background: url(./../../../image/background2.jpg)
-    no-repeat;
+  background: url(./../../../image/background2.jpg) no-repeat;
   position: relative;
   background-size: cover;
   background-position: center;

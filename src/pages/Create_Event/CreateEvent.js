@@ -111,15 +111,14 @@ class Index extends Component{
                     onChange={props.handleChange}
                     value={props.values.category}
                   >
-                    <option></option>
-                    <option>Charity</option>
-                    <option>Art</option>
-                    <option>Film</option>
                     <option>Music</option>
-                    <option>Festival</option>
+                    <option>Visual Art</option>
+                    <option>Film</option>
                     <option>Fashion</option>
+                    <option>Festival</option>
                     <option>Sport</option>
                     <option>Nightlife</option>
+                    <option>Charity</option>
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col} md={2}>
@@ -147,13 +146,14 @@ class Index extends Component{
                   />
                 </Form.Group>
                 <Form.Group as={Col} md={3} controlId="formBasicEmail">
-                  <Form.Label>Penanggung Jawab Event</Form.Label>
+                  <Form.Label>Dependent Event</Form.Label>
                   <Form.Control
                     type="text"
                     className="inputText"
                     name="responsibleName"
-                    onChange={props.handleChange}
-                    value={props.values.responsibleName}
+                    placeholder="Dependent"
+                    value={data.responsibleName}
+                    onChange={(e) => setData(e.target.value)}
                   />
                 </Form.Group>
               </Form.Row>
@@ -168,6 +168,7 @@ class Index extends Component{
                     as="textarea"
                     rows="3"
                     className="inputText"
+                    placeholder="Description"
                     style={{ width: "33rem" }}
                     name="description"
                     onChange={props.handleChange}
@@ -198,8 +199,10 @@ class Index extends Component{
                     type="text"
                     className="inputText"
                     name="location"
-                    onChange={props.handleChange}
-                    value={props.values.location}
+
+                    placeholder="Location"
+                    value={data.location}
+                    onChange={(e) => setData(e.target.value)}
                   />
                 </Form.Group>
               </Form.Row>
