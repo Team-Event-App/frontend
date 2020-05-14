@@ -4,7 +4,6 @@
   box-sizing: border-box;
   overflow-y: hidden;
 }
-
 .container-register {
   background: #f6f5f7;
   display: flex;
@@ -13,7 +12,7 @@
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   height: 55vh;
-  margin: 12rem 0 50px;
+  margin: 60px 50px;
   width: 50rem;
 }
 
@@ -27,7 +26,6 @@
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;
-  margin: 20px 0 30px;
 }
 
 .container-register span {
@@ -73,8 +71,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 50px;
-  height: 100%;
+  padding: 0 50px 50px;
+  height: 40rem;
   text-align: center;
 }
 
@@ -98,7 +96,7 @@
   overflow: hidden;
   width: 768px;
   max-width: 100%;
-  min-height: 480px;
+  min-height: 580px;
 }
 
 .form-container {
@@ -215,7 +213,9 @@
 .social-container {
   margin: 20px 0;
 }
-
+.home-container {
+  margin: 20px 0;
+}
 .social-container a {
   border: 1px solid #dddddd;
   border-radius: 50%;
@@ -225,4 +225,66 @@
   margin: 0 5px;
   height: 40px;
   width: 40px;
+}
+.home-container a {
+  border: 1px solid white;
+  color:white;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+.home-container a:hover{
+  border: 1px solid white;
+  color:#F94C66;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+.sidebar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #F94C66;
+  overflow-x: hidden;
+  margin-top: 10%;
+  padding:10px 10px 10px 10px;
+}
+.sidebar a {
+  border: 1px solid white;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+  color: white;
+  margin-left: 10px;
+}
+
+.sidebar a:hover {
+  color: #F94C66;
+  text-decoration: none;
+  background-color: white;
+}
+.sidebar p{
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+.i-logout{
+  color: black;
+}
+.i-logout:hover{
+  color: black;
+  text-decoration: none;
 }

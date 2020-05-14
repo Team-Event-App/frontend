@@ -22,10 +22,10 @@ const Login = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.login(data)
-    history.push('/');
+    history.push('/')
   };
   return (
-    <Container>
+    <Container className="registerMainContainer">
       <Row>
         <Col>
           <div className="main-login ">
@@ -70,19 +70,17 @@ const Login = (props) => {
               <div className="overlay-container">
                 <div className="overlay">
                   <div className="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>
-                      To keep connected with us please login with your personal
-                      info
-                    </p>
                     <button className="ghost" id="signIn">
                       Sign In
                     </button>
                   </div>
                   <div className="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
-
+                  <h1>Welcome Back!</h1>
+                    <p>
+                      To keep connected with us please login with your personal
+                      info
+                    </p>
+                    <p>Don't have an account?</p>
                     <Link to="/register">
                       <Button variant="danger" className="ghost" id="signUp">
                         Sign Up

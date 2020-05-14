@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {useHistory} from 'react-router-dom';
 import axios from "axios";
 import { Formik } from "formik";
 import { Container, Row, Col, Button } from "react-bootstrap";
@@ -11,6 +11,10 @@ class Register extends Component {
   render() {
     return (
       <Container>
+        <div class="sidebar">
+          {/* <p>Home</p> */}
+  <Link to="/"><i class="fa fa-fw fa-home"></i></Link>
+</div>
         <Row>
           <Col>
             <div className="main-register">
@@ -123,6 +127,7 @@ class Register extends Component {
                       <p>
                         Enter your personal details and start journey with us
                       </p>
+                      <p>Have an account?</p>
                       <Link to="/login">
                         <Button className="ghost" variant="outline-danger">
                           Sign In

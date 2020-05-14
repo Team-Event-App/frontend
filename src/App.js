@@ -1,5 +1,5 @@
-import React,{Component} from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from "react";
+import { Redirect , BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "@fortawesome/react-fontawesome";
 
@@ -14,7 +14,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 
 
-import {Provider} from 'react-redux';
+import {Provider, connect} from 'react-redux';
 import {createStore,applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers'
@@ -27,7 +27,7 @@ store.subscribe(() => {
   console.log(store.getState());
 })
 
-function App(){
+function App(props){
     return(
       <Provider store={store}>
       <Router>
@@ -39,7 +39,7 @@ function App(){
           <Main />
         </Route>
         <Route exact path="/event" component={CreateEvent}>
-          <CreateEvent />
+          {(props.viaLogin) ? <Redirect push to="/login" /> : <CreateEvent />}
         </Route>
         <Route exact path="/register" component={Register}>
           <Register />
@@ -58,6 +58,10 @@ function App(){
     </Provider>
     )
 }
-
+// const mapStateToProps = (state) => {
+//   return{
+//     viaLogin:state.login.viaLogin
+//   }
+// }
 
 export default App;

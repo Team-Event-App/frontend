@@ -23,7 +23,7 @@ export default class CategoryCarousel extends Component {
         <Jumbotron className="containerCarousel mb-5 bg-white">
           <h2 className="mb-5 text-center">CATEGORY</h2>
           <div class="underlineCarousel mb-4 "></div>
-          <Carousel centered infinite arrows slidesPerPage={4}>
+          <Carousel centered infinite arrows slidesPerPage={3}>
             <a href="#" className="text-center">
               <img src={music} className="carouselImg" />
               <Button className="buttonImg">Music</Button>
