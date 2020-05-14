@@ -10,17 +10,17 @@ import "./Navbar.css";
 import Logo from "./../../image/logo.png";
 
 const Navbars = (props) => {
-  let privateRoute;
+  // let privateRoute;
   const [data, setData] = useState();
   const [viewLogin, setViewLogin] = useState();
   const history = useHistory();
-  const logOut = () => {
+  const logout = () => {
     props.logout();
     history.push("/");
   };
   useEffect(() => {
     if (props.viaLogin) {
-      privateRoute = <></>;
+      // privateRoute = <></>;
       setViewLogin(
         <>
           <NavDropdown
@@ -43,14 +43,14 @@ const Navbars = (props) => {
               <i className="far fa-clock mr-2"></i>History Purchase
             </NavDropdown.Item>
             <NavDropdown.Item className="navDropItem">
-              <Link className="fas fa-sign-out-alt i-logout" onClick={logOut}></Link>{" "}
+              <Link className="fas fa-sign-out-alt i-logout" onClick={logout}></Link>{" "}
               Logout
             </NavDropdown.Item>
             <NavDropdown.Divider />
           </NavDropdown>
         </>
       );
-      setData(privateRoute);
+      // setData(privateRoute);
     } else {
       setData();
       setViewLogin(
@@ -73,7 +73,7 @@ const Navbars = (props) => {
             className="signInButton mr-3 btn both-line-dark"
             href="/event"
           >
-            <i class="fas fa-plus mr-2"></i>
+            <i className="fas fa-plus mr-2"></i>
             Create Events
           </Button>
         </Nav>

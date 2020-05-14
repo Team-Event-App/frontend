@@ -1,11 +1,10 @@
-import React, { useState , useEffect} from "react";
+import React, { Component} from "react";
 import axios from 'axios';
+import {Formik} from 'formik';
 import {
   Container,
   Row,
   Col,
-  ButtonGroup,
-  ToggleButton,
   Button,
   Form,
   InputGroup,
@@ -16,58 +15,10 @@ import "./CreateEvent.css";
 import Navbars from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
-const Index = () => {
-  const [data, setData] = useState({
-    title: "",
-    category: "",
-    limitPeople: "",
-    organizerName: "",
-    responsibleName: "",
-    typeEvent:"",
-    description: "",
-    location: "",
-    price: "",
-    date: "",
-    detail: "",
-    
-  });
-  const [image, setImage] = useState("");
-
-  const [formData , setFormData] = useState('')
-  useEffect(() => {
-    setFormData(new FormData())
-  },[])
-
-  const handleImage = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    formData.set('title',data.title)
-    formData.set('category',data.category)
-    formData.set('limitPeople',data.limitPeople)
-    formData.set('organizerName',data.organizerName)
-    formData.set('responsibleName',data.responsibleName)
-    formData.set('typeEvent',data.typeEvent)
-    formData.set('description',data.description)
-    formData.set('location',data.location)
-    formData.set('price',data.price)
-    formData.set('date',data.date)
-    formData.append('imageEvent',image)
-    formData.set('detail',data.detail)
-
-    axios.post('http://api.indrakawasan.com/event/create',formData,{
-      headers:{
-        'Content-Type' : 'multipart/form-data'
-      }
-    })
-    .then(res => {
-      console.log('result',res)
-    })
-  }
-  return (
-    <div className="mt-5 pt-5">
+class Index extends Component{
+  render(){
+    return(
+      <div className="mt-5 pt-5">
       <Navbars />
       <Container>
         <Row>
@@ -78,7 +29,62 @@ const Index = () => {
             <div className="underlineEvent mx-auto"></div>
           </Col>
         </Row>
-        <Form className="justify-content-center align-items-center" onSubmit={handleSubmit}>
+        <Formik
+        initialValues={{
+          title: "",
+          category: "",
+          description: "",
+          imageEvent:null,
+          organizerName: "",
+          responsibleName: "",
+          typeEvent:"",
+          location: "",
+          date: "",
+          limitPeople: "",
+          price: "",
+          detail: "",
+        }}
+        
+        onSubmit={(values) => {
+          let formData = new FormData();
+
+          formData.append('title',values.title)
+          formData.append('category',values.category)
+          formData.append('limitPeople',values.limitPeople)
+          formData.append('organizerName',values.organizerName)
+          formData.append('responsibleName',values.responsibleName)
+          formData.append('typeEvent',values.typeEvent)
+          formData.append('description',values.description)
+          formData.append('location',values.location)
+          formData.append('price',values.price)
+          formData.append('date',values.date)
+          formData.append('imageEvent',values.imageEvent)
+          formData.append('detail',values.detail)
+          
+          const res = axios.post("http://api.indrakawasan.com/event/create",formData,{
+            headers:{
+              'access-token' : localStorage.getItem('access-token')
+            }
+          })
+          console.log(res);
+          alert("Create Event Success.")
+          console.log(formData.get("title"));
+          console.log(formData.get("category"));
+          console.log(formData.get("limitPeople"));
+          console.log(formData.get("organizerName"));
+          console.log(formData.get("responsibleName"));
+          console.log(formData.get("typeEvent"));
+          console.log(formData.get("description"));
+          console.log(formData.get("location"));
+          console.log(formData.get("price"));
+          console.log(formData.get("date"));
+          console.log(formData.get("imageEvent"));
+          console.log(formData.get("detail"));
+
+        }}  
+        >
+          {props => (
+        <Form className="justify-content-center align-items-center" onSubmit={props.handleSubmit}>
           <Form.Row>
             <Container>
               <Form.Group as={Col} md={6} controlId="formBasicEmail">
@@ -88,8 +94,8 @@ const Index = () => {
                   placeholder="Title"
                   className="inputText"
                   name="title"
-                  value={data.title}
-                  onChange={(e) => setData(e.target.value)}
+                  onChange={props.handleChange}
+                  value={props.values.title}
                 />
                 <Form.Text className="text-muted">
                   Your Event Main Title.
@@ -102,9 +108,10 @@ const Index = () => {
                     as="select"
                     className="inputText"
                     name="category"
-                    value={data.category}
-                    onChange={(e) => setData(e.target.value)}
+                    onChange={props.handleChange}
+                    value={props.values.category}
                   >
+                    <option></option>
                     <option>Charity</option>
                     <option>Art</option>
                     <option>Film</option>
@@ -122,8 +129,8 @@ const Index = () => {
                     className="inputText"
                     placeholder="Max People"
                     name="limitPeople"
-                    value={data.limitPeople}
-                    onChange={(e) => setData(e.target.value)}
+                    onChange={props.handleChange}
+                    value={props.values.limitPeople}
                   />
                 </Form.Group>
               </Form.Row>
@@ -135,8 +142,8 @@ const Index = () => {
                     placeholder="Organizer Event"
                     className="inputText"
                     name="organizerName"
-                    value={data.organizerName}
-                    onChange={(e) => setData(e.target.value)}
+                    onChange={props.handleChange}
+                    value={props.values.organizerName}
                   />
                 </Form.Group>
                 <Form.Group as={Col} md={3} controlId="formBasicEmail">
@@ -145,8 +152,8 @@ const Index = () => {
                     type="text"
                     className="inputText"
                     name="responsibleName"
-                    value={data.responsibleName}
-                    onChange={(e) => setData(e.target.value)}
+                    onChange={props.handleChange}
+                    value={props.values.responsibleName}
                   />
                 </Form.Group>
               </Form.Row>
@@ -163,8 +170,8 @@ const Index = () => {
                     className="inputText"
                     style={{ width: "33rem" }}
                     name="description"
-                    value={data.description}
-                    onChange={(e) => setData(e.target.value)}
+                    onChange={props.handleChange}
+                    value={props.values.description}
                   />
                 </Form.Group>
               </Form.Row>
@@ -175,11 +182,13 @@ const Index = () => {
                     <Form.Label>Type Event</Form.Label>
                     <Form.Control
                       as="select"
-                      value={data.typeEvent}
+                      onChange={props.handleChange}
+                      value={props.values.typeEvent}
                       className="inputText"
                       name="typeEvent"
-                      onChange={(e) => setData(e.target.value)}
+
                     >
+                      <option></option>
                       <option>Online</option>
                       <option>Offline</option>
                     </Form.Control>
@@ -189,8 +198,8 @@ const Index = () => {
                     type="text"
                     className="inputText"
                     name="location"
-                    value={data.location}
-                    onChange={(e) => setData(e.target.value)}
+                    onChange={props.handleChange}
+                    value={props.values.location}
                   />
                 </Form.Group>
               </Form.Row>
@@ -216,8 +225,8 @@ const Index = () => {
                       aria-describedby="inputGroupPrepend"
                       name="price"
                       className="inputText"
-                      value={data.price}
-                      onChange={(e) => setData(e.target.value)}
+                      onChange={props.handleChange}
+                      value={props.values.price}
                     />
                     <input type="date" className="pl-3 ml-3 inputText"></input>
                   </InputGroup>
@@ -225,11 +234,13 @@ const Index = () => {
               </Form.Row>
               <Form.Row className="pl-4">
                 <Form.Group className="inputText">
-                  <Form.File
-                    id="file"       
+                  <input type="file"
                     name="imageEvent"
-                    onChange={handleImage}
-                  />
+                    id="imageEvent"
+                    onChange={(event) => {
+                      props.setFieldValue("imageEvent", event.currentTarget.files[0])
+                    }}
+                  ></input>
                 </Form.Group>
               </Form.Row>
               <Form.Row className="pl-3">
@@ -244,21 +255,23 @@ const Index = () => {
                     rows="3"
                     className="inputText"
                     name="detail"
-                    value={data.detail}
-                    onChange={(e) => setData(e.target.value)}
+
                   />
                 </Form.Group>
               </Form.Row>
               <Form.Group className="pl-3">
-                <Button className="save">Save</Button>
+                <Button className="save" type="submit">Save</Button>
               </Form.Group>
             </Container>
           </Form.Row>
         </Form>
+        )}
+        </Formik>
       </Container>
       <Footer />
     </div>
-  );
-};
+    )
+  }
+}
 
 export default Index;

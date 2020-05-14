@@ -14,7 +14,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 
 
-import {Provider, connect} from 'react-redux';
+import {Provider} from 'react-redux';
 import {createStore,applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers'
