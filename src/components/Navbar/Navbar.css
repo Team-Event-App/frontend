@@ -22,4 +22,11 @@
 .logout-button {
   text-decoration: none !important;
   font-size: 24px;
+  color: black;
+}
+
+.logout-button:hover {
+  text-decoration: none !important;
+  font-size: 24px;
+  color: #ff001f;
 }

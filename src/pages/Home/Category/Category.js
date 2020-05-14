@@ -70,7 +70,7 @@ class Category extends Component {
             </CardDeck>
           </Row>
 
-          <Row>
+          <Row className="mt-4 mb-3">
             <CardDeck className="mt-3">
               <Card border="danger" className="category-card">
                 <Card.Img
@@ -130,7 +130,7 @@ class Category extends Component {
           </Row>
 
           <Row>
-            <Button className="buttonMore mt-4 mb-4 mx-auto">
+            <Button className="buttonMore mt-4 mb-5 mx-auto">
               <h5>See More</h5>
             </Button>
           </Row>

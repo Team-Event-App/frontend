@@ -23,7 +23,7 @@ const Navbars = (props) => {
       privateRoute = (
         <>
           <NavDropdown
-            className="mr-5 pr-4 ml-4"
+            className="mr-3 pr-3 ml-4"
             title={
               <span>
                 <i className="fa fa-user fa-fw"></i>Profile
@@ -46,7 +46,10 @@ const Navbars = (props) => {
       );
       setViewLogin(
         <NavDropdown.Item>
-          <Link className="fas fa-sign-out-alt  logout-button" onClick={logOut}>
+          <Link
+            className="fas fa-sign-out-alt  logout-button mr-3"
+            onClick={logOut}
+          >
             Logout
           </Link>
         </NavDropdown.Item>
@@ -91,4 +94,5 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = { logout };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Navbars);

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Container, Row, Col, Card, Button, Jumbotron } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";

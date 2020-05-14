@@ -37,13 +37,13 @@ class Trend extends Component {
 
         <Container>
           <Row>
-            <h2 className="mb-4">TOP TRENDINGS EVENTS</h2>
+            <h2 className="mb-2 mt-5">TOP TRENDINGS EVENTS</h2>
           </Row>
           <Row>
-            <div class="underlineTrend mb-4"></div>
+            <div class="underlineTrend mb-2"></div>
           </Row>
           <Row>
-            <CardDeck className="mt-5 pt-2">
+            <CardDeck className="mt-5 pt-2 mb-5">
               <Card border="secondary" className="main-card">
                 <Card.Img variant="top" src={imageCards} />
                 <Card.Body className="card-body">
