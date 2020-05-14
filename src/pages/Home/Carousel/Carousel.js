@@ -4,6 +4,7 @@ import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
 import { Jumbotron, Button, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import music from "../../../image/music.jpg";
 import art from "../../../image/art.jpeg";
@@ -26,38 +27,42 @@ export default class CategoryCarousel extends Component {
               <h2 className="text-center">CATEGORY</h2>
               <div class="underlineCarousel mb-5 mx-auto "></div>
               <Carousel centered infinite arrows slidesPerPage={4}>
-                <a href="#" className="text-center">
-                  <img src={music} className="carouselImg" />
+                <Link to="#" className="text-center">
+                  <img src={music} className="carouselImg" alt="music" />
                   <Button className="buttonImg">Music</Button>
-                </a>
-                <a href="#" className="text-center">
-                  <img src={art} className="carouselImg" />
-                  <Button className="buttonImg">Art</Button>
-                </a>
-                <a href="#" className="text-center">
-                  <img src={film} className="carouselImg" />
+                </Link>
+                <Link to="#" className="text-center">
+                  <img src={art} className="carouselImg" alt="visual art" />
+                  <Button className="buttonImg">Visual Art</Button>
+                </Link>
+                <Link to="#" className="text-center">
+                  <img src={film} className="carouselImg" alt="film" />
                   <Button className="buttonImg">Film</Button>
-                </a>
-                <a href="#" className="text-center">
-                  <img src={fashion} className="carouselImg" />
+                </Link>
+                <Link to="#" className="text-center">
+                  <img src={fashion} className="carouselImg" alt="fashion" />
                   <Button className="buttonImg">Fashion</Button>
-                </a>
-                <a href="#" className="text-center">
-                  <img src={sport} className="carouselImg" />
+                </Link>
+                <Link to="#" className="text-center">
+                  <img src={sport} className="carouselImg" alt="sport" />
                   <Button className="buttonImg">Sport</Button>
-                </a>
-                <a href="#" className="text-center">
-                  <img src={festival} className="carouselImg" />
+                </Link>
+                <Link to="#" className="text-center">
+                  <img src={festival} className="carouselImg" alt="festival" />
                   <Button className="buttonImg">Festival</Button>
-                </a>
-                <a href="#" className="text-center">
-                  <img src={nightlife} className="carouselImg" />
+                </Link>
+                <Link to="#" className="text-center">
+                  <img
+                    src={nightlife}
+                    className="carouselImg"
+                    alt="nightlife"
+                  />
                   <Button className="buttonImg">Nightlife</Button>
-                </a>
-                <a href="#" className="text-center">
-                  <img src={charity} className="carouselImg" />
+                </Link>
+                <Link to="#" className="text-center">
+                  <img src={charity} className="carouselImg" alt="charity" />
                   <Button className="buttonImg">Charity</Button>
-                </a>
+                </Link>
               </Carousel>
             </Col>
           </Row>

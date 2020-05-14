@@ -24,7 +24,7 @@ import Footer from "../../../components/Footer/Footer";
 import imageCards from "../../../image/eventposter.jpg";
 
 import Trend from "../Trend/Trend";
-import Category from "../Category/Category";
+// import Category from "../Category/Category";
 import Slider from "../Carousel/Carousel";
 
 class Main extends Component {
