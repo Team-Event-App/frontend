@@ -99,14 +99,14 @@ const Index = () => {
                     value={data.category}
                     onChange={(e) => setData(e.target.value)}
                   >
-                    <option>Charity</option>
+                    <option>Music</option>
                     <option>Art</option>
                     <option>Film</option>
-                    <option>Music</option>
-                    <option>Festival</option>
                     <option>Fashion</option>
+                    <option>Festival</option>
                     <option>Sport</option>
                     <option>Nightlife</option>
+                    <option>Charity</option>
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col} md={2}>
@@ -134,11 +134,12 @@ const Index = () => {
                   />
                 </Form.Group>
                 <Form.Group as={Col} md={3} controlId="formBasicEmail">
-                  <Form.Label>Penanggung Jawab Event</Form.Label>
+                  <Form.Label>Dependent Event</Form.Label>
                   <Form.Control
                     type="text"
                     className="inputText"
                     name="responsibleName"
+                    placeholder="Dependent"
                     value={data.responsibleName}
                     onChange={(e) => setData(e.target.value)}
                   />
@@ -155,6 +156,7 @@ const Index = () => {
                     as="textarea"
                     rows="3"
                     className="inputText"
+                    placeholder="Description"
                     style={{ width: "33rem" }}
                     name="description"
                     value={data.description}
@@ -183,6 +185,7 @@ const Index = () => {
                     type="text"
                     className="inputText"
                     name="location"
+                    placeholder="Location"
                     value={data.location}
                     onChange={(e) => setData(e.target.value)}
                   />
@@ -205,7 +208,6 @@ const Index = () => {
                         Rp.
                       </InputGroup.Text>
                     </InputGroup.Prepend>
-                    >>>>>>> 2620fa77c227e0dec58de55273c9366fa056c1b9
                     <Form.Control
                       type="text"
                       aria-describedby="inputGroupPrepend"

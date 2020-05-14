@@ -5,17 +5,18 @@ body {
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 12px;
   background-color: whitesmoke;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: linear-gradient(#ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
-  border-radius:6px;
+  border-radius: 6px;
 }
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(#d4031b 50%, rgba(190, 3, 25, 0.85) 120%);
 }
+
 .card {
   border-radius: 10px !important;
   overflow: hidden;
@@ -46,7 +47,7 @@ body {
   border-radius: 20rem !important;
   /* border: 1px solid black !important; */
 }
-.mainInput:focus{
+.mainInput:focus {
   border-color: #ff001f !important;
   box-shadow: #ff001f !important;
 }
@@ -81,4 +82,10 @@ body {
   box-shadow: 2px 2px 20px #c4c4c4;
   transition: transform 0.5s ease;
   transform: scale(1.1);
+}
+
+.buttonMore {
+  color: white !important;
+  background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+  border-color: #ff001f !important;
 }
