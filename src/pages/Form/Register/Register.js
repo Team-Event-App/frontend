@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 // import {useHistory} from 'react-router-dom';
+=======
+>>>>>>> 8f537f66e53daf0d070bd8feedd70d5c79a1fc00
 import axios from "axios";
 import { Formik } from "formik";
 import { Container, Row, Col, Button } from "react-bootstrap";
@@ -12,9 +15,10 @@ class Register extends Component {
     return (
       <Container>
         <div class="sidebar">
-          {/* <p>Home</p> */}
-  <Link to="/"><i class="fa fa-fw fa-home"></i></Link>
-</div>
+          <Link to="/">
+            <i class="fa fa-fw fa-home"></i>
+          </Link>
+        </div>
         <Row>
           <Col>
             <div className="main-register">

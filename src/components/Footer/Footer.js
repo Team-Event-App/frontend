@@ -12,21 +12,25 @@ import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
-import Logo from "../../image/logo2-1.png";
+import Logo from "../../image/footer-logo.png";
 
 class Footer extends Component {
   render() {
     return (
       <div>
-        <Jumbotron fluid className="jumbotronFooter mb-0">
+        <Jumbotron fluid className="jumbotronFooter mb-0 p-0 pt-2 pb-2">
           <Container>
             <Row className="text-center">
               <Col md={4} sm={12}>
                 <div className="mt-5">
                   <Link to="/">
-                    <img src={Logo} alt="logo" className="mx-auto d-block " />
+                    <img
+                      src={Logo}
+                      alt="logo"
+                      className="mx-auto d-block mb-3"
+                    />
                   </Link>
-                  <p className="text-whiet-50">
+                  <p className="text-wheat-50">
                     Duis nostrud culpa velit ipsum aliquip elit aliquip
                     consequat ut exercitation labore dolore pariatur elit. Duis
                     nostrud culpa velit ipsum aliquip elit aliquip consequat ut
@@ -35,7 +39,7 @@ class Footer extends Component {
                 </div>
               </Col>
               <Col md={4} sm={12}>
-                <div className="mt-5 ml-5 pt-3 pl-5 text-left">
+                <div className="mt-5 ml-5 pt-4 pl-5 text-left">
                   <Link to="/about" className="footerNav">
                     <h5>About Us</h5>
                   </Link>
@@ -45,7 +49,7 @@ class Footer extends Component {
                 </div>
               </Col>
               <Col md={4} sm={12}>
-                <div className="text-left mt-5">
+                <div className="text-left mt-5 pt-3">
                   <h5>
                     <b>Subscribe to our Newsletter</b>
                   </h5>
@@ -65,7 +69,10 @@ class Footer extends Component {
             </Row>
 
             <Row>
-              <Col md={{ span: 6, offset: 5 }} className="mt-4">
+              <Col
+                md={{ span: 6, offset: 5 }}
+                className="mt-4 mx-auto text-center"
+              >
                 © 2020 Copyright Evenity
               </Col>
             </Row>
