@@ -24,6 +24,14 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Detail from "./pages/Detail/Detail";
 
+<<<<<<< HEAD
+
+import {Provider} from 'react-redux';
+import {createStore,applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import reducers from './reducers'
+=======
+>>>>>>> 8f537f66e53daf0d070bd8feedd70d5c79a1fc00
 import ShowAll from "./pages/Show_All/ShowAll";
 
 const store = createStore(reducers, applyMiddleware(thunk));
