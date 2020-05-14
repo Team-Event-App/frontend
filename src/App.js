@@ -1,5 +1,15 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from "react";
+import {
+  Redirect,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import reducers from "./reducers";
 
 import "@fortawesome/react-fontawesome";
 
@@ -14,10 +24,6 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Detail from "./pages/Detail/Detail";
 
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import reducers from "./reducers";
 import ShowAll from "./pages/Show_All/ShowAll";
 
 const store = createStore(reducers, applyMiddleware(thunk));
@@ -27,7 +33,7 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-function App() {
+function App(props) {
   return (
     <Provider store={store}>
       <Router>
@@ -39,7 +45,7 @@ function App() {
             <Main />
           </Route>
           <Route exact path="/event" component={CreateEvent}>
-            <CreateEvent />
+            {props.viaLogin ? <Redirect push to="/login" /> : <CreateEvent />}
           </Route>
           <Route exact path="/register" component={Register}>
             <Register />
@@ -54,7 +60,7 @@ function App() {
             <ShowAll />
           </Route>
           <Route exact path="/detail" component={Detail}>
-            <Detail />
+            <ShowAll />
           </Route>
         </Switch>
       </Router>

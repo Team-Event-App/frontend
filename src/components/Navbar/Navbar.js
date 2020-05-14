@@ -16,44 +16,44 @@ const Navbars = (props) => {
   const history = useHistory();
   const logOut = () => {
     props.logout();
-    history.push("/login");
+    history.push("/");
   };
   useEffect(() => {
     if (props.viaLogin) {
-      privateRoute = (
+      privateRoute = <></>;
+      setViewLogin(
         <>
           <NavDropdown
-            className="mr-3 pr-3 ml-4"
+            className="mr-5 pr-4 ml-4"
             title={
               <span>
                 <i className="fa fa-user fa-fw"></i>Profile
               </span>
             }
           >
-            <NavDropdown.Item>
+            <NavDropdown.Item className="navDropItem">
               <i className="fas fa-envelope fa-fw"></i> User Profile
             </NavDropdown.Item>
 
-            <NavDropdown.Item>
+            <NavDropdown.Item className="navDropItem">
               <i className="fas fa-bookmark mr-2"></i>Bookmark
             </NavDropdown.Item>
 
-            <NavDropdown.Item>
+            <NavDropdown.Item className="navDropItem">
               <i className="far fa-clock mr-2"></i>History Purchase
             </NavDropdown.Item>
+            <NavDropdown.Item className="navDropItem">
+              <Link
+                className="fas fa-sign-out-alt i-logout"
+                onClick={logOut}
+              ></Link>{" "}
+              Logout
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
           </NavDropdown>
         </>
       );
-      setViewLogin(
-        <NavDropdown.Item>
-          <Link
-            className="fas fa-sign-out-alt  logout-button mr-3"
-            onClick={logOut}
-          >
-            Logout
-          </Link>
-        </NavDropdown.Item>
-      );
+
       setData(privateRoute);
     } else {
       setData();
@@ -93,6 +93,7 @@ const mapStateToProps = (state) => {
     viaLogin: state.login.viaLogin,
   };
 };
+
 const mapDispatchToProps = { logout };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbars);
