@@ -51,12 +51,13 @@ const Main = () => {
         ) {
           alert(err.response.data.message);
         } else {
-          alert("Sorry we have problem");
+          alert("Sorry we have server problem , Please wait.. ");
         }
       });
   }, []);
 
   const showEvent = data.map((item, index) => {
+    const URL = "https://api.indrakawasan.com/";
     return (
       <Col md={3} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
         <Card
@@ -65,10 +66,9 @@ const Main = () => {
           key={index}
           style={{ height: "100%" }}
         >
-          <Card.Img variant="top" src={item.imageEvent} />
+          <Card.Img variant="top" src={`${URL}${item.imageEvent}`} />
           <Card.Body>
             <Card.Text>{item.title}</Card.Text>
-            <Card.Text>Category :{item.category}</Card.Text>
             <Card.Text>
               <FontAwesomeIcon icon={faCalendar} /> {item.date}
             </Card.Text>
@@ -124,13 +124,15 @@ const Main = () => {
         <Row>
           <div class="underlineMain mb-4"></div>
         </Row>
+      </Container>
 
-        <>
-          <Row>
-            <CardDeck>{showEvent}</CardDeck>
-          </Row>
-        </>
+      <Container>
+        <Row>
+          <CardDeck>{showEvent}</CardDeck>
+        </Row>
+      </Container>
 
+      <Container>
         <Row>
           <Col className="text-center mt-4 mb-3">
             <Link to="/showall">

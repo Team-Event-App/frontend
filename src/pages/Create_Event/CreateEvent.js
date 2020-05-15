@@ -30,7 +30,7 @@ class Index extends Component {
               imageEvent: null,
               organizerName: "",
               responsibleName: "",
-              typeEvent: "",
+              time: "",
               location: "",
               date: "",
               limitPeople: "",
@@ -45,7 +45,7 @@ class Index extends Component {
               formData.append("limitPeople", values.limitPeople);
               formData.append("organizerName", values.organizerName);
               formData.append("responsibleName", values.responsibleName);
-              formData.append("typeEvent", values.typeEvent);
+              formData.append("time", values.time);
               formData.append("description", values.description);
               formData.append("location", values.location);
               formData.append("price", values.price);
@@ -71,7 +71,7 @@ class Index extends Component {
               console.log(formData.get("limitPeople"));
               console.log(formData.get("organizerName"));
               console.log(formData.get("responsibleName"));
-              console.log(formData.get("typeEvent"));
+              console.log(formData.get("time"));
               console.log(formData.get("description"));
               console.log(formData.get("location"));
               console.log(formData.get("price"));
@@ -114,7 +114,6 @@ class Index extends Component {
                           value={props.values.category}
                         >
                           <option></option>
-                          <option>Charity</option>
                           <option>Art</option>
                           <option>Film</option>
                           <option>Music</option>
@@ -122,6 +121,7 @@ class Index extends Component {
                           <option>Fashion</option>
                           <option>Sport</option>
                           <option>Nightlife</option>
+                          <option>Charity</option>
                         </Form.Control>
                       </Form.Group>
                       <Form.Group as={Col} md={2}>
@@ -177,23 +177,21 @@ class Index extends Component {
                         />
                       </Form.Group>
                     </Form.Row>
-                    <Form.Label className="subLabel pl-3">Location</Form.Label>
-                    <Form.Row className="pl-3">
+                    <Form.Row className="pl-3 mt-2">
                       <Form.Group as={Col} md={6} controlId="formBasicEmail">
-                        <Form.Group as={Col} md={4} className="pr-5">
-                          <Form.Label>Type Event</Form.Label>
-                          <Form.Control
-                            as="select"
-                            onChange={props.handleChange}
-                            value={props.values.typeEvent}
-                            className="inputText"
-                            name="typeEvent"
-                          >
-                            <option></option>
-                            <option>Online</option>
-                            <option>Offline</option>
-                          </Form.Control>
-                        </Form.Group>
+                        <Form.Label className="pb-2">Time</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="inputText"
+                          name="time"
+                          placeholder="Time"
+                          onChange={props.handleChange}
+                          value={props.values.time}
+                        />
+                      </Form.Group>
+                    </Form.Row>
+                    <Form.Row className="pl-3 mt-3">
+                      <Form.Group as={Col} md={6} controlId="formBasicEmail">
                         <Form.Label className="pb-2">Venue Location</Form.Label>
                         <Form.Control
                           type="text"
@@ -205,11 +203,11 @@ class Index extends Component {
                       </Form.Group>
                     </Form.Row>
                     <Form.Row className="pl-3">
-                      <Form.Group as={Col} md={6} controlId="formBasicEmail">
-                        <Form.Label className="subLabel">
-                          Detail Event
-                        </Form.Label>
-                      </Form.Group>
+                      <Form.Group
+                        as={Col}
+                        md={6}
+                        controlId="formBasicEmail"
+                      ></Form.Group>
                     </Form.Row>
                     <Form.Row className="pl-4">
                       <Form.Group>
