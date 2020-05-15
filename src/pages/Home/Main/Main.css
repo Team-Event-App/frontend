@@ -92,3 +92,9 @@ body {
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
 }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1500px !important;
+  }
+}
