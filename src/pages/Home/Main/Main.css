@@ -13,6 +13,9 @@ body {
   background: linear-gradient(#ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-radius:6px;
 }
+:hover::-webkit-scrollbar{
+  width: 5px;
+}
 ::-webkit-scrollbar-thumb:hover{
   background: linear-gradient(#d4031b 50%, rgba(190, 3, 25, 0.85) 120%);
 }
