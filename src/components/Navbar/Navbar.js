@@ -43,26 +43,14 @@ const Navbars = (props) => {
               <i className="far fa-clock mr-2"></i>History Purchase
             </NavDropdown.Item>
             <NavDropdown.Item className="navDropItem">
-<<<<<<< HEAD
               <Link className="fas fa-sign-out-alt i-logout" onClick={logout}></Link>{" "}
-=======
-              <Link
-                className="fas fa-sign-out-alt i-logout"
-                onClick={logOut}
-              ></Link>{" "}
->>>>>>> 8f537f66e53daf0d070bd8feedd70d5c79a1fc00
               Logout
             </NavDropdown.Item>
             <NavDropdown.Divider />
           </NavDropdown>
         </>
       );
-<<<<<<< HEAD
       // setData(privateRoute);
-=======
-
-      setData(privateRoute);
->>>>>>> 8f537f66e53daf0d070bd8feedd70d5c79a1fc00
     } else {
       setData();
       setViewLogin(
