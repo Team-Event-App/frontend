@@ -3,6 +3,7 @@
 .main-register {
   box-sizing: border-box;
   overflow-y: hidden;
+  margin: 10rem 0 !important;
 }
 .container-register {
   background: #f6f5f7;
@@ -112,23 +113,12 @@
   z-index: 2;
 }
 
-/* .container-login.right-panel-active .sign-in-container {
-  transform: translateX(100%);
-} */
-
 .sign-up-container {
   left: 0;
   width: 50%;
   opacity: 0;
   z-index: 1;
 }
-
-/* .container-login.right-panel-active .sign-up-container {
-  transform: translateX(100%);
-  opacity: 1;
-  z-index: 5;
-  animation: show 0.6s;
-} */
 
 @keyframes show {
   0%,
@@ -155,10 +145,6 @@
   z-index: 100;
 }
 
-/* .container-login.right-panel-active .overlay-container {
-  transform: translateX(-100%);
-} */
-
 .overlay {
   background: #ff416c;
   background: linear-gradient(to right, #ff4b2b, #ff416c);
@@ -173,10 +159,6 @@
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
 }
-
-/* .container-login.right-panel-active .overlay {
-  transform: translateX(50%);
-} */
 
 .overlay-panel {
   position: absolute;
@@ -197,18 +179,10 @@
   transform: translateX(-20%);
 }
 
-/* .container-login.right-panel-active .overlay-left {
-  transform: translateX(0);
-} */
-
 .overlay-right {
   right: 0;
   transform: translateX(0);
 }
-
-/* .container-login.right-panel-active .overlay-right {
-  transform: translateX(20%);
-} */
 
 .social-container {
   margin: 20px 0;
@@ -228,7 +202,7 @@
 }
 .home-container a {
   border: 1px solid white;
-  color:white;
+  color: white;
   border-radius: 50%;
   display: inline-flex;
   justify-content: center;
@@ -237,9 +211,9 @@
   height: 40px;
   width: 40px;
 }
-.home-container a:hover{
+.home-container a:hover {
   border: 1px solid white;
-  color:#F94C66;
+  color: #f94c66;
   background-color: white;
   border-radius: 50%;
   display: inline-flex;
@@ -254,10 +228,10 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #F94C66;
+  background-color: #f94c66;
   overflow-x: hidden;
   margin-top: 10%;
-  padding:10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
 }
 .sidebar a {
   border: 1px solid white;
@@ -273,18 +247,18 @@
 }
 
 .sidebar a:hover {
-  color: #F94C66;
+  color: #f94c66;
   text-decoration: none;
   background-color: white;
 }
-.sidebar p{
+.sidebar p {
   color: white;
   padding: 10px 10px 10px 10px;
 }
-.i-logout{
+.i-logout {
   color: black;
 }
-.i-logout:hover{
+.i-logout:hover {
   color: black;
   text-decoration: none;
 }
