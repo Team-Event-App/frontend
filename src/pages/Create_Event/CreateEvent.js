@@ -53,11 +53,10 @@ class Index extends Component {
               formData.append("imageEvent", values.imageEvent);
               formData.append("detail", values.detail);
 
-              const res = await axios(
-                "http://api.indrakawasan.com/event/create",
+              const res = await axios.post(
+                "https://api.indrakawasan.com/event/create",
                 formData,
                 {
-                  method: "POST",
                   headers: {
                     "Content-Type": "multipart/form-data",
                     "access-token": localStorage.getItem("access-token"),

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { useParams,useEffect ,useState} from "react";
 
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-
+import { Container, Row, Col, Card, Button ,Modal} from "react-bootstrap";
+import axios from 'axios';
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -9,8 +9,59 @@ import "./Detail.css";
 
 import Event from "../../image/quoteimages.jpg";
 
-class Detail extends Component {
-  render() {
+const Detail = () => {
+    const [modalShow, setModalShow] = React.useState(false);
+    function MyVerticallyCenteredModal(props) {
+
+      return (
+        <Modal
+          {...props}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              Booking Form
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+          <p>Price / Ticket : 
+            </p>
+          <input
+                              type="text"
+                              placeholder="Name"
+                              className="register-input"
+                              name="name"
+                              id="name"
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
+                            />
+                                  <input
+                              type="number"
+                              placeholder="Ticket Quantity"
+                              className="register-input"
+                              name="quantity"
+                              id="quantity"
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
+                            />
+                                                          <input
+                              type="total"
+                              placeholder="Total Price"
+                              className="register-input"
+                              name="total"
+                              id="total"
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
+                            />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button >Submit</Button>
+          </Modal.Footer>
+        </Modal>
+      );
+    }
     return (
       <div>
         <Navbar />
@@ -55,10 +106,14 @@ class Detail extends Component {
                       <i class="far fa-bookmark"></i>
                     </Col>
                     <Col md={{ span: 3, offset: 7 }}>
-                      <Button block variant="outline-danger">
-                        Buy Ticket
+                      <Button block variant="outline-danger" onClick={() => setModalShow(true)}>
+                         Buy Ticket
                       </Button>
                     </Col>
+                    <MyVerticallyCenteredModal
+                      show={modalShow}
+                      onHide={() => setModalShow(false)}
+                    />
                   </Row>
                 </Card.Header>
                 <Card.Body>
@@ -134,6 +189,5 @@ class Detail extends Component {
         <Footer />
       </div>
     );
-  }
 }
 export default Detail;
