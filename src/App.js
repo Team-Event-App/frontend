@@ -60,7 +60,7 @@ function App(props) {
             <ShowAll />
           </Route>
           <Route exact path="/detail" component={Detail}>
-            <ShowAll />
+            <Detail />
           </Route>
         </Switch>
       </Router>

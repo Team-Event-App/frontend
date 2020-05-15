@@ -14,7 +14,7 @@ const Navbars = (props) => {
   const [data, setData] = useState();
   const [viewLogin, setViewLogin] = useState();
   const history = useHistory();
-  const logout = () => {
+  const logOut = () => {
     props.logout();
     history.push("/");
   };
@@ -42,8 +42,8 @@ const Navbars = (props) => {
             <NavDropdown.Item className="navDropItem">
               <i className="far fa-clock mr-2"></i>History Purchase
             </NavDropdown.Item>
-            <NavDropdown.Item className="navDropItem">
-              <Link className="fas fa-sign-out-alt i-logout" onClick={logout}></Link>{" "}
+            <NavDropdown.Item className="navDropItem" onClick={logOut}>
+              <Link className="fas fa-sign-out-alt i-logout"></Link>
               Logout
             </NavDropdown.Item>
             <NavDropdown.Divider />
