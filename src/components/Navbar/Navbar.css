@@ -33,3 +33,6 @@
 .navDropItem:active {
   background-color: #ff001f !important;
 }
+.i-logout:active{
+  color: white !important;
+}
