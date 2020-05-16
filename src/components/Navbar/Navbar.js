@@ -21,6 +21,15 @@ const Navbars = (props) => {
     if (props.viaLogin) {
       setViewLogin(
         <>
+                <Nav className="ml-auto">
+          <Button
+            className="signInButton mr-4 btn both-line-dark"
+            href="/event/create"
+          >
+            <i className="fas fa-plus mr-2 "></i>
+            Create Events
+          </Button>
+        </Nav>
           <NavDropdown
             className="mr-5 pr-4 ml-4"
             title={
@@ -52,10 +61,12 @@ const Navbars = (props) => {
     } else {
       setData();
       setViewLogin(
-        <Button className="signInButton btn both-line-dark" href="/login">
+        <Nav>
+        <Button className="signInButton btn both-line-dark mr-5 pr-4 ml-4" href="/login">
           Sign In
           <i class="fas fa-sign-in-alt ml-2"></i>
         </Button>
+        </Nav>
       );
     }
   }, [props.viaLogin]);
@@ -67,17 +78,9 @@ const Navbars = (props) => {
       </Link>
       <Navbar.Toggle aria-controls="toogle" />
       <Navbar.Collapse id="toogle">
-        <Nav className="ml-auto">
-          <Button
-            className="signInButton mr-4 btn both-line-dark"
-            href="/event/create"
-          >
-            <i className="fas fa-plus mr-2 "></i>
-            Create Events
-          </Button>
-        </Nav>
-        <Nav>{data}</Nav>
-        <Nav className="pr-3 mr-5">{viewLogin}</Nav>
+
+        <Nav className="ml-auto">{data}</Nav>
+        <Nav className="ml-auto">{viewLogin}</Nav>
       </Navbar.Collapse>
     </Navbar>
   );

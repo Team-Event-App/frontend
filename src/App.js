@@ -28,6 +28,7 @@ import Detail from "./pages/Detail/Detail";
 
 import ShowAll from "./pages/Show_All/ShowAll";
 import Profile from "./pages/Profile/Profile";
+import { faPray } from "@fortawesome/free-solid-svg-icons";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
@@ -57,7 +58,7 @@ function App(props) {
             <ShowAll />
           </Route>
           <Route exact path="/event/create" component={CreateEvent}>
-            {props.viaLogin ? <Redirect push to="/login" /> : <CreateEvent />}
+          <CreateEvent />
           </Route>
           <Route path="/event/:id" component={Detail}>
             <Detail />
