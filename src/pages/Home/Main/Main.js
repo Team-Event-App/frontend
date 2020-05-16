@@ -27,8 +27,6 @@ import Trend from "../Trend/Trend";
 // import Category from "../Category/Category";
 import Slider from "../Carousel/Carousel";
 
-// import imageCards from "../../../image/eventposter.jpg";
-
 const Main = () => {
   const [data, setData] = useState([]);
 
@@ -40,7 +38,6 @@ const Main = () => {
       .then((res) => {
         const data = res.data;
         setData(data);
-        console.log(data);
       })
       .catch((err) => {
         if (
@@ -79,8 +76,10 @@ const Main = () => {
               <i class="fas fa-map-marker-alt mr-2"></i>
               {item.location}
             </Card.Text>
-            <Link to="/detail">
-              <Button block> See More</Button>
+            <Link to={`/event/${item.id}`}>
+              <Button block variant="outline-danger">
+                See More
+              </Button>
             </Link>
           </Card.Body>
         </Card>

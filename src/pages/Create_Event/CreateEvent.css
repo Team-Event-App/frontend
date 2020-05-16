@@ -9,16 +9,22 @@
   width: 15rem;
 }
 .subLabel {
-  font-size: 25px;
+  font-size: 19px;
 }
 .toggleButton {
   background-color: #ff001f !important;
   border-color: #ff001f !important;
 }
-.inputPrepand {
+
+.formCreate {
+  /* Masukin Background Foto Disini */
+}
+
+.inputPrepend {
   border: 1px solid #ff001f !important;
   background-color: #ff001f !important;
   color: white !important;
+  padding: 0.4rem;
 }
 .save {
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);

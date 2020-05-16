@@ -57,6 +57,7 @@ const Navbars = (props) => {
       );
     }
   }, [props.viaLogin]);
+
   return (
     <Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
       <Link to="/" className="ml-3 brand">
@@ -67,7 +68,7 @@ const Navbars = (props) => {
         <Nav className="ml-auto">
           <Button
             className="signInButton mr-4 btn both-line-dark"
-            href="/event"
+            href="/event/create"
           >
             <i className="fas fa-plus mr-2 "></i>
             Create Events
