@@ -6,6 +6,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import history from './history/history';
+
 import "@fortawesome/react-fontawesome";
 
 import { Provider } from "react-redux";
@@ -37,7 +39,7 @@ store.subscribe(() => {
 function App(props) {
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route exact path="/login" component={Login}>
             <Login />
