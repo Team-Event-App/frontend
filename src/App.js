@@ -8,6 +8,11 @@ import {
 
 import "@fortawesome/react-fontawesome";
 
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import reducers from "./reducers";
+
 import Main from "./pages/Home/Main/Main";
 
 import CreateEvent from "./pages/Create_Event/EventCreate";
@@ -19,11 +24,8 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Detail from "./pages/Detail/Detail";
 
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import reducers from "./reducers";
 import ShowAll from "./pages/Show_All/ShowAll";
+import Profile from "./pages/Profile/Profile";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
@@ -57,6 +59,9 @@ function App(props) {
           </Route>
           <Route path="/event/:id" component={Detail}>
             <Detail />
+          </Route>
+          <Route exact path="/profile" component={Profile}>
+            <Profile />
           </Route>
           <Route exact path="/" component={Main}>
             <Main />

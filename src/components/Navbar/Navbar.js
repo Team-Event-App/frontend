@@ -13,7 +13,7 @@ const Navbars = (props) => {
   const [data, setData] = useState();
   const [viewLogin, setViewLogin] = useState();
   const history = useHistory();
-  const logout = () => {
+  const logOut = () => {
     props.logout();
     history.push("/");
   };
@@ -30,7 +30,9 @@ const Navbars = (props) => {
             }
           >
             <NavDropdown.Item className="navDropItem">
-              <i className="fas fa-envelope fa-fw"></i> User Profile
+              <Link to="/profile" className="profileSetting">
+                <i className="fas fa-envelope fa-fw"></i> User Profile
+              </Link>
             </NavDropdown.Item>
 
             <NavDropdown.Item className="navDropItem">
@@ -40,12 +42,9 @@ const Navbars = (props) => {
             <NavDropdown.Item className="navDropItem">
               <i className="far fa-clock mr-2"></i>History Purchase
             </NavDropdown.Item>
-
-            <NavDropdown.Divider />
-            <NavDropdown.Item className="navDropItem">
-              <Link className="fas fa-sign-out-alt i-logout" onClick={logout}>
-                Logout
-              </Link>
+            <NavDropdown.Item className="navDropItem" onClick={logOut}>
+              <Link className="fas fa-sign-out-alt i-logout"></Link>
+              Logout
             </NavDropdown.Item>
           </NavDropdown>
         </>
