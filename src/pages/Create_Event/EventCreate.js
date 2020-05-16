@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Container, Row, Col, Button, Card, InputGroup } from "react-bootstrap";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
 
 import axios from "axios";
 
-import "./CreateEvent.css";
-
+import "./EventCreate.css";
 import Navbars from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -181,10 +180,7 @@ class EventCreate extends Component {
 
                           <div className="form-group">
                             <div className="input-group-prepend">
-                              <div
-                                className="input-group-text"
-                                className="inputPrepend"
-                              >
+                              <div className="input-group-text inputPrepend">
                                 Rp.
                               </div>
                               <Field

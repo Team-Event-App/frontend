@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Col, Card, Button } from "react-bootstrap";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
 import Navbar from "../../components/Navbar/Navbar";
