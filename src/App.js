@@ -10,7 +10,7 @@ import "@fortawesome/react-fontawesome";
 
 import Main from "./pages/Home/Main/Main";
 
-import CreateEvent from "./pages/Create_Event/CreateEvent";
+import CreateEvent from "./pages/Create_Event/EventCreate";
 
 import Login from "./pages/Form/Login/Login";
 
@@ -19,11 +19,10 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Detail from "./pages/Detail/Detail";
 
-
-import {Provider} from 'react-redux';
-import {createStore,applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';
-import reducers from './reducers'
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import reducers from "./reducers";
 import ShowAll from "./pages/Show_All/ShowAll";
 
 const store = createStore(reducers, applyMiddleware(thunk));
@@ -41,12 +40,6 @@ function App(props) {
           <Route exact path="/login" component={Login}>
             <Login />
           </Route>
-          <Route exact path="/" component={Main}>
-            <Main />
-          </Route>
-          <Route exact path="/event" component={CreateEvent}>
-            {props.viaLogin ? <Redirect push to="/login" /> : <CreateEvent />}
-          </Route>
           <Route exact path="/register" component={Register}>
             <Register />
           </Route>
@@ -59,8 +52,14 @@ function App(props) {
           <Route exact path="/showall" component={ShowAll}>
             <ShowAll />
           </Route>
-          <Route exact path="/detail" component={Detail}>
+          <Route exact path="/event/create" component={CreateEvent}>
+            {props.viaLogin ? <Redirect push to="/login" /> : <CreateEvent />}
+          </Route>
+          <Route path="/event/:id" component={Detail}>
             <Detail />
+          </Route>
+          <Route exact path="/" component={Main}>
+            <Main />
           </Route>
         </Switch>
       </Router>
