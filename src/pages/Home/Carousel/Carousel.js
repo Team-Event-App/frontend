@@ -29,35 +29,51 @@ export default class CategoryCarousel extends Component {
               <Carousel centered infinite arrows slidesPerPage={4}>
                 <Link href="/#" className="text-center">
                   <img alt="#" src={music} className="carouselImg" />
-                  <Button className="buttonImg">Music</Button>
+                  <Button className="buttonImg" block>
+                    Music
+                  </Button>
                 </Link>
                 <a href="/#" className="text-center">
                   <img src={art} alt="#" className="carouselImg" />
-                  <Button className="buttonImg">Art</Button>
+                  <Button className="buttonImg" block>
+                    Art
+                  </Button>
                 </a>
                 <a href="/#" className="text-center">
                   <img src={film} alt="#" className="carouselImg" />
-                  <Button className="buttonImg">Film</Button>
+                  <Button className="buttonImg" block>
+                    Film
+                  </Button>
                 </a>
                 <a href="/#" className="text-center">
                   <img src={fashion} alt="#" className="carouselImg" />
-                  <Button className="buttonImg">Fashion</Button>
+                  <Button className="buttonImg" block>
+                    Fashion
+                  </Button>
                 </a>
                 <a href="/#" className="text-center">
                   <img src={sport} alt="#" className="carouselImg" />
-                  <Button className="buttonImg">Sport</Button>
+                  <Button className="buttonImg" block>
+                    Sport
+                  </Button>
                 </a>
                 <a href="/#" className="text-center">
                   <img src={festival} alt="#" className="carouselImg" />
-                  <Button className="buttonImg">Festival</Button>
+                  <Button className="buttonImg" block>
+                    Festival
+                  </Button>
                 </a>
                 <a href="/#" className="text-center">
                   <img src={nightlife} alt="#" className="carouselImg" />
-                  <Button className="buttonImg">Nightlife</Button>
+                  <Button className="buttonImg" block>
+                    Nightlife
+                  </Button>
                 </a>
                 <a href="/#" className="text-center">
                   <img src={charity} alt="#" className="carouselImg" />
-                  <Button className="buttonImg">Charity</Button>
+                  <Button className="buttonImg" block>
+                    Charity
+                  </Button>
                 </a>
               </Carousel>
             </Col>
