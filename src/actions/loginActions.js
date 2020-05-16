@@ -1,6 +1,8 @@
 import axios from 'axios';
 // const url = 'https://api.indrakawasan.com'
+import {createBrowserHistory} from 'history'
 
+const history = createBrowserHistory();
 export const login = (data) => {
     return async(dispatch) => {
         try {
@@ -8,11 +10,13 @@ export const login = (data) => {
             console.log(response.data)
             dispatch({
                 type: 'LOGIN_SUCCESS',
-                payload: response.data
+                payload: response.data,
             })
         }
         catch(error){
-            error && alert(`Login Failed.`)
+            error && alert(`Either your email or password is wrong.`)
+            history.push('/login')
+            window.location.reload();
         }
 
     }

@@ -118,10 +118,10 @@ const Main = () => {
 
       <Container className="browseContainer mt-5 pt-5">
         <Row>
-          <h2 className="mb-4">BROWSE EVENTS</h2>
+          <h2 className="mb-4 ml-5">BROWSE EVENTS</h2>
         </Row>
         <Row>
-          <div class="underlineMain mb-4"></div>
+          <div class="underlineMain mb-4 ml-5"></div>
         </Row>
       </Container>
 

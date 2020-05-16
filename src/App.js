@@ -6,6 +6,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import history from './history/history';
+
 import "@fortawesome/react-fontawesome";
 
 import { Provider } from "react-redux";
@@ -26,6 +28,7 @@ import Detail from "./pages/Detail/Detail";
 
 import ShowAll from "./pages/Show_All/ShowAll";
 import Profile from "./pages/Profile/Profile";
+import { faPray } from "@fortawesome/free-solid-svg-icons";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
@@ -37,7 +40,7 @@ store.subscribe(() => {
 function App(props) {
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route exact path="/login" component={Login}>
             <Login />
@@ -55,7 +58,7 @@ function App(props) {
             <ShowAll />
           </Route>
           <Route exact path="/event/create" component={CreateEvent}>
-            {props.viaLogin ? <Redirect push to="/login" /> : <CreateEvent />}
+          <CreateEvent />
           </Route>
           <Route path="/event/:id" component={Detail}>
             <Detail />

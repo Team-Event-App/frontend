@@ -25,22 +25,22 @@ class Trend extends Component {
           <Container>
             <h1 className="text-center mb-4 hostEvent">Host Your Own Events</h1>
             <Form inline>
-              <Button
+              {/* <Button
                 className="buttonCreate both-line-light mx-auto"
                 href="/event"
               >
                 Create Events
-              </Button>
+              </Button> */}
             </Form>
           </Container>
         </Jumbotron>
 
         <Container>
           <Row>
-            <h2 className="mb-2 mt-5">TOP TRENDINGS EVENTS</h2>
+            <h2 className="mb-2 mt-5 ml-5">TOP TRENDINGS EVENTS</h2>
           </Row>
           <Row>
-            <div class="underlineTrend mb-2"></div>
+            <div class="underlineTrend mb-2 ml-5"></div>
           </Row>
           <Row>
             <CardDeck className="mt-5 pt-2 mb-5">
