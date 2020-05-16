@@ -42,3 +42,7 @@
 .profileSetting:hover {
   color: white !important;
 }
+.i-logout:active{
+  color: white !important;
+}
+
