@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-import { Container, Row, Col, Card, Button ,Modal} from "react-bootstrap";
-import axios from 'axios';
+import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -41,6 +39,8 @@ const Detail = () => {
       });
   }, []);
 
+  // const MyVerticallyCenteredModal = () => {
+  //   const [modalShow, setModalShow] = React.useState(false);
   return (
     <div>
       <Navbar />
@@ -153,10 +153,9 @@ const Detail = () => {
                     <Col md={1}>
                       <i class="far fa-copy"></i>
                     </Col>
-                    <MyVerticallyCenteredModal
+                    {/* <MyVerticallyCenteredModal
                       show={modalShow}
-                      onHide={() => setModalShow(false)}
-                    />
+                      onHide={() => setModalShow(false)} */}
                   </Row>
                 </Container>
               </Card.Body>
@@ -168,4 +167,6 @@ const Detail = () => {
     </div>
   );
 };
+// };
+
 export default Detail;

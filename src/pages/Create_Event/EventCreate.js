@@ -33,7 +33,7 @@ class EventCreate extends Component {
 
         actions.setSubmitting(false);
         actions.resetForm();
-        alert("Success");
+        alert("Succesfully add Event");
       });
   };
 
