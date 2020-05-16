@@ -61,7 +61,7 @@ class About extends Component {
           </Row>
         </Container>
 
-        <Container className="mb-5 pb-3">
+        <Container className="mb-5 pb-3 ">
           <Row>
             <Col md={4} sm={12}>
               <div className="photo-grid">
@@ -138,7 +138,7 @@ class About extends Component {
 
         <Container>
           <Row>
-            <Card className="mb-3 mt-3 about-card">
+            <Card className="mb-3 mt-3 mx-auto about-card">
               <Row className="no-gutters">
                 <Col md={4}>
                   <img src="..." className="about-card-img" alt="..." />
@@ -190,7 +190,7 @@ class About extends Component {
             </Card>
           </Row>
           <Row>
-            <Card className="mb-3 mt-3 about-card">
+            <Card className="mb-3 mt-3 mx-auto about-card">
               <Row className="no-gutters">
                 <Col md={4}>
                   <img src="..." className="about-card-img" alt="..." />
@@ -242,7 +242,7 @@ class About extends Component {
             </Card>
           </Row>
           <Row>
-            <Card className="mb-3 mt-3 about-card">
+            <Card className="mb-5 mt-3 mx-auto about-card">
               <Row className="no-gutters">
                 <Col md={4}>
                   <img src="..." className="about-card-img" alt="..." />
