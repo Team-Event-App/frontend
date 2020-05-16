@@ -14,7 +14,7 @@ class Contact extends Component {
     return (
       <div>
         <Navbar />
-        <Container fluid className="mt-5 pt-5 mb-5">
+        <div className="container mt-5 pt-5 mb-5">
           <Formik
             initialValues={{
               fullName: "",
@@ -51,7 +51,7 @@ class Contact extends Component {
             onSubmit={this.handleSubmit}
             render={() => {
               return (
-                <Container>
+                <div className="container-contact">
                   <Row className="justify-content-center">
                     <Col md={6}>
                       <Card className="p-5 mt-5">
@@ -107,11 +107,11 @@ class Contact extends Component {
                       </Card>
                     </Col>
                   </Row>
-                </Container>
+                </div>
               );
             }}
           />
-        </Container>
+        </div>
         <Footer />
       </div>
     );
