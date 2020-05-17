@@ -11,6 +11,42 @@ import "./Detail.css";
 
 import Event from "../../image/quoteimages.jpg";
 
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Booking Form
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+      <input
+                    type="text"
+                    placeholder="Nama"
+                    className="login-input"
+                    name="name"
+                    id="name"
+                  />
+                                    <input
+                    type="text"
+                    placeholder="Quantity of Ticket"
+                    className="login-input"
+                    name="quantity"
+                    id="quantity"
+                  />
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
 const Detail = () => {
   const { id } = useParams();
 
@@ -38,9 +74,7 @@ const Detail = () => {
         }
       });
   }, []);
-
-  // const MyVerticallyCenteredModal = () => {
-  //   const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <div>
       <Navbar />
@@ -85,7 +119,7 @@ const Detail = () => {
                     <i class="far fa-bookmark"></i>
                   </Col>
                   <Col md={{ span: 3, offset: 7 }}>
-                    <Button block variant="outline-danger">
+                    <Button block variant="outline-danger" onClick={() => setModalShow(true)}>
                       Buy Ticket
                     </Button>
                   </Col>
@@ -162,6 +196,10 @@ const Detail = () => {
             </Card>
           </Col>
         </Row>
+        <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       </Container>
       <Footer />
     </div>
