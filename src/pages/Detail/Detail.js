@@ -74,14 +74,7 @@ const Detail = () => {
         }
       });
   }, []);
-<<<<<<< HEAD
-
-  const MyVerticallyCenteredModal = () => {
-    const [modalShow, setModalShow] = React.useState(false);
-
-=======
   const [modalShow, setModalShow] = React.useState(false);
->>>>>>> 52e34a28aa84ea4bcb4cba0a73e147661f83f501
   return (
     <div>
       <Navbar />
@@ -212,10 +205,6 @@ const Detail = () => {
     </div>
   );
 };
-<<<<<<< HEAD
-}
-=======
 // };
 
->>>>>>> 52e34a28aa84ea4bcb4cba0a73e147661f83f501
 export default Detail;
