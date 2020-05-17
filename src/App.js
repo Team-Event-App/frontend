@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "@fortawesome/react-fontawesome";
 
@@ -33,7 +29,7 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-function App(props) {
+function App() {
   return (
     <Provider store={store}>
       <Router>
@@ -54,7 +50,7 @@ function App(props) {
             <ShowAll />
           </Route>
           <Route exact path="/event/create" component={CreateEvent}>
-          <CreateEvent />
+            <CreateEvent />
           </Route>
           <Route path="/event/:id" component={Detail}>
             <Detail />
