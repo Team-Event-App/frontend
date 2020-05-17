@@ -15,7 +15,7 @@ import festival from "../../../image/festival.jpeg";
 import nightlife from "../../../image/nightlife.jpeg";
 import charity from "../../../image/charity.jpg";
 
-import "./Carousel.css";
+import "./Category.css";
 
 export default class CategoryCarousel extends Component {
   render() {

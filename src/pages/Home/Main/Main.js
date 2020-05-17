@@ -24,8 +24,7 @@ import Navbars from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 
 import Trend from "../Trend/Trend";
-// import Category from "../Category/Category";
-import Slider from "../Carousel/Carousel";
+import Category from "./../Category/Category";
 
 const Main = () => {
   const [data, setData] = useState([]);
@@ -114,7 +113,7 @@ const Main = () => {
         </Container>
       </Jumbotron>
 
-      <Slider />
+      <Category />
 
       <Container className="browseContainer mt-5 pt-5">
         <Row>
