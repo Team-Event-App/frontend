@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 import { useHistory } from "react-router-dom";
 import { logout } from "../../actions/loginActions";
 import { connect } from "react-redux";
@@ -23,7 +22,6 @@ const Navbars = (props) => {
     if (props.viaLogin) {
       setViewLogin(
         <>
-
           <NavDropdown
             className="mr-5 pr-4 ml-4"
             title={
@@ -56,10 +54,10 @@ const Navbars = (props) => {
       setData();
       setViewLogin(
         <Nav>
-        <Button className="signInButton btn both-line-dark mr-5" href="/login">
-          Sign In
-          <i class="fas fa-sign-in-alt ml-2"></i>
-        </Button>
+          <Button className="signInButton   mr-5" href="/login">
+            Sign In
+            <i class="fas fa-sign-in-alt ml-2"></i>
+          </Button>
         </Nav>
       );
     }
@@ -72,18 +70,14 @@ const Navbars = (props) => {
       </Link>
       <Navbar.Toggle aria-controls="toogle" />
       <Navbar.Collapse id="toogle">
-
-        <Nav className="ml-auto">{data}</Nav>
         <Nav className="ml-auto">
-          <Button
-            className="signInButton btn both-line-dark"
-            href="/event/create"
-          >
+          {data}
+          <Button className="signInButton mr-3" href="/event/create">
             <i className="fas fa-plus mr-2 "></i>
             Create Events
           </Button>
+          <Nav className="ml-auto">{viewLogin}</Nav>
         </Nav>
-        <Nav className="ml-auto">{viewLogin}</Nav>
       </Navbar.Collapse>
     </Navbar>
   );
