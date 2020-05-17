@@ -14,11 +14,12 @@ export const login = (data) => {
                 type: 'LOGIN_SUCCESS',
                 payload: response.data,
             })
+            history.push('/')
+            window.location.reload();
         }
         catch(error){
             error && alert(`Either your email or password is wrong.`)
             history.push('/login')
-            window.location.reload();
         }
 
     }

@@ -1,12 +1,9 @@
 import React from "react";
 import {
-  Redirect,
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-
-import history from './history/history';
 
 import "@fortawesome/react-fontawesome";
 
@@ -28,7 +25,6 @@ import Detail from "./pages/Detail/Detail";
 
 import ShowAll from "./pages/Show_All/ShowAll";
 import Profile from "./pages/Profile/Profile";
-import { faPray } from "@fortawesome/free-solid-svg-icons";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
@@ -40,7 +36,7 @@ store.subscribe(() => {
 function App(props) {
   return (
     <Provider store={store}>
-      <Router history={history}>
+      <Router>
         <Switch>
           <Route exact path="/login" component={Login}>
             <Login />
