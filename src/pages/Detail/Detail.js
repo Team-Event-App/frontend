@@ -85,7 +85,7 @@ const Detail = () => {
       <Card
         border="primary"
         key={index}
-        className="mx-auto"
+        className="mx-auto mt-4"
         style={{ width: "70rem" }}
       >
         <Card.Header>
