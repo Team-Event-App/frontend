@@ -96,7 +96,7 @@ const Trend = () => {
         </Container>
       </Jumbotron>
 
-      <Container>
+      <Container className="mb-5">
         <Row>
           <h2 className="mb-2 mt-5 ml-5">TOP TRENDINGS EVENTS</h2>
         </Row>
