@@ -19,6 +19,8 @@ const Navbars = (props) => {
     history.push("/");
   };
   useEffect(() => {
+    console.log(props.viaLogin);
+
     if (props.viaLogin) {
       setViewLogin(
         <>
@@ -58,7 +60,7 @@ const Navbars = (props) => {
         <Nav>
           <Button className="signInButton   mr-5" href="/login">
             Sign In
-            <i class="fas fa-sign-in-alt ml-2"></i>
+            <i className="fas fa-sign-in-alt ml-2"></i>
           </Button>
         </Nav>
       );
@@ -86,6 +88,7 @@ const Navbars = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  console.log(state.login);
   return {
     viaLogin: state.login.viaLogin,
   };
