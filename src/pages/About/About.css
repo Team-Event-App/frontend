@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 .underlineAbout {
   width: 180px;
   height: 2px;
@@ -8,8 +10,16 @@
   width: 36rem;
 }
 
-.about-text {
+h3.about-top {
   margin-top: 8rem !important;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+p.about-text {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .rounded-image {

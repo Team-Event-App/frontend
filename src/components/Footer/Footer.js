@@ -30,11 +30,11 @@ class Footer extends Component {
                       className="mx-auto d-block mb-3"
                     />
                   </Link>
-                  <p className="text-wheat-50">
-                    Duis nostrud culpa velit ipsum aliquip elit aliquip
-                    consequat ut exercitation labore dolore pariatur elit. Duis
-                    nostrud culpa velit ipsum aliquip elit aliquip consequat ut
-                    exercitation labore dolore pariatur elit.
+                  <p className="text-wheat-50 text-center">
+                    Evenity is a event discovery with on-demand ticket order
+                    services. There you can organize events, can also find your
+                    Experiences .Now you can book your tickets easily trough
+                    Evenity!
                   </p>
                 </div>
               </Col>

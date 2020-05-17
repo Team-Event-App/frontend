@@ -19,7 +19,6 @@ const login = (state = initialState, action) => {
         viaLogin: action.payload,
       };
     default:
-      console.log(state);
       return state;
   }
 };

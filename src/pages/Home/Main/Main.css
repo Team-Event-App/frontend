@@ -81,7 +81,6 @@ body {
   transform: scale(1);
 }
 .main-card:hover {
-  /* border: solid 1px #ccc; */
   box-shadow: 2px 2px 20px #c4c4c4;
   transition: transform 0.5s ease;
   transform: scale(1.1);
@@ -99,7 +98,7 @@ body {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1000px) and (max-width: 1199px) {
   .container {
     max-width: 1200px !important;
   }

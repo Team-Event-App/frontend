@@ -35,24 +35,21 @@ class About extends Component {
 
           <Row>
             <Col md={6} sm={12}>
-              <p className="about-text text-justify">
-                Velit cupidatat enim nostrud incididunt pariatur ex. Amet
-                laboris veniam enim mollit duis pariatur veniam magna et
-                consectetur velit do id. Sint do incididunt Lorem aliqua in non
-                mollit culpa aute enim sint. Nisi esse magna nostrud non sunt
-                mollit velit non deserunt. Consectetur eiusmod ut aliquip amet
-                sint ut reprehenderit quis tempor. Adipisicing dolore pariatur
-                veniam officia excepteur consequat amet culpa esse commodo
-                irure. Aute reprehenderit occaecat sit do laboris pariatur
-                eiusmod elit in consectetur in non in. Reprehenderit nostrud
-                laborum sunt do aliqua labore laboris magna eiusmod sit tempor.
-                Veniam pariatur aliquip anim ea sit dolore. In eu mollit
-                proident consequat adipisicing voluptate cupidatat ullamco
-                pariatur. Non commodo est excepteur irure sint duis est ea duis
-                nulla. Excepteur quis nostrud incididunt ea ad. Et est
-                exercitation mollit eu adipisicing in ea. Sint velit est nulla
-                sunt duis amet aliqua minim nisi occaecat aliquip nisi. Mollit
-                ex enim aliqua non irure enim sit ut do nulla.
+              <h3 className="about-top">
+                What is <span style={{ color: "red" }}>Evenity</span>?
+              </h3>
+              <p className="text-justify about-text">
+                Evenity stands for event for infinity so this web is solution
+                for you to find a better life to join some event or activities,
+                you can find a lot of event nearby you where ever you at, you
+                can still looking for some events to join with, This evenity
+                belongs to anybody who try to looking for event and activity
+                such as seminar, concert, sport, online lecture, online
+                activities and so on, whether it’s free or paid you can easy to
+                find them Finally please enjoy to explore our evenity web app
+                and we are very welcome to have suggestion or critics to make
+                our web better in the future, please go to our webpage and put
+                your comment in our contact link page.
               </p>
             </Col>
             <Col md={6} sm={12}>
@@ -66,7 +63,7 @@ class About extends Component {
             <Col md={4} sm={12}>
               <div className="photo-grid">
                 <div className="grid-item">
-                  <Link to="/event">
+                  <Link to="/event/create">
                     <figure>
                       <img src={host} height="100%" width="100%" alt="host" />
                       <figcaption>
@@ -123,7 +120,7 @@ class About extends Component {
             </Col>
           </Row>
 
-          <Row className="mt-5 mb-5">
+          <Row className="mt-5 mb-5 text-center">
             <Col md={4} sm={12}>
               <img src={profile} alt="" className="rounded-image" />
             </Col>
@@ -152,11 +149,11 @@ class About extends Component {
                       <h6>Frontend Developer</h6>
                     </Card.Title>
                     <Card.Text className="mt-3">
-                      <h5>
+                      <h6>
                         “Styles come and go. Good design is a language, not a
                         Style.” <br />
                         -Massimo Vignelli
-                      </h5>
+                      </h6>
                     </Card.Text>
                     <Card.Text>
                       <p>
