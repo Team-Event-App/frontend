@@ -29,7 +29,9 @@ const Login = (props) => {
     history.push('/login')
   };
   return (
+    <div>
     <Container className="registerMainContainer">
+      
               <div class="sidebar">
           <Link to="/">
             <i class="fa fa-fw fa-home"></i>
@@ -102,7 +104,9 @@ const Login = (props) => {
           </div>
         </Col>
       </Row>
+
     </Container>
+    </div>
   );
 };
 const mapDispatchToProps = { login };

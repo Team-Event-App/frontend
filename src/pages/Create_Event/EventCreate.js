@@ -71,6 +71,7 @@ class EventCreate extends Component {
               <Form className="formCreate mb-5">
                 <Container>
                   <Row className="justify-content-md-center">
+                    
                     <Col sm={6}>
                       <ol>
                         <h2 className="text-center pt-4 mb-2 titleCategory">
@@ -82,6 +83,7 @@ class EventCreate extends Component {
                         <Card.Body>
                           <div className="form-group">
                             <label className="subLabel ">Event Info</label>
+                            
                             <Field
                               type="text"
                               className="form-control inputText"
@@ -94,7 +96,7 @@ class EventCreate extends Component {
                             </small>
                             <ErrorMessage name="title" />
                           </div>
-
+                        <Col sm={12}>
                           <div className="form-group">
                             <select className="form-control inputText">
                               <Field
@@ -115,7 +117,6 @@ class EventCreate extends Component {
                               Category Event Required
                             </small>
                           </div>
-
                           <div className="form-group">
                             <Field
                               type="number"
@@ -124,6 +125,8 @@ class EventCreate extends Component {
                               placeholder="Max People"
                             />
                           </div>
+                          </Col>
+
 
                           <div className="form-group">
                             <Field

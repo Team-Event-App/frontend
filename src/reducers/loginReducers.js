@@ -1,5 +1,6 @@
 const initialState = {
-    viaLogin : localStorage.getItem('access-token')
+    viaLogin : localStorage.getItem('access-token'),
+    loading:false
 }
 
 const login = (state = initialState, action) =>{
