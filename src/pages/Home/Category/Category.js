@@ -27,49 +27,49 @@ export default class CategoryCarousel extends Component {
               <h2 className="text-center">CATEGORY</h2>
               <div className="underlineCarousel mb-5 mx-auto"></div>
               <Carousel centered infinite arrows slidesPerPage={4}>
-                <Link to="/#" className="text-center">
+                <Link to="/showAll" className="text-center">
                   <img alt="#" src={music} className="carouselImg" />
                   <Button className="buttonImg" block>
                     Music
                   </Button>
                 </Link>
-                <a href="/#" className="text-center">
+                <a href="/showAll" className="text-center">
                   <img src={art} alt="#" className="carouselImg" />
                   <Button className="buttonImg" block>
                     Art
                   </Button>
                 </a>
-                <a href="/#" className="text-center">
+                <a href="/showAll" className="text-center">
                   <img src={film} alt="#" className="carouselImg" />
                   <Button className="buttonImg" block>
                     Film
                   </Button>
                 </a>
-                <a href="/#" className="text-center">
+                <a href="/showAll" className="text-center">
                   <img src={fashion} alt="#" className="carouselImg" />
                   <Button className="buttonImg" block>
                     Fashion
                   </Button>
                 </a>
-                <a href="/#" className="text-center">
+                <a href="/showAll" className="text-center">
                   <img src={sport} alt="#" className="carouselImg" />
                   <Button className="buttonImg" block>
                     Sport
                   </Button>
                 </a>
-                <a href="/#" className="text-center">
+                <a href="/showAll" className="text-center">
                   <img src={festival} alt="#" className="carouselImg" />
                   <Button className="buttonImg" block>
                     Festival
                   </Button>
                 </a>
-                <a href="/#" className="text-center">
+                <a href="/showAll" className="text-center">
                   <img src={nightlife} alt="#" className="carouselImg" />
                   <Button className="buttonImg" block>
                     Nightlife
                   </Button>
                 </a>
-                <a href="/#" className="text-center">
+                <a href="/showAll" className="text-center">
                   <img src={charity} alt="#" className="carouselImg" />
                   <Button className="buttonImg" block>
                     Charity
