@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
+// import history from '../../../history/history';
+
 import "./Login.css";
 import { connect } from "react-redux";
 import { login } from "../../../actions/loginActions";
@@ -24,10 +26,17 @@ const Login = (props) => {
     event.preventDefault();
 
     props.login(data);
-    history.push("/");
+    history.push('/login')
   };
   return (
+    <div>
     <Container className="registerMainContainer">
+      
+              <div class="sidebar">
+          <Link to="/">
+            <i class="fa fa-fw fa-home"></i>
+          </Link>
+        </div>
       <Row>
         <Col>
           <div className="main-login ">
@@ -95,7 +104,9 @@ const Login = (props) => {
           </div>
         </Col>
       </Row>
+
     </Container>
+    </div>
   );
 };
 const mapDispatchToProps = { login };

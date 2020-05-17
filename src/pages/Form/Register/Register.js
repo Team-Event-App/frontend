@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Formik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -28,6 +28,17 @@ class Register extends Component {
                       email: "",
                       password: "",
                     }}
+                    validate={(values) => {
+                      let errors = {};
+                      if (!values.password) {
+                        errors.password = (
+                          <small className="form-text text-danger">
+                            Password is required
+                          </small>
+                        );
+                        return errors;
+                      }
+                    }}
                     onSubmit={(values, actions) => {
                       console.log(values);
 
@@ -45,7 +56,7 @@ class Register extends Component {
                     }}
                   >
                     {(props) => (
-                      <form
+                      <Form
                         className="register-form"
                         onSubmit={props.handleSubmit}
                       >
@@ -112,11 +123,13 @@ class Register extends Component {
                           onBlur={props.handleBlur}
                           value={props.values.password}
                         />
+                        <span>Password at least 8 Characters</span>
+                        <ErrorMessage name="password" />
 
                         <Button variant="danger" type="submit" className="mt-3">
                           Sign Up
                         </Button>
-                      </form>
+                      </Form>
                     )}
                   </Formik>
                 </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 import { useHistory } from "react-router-dom";
 import { logout } from "../../actions/loginActions";
 import { connect } from "react-redux";
@@ -36,14 +37,16 @@ const Navbars = (props) => {
             </NavDropdown.Item>
 
             <NavDropdown.Item className="navDropItem">
-              <i className="fas fa-bookmark mr-2"></i>Bookmark
+              <Link to="/bookmark">
+                <i className="fas fa-bookmark mr-2"></i>Bookmark
+              </Link>
             </NavDropdown.Item>
 
             <NavDropdown.Item className="navDropItem">
               <i className="far fa-clock mr-2"></i>History Purchase
             </NavDropdown.Item>
             <NavDropdown.Item className="navDropItem" onClick={logOut}>
-              <Link className="fas fa-sign-out-alt i-logout"></Link>
+              <Link className="fas fa-sign-out-alt i-logout mr-2"></Link>
               Logout
             </NavDropdown.Item>
           </NavDropdown>
@@ -52,10 +55,12 @@ const Navbars = (props) => {
     } else {
       setData();
       setViewLogin(
-        <Button className="signInButton btn both-line-dark" href="/login">
-          Sign In
-          <i class="fas fa-sign-in-alt ml-2"></i>
-        </Button>
+        <Nav>
+          <Button className="signInButton   mr-5" href="/login">
+            Sign In
+            <i class="fas fa-sign-in-alt ml-2"></i>
+          </Button>
+        </Nav>
       );
     }
   }, [props.viaLogin]);
@@ -68,16 +73,13 @@ const Navbars = (props) => {
       <Navbar.Toggle aria-controls="toogle" />
       <Navbar.Collapse id="toogle">
         <Nav className="ml-auto">
-          <Button
-            className="signInButton mr-4 btn both-line-dark"
-            href="/event/create"
-          >
+          {data}
+          <Button className="signInButton mr-3" href="/event/create">
             <i className="fas fa-plus mr-2 "></i>
             Create Events
           </Button>
+          <Nav className="ml-auto">{viewLogin}</Nav>
         </Nav>
-        <Nav>{data}</Nav>
-        <Nav className="pr-3 mr-5">{viewLogin}</Nav>
       </Navbar.Collapse>
     </Navbar>
   );

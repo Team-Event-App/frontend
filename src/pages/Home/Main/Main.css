@@ -6,12 +6,15 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
   background-color: whitesmoke;
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(#ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-radius: 6px;
+}
+:hover::-webkit-scrollbar {
+  width: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(#d4031b 50%, rgba(190, 3, 25, 0.85) 120%);

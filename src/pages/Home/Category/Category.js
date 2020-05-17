@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import { Container, Row, Card, CardDeck, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-import "./Category.css";
+import Carousel from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+
+import { Jumbotron, Button, Row, Col } from "react-bootstrap";
 
 import music from "../../../image/music.jpg";
 import art from "../../../image/art.jpeg";
@@ -12,132 +15,71 @@ import festival from "../../../image/festival.jpeg";
 import nightlife from "../../../image/nightlife.jpeg";
 import charity from "../../../image/charity.jpg";
 
-class Category extends Component {
+import "./Category.css";
+
+export default class CategoryCarousel extends Component {
   render() {
     return (
       <div>
-        <Container>
+        <Jumbotron className="containerCarousel mb-5 bg-white">
           <Row>
-            <h2 className="titleCategory">CATEGORY</h2>
+            <Col>
+              <h2 className="text-center">CATEGORY</h2>
+              <div class="underlineCarousel mb-5 mx-auto"></div>
+              <Carousel centered infinite arrows slidesPerPage={4}>
+                <Link href="/#" className="text-center">
+                  <img alt="#" src={music} className="carouselImg" />
+                  <Button className="buttonImg" block>
+                    Music
+                  </Button>
+                </Link>
+                <a href="/#" className="text-center">
+                  <img src={art} alt="#" className="carouselImg" />
+                  <Button className="buttonImg" block>
+                    Art
+                  </Button>
+                </a>
+                <a href="/#" className="text-center">
+                  <img src={film} alt="#" className="carouselImg" />
+                  <Button className="buttonImg" block>
+                    Film
+                  </Button>
+                </a>
+                <a href="/#" className="text-center">
+                  <img src={fashion} alt="#" className="carouselImg" />
+                  <Button className="buttonImg" block>
+                    Fashion
+                  </Button>
+                </a>
+                <a href="/#" className="text-center">
+                  <img src={sport} alt="#" className="carouselImg" />
+                  <Button className="buttonImg" block>
+                    Sport
+                  </Button>
+                </a>
+                <a href="/#" className="text-center">
+                  <img src={festival} alt="#" className="carouselImg" />
+                  <Button className="buttonImg" block>
+                    Festival
+                  </Button>
+                </a>
+                <a href="/#" className="text-center">
+                  <img src={nightlife} alt="#" className="carouselImg" />
+                  <Button className="buttonImg" block>
+                    Nightlife
+                  </Button>
+                </a>
+                <a href="/#" className="text-center">
+                  <img src={charity} alt="#" className="carouselImg" />
+                  <Button className="buttonImg" block>
+                    Charity
+                  </Button>
+                </a>
+              </Carousel>
+            </Col>
           </Row>
-          <Row>
-            <div class="underlineCategory mb-4"></div>
-          </Row>
-          <Row>
-            <CardDeck className="mt-3">
-              <Card border="danger" className="category-card">
-                <Card.Img
-                  variant="top"
-                  className="category-image"
-                  src={music}
-                />
-                <Card.Body>
-                  <Card.Title className="text-center">Music</Card.Title>
-                </Card.Body>
-              </Card>
-              <Card border="danger" className="category-card">
-                <Card.Img variant="top" className="category-image" src={art} />
-                <Card.Body>
-                  <Card.Title className="text-center">Visual Arts</Card.Title>
-                </Card.Body>
-              </Card>
-              <Card border="danger" className="category-card">
-                <Card.Img variant="top" className="category-image" src={film} />
-                <Card.Body>
-                  <Card.Title className="text-center">Film</Card.Title>
-                </Card.Body>
-              </Card>
-              <Card border="danger" className="category-card">
-                <Card.Img
-                  variant="top"
-                  className="category-image"
-                  src={fashion}
-                />
-                <Card.Body>
-                  <Card.Title className="text-center">Fashion</Card.Title>
-                </Card.Body>
-              </Card>
-              <Card border="danger" className="category-card">
-                <Card.Img
-                  variant="top"
-                  className="category-image"
-                  src={fashion}
-                />
-                <Card.Body>
-                  <Card.Title className="text-center">Fashion</Card.Title>
-                </Card.Body>
-              </Card>
-            </CardDeck>
-          </Row>
-
-          <Row className="mt-4 mb-3">
-            <CardDeck className="mt-3">
-              <Card border="danger" className="category-card">
-                <Card.Img
-                  variant="top"
-                  className="category-image"
-                  src={sport}
-                />
-                <Card.Body>
-                  <Card.Title className="text-center">Sports</Card.Title>
-                </Card.Body>
-              </Card>
-              <Card border="danger" className="category-card">
-                <Card.Img
-                  variant="top"
-                  className="category-image"
-                  src={festival}
-                />
-                <Card.Body>
-                  <Card.Title className="text-center">
-                    Festival & Fairs
-                  </Card.Title>
-                </Card.Body>
-              </Card>
-              <Card border="danger" className="category-card">
-                <Card.Img
-                  variant="top"
-                  className="category-image"
-                  src={nightlife}
-                />
-                <Card.Body>
-                  <Card.Title className="text-center">Nightlife</Card.Title>
-                </Card.Body>
-              </Card>
-              <Card border="danger" className="category-card">
-                <Card.Img
-                  variant="top"
-                  className="category-image"
-                  src={charity}
-                />
-                <Card.Body>
-                  <Card.Title className="text-center">
-                    Charity & Causes
-                  </Card.Title>
-                </Card.Body>
-              </Card>
-              <Card border="danger" className="category-card">
-                <Card.Img
-                  variant="top"
-                  className="category-image"
-                  src={fashion}
-                />
-                <Card.Body>
-                  <Card.Title className="text-center">Fashion</Card.Title>
-                </Card.Body>
-              </Card>
-            </CardDeck>
-          </Row>
-
-          <Row>
-            <Button className="buttonMore mt-4 mb-5 mx-auto">
-              <h5>See More</h5>
-            </Button>
-          </Row>
-        </Container>
+        </Jumbotron>
       </div>
     );
   }
 }
-
-export default Category;

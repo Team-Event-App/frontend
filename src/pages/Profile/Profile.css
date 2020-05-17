@@ -1,0 +1,13 @@
+.buttonProfile {
+  border-radius: 20rem !important;
+}
+
+.profileText {
+  font-size: 30px;
+}
+
+.underlineProfile {
+  width: 275px;
+  height: 2px;
+  background-color: #ff001f;
+}

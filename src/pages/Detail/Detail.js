@@ -2,13 +2,50 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-import { Container, Row, Col, Card, Button ,Modal} from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
 import "./Detail.css";
 
 import Event from "../../image/quoteimages.jpg";
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Booking Form
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+      <input
+                    type="text"
+                    placeholder="Nama"
+                    className="login-input"
+                    name="name"
+                    id="name"
+                  />
+                                    <input
+                    type="text"
+                    placeholder="Quantity of Ticket"
+                    className="login-input"
+                    name="quantity"
+                    id="quantity"
+                  />
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 const Detail = () => {
   const { id } = useParams();
@@ -37,10 +74,14 @@ const Detail = () => {
         }
       });
   }, []);
+<<<<<<< HEAD
 
   const MyVerticallyCenteredModal = () => {
     const [modalShow, setModalShow] = React.useState(false);
 
+=======
+  const [modalShow, setModalShow] = React.useState(false);
+>>>>>>> 52e34a28aa84ea4bcb4cba0a73e147661f83f501
   return (
     <div>
       <Navbar />
@@ -85,7 +126,7 @@ const Detail = () => {
                     <i class="far fa-bookmark"></i>
                   </Col>
                   <Col md={{ span: 3, offset: 7 }}>
-                    <Button block variant="outline-danger">
+                    <Button block variant="outline-danger" onClick={() => setModalShow(true)}>
                       Buy Ticket
                     </Button>
                   </Col>
@@ -153,20 +194,28 @@ const Detail = () => {
                     <Col md={1}>
                       <i class="far fa-copy"></i>
                     </Col>
-                    <MyVerticallyCenteredModal
+                    {/* <MyVerticallyCenteredModal
                       show={modalShow}
-                      onHide={() => setModalShow(false)}
-                    />
+                      onHide={() => setModalShow(false)} */}
                   </Row>
                 </Container>
               </Card.Body>
             </Card>
           </Col>
         </Row>
+        <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       </Container>
       <Footer />
     </div>
   );
 };
+<<<<<<< HEAD
 }
+=======
+// };
+
+>>>>>>> 52e34a28aa84ea4bcb4cba0a73e147661f83f501
 export default Detail;

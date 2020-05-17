@@ -1,11 +1,15 @@
 import React, { Component } from "react";
-
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import "./Profile.css";
 
 import Navbars from "./../../components/Navbar/Navbar";
 import Footer from "./../../components/Footer/Footer";
+
+import editProfile from "./editProfile";
+import editPassword from "./editPassword";
 
 class Profile extends Component {
   render() {
@@ -13,21 +17,32 @@ class Profile extends Component {
       <div>
         <Navbars />
         <Container className="mt-5 pt-5 mb-4">
+          <div>
+            <h4 className="text-center mt-3 profileText">ACCOUNT SETTING</h4>
+          </div>
+          <div className="underlineProfile mx-auto mb-5"></div>
+
           <Row>
-            <Col>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
-            </Col>
+            <Link exact to="/profile" activeClassName="active" className="mr-3">
+              <i class="fas fa-user mr-2"></i>Edit Profile
+            </Link>
           </Row>
+          <Row>
+            <Link to="/profile/editpassword" activeClassName="active">
+              <i class="fas fa-lock mr-2"></i>Edit Password
+            </Link>
+          </Row>
+
+          <Switch>
+            <Route exact path="/profile" component={editProfile}></Route>
+
+            <Route
+              path="/profile/editpassword"
+              component={editPassword}
+            ></Route>
+
+            {/* <Route path="/bookmark" component={bookmark}></Route> */}
+          </Switch>
         </Container>
         <Footer />
       </div>

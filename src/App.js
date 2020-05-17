@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Redirect,
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "@fortawesome/react-fontawesome";
 
@@ -34,7 +29,7 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-function App(props) {
+function App() {
   return (
     <Provider store={store}>
       <Router>
@@ -55,12 +50,12 @@ function App(props) {
             <ShowAll />
           </Route>
           <Route exact path="/event/create" component={CreateEvent}>
-            {props.viaLogin ? <Redirect push to="/login" /> : <CreateEvent />}
+            <CreateEvent />
           </Route>
           <Route path="/event/:id" component={Detail}>
             <Detail />
           </Route>
-          <Route exact path="/profile" component={Profile}>
+          <Route path="/profile" component={Profile}>
             <Profile />
           </Route>
           <Route exact path="/" component={Main}>

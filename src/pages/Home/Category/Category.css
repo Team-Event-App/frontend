@@ -1,29 +1,23 @@
-.buttonMore {
-  background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
-  border-color: #ff001f !important;
+.carouselImg {
+  height: 200px;
+  width: 350px;
 }
-.buttonMore::hover {
-  background-color: rgba(255, 0, 31, 0.85) !important;
+.BrainhubCarousel__arrowRight {
+  background-color: #ff4b2b;
+}
+.BrainhubCarousel__arrowLeft {
+  background-color: #ff4b2b;
+}
+.buttonImg {
+  width: 50%;
+  color: white;
+  background-color: #ff4b2b !important;
+  border-color: #ff4b2b !important;
+  font-size: 20px !important;
 }
 
-.underlineCategory {
-  width: 160px;
+.underlineCarousel {
+  width: 180px;
   height: 2px;
   background-color: #ff001f;
-}
-
-.category-image {
-  width: 18rem !important;
-  max-height: 200px;
-}
-
-.category-card {
-  box-shadow: 1px 1px 5px #ff001f;
-  transform: scale(1);
-}
-.category-card:hover {
-  /* border: solid 1px #ccc; */
-  box-shadow: 2px 2px 20px #ff001f;
-  transition: transform 0.5s ease;
-  transform: scale(1.1);
 }
