@@ -7,7 +7,7 @@ class editProfile extends Component {
   render() {
     return (
       <div>
-        <Row className="mt-5">
+        <Row className="mt-5 mb-5">
           <Col md={{ offset: 3, span: 6 }}>
             <Card>
               <Card.Img
