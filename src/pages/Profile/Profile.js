@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
 
@@ -40,8 +40,6 @@ class Profile extends Component {
               path="/profile/editpassword"
               component={editPassword}
             ></Route>
-
-            {/* <Route path="/bookmark" component={bookmark}></Route> */}
           </Switch>
         </Container>
         <Footer />

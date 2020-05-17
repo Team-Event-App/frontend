@@ -166,7 +166,7 @@ class EventCreate extends Component {
                               type="text"
                               className="form-control inputText"
                               name="time"
-                              placeholder="Time"
+                              placeholder="00.00 - 00.00"
                             />
                           </div>
 
