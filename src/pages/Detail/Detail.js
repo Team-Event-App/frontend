@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import { useParams } from "react-router-dom";
 
 import { Container, Row, Col, Card, Button ,Modal} from "react-bootstrap";
@@ -38,6 +37,9 @@ const Detail = () => {
         }
       });
   }, []);
+
+  const MyVerticallyCenteredModal = () => {
+    const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <div>
@@ -166,4 +168,5 @@ const Detail = () => {
     </div>
   );
 };
+}
 export default Detail;
