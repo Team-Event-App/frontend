@@ -26,7 +26,7 @@ const Login = (props) => {
     event.preventDefault();
 
     props.login(data);
-    history.push('/')
+    history.push('/login')
   };
   return (
     <Container className="registerMainContainer">

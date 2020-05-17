@@ -23,15 +23,7 @@ const Navbars = (props) => {
     if (props.viaLogin) {
       setViewLogin(
         <>
-                <Nav className="ml-auto">
-          <Button
-            className="signInButton mr-4 btn both-line-dark"
-            href="/event/create"
-          >
-            <i className="fas fa-plus mr-2 "></i>
-            Create Events
-          </Button>
-        </Nav>
+
           <NavDropdown
             className="mr-5 pr-4 ml-4"
             title={
@@ -64,7 +56,7 @@ const Navbars = (props) => {
       setData();
       setViewLogin(
         <Nav>
-        <Button className="signInButton btn both-line-dark mr-5 pr-4 ml-4" href="/login">
+        <Button className="signInButton btn both-line-dark mr-5" href="/login">
           Sign In
           <i class="fas fa-sign-in-alt ml-2"></i>
         </Button>
@@ -82,6 +74,15 @@ const Navbars = (props) => {
       <Navbar.Collapse id="toogle">
 
         <Nav className="ml-auto">{data}</Nav>
+        <Nav className="ml-auto">
+          <Button
+            className="signInButton btn both-line-dark"
+            href="/event/create"
+          >
+            <i className="fas fa-plus mr-2 "></i>
+            Create Events
+          </Button>
+        </Nav>
         <Nav className="ml-auto">{viewLogin}</Nav>
       </Navbar.Collapse>
     </Navbar>
