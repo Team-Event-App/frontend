@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import "./Profile.css";
 
 import Navbars from "./../../components/Navbar/Navbar";
 import Footer from "./../../components/Footer/Footer";
 
-import profile from "./../../image/profile.png";
+import editProfile from "./editProfile";
+import editPassword from "./editPassword";
 
 class Profile extends Component {
   render() {
@@ -20,117 +23,26 @@ class Profile extends Component {
           <div className="underlineProfile mx-auto mb-5"></div>
 
           <Row>
-            <Col md={{ offset: 1, span: 3 }} className="mt-5">
-              <>
-                <Row className="ml-5 pl-5">
-                  <i class="fas fa-user mr-2"></i>Edit Profile
-                </Row>
-              </>
-              <>
-                <Row className="ml-5 pl-5">
-                  <i class="fas fa-lock mr-2"></i>Edit Password
-                </Row>
-              </>
-            </Col>
-
-            <Col md={4}>
-              <Card className="mx-auto" style={{ width: "36rem" }}>
-                <Row>
-                  <Col md={4}>
-                    <Card.Img
-                      className="mt-5 ml-3"
-                      src={profile}
-                      style={{ width: "10rem" }}
-                    />
-                  </Col>
-                  <Col md={8}>
-                    <Card.Body>
-                      <Form>
-                        <Form.Group controlId="formBasicPassword">
-                          <Form.Label>Current Password</Form.Label>
-                          <Form.Control
-                            type="password"
-                            placeholder="Current Password"
-                          />
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicPassword">
-                          <Form.Label>New Password</Form.Label>
-                          <Form.Control
-                            type="password"
-                            placeholder="New Password"
-                          />
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicPassword">
-                          <Form.Label>Confrim Password</Form.Label>
-                          <Form.Control
-                            type="password"
-                            placeholder="Confirm Password"
-                          />
-                        </Form.Group>
-                      </Form>
-                      <Button
-                        variant="outline-danger"
-                        className="buttonProfile "
-                        block
-                      >
-                        Save
-                      </Button>
-                    </Card.Body>
-                  </Col>
-                </Row>
-              </Card>
-            </Col>
+            <Link exact to="/profile" activeClassName="active" className="mr-3">
+              <i class="fas fa-user mr-2"></i>Edit Profile
+            </Link>
+          </Row>
+          <Row>
+            <Link to="/profile/editpassword" activeClassName="active">
+              <i class="fas fa-lock mr-2"></i>Edit Password
+            </Link>
           </Row>
 
-          <Row className="mt-5">
-            <Col md={{ offset: 4, span: 5 }}>
-              <Card>
-                <Card.Img
-                  src={profile}
-                  className="mx-auto mb-2"
-                  style={{ width: "10rem" }}
-                />
-                <Card.Body>
-                  <Form>
-                    <Form.Group controlId="formBasicEmail">
-                      <Form.Label>Username</Form.Label>
-                      <Form.Control type="text" placeholder="Username" />
-                    </Form.Group>
+          <Switch>
+            <Route exact path="/profile" component={editProfile}></Route>
 
-                    <Form.Group controlId="formBasicEmail">
-                      <Form.Label>Full Name</Form.Label>
-                      <Form.Control type="email" placeholder="Full Name" />
-                    </Form.Group>
+            <Route
+              path="/profile/editpassword"
+              component={editPassword}
+            ></Route>
 
-                    <Form.Group controlId="formBasicEmail">
-                      <Form.Label>Email address</Form.Label>
-                      <Form.Control type="email" placeholder="Enter email" />
-                      <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                      </Form.Text>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicEmail">
-                      <Form.Label>Phone Number</Form.Label>
-                      <Form.Control type="email" placeholder="Phone Number" />
-                      <Form.Text className="text-muted">
-                        We'll never share your number with anyone else.
-                      </Form.Text>
-                    </Form.Group>
-                    <Button
-                      variant="outline-danger"
-                      className="buttonProfile "
-                      block
-                    >
-                      Save
-                    </Button>
-                  </Form>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
+            {/* <Route path="/bookmark" component={bookmark}></Route> */}
+          </Switch>
         </Container>
         <Footer />
       </div>

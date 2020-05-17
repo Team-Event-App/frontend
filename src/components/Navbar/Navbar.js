@@ -37,7 +37,9 @@ const Navbars = (props) => {
             </NavDropdown.Item>
 
             <NavDropdown.Item className="navDropItem">
-              <i className="fas fa-bookmark mr-2"></i>Bookmark
+              <Link to="/bookmark">
+                <i className="fas fa-bookmark mr-2"></i>Bookmark
+              </Link>
             </NavDropdown.Item>
 
             <NavDropdown.Item className="navDropItem">

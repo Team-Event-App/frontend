@@ -55,7 +55,7 @@ function App() {
           <Route path="/event/:id" component={Detail}>
             <Detail />
           </Route>
-          <Route exact path="/profile" component={Profile}>
+          <Route path="/profile" component={Profile}>
             <Profile />
           </Route>
           <Route exact path="/" component={Main}>
