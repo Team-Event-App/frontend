@@ -71,7 +71,6 @@ class EventCreate extends Component {
               <Form className="formCreate mb-5">
                 <Container>
                   <Row className="justify-content-md-center">
-                    
                     <Col sm={6}>
                       <ol>
                         <h2 className="text-center pt-4 mb-2 titleCategory">
@@ -83,7 +82,7 @@ class EventCreate extends Component {
                         <Card.Body>
                           <div className="form-group">
                             <label className="subLabel ">Event Info</label>
-                            
+
                             <Field
                               type="text"
                               className="form-control inputText"
@@ -96,37 +95,36 @@ class EventCreate extends Component {
                             </small>
                             <ErrorMessage name="title" />
                           </div>
-                        <Col sm={12}>
-                          <div className="form-group">
-                            <select className="form-control inputText">
+                          <Col sm={12}>
+                            <div className="form-group">
+                              <select className="form-control inputText">
+                                <Field
+                                  type="text"
+                                  className="form-control "
+                                  name="category"
+                                />
+                                <option></option>
+                                <option>Art</option>
+                                <option>Film</option>
+                                <option>Festival</option>
+                                <option>Fashion</option>
+                                <option>Sport</option>
+                                <option>Nightlife</option>
+                                <option>Charity</option>
+                              </select>
+                              <small class="form-text text-muted">
+                                Category Event Required
+                              </small>
+                            </div>
+                            <div className="form-group">
                               <Field
-                                type="text"
-                                className="form-control "
-                                name="category"
+                                type="number"
+                                className="form-control inputText"
+                                name="limitPeople"
+                                placeholder="Max People"
                               />
-                              <option></option>
-                              <option>Art</option>
-                              <option>Film</option>
-                              <option>Festival</option>
-                              <option>Fashion</option>
-                              <option>Sport</option>
-                              <option>Nightlife</option>
-                              <option>Charity</option>
-                            </select>
-                            <small class="form-text text-muted">
-                              Category Event Required
-                            </small>
-                          </div>
-                          <div className="form-group">
-                            <Field
-                              type="number"
-                              className="form-control inputText"
-                              name="limitPeople"
-                              placeholder="Max People"
-                            />
-                          </div>
+                            </div>
                           </Col>
-
 
                           <div className="form-group">
                             <Field
@@ -156,6 +154,15 @@ class EventCreate extends Component {
 
                           <div className="form-group">
                             <Field
+                              type="date"
+                              className="form-control inputText "
+                              name="date"
+                              placeholder="Date"
+                            />
+                          </div>
+
+                          <div className="form-group">
+                            <Field
                               type="text"
                               className="form-control inputText"
                               name="time"
@@ -169,15 +176,6 @@ class EventCreate extends Component {
                               className="form-control inputText"
                               name="location"
                               placeholder="Venue Location"
-                            />
-                          </div>
-
-                          <div className="form-group">
-                            <Field
-                              type="date"
-                              className="form-control inputText"
-                              name="date"
-                              placeholder="Date"
                             />
                           </div>
 
