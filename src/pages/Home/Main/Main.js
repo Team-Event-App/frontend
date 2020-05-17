@@ -144,7 +144,6 @@ const Main = () => {
 
       <Trend />
       <br />
-      {/* <Category /> */}
       <Footer />
     </div>
   );
