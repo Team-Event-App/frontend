@@ -77,7 +77,7 @@ body {
 }
 
 .main-card {
-  box-shadow: 1px 1px 5px #c4c4c4;
+  box-shadow: 0 5px 5px -2px gray;
   transform: scale(1);
 }
 .main-card:hover {
@@ -102,4 +102,7 @@ body {
   .container {
     max-width: 1200px !important;
   }
+}
+a{
+  text-decoration: none !important;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { logout } from "../../actions/loginActions";
 import { connect } from "react-redux";
@@ -14,13 +14,40 @@ const Navbars = (props) => {
   const [data, setData] = useState();
   const [viewLogin, setViewLogin] = useState();
   const history = useHistory();
+  const [user , setUser] = useState([]);
+  const URL = "https://api.indrakawasan.com/user/show";
+
+  // useEffect(() => {
+
+  // },);
   const logOut = () => {
     props.logout();
     history.push("/");
   };
+  // 
   useEffect(() => {
     console.log(props.viaLogin);
-
+    axios.get(URL)
+    .then((res) => {
+      const user = res.data
+      setUser(user);
+      console.log(user);
+    })
+    .catch((err) => {
+      if (
+        err &&
+        err.response &&
+        err.response.data &&
+        err.response.data.message
+      ){
+        alert(err.response.data.message);
+      }else{
+        alert("Sorry , can't get the data from server..")
+      }
+    })
+    // const showUser = user.map((item,index) => {
+    //   console.log(showUser);
+    // })
     if (props.viaLogin) {
       setViewLogin(
         <>
@@ -33,7 +60,7 @@ const Navbars = (props) => {
             }
           >
             <NavDropdown.Item className="navDropItem">
-              <Link to="/profile" className="profileSetting">
+              <Link to={`/profile/${user.id}`} className="profileSetting">
                 <i className="fas fa-envelope fa-fw"></i> User Profile
               </Link>
             </NavDropdown.Item>
@@ -67,7 +94,7 @@ const Navbars = (props) => {
         </Nav>
       );
     }
-  }, [props.viaLogin]);
+  }, [props.viaLogin],[]);
 
   return (
     <Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
