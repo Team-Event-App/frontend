@@ -97,21 +97,23 @@ class EventCreate extends Component {
                           </div>
                           <Col sm={12}>
                             <div className="form-group">
-                              <select className="form-control inputText">
-                                <Field
-                                  type="text"
-                                  className="form-control "
-                                  name="category"
-                                />
+                              <Field
+                                as="select"
+                                type="text"
+                                className="form-control inputText "
+                                name="category"
+                              >
                                 <option></option>
+                                <option>Music</option>
                                 <option>Art</option>
                                 <option>Film</option>
+                                <option>Food & Drinks</option>
                                 <option>Festival</option>
                                 <option>Fashion</option>
                                 <option>Sport</option>
                                 <option>Nightlife</option>
                                 <option>Charity</option>
-                              </select>
+                              </Field>
                               <small class="form-text text-muted">
                                 Category Event Required
                               </small>

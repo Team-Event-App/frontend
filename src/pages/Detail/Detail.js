@@ -157,10 +157,10 @@ const Detail = () => {
                   {item.location}
                 </Card.Text>
 
-                <Card.Text>
+                {/* <Card.Text>
                   <span style={{ color: "red" }}>Organizer by </span>{" "}
                   {item.organizerName}
-                </Card.Text>
+                </Card.Text> */}
                 <Card.Text>
                   <span style={{ color: "red" }}>Responsible by </span>{" "}
                   {item.responsibleName}
