@@ -31,11 +31,19 @@ function MyVerticallyCenteredModal(props) {
           id="name"
         />
         <input
-          type="text"
+          type="number"
           placeholder="Quantity of Ticket"
           className="login-input"
           name="quantity"
           id="quantity"
+        />
+
+        <input
+          type="text"
+          placeholder="Quantity of Ticket"
+          className="login-input"
+          name="total"
+          id="total"
         />
       </Modal.Body>
       <Modal.Footer>
@@ -103,7 +111,7 @@ const Detail = () => {
                 <b>{item.title}</b>
               </Card.Title>
               <Card.Title>{item.category}</Card.Title>
-              <div className="mt-5">Price : {item.price}</div>
+              <div className="mt-5">Price : ${item.price}</div>
             </Col>
           </Row>
           <div className="mt-2" style={{ borderTop: "1px solid black" }}></div>
