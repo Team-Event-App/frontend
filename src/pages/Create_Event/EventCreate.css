@@ -9,7 +9,7 @@
   width: 15rem;
 }
 .subLabel {
-  font-size: 19px;
+  font-size: 22px;
 }
 .toggleButton {
   background-color: #ff001f !important;
@@ -30,10 +30,14 @@
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
 }
-.orgRow{
+.orgRow {
   padding-left: 32px;
 }
-.createEventCard{
+.createEventCard {
   width: 40rem;
-  margin:1rem 0rem 2rem 2rem;
+  margin: 1rem 0rem 2rem 2rem;
+}
+
+.containerCreate {
+  border: 1px solid #ff001f !important;
 }
