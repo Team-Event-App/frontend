@@ -37,7 +37,6 @@ const Main = () => {
       .then((res) => {
         const data = res.data.slice(0, 8);
         setData(data);
-        
       })
       .catch((err) => {
         if (
@@ -76,10 +75,11 @@ const Main = () => {
               <i className="fas fa-map-marker-alt mr-2"></i>
               {item.location}
             </Card.Text>
-            <Link to={`/event/${item.id}`}>
-              <Button block variant="outline-danger">
-                See More
-              </Button>
+            <Link
+              to={`/event/${item.id}`}
+              className="btn btn-outline-danger btn-block"
+            >
+              See More
             </Link>
           </Card.Body>
         </Card>
