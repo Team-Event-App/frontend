@@ -26,7 +26,6 @@ const Navbars = (props) => {
   };
   // 
   useEffect(() => {
-    console.log(props.viaLogin);
     axios.get(URL)
     .then((res) => {
       const user = res.data
@@ -48,6 +47,7 @@ const Navbars = (props) => {
     // const showUser = user.map((item,index) => {
     //   console.log(showUser);
     // })
+    
     if (props.viaLogin) {
       setViewLogin(
         <>
@@ -65,14 +65,14 @@ const Navbars = (props) => {
               </Link>
             </NavDropdown.Item>
 
-            <NavDropdown.Item className="navDropItem">
+            {/* <NavDropdown.Item className="navDropItem">
               <Link to="/bookmark">
                 <i className="fas fa-bookmark mr-2"></i>Bookmark
               </Link>
-            </NavDropdown.Item>
+            </NavDropdown.Item> */}
 
             <NavDropdown.Item className="navDropItem">
-              <i className="far fa-clock mr-2"></i>History Purchase
+              <i className="far fa-clock mr-2"></i>History
             </NavDropdown.Item>
             <NavDropdown.Item className="navDropItem" onClick={logOut}>
               <Link className="fas fa-sign-out-alt i-logout mr-2"></Link>
@@ -119,7 +119,6 @@ const Navbars = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.login);
   return {
     viaLogin: state.login.viaLogin,
   };

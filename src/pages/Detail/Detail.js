@@ -31,11 +31,19 @@ function MyVerticallyCenteredModal(props) {
           id="name"
         />
         <input
-          type="text"
-          placeholder="Quantity of Ticket"
+          type="number"
+          placeholder="Quantity"
           className="login-input"
           name="quantity"
           id="quantity"
+        />
+
+        <input
+          type="number"
+          placeholder="Total"
+          className="login-input"
+          name="total"
+          id="total"
         />
       </Modal.Body>
       <Modal.Footer>
@@ -53,11 +61,12 @@ const Detail = () => {
 
   useEffect(() => {
     const URL = `https://api.indrakawasan.com/event/show/${id}`;
+    const tokens = localStorage.getItem("access-token");
 
     axios
       .get(URL, {
         headers: {
-          "access-token": localStorage.getItem("access-token"),
+          "access-token": tokens,
         },
       })
       .then((res) => {
@@ -76,7 +85,7 @@ const Detail = () => {
           alert("Sorry we have server problem , Please wait.. ");
         }
       });
-  }, []);
+  }, [id]);
 
   const showDetail = data.map((item, index) => {
     const URL = "https://api.indrakawasan.com/";
@@ -103,17 +112,17 @@ const Detail = () => {
                 <b>{item.title}</b>
               </Card.Title>
               <Card.Title>{item.category}</Card.Title>
-              <div className="mt-5">Price : {item.price}</div>
+              <div className="mt-5">Price : ${item.price}</div>
             </Col>
           </Row>
           <div className="mt-2" style={{ borderTop: "1px solid black" }}></div>
 
           <Row className="mt-3">
             <Col md={1}>
-              <i class="fas fa-share-alt"></i>
+              <i className="fas fa-share-alt"></i>
             </Col>
             <Col md={1}>
-              <i class="far fa-bookmark"></i>
+              <i className="far fa-bookmark"></i>
             </Col>
             <Col md={{ span: 3, offset: 7 }}>
               <Button

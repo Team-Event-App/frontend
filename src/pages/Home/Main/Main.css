@@ -48,7 +48,6 @@ body {
   width: 35rem !important;
   padding: 1.7rem 4rem !important;
   border-radius: 20rem !important;
-  /* border: 1px solid black !important; */
 }
 .mainInput:focus {
   border-color: #ff001f !important;
@@ -103,6 +102,4 @@ body {
     max-width: 1200px !important;
   }
 }
-a{
-  text-decoration: none !important;
-}
+
