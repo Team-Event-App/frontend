@@ -26,12 +26,13 @@ const Login = (props) => {
     props.login(data);
     history.push("/login");
   };
+
   return (
     <div>
       <Container className="registerMainContainer">
-        <div class="sidebar">
+        <div className="sidebar">
           <Link to="/">
-            <i class="fa fa-fw fa-home"></i>
+            <i className="fa fa-fw fa-home"></i>
           </Link>
         </div>
         <Row>

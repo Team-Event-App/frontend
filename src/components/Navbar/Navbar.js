@@ -58,10 +58,12 @@ const Navbars = (props) => {
       setData();
       setViewLogin(
         <Nav>
-          <Button className="signInButton   mr-5" href="/login">
-            Sign In
-            <i className="fas fa-sign-in-alt ml-2"></i>
-          </Button>
+          <Link to="/login">
+            <Button className="signInButton   mr-5">
+              Sign In
+              <i className="fas fa-sign-in-alt ml-2"></i>
+            </Button>
+          </Link>
         </Nav>
       );
     }
@@ -76,10 +78,12 @@ const Navbars = (props) => {
       <Navbar.Collapse id="toogle">
         <Nav className="ml-auto">
           {data}
-          <Button className="signInButton mr-3" href="/event/create">
-            <i className="fas fa-plus mr-2 "></i>
-            Create Events
-          </Button>
+          <Link to="/event/create">
+            <Button className="signInButton mr-3">
+              <i className="fas fa-plus mr-2 "></i>
+              Create Events
+            </Button>
+          </Link>
           <Nav className="ml-auto">{viewLogin}</Nav>
         </Nav>
       </Navbar.Collapse>

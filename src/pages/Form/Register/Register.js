@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Formik, Form, ErrorMessage } from "formik";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link ,useHistory} from "react-router-dom";
 
 import "./Register.css";
 
-class Register extends Component {
-  render() {
+
+
+const Register = () => {
+  const history = useHistory();
     return (
       <Container>
         <div class="sidebar">
@@ -49,6 +51,7 @@ class Register extends Component {
                         .then((res) => {
                           alert("Register Success!");
                           actions.resetForm(true);
+                          history.push('/login')
                         })
                         .catch((err) => {
                           console.log(err);
@@ -155,7 +158,6 @@ class Register extends Component {
         </Row>
       </Container>
     );
-  }
 }
 
 export default Register;

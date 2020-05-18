@@ -85,7 +85,7 @@ const Detail = () => {
       <Card
         border="primary"
         key={index}
-        className="mx-auto"
+        className="mx-auto mt-4"
         style={{ width: "70rem" }}
       >
         <Card.Header>
@@ -94,12 +94,16 @@ const Detail = () => {
               <img
                 src={`${URL}${item.imageEvent}`}
                 alt="imageEvent"
-                style={{ width: "50rem", height: "250px" }}
+                style={{ width: "50rem", height: "300px" }}
               />
             </Col>
 
-            <Col md={3} sm={12}>
-              <div className="mt-5 pt-5">{item.price}</div>
+            <Col md={3} sm={12} className="mt-5">
+              <Card.Title>
+                <b>{item.title}</b>
+              </Card.Title>
+              <Card.Title>{item.category}</Card.Title>
+              <div className="mt-5">Price : {item.price}</div>
             </Col>
           </Row>
           <div className="mt-2" style={{ borderTop: "1px solid black" }}></div>
@@ -127,16 +131,40 @@ const Detail = () => {
           <Container>
             <Row>
               <Col md={9}>
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Title>{item.category}</Card.Title>
+                <Card.Title>
+                  <b>{item.title}</b>
+                </Card.Title>
                 <Card.Title>{item.description}</Card.Title>
-                <Card.Text className="text-justify">{item.detail}</Card.Text>
+                <Card.Text className="text-justify mt-4">
+                  {item.detail}
+                </Card.Text>
               </Col>
 
               <Col md={3}>
                 <h5 className="mb-4">Date And Time</h5>
-                <h6>{item.date}</h6>
-                <h6>{item.time}</h6>
+                <Card.Text>
+                  <i class="far fa-calendar-alt mr-2"></i>
+                  {item.date}
+                </Card.Text>
+                <Card.Text>
+                  <i class="fas fa-clock mr-2"></i>
+                  {item.time}
+                </Card.Text>
+
+                <h5 className="mt-4">Location</h5>
+                <Card.Text className="mt-0">
+                  <i className="fas fa-map-marker-alt mr-2"></i>
+                  {item.location}
+                </Card.Text>
+
+                {/* <Card.Text>
+                  <span style={{ color: "red" }}>Organizer by </span>{" "}
+                  {item.organizerName}
+                </Card.Text> */}
+                <Card.Text>
+                  <span style={{ color: "red" }}>Responsible by </span>{" "}
+                  {item.responsibleName}
+                </Card.Text>
               </Col>
             </Row>
 
@@ -145,19 +173,19 @@ const Detail = () => {
               style={{ borderRadius: "20rem" }}
             >
               <Col md={{ offset: 2, span: 4 }}>
-                <h5>Share this Event</h5>
+                <h4>Share this Event</h4>
               </Col>
               <Col md={1}>
-                <i class="fab fa-facebook-square"></i>
+                <i className="fab fa-facebook-square fa-2x"></i>
               </Col>
               <Col md={1}>
-                <i class="fab fa-whatsapp"></i>
+                <i className="fab fa-whatsapp fa-2x"></i>
               </Col>
               <Col md={1}>
-                <i class="fas fa-envelope"></i>
+                <i className="fas fa-envelope fa-2x"></i>
               </Col>
               <Col md={1}>
-                <i class="far fa-copy"></i>
+                <i className="far fa-copy fa-2x"></i>
               </Col>
             </Row>
           </Container>
