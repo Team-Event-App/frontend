@@ -8,8 +8,9 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
 
-import Main from "./pages/Home/Main/Main";
+import jwt from "jwt-decode";
 
+import Main from "./pages/Home/Main/Main";
 import CreateEvent from "./pages/Create_Event/EventCreate";
 
 import Login from "./pages/Form/Login/Login";
@@ -25,9 +26,11 @@ import Profile from "./pages/Profile/Profile";
 const store = createStore(reducers, applyMiddleware(thunk));
 
 store.subscribe(() => {
-  console.log("data");
   console.log(store.getState());
 });
+
+// const jwtdecode = jwt(localStorage.access-token);
+// console.log(jwtdecode);
 
 function App() {
   return (

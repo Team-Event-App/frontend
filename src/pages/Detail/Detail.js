@@ -32,15 +32,15 @@ function MyVerticallyCenteredModal(props) {
         />
         <input
           type="number"
-          placeholder="Quantity of Ticket"
+          placeholder="Quantity"
           className="login-input"
           name="quantity"
           id="quantity"
         />
 
         <input
-          type="text"
-          placeholder="Quantity of Ticket"
+          type="number"
+          placeholder="Total"
           className="login-input"
           name="total"
           id="total"
@@ -61,11 +61,12 @@ const Detail = () => {
 
   useEffect(() => {
     const URL = `https://api.indrakawasan.com/event/show/${id}`;
+    const tokens = localStorage.getItem("access-token");
 
     axios
       .get(URL, {
         headers: {
-          "access-token": localStorage.getItem("access-token"),
+          "access-token": tokens,
         },
       })
       .then((res) => {
@@ -84,7 +85,7 @@ const Detail = () => {
           alert("Sorry we have server problem , Please wait.. ");
         }
       });
-  }, []);
+  }, [id]);
 
   const showDetail = data.map((item, index) => {
     const URL = "https://api.indrakawasan.com/";
@@ -118,10 +119,10 @@ const Detail = () => {
 
           <Row className="mt-3">
             <Col md={1}>
-              <i class="fas fa-share-alt"></i>
+              <i className="fas fa-share-alt"></i>
             </Col>
             <Col md={1}>
-              <i class="far fa-bookmark"></i>
+              <i className="far fa-bookmark"></i>
             </Col>
             <Col md={{ span: 3, offset: 7 }}>
               <Button

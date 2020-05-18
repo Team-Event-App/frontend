@@ -19,8 +19,6 @@ const Navbars = (props) => {
     history.push("/");
   };
   useEffect(() => {
-    console.log(props.viaLogin);
-
     if (props.viaLogin) {
       setViewLogin(
         <>
@@ -92,7 +90,6 @@ const Navbars = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.login);
   return {
     viaLogin: state.login.viaLogin,
   };
