@@ -55,7 +55,7 @@ const Main = () => {
   const showEvent = data.map((item, index) => {
     const URL = "https://api.indrakawasan.com/";
     return (
-      <Col md={3} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
+      <Col md={3} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
         <Card
           border="secondary"
           className="main-card"
@@ -72,7 +72,7 @@ const Main = () => {
               <FontAwesomeIcon icon={faClock} /> {item.time}
             </Card.Text>
             <Card.Text>
-              <i class="fas fa-map-marker-alt mr-2"></i>
+              <i className="fas fa-map-marker-alt mr-2"></i>
               {item.location}
             </Card.Text>
             <Link to={`/event/${item.id}`}>
@@ -106,7 +106,7 @@ const Main = () => {
                 variant="outline-success"
                 className="buttonSearch mainSearch"
               >
-                <i class="fas fa-search"></i>
+                <i className="fas fa-search"></i>
               </Button>
             </Form>
           </Row>
@@ -120,7 +120,7 @@ const Main = () => {
           <h2 className="mb-4 ml-5">BROWSE EVENTS</h2>
         </Row>
         <Row>
-          <div class="underlineMain mb-4 ml-5"></div>
+          <div className="underlineMain mb-4 ml-5"></div>
         </Row>
       </Container>
 

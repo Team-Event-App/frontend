@@ -25,9 +25,9 @@ export default class CategoryCarousel extends Component {
           <Row>
             <Col>
               <h2 className="text-center">CATEGORY</h2>
-              <div class="underlineCarousel mb-5 mx-auto"></div>
+              <div className="underlineCarousel mb-5 mx-auto"></div>
               <Carousel centered infinite arrows slidesPerPage={4}>
-                <Link href="/#" className="text-center">
+                <Link to="/#" className="text-center">
                   <img alt="#" src={music} className="carouselImg" />
                   <Button className="buttonImg" block>
                     Music
