@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component ,useState} from "react";
 import axios from "axios";
 import { Formik, Form, ErrorMessage } from "formik";
 import { Container, Row, Col, Button } from "react-bootstrap";
@@ -7,9 +7,11 @@ import { Link ,useHistory} from "react-router-dom";
 import "./Register.css";
 
 
-
+// const passwordField = document.getElementById("password-field")
+// passwordField.type = "text"
 const Register = () => {
   const history = useHistory();
+
     return (
       <Container>
         <div class="sidebar">
@@ -116,19 +118,23 @@ const Register = () => {
                           onBlur={props.handleBlur}
                           value={props.values.phone}
                         />
-                        <input
+                                                <div className="input-group-prepend mainPrependPassword">
+                              <input
                           type="password"
                           placeholder="Password"
                           className="register-input"
                           name="password"
-                          id="password"
+                          id="password-field"
                           onChange={props.handleChange}
                           onBlur={props.handleBlur}
                           value={props.values.password}
                         />
-                        <span>Password at least 8 Characters</span>
+                                                <div className="input-group-text passwordPrepend">
+                                <i className="fa fa-eye password-icon"></i>
+                              </div>
+                              </div>
+                              <span>Password at least 8 Characters</span>
                         <ErrorMessage name="password" />
-
                         <Button variant="danger" type="submit" className="mt-3">
                           Sign Up
                         </Button>
