@@ -16,9 +16,9 @@
   border-color: #ff001f !important;
 }
 
-.formCreate {
-  /* Masukin Background Foto Disini */
-}
+/* .formCreate {
+  Masukin Background Foto Disini 
+}  */
 
 .inputPrepend {
   border: 1px solid #ff001f !important;
@@ -29,4 +29,11 @@
 .save {
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
+}
+.orgRow{
+  padding-left: 32px;
+}
+.createEventCard{
+  width: 40rem;
+  margin:1rem 0rem 2rem 2rem;
 }
