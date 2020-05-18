@@ -37,6 +37,7 @@ const Main = () => {
       .then((res) => {
         const data = res.data;
         setData(data);
+        
       })
       .catch((err) => {
         if (
@@ -47,7 +48,7 @@ const Main = () => {
         ) {
           alert(err.response.data.message);
         } else {
-          alert("Sorry we have server problem , Please wait.. ");
+          alert("Sorry we have server problem , Try again later.. ");
         }
       });
   }, []);
@@ -124,7 +125,7 @@ const Main = () => {
         </Row>
       </Container>
 
-      <Container>
+      <Container id="cardContainer">
         <Row>
           <CardDeck>{showEvent}</CardDeck>
         </Row>
