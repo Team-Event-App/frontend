@@ -134,10 +134,8 @@ const Main = () => {
       <Container>
         <Row>
           <Col className="text-center mt-4 mb-3">
-            <Link to="/showall">
-              <Button className="buttonMore mt-4 mb-4">
-                <h5>More Events</h5>
-              </Button>
+            <Link to="/showall" className="btn buttonMore mt-4 mb-4">
+              <h5>More Events</h5>
             </Link>
           </Col>
         </Row>
