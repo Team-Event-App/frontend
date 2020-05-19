@@ -18,7 +18,7 @@ import Register from "./pages/Form/Register/Register";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Detail from "./pages/Detail/Detail";
-
+import History from "./pages/HistoryPurchase/HistoryPurchase";
 import ShowAll from "./pages/Show_All/ShowAll";
 import Profile from "./pages/Profile/Profile";
 
@@ -57,6 +57,9 @@ function App() {
           </Route>
           <Route path="/profile" component={Profile}>
             <Profile />
+          </Route>
+          <Route path="/history_purchase" component={History}>
+            <History/>
           </Route>
           <Route exact path="/" component={Main}>
             <Main />

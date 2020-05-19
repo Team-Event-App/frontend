@@ -6,7 +6,6 @@ import { logout } from "../../actions/loginActions";
 import { connect } from "react-redux";
 
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
-
 import "./Navbar.css";
 import Logo from "./../../image/logo.png";
 
@@ -72,7 +71,9 @@ const Navbars = (props) => {
             </NavDropdown.Item>
 
             <NavDropdown.Item className="navDropItem">
+              <Link to="/history_purchase">
               <i className="far fa-clock mr-2"></i>History Purchase
+              </Link>
             </NavDropdown.Item>
             <NavDropdown.Item className="navDropItem" onClick={logOut}>
               <Link className="fas fa-sign-out-alt i-logout mr-2"></Link>
