@@ -35,9 +35,8 @@ const Main = () => {
     axios
       .get(URL)
       .then((res) => {
-        const data = res.data;
+        const data = res.data.slice(0, 8);
         setData(data);
-        
       })
       .catch((err) => {
         if (
@@ -76,10 +75,11 @@ const Main = () => {
               <i className="fas fa-map-marker-alt mr-2"></i>
               {item.location}
             </Card.Text>
-            <Link to={`/event/${item.id}`}>
-              <Button block variant="outline-danger">
-                See More
-              </Button>
+            <Link
+              to={`/event/${item.id}`}
+              className="btn btn-outline-danger btn-block"
+            >
+              See More
             </Link>
           </Card.Body>
         </Card>
@@ -134,10 +134,8 @@ const Main = () => {
       <Container>
         <Row>
           <Col className="text-center mt-4 mb-3">
-            <Link to="/showall">
-              <Button className="buttonMore mt-4 mb-4">
-                <h5>More Events</h5>
-              </Button>
+            <Link to="/showall" className="btn buttonMore mt-4 mb-4">
+              <h5>More Events</h5>
             </Link>
           </Col>
         </Row>

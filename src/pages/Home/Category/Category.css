@@ -1,6 +1,7 @@
 .carouselImg {
   height: 200px;
   width: 350px;
+  border-radius: 1rem 1rem 0 0 !important;
 }
 .BrainhubCarousel__arrowRight {
   background-color: #ff4b2b;
