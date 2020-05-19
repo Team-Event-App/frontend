@@ -104,6 +104,7 @@ const Detail = () => {
                 src={`${URL}${item.imageEvent}`}
                 alt="imageEvent"
                 style={{ width: "50rem", height: "300px" }}
+                className="detailCardImage"
               />
             </Col>
 
