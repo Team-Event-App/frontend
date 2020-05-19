@@ -60,7 +60,7 @@ const Navbars = (props) => {
             }
           >
             <NavDropdown.Item className="navDropItem">
-              <Link to={`/profile/${user.id}`} className="profileSetting">
+              <Link to={`/profile`} className="profileSetting">
                 <i className="fas fa-envelope fa-fw"></i> User Profile
               </Link>
             </NavDropdown.Item>
