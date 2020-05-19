@@ -257,3 +257,10 @@
   color: black;
   text-decoration: none;
 }
+.passwordPrepend{
+  height: 75%;
+  margin-top: 8px !important;
+}
+.password-icon{
+  cursor: pointer;
+}
