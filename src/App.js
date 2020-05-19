@@ -29,8 +29,8 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-// const jwtdecode = jwt(localStorage.access-token);
-// console.log(jwtdecode);
+const jwtdecode = jwt(localStorage.getItem("access-token"));
+console.log(jwtdecode);
 
 function App() {
   return (
