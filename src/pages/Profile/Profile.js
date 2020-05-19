@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row ,Col} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
 
@@ -20,17 +20,19 @@ class Profile extends Component {
           <div>
             <h4 className="text-center mt-3 profileText">ACCOUNT SETTING</h4>
           </div>
-          <div className="underlineProfile mx-auto mb-5"></div>
+          <div className="underlineProfile mx-auto "></div>
 
           <Row>
-            <Link exact to="/profile" activeClassName="active" className="mr-3">
-              <i class="fas fa-user mr-2"></i>Edit Profile
-            </Link>
-          </Row>
-          <Row>
-            <Link to="/profile/editpassword" activeClassName="active">
-              <i class="fas fa-lock mr-2"></i>Edit Password
-            </Link>
+            <div className="sidebarUser">
+            <Link exact to="/profile" activeClassName="active" className="ml-3 accountLink"> 
+            <i class="fas fa-user fa-userr mr-2"></i>
+          </Link>
+          </div>
+            <div className="sidebarPassword">
+            <Link exact to="/profile/editpassword" activeClassName="active" className="ml-3 passwordLink"> 
+            <i class="fas fa-lock mr-2"></i>
+          </Link>
+            </div>
           </Row>
 
           <Switch>
