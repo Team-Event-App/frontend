@@ -28,12 +28,6 @@ store.subscribe(() => {
 	console.log(store.getState());
 });
 
-// const token = localStorage.getItem("access-token");
-// if (!token) {
-// 	const jwtdecode = jwt(token);
-// 	console.log(jwtdecode);
-// }
-
 const App = () => {
 	return (
 		<Provider store={store}>
