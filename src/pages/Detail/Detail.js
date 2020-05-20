@@ -11,10 +11,29 @@ import Footer from "../../components/Footer/Footer";
 import "./Detail.css";
 
 function MyVerticallyCenteredModal(props) {
+	const token = localStorage.getItem("access-token");
+	const jwtdecode = jwt(token);
+	const users = jwtdecode.fullname;
+
+	const history = useHistory();
+
 	return (
 		<Modal
+			onSubmit={(values, actions) => {
+				axios("https:api.indrakawasan.com/booking/create", {
+					method: "POST",
+					data: values,
+				})
+					.then((res) => {
+						alert("Booking Success !");
+						actions.resetForm();
+						history.pushState("/payment");
+					})
+					.catch((err) => {
+						console.log(err);
+					});
+			}}
 			{...props}
-			// show={props.modalShow}
 			size="lg"
 			aria-labelledby="contained-modal-title-vcenter"
 			centered
@@ -31,6 +50,7 @@ function MyVerticallyCenteredModal(props) {
 					className="login-input"
 					name="name"
 					id="name"
+					value={users}
 				/>
 				<input
 					type="number"
@@ -49,7 +69,12 @@ function MyVerticallyCenteredModal(props) {
 				/>
 			</Modal.Body>
 			<Modal.Footer>
-				<Button onClick={props.onHide}>Close</Button>
+				<Button variant="outline-primary" type="submit">
+					Check Out
+				</Button>
+				<Button variant="outline-danger" onClick={props.onHide}>
+					Close
+				</Button>
 			</Modal.Footer>
 		</Modal>
 	);
@@ -129,7 +154,6 @@ const Detail = () => {
 							<Button
 								block
 								variant="outline-danger"
-								// onClick={() => setModalShow(true)}
 								onClick={() => bookingClick(true)}
 							>
 								Buy Ticket
@@ -168,14 +192,14 @@ const Detail = () => {
 									{item.location}
 								</Card.Text>
 
-								{/* <Card.Text>
-                  <span style={{ color: "red" }}>Organizer by </span>{" "}
-                  {item.organizerName}
-                </Card.Text> */}
 								<Card.Text>
+									<span style={{ color: "red" }}>Organizer by </span>{" "}
+									{item.organizerName}
+								</Card.Text>
+								{/* <Card.Text>
 									<span style={{ color: "red" }}>Responsible by </span>{" "}
 									{item.responsibleName}
-								</Card.Text>
+								</Card.Text> */}
 							</Col>
 						</Row>
 
