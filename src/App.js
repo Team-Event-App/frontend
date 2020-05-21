@@ -42,9 +42,7 @@ const App = () => {
 					<Route path="/event/:id" component={Detail} />
 					<Route path="/profile" component={Profile} />
 					<Route path="/history" component={History} />
-					<Route exact path="/" component={Main}>
-						<Main />
-					</Route>
+					<Route exact path="/" component={Main} />
 				</Switch>
 			</Router>
 		</Provider>

@@ -14,7 +14,6 @@ class EventCreate extends Component {
 		this.imageRef = React.createRef();
 	}
 	handleSubmit = (values, actions) => {
-		console.log(values);
 		var formData = new FormData();
 		Object.keys(values).forEach(function (key) {
 			formData.append(key, values[key]);
@@ -34,6 +33,9 @@ class EventCreate extends Component {
 				actions.setSubmitting(false);
 				actions.resetForm();
 				alert("Succesfully add Event");
+			})
+			.catch((err) => {
+				console.log(err);
 			});
 	};
 
@@ -90,13 +92,12 @@ class EventCreate extends Component {
 
 												<Row className="pl-3 pt-2 pr-3">
 													<Col md={5}>
-														<select className="form-control inputText">
-															<Field
-																type="text"
-																className="form-control "
-																name="category"
-															/>
-															<option></option>
+														<Field
+															as="select"
+															type="text"
+															className="form-control inputText "
+															name="category"
+														>
 															<option>Music</option>
 															<option>Art</option>
 															<option>Film</option>
@@ -108,7 +109,7 @@ class EventCreate extends Component {
 															<option>Charity</option>
 															<option>Education</option>
 															<option>Others</option>
-														</select>
+														</Field>
 														<small className="form-text text-muted">
 															Your Category Event.
 														</small>
