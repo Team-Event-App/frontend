@@ -30,7 +30,6 @@ store.subscribe(() => {
 });
 
 const jwtdecode = jwt(localStorage.getItem("access-token"));
-console.log(jwtdecode);
 
 const App = () => {
 	return (
