@@ -96,6 +96,15 @@ body {
 	.container {
 		max-width: 1400px !important;
 	}
+	
+	.card-deck{
+		margin-left: 50px;
+	}
+
+	.main-card{
+		width: 280px !important;
+		margin-left: 20px !important;
+	}
 }
 
 @media (min-width: 1000px) and (max-width: 1199px) {
