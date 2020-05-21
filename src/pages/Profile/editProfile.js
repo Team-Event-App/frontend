@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
-// import { Formik } from "formik";
-// import axios from "axios";
+import { Formik } from "formik";
+import axios from "axios";
 import profile from "./../../image/profile.png";
 
 class editProfile extends Component {

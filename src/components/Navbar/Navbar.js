@@ -62,7 +62,7 @@ const Navbars = (props) => {
 							}
 						>
 							<NavDropdown.Item className="navDropItem">
-								<Link to="/profile" className="profileSetting">
+								<Link to={`/profile`} className="profileSetting">
 									<i className="fas fa-envelope fa-fw"></i> User Profile
 								</Link>
 							</NavDropdown.Item>
@@ -77,10 +77,7 @@ const Navbars = (props) => {
 								<i className="far fa-clock mr-2"></i>History
 							</NavDropdown.Item>
 							<NavDropdown.Item className="navDropItem" onClick={logOut}>
-								<Link
-									to="#"
-									className="fas fa-sign-out-alt i-logout mr-2"
-								></Link>
+								<Link className="fas fa-sign-out-alt i-logout mr-2"></Link>
 								Logout
 							</NavDropdown.Item>
 						</NavDropdown>
