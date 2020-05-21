@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Card,Button } from "react-bootstrap";
+import { Container, Row, Col, Card} from "react-bootstrap";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
