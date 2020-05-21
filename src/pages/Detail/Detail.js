@@ -11,10 +11,47 @@ import Footer from "../../components/Footer/Footer";
 import "./Detail.css";
 
 function MyVerticallyCenteredModal(props) {
+	const token = localStorage.getItem("access-token");
+	const jwtdecode = jwt(token);
+	const users = jwtdecode.fullname;
+	let total = 0;
+
+	const [data, setData] = useState({
+		name: users,
+		quantity: 1,
+	});
+
+	const onChange = (event) => {
+		const name = event.currentTarget.name;
+		const value = event.currentTarget.value;
+		const price = event.currentTarget.price;
+		console.log(value);
+		setData({ ...data, [name]: value, price });
+	};
+	console.log(props.data);
+
+	const bookModals = () => {
+		let newData = data;
+		newData.price = (props.data && props.data.price) * data.quantity;
+		axios("https:api.indrakawasan.com/booking/create", {
+			method: "POST",
+			data: newData,
+			headers: {
+				"access-token": localStorage.getItem("access-token"),
+			},
+		})
+			.then((res) => {
+				alert("Booking Success !");
+				window.history.pushState("/");
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
 	return (
 		<Modal
 			{...props}
-			// show={props.modalShow}
 			size="lg"
 			aria-labelledby="contained-modal-title-vcenter"
 			centered
@@ -25,12 +62,22 @@ function MyVerticallyCenteredModal(props) {
 				</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
-				<input
+				{/* <input
 					type="text"
 					placeholder="Nama"
 					className="login-input"
 					name="name"
 					id="name"
+					value={data.name}
+					onChange={onChange}
+				/> */}
+				${props.data && props.data.price} per tiket
+				<input
+					placeholder="Ticket Price"
+					className="login-input"
+					name="price"
+					id="price"
+					value={props.data && props.data.price}
 				/>
 				<input
 					type="number"
@@ -38,18 +85,25 @@ function MyVerticallyCenteredModal(props) {
 					className="login-input"
 					name="quantity"
 					id="quantity"
+					value={data.quantity}
+					onChange={onChange}
 				/>
-
 				<input
-					type="number"
+					type="text"
 					placeholder="Total"
 					className="login-input"
 					name="total"
 					id="total"
+					value={(props.data && props.data.price) * data.quantity}
 				/>
 			</Modal.Body>
 			<Modal.Footer>
-				<Button onClick={props.onHide}>Close</Button>
+				<Button variant="outline-primary" onClick={bookModals}>
+					Check Out
+				</Button>
+				<Button variant="outline-danger" onClick={props.onHide}>
+					Close
+				</Button>
 			</Modal.Footer>
 		</Modal>
 	);
@@ -76,14 +130,14 @@ const Detail = () => {
 			});
 	}, [id]);
 
-	const bookingClick = (props) => {
+	const bookingClick = (isShow, data) => {
 		const token = localStorage.getItem("access-token");
 		if (!token) {
 			history.replace("/login");
 		} else {
 			const jwtdecode = jwt(token);
 			console.log(jwtdecode);
-			setModalShow(props);
+			setModalShow({ isShow, data });
 		}
 	};
 
@@ -129,8 +183,7 @@ const Detail = () => {
 							<Button
 								block
 								variant="outline-danger"
-								// onClick={() => setModalShow(true)}
-								onClick={() => bookingClick(true)}
+								onClick={() => bookingClick(true, item)}
 							>
 								Buy Ticket
 							</Button>
@@ -168,14 +221,14 @@ const Detail = () => {
 									{item.location}
 								</Card.Text>
 
-								{/* <Card.Text>
-                  <span style={{ color: "red" }}>Organizer by </span>{" "}
-                  {item.organizerName}
-                </Card.Text> */}
 								<Card.Text>
+									<span style={{ color: "red" }}>Organizer by </span>{" "}
+									{item.organizerName}
+								</Card.Text>
+								{/* <Card.Text>
 									<span style={{ color: "red" }}>Responsible by </span>{" "}
 									{item.responsibleName}
-								</Card.Text>
+								</Card.Text> */}
 							</Col>
 						</Row>
 
@@ -213,8 +266,9 @@ const Detail = () => {
 					<Col>{showDetail}</Col>
 				</Row>
 				<MyVerticallyCenteredModal
-					show={modalShow}
-					onHide={() => setModalShow(false)}
+					data={modalShow.data}
+					show={modalShow.isShow}
+					onHide={() => setModalShow({ isShow: false })}
 				/>
 			</Container>
 			<Footer />
