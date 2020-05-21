@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +12,7 @@ import {
 	FormControl,
 	Card,
 	CardDeck,
+	
 } from "react-bootstrap";
 
 import axios from "axios";
@@ -55,14 +56,15 @@ const Main = () => {
 	const showEvent = data.map((item, index) => {
 		const URL = "https://api.indrakawasan.com/";
 		return (
-			<Col md={3} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
+			<Row >
+			<Col md={4} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
 				<Card
 					border="secondary"
-					className="main-card"
+					className="mr-5 main-card"
 					key={index}
-					style={{ height: "100%" }}
+					style={{ height: "100%",width:"350px" }}
 				>
-					<Card.Img variant="top" src={`${URL}${item.imageEvent}`} />
+					<Card.Img variant="top" src={`${URL}${item.imageEvent}`} className="cardImg"/>
 					<Card.Body>
 						<Card.Text>{item.title}</Card.Text>
 						<Card.Text>
@@ -84,9 +86,20 @@ const Main = () => {
 					</Card.Body>
 				</Card>
 			</Col>
+			</Row>
 		);
 	});
+	// SET INITIAL STATE FOR QUERY AND EVENTS
+	// CREATE REF FOR SEARCH INPUT
+	// const [query , setQuery] = useState('')
+	// const [events , setEvents] = useState([])
+	// const focusSearch = useRef(null)
 
+	// useEffect(() => {focusSearch.current.focus()},[])
+
+	// const getEvents = async (query) => {
+	// 	const results = await axios(``)
+	// }
 	return (
 		<div>
 			<Navbars />
