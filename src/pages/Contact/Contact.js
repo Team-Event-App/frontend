@@ -8,6 +8,7 @@ import Footer from "../../components/Footer/Footer";
 import Logo from "../../image/logo.png";
 
 import "./Contact.css";
+import axios from "axios";
 
 class Contact extends Component {
   render() {
@@ -17,7 +18,7 @@ class Contact extends Component {
         <div className="container mt-5 pt-5 mb-5">
           <Formik
             initialValues={{
-              fullName: "",
+              fullname: "",
               email: "",
               phone: "",
               message: "",
@@ -48,8 +49,20 @@ class Contact extends Component {
                 return errors;
               }
             }}
-            onSubmit={this.handleSubmit}
-            render={() => {
+            onSubmit={(values,action) => {
+              axios("https://api.indrakawasan.com/contact/create",{
+                method:"POST",
+                data:values,
+              })
+              .then((res) => {
+                alert('Your message succesfully send');
+                action.resetForm(true);
+              })
+              .catch((err) => {
+                alert('Sorry,We have a problem.')
+              })
+            }}
+            render={(props) => {
               return (
                 <div className="container-contact">
                   <Row className="justify-content-center">
@@ -57,12 +70,13 @@ class Contact extends Component {
                       <Card className="p-5 mt-5">
                         <img src={Logo} alt="Logo" />
                         <hr />
-                        <Form>
+
+                        <Form onSubmit={props.handleSubmit}>
                           <div className="form-group">
                             Full Name
                             <Field
                               type="text"
-                              name="fullName"
+                              name="fullname"
                               placeholder="Enter your Name"
                               className="form-control"
                             />
