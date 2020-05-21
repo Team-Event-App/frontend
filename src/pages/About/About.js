@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card,Button } from "react-bootstrap";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -162,11 +162,13 @@ class About extends Component {
 										</Card.Text>
 										<Card.Text>
 											<small className="text-muted">
-												<img
+											<Link to="www.google.com">
+											<img
 													src={fb}
 													alt="social-icon"
 													className="social-icons"
 												/>
+			</Link>
 												<img
 													src={ig}
 													alt="social-icon"
