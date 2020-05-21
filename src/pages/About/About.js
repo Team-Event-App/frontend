@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Card} from "react-bootstrap";
+import { Container, Row, Col, Card,Button } from "react-bootstrap";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -161,30 +161,30 @@ class About extends Component {
 											</h6>
 										</Card.Text>
 										<Card.Text>
-											<p>
-												<small className="text-muted">
-													<img
-														src={fb}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={ig}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={lin}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={wa}
-														alt="social-icon"
-														className="social-icons"
-													/>
-												</small>
-											</p>
+											<small className="text-muted">
+											<Link to="www.google.com">
+											<img
+													src={fb}
+													alt="social-icon"
+													className="social-icons"
+												/>
+			</Link>
+												<img
+													src={ig}
+													alt="social-icon"
+													className="social-icons"
+												/>
+												<img
+													src={lin}
+													alt="social-icon"
+													className="social-icons"
+												/>
+												<img
+													src={wa}
+													alt="social-icon"
+													className="social-icons"
+												/>
+											</small>
 										</Card.Text>
 									</Card.Body>
 								</Col>
@@ -218,30 +218,28 @@ class About extends Component {
 											</p>
 										</Card.Text>
 										<Card.Text>
-											<p>
-												<small className="text-muted">
-													<img
-														src={fb}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={ig}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={lin}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={wa}
-														alt="social-icon"
-														className="social-icons"
-													/>
-												</small>
-											</p>
+											<small className="text-muted">
+												<img
+													src={fb}
+													alt="social-icon"
+													className="social-icons"
+												/>
+												<img
+													src={ig}
+													alt="social-icon"
+													className="social-icons"
+												/>
+												<img
+													src={lin}
+													alt="social-icon"
+													className="social-icons"
+												/>
+												<img
+													src={wa}
+													alt="social-icon"
+													className="social-icons"
+												/>
+											</small>
 										</Card.Text>
 									</Card.Body>
 								</Col>

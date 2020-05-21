@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-
-import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
+import jwt from "jwt-decode";
+import {
+	Container,
+	Row,
+	Col,
+	Card,
+	Button,
+	Modal,
+	InputGroup,
+	FormControl,
+} from "react-bootstrap";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -10,46 +20,110 @@ import Footer from "../../components/Footer/Footer";
 import "./Detail.css";
 
 function MyVerticallyCenteredModal(props) {
+	const { id } = useParams();
+	const token = localStorage.getItem("access-token");
+	const jwtdecode = jwt(token);
+	const users = jwtdecode.fullname;
+	const { register, handleSubmit, errors } = useForm();
+	const onSubmit = (data) => {
+		const value = {
+			eventId: id,
+			name: users,
+			quantity: data.quantity,
+			total: data.total,
+		};
+		axios
+			.post(`https://api.indrakawasan.com/booking/create/`, value, {
+				headers: {
+					"access-token": localStorage.getItem("access-token"),
+				},
+			})
+			.then((res) => {
+				console.log(res);
+				alert("Successful Booking");
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
+	const [data, setData] = useState({
+		name: users,
+		quantity: 1,
+	});
+
+	const onChange = (event) => {
+		const name = event.currentTarget.name;
+		const value = event.currentTarget.value;
+		if (value <= 0) {
+			return;
+		}
+		setData({ ...data, [name]: value });
+	};
+
 	return (
 		<Modal
 			{...props}
-			// show={props.modalShow}
 			size="lg"
 			aria-labelledby="contained-modal-title-vcenter"
 			centered
 		>
 			<Modal.Header closeButton>
 				<Modal.Title id="contained-modal-title-vcenter">
-					Booking Form
+					<h5>{props.data && props.data.title}</h5>
 				</Modal.Title>
 			</Modal.Header>
-			<Modal.Body>
-				<input
-					type="text"
-					placeholder="Nama"
-					className="login-input"
-					name="name"
-					id="name"
-				/>
-				<input
-					type="number"
-					placeholder="Quantity"
-					className="login-input"
-					name="quantity"
-					id="quantity"
-				/>
-
-				<input
-					type="number"
-					placeholder="Total"
-					className="login-input"
-					name="total"
-					id="total"
-				/>
-			</Modal.Body>
-			<Modal.Footer>
-				<Button onClick={props.onHide}>Close</Button>
-			</Modal.Footer>
+			<form onSubmit={handleSubmit(onSubmit)}>
+				<Modal.Body>
+					<InputGroup className="mb-3">
+						<InputGroup.Prepend>
+							<InputGroup.Text>$</InputGroup.Text>
+						</InputGroup.Prepend>
+						<FormControl value={props.data && props.data.price} />
+						<InputGroup.Append>
+							<InputGroup.Text>.00</InputGroup.Text>
+						</InputGroup.Append>
+					</InputGroup>
+					<InputGroup className="mb-3">
+						<InputGroup.Prepend>
+							<InputGroup.Text id="basic-addon3">Quantity</InputGroup.Text>
+						</InputGroup.Prepend>
+						<FormControl
+							type="number"
+							aria-describedby="basic-addon3"
+							name="quantity"
+							id="quantity"
+							ref={register({ required: true })}
+							value={data.quantity}
+							onChange={onChange}
+						/>
+						{errors.quantity && <span>This field is required</span>}
+					</InputGroup>
+					<InputGroup className="mb-3">
+						<InputGroup.Prepend>
+							<InputGroup.Text>Total Price</InputGroup.Text>
+						</InputGroup.Prepend>
+						<FormControl
+							type="number"
+							name="total"
+							ref={register({ required: true })}
+							value={(props.data && props.data.price) * data.quantity}
+							disabled
+						/>
+						<InputGroup.Append>
+							<InputGroup.Text>.00</InputGroup.Text>
+						</InputGroup.Append>
+					</InputGroup>
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant="outline-primary" type="submit">
+						Check Out
+					</Button>
+					<Button variant="outline-danger" onClick={props.onHide}>
+						Close
+					</Button>
+				</Modal.Footer>
+			</form>
 		</Modal>
 	);
 }
@@ -75,14 +149,13 @@ const Detail = () => {
 			});
 	}, [id]);
 
-	const bookingClick = (props) => {
+	const bookingClick = (isShow, data) => {
 		const token = localStorage.getItem("access-token");
 		if (!token) {
 			history.replace("/login");
 		} else {
 			const jwtdecode = jwt(token);
-			console.log(jwtdecode);
-			setModalShow(props);
+			setModalShow({ isShow, data });
 		}
 	};
 
@@ -128,8 +201,7 @@ const Detail = () => {
 							<Button
 								block
 								variant="outline-danger"
-								// onClick={() => setModalShow(true)}
-								onClick={() => bookingClick(true)}
+								onClick={() => bookingClick(true, item)}
 							>
 								Buy Ticket
 							</Button>
@@ -167,14 +239,14 @@ const Detail = () => {
 									{item.location}
 								</Card.Text>
 
-								{/* <Card.Text>
-                  <span style={{ color: "red" }}>Organizer by </span>{" "}
-                  {item.organizerName}
-                </Card.Text> */}
 								<Card.Text>
+									<span style={{ color: "red" }}>Organizer by </span>{" "}
+									{item.organizerName}
+								</Card.Text>
+								{/* <Card.Text>
 									<span style={{ color: "red" }}>Responsible by </span>{" "}
 									{item.responsibleName}
-								</Card.Text>
+								</Card.Text> */}
 							</Col>
 						</Row>
 
@@ -212,8 +284,9 @@ const Detail = () => {
 					<Col>{showDetail}</Col>
 				</Row>
 				<MyVerticallyCenteredModal
-					show={modalShow}
-					onHide={() => setModalShow(false)}
+					data={modalShow.data}
+					show={modalShow.isShow}
+					onHide={() => setModalShow({ isShow: false })}
 				/>
 			</Container>
 			<Footer />
