@@ -22,8 +22,10 @@ import "./Detail.css";
 function MyVerticallyCenteredModal(props) {
 	const { id } = useParams();
 	const token = localStorage.getItem("access-token");
-	const jwtdecode = jwt(token);
-	const users = jwtdecode.fullname;
+	let users = "";
+	if (token) {
+		users = jwt(token).fullname;
+	}
 	const { register, handleSubmit, errors } = useForm();
 	const onSubmit = (data) => {
 		const value = {
@@ -32,6 +34,8 @@ function MyVerticallyCenteredModal(props) {
 			quantity: data.quantity,
 			total: data.total,
 		};
+		// console.log(value);
+
 		axios
 			.post(`https://api.indrakawasan.com/booking/create/`, value, {
 				headers: {
