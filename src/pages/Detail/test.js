@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import jwt from "jwt-decode";
+// import jwt from "jwt-decode";
 import {
 	Container,
 	Row,
@@ -22,8 +22,8 @@ import "./Detail.css";
 function MyVerticallyCenteredModal(props) {
 	const { id } = useParams();
 	const token = localStorage.getItem("access-token");
-	const jwtdecode = jwt(token);
-	const users = jwtdecode.fullname;
+	// const jwtdecode = jwt(token);
+	// const users = jwtdecode.fullname;
 	const { register, handleSubmit, errors } = useForm();
 	const onSubmit = (data) => {
 		const value = {
@@ -149,15 +149,15 @@ const Detail = () => {
 			});
 	}, [id]);
 
-	const bookingClick = (isShow, data) => {
-		const token = localStorage.getItem("access-token");
-		if (!token) {
-			history.replace("/login");
-		} else {
-			const jwtdecode = jwt(token,{header:true});
-			setModalShow({ isShow, data });
-		}
-	};
+	// const bookingClick = (isShow, data) => {
+	// 	const token = localStorage.getItem("access-token");
+	// 	if (!token) {
+	// 		history.replace("/login");
+	// 	} else {
+	// 		const jwtdecode = jwt(token);
+	// 		setModalShow({ isShow, data });
+	// 	}
+	// };
 
 	const showDetail = data.map((item, index) => {
 		const URL = "https://api.indrakawasan.com/";

@@ -60,11 +60,11 @@ const HistoryPurchase = () => {
 				}
 			  )
 				
-              console.log(res);
-              alert("Success sending payment.");
-              console.log(formData.get("sender"));
-              console.log(formData.get("totalAmount"));
-              console.log(formData.get("imageProof"));
+            //   console.log(res);
+            //   alert("Success sending payment.");
+            //   console.log(formData.get("sender"));
+            //   console.log(formData.get("totalAmount"));
+            //   console.log(formData.get("imageProof"));
             }}
           >
             {props => (
