@@ -1,14 +1,8 @@
-.underlineHistory {
-	width: 255px;
-	height: 2px;
-	background-color: #ff001f;
+.imageTable{
+    width: 150px;
+    height: auto;
 }
-
-.imageTable {
-	width: 150px;
-	height: auto;
-}
-.invoiceButton {
-	background-color: #fa423b !important;
-	border-color: #fa423b !important;
+.invoiceButton{
+    background-color: #FA423B !important;
+    border-color: #FA423B !important;
 }

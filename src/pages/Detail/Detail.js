@@ -1,18 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useParams, useHistory } from "react-router-dom";
 import jwt from "jwt-decode";
-import {
-	Container,
-	Row,
-	Col,
-	Card,
-	Button,
-	Modal,
-	InputGroup,
-	FormControl,
-} from "react-bootstrap";
+
+import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -20,32 +11,10 @@ import Footer from "../../components/Footer/Footer";
 import "./Detail.css";
 
 function MyVerticallyCenteredModal(props) {
-	const { id } = useParams();
 	const token = localStorage.getItem("access-token");
 	const jwtdecode = jwt(token);
 	const users = jwtdecode.fullname;
-	const { register, handleSubmit, errors } = useForm();
-	const onSubmit = (data) => {
-		const value = {
-			eventId: id,
-			name: users,
-			quantity: data.quantity,
-			total: data.total,
-		};
-		axios
-			.post(`https://api.indrakawasan.com/booking/create/`, value, {
-				headers: {
-					"access-token": localStorage.getItem("access-token"),
-				},
-			})
-			.then((res) => {
-				console.log(res);
-				alert("Successful Booking");
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	};
+	let total = 0;
 
 	const [data, setData] = useState({
 		name: users,
@@ -55,10 +24,29 @@ function MyVerticallyCenteredModal(props) {
 	const onChange = (event) => {
 		const name = event.currentTarget.name;
 		const value = event.currentTarget.value;
-		if (value <= 0) {
-			return;
-		}
-		setData({ ...data, [name]: value });
+		const price = event.currentTarget.price;
+		console.log(value);
+		setData({ ...data, [name]: value, price });
+	};
+	console.log(props.data);
+
+	const bookModals = () => {
+		let newData = data;
+		newData.price = (props.data && props.data.price) * data.quantity;
+		axios("https:api.indrakawasan.com/booking/create", {
+			method: "POST",
+			data: newData,
+			headers: {
+				"access-token": localStorage.getItem("access-token"),
+			},
+		})
+			.then((res) => {
+				alert("Booking Success !");
+				window.history.pushState("/");
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	};
 
 	return (
@@ -70,60 +58,53 @@ function MyVerticallyCenteredModal(props) {
 		>
 			<Modal.Header closeButton>
 				<Modal.Title id="contained-modal-title-vcenter">
-					<h5>{props.data && props.data.title}</h5>
+					Booking Form
 				</Modal.Title>
 			</Modal.Header>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<Modal.Body>
-					<InputGroup className="mb-3">
-						<InputGroup.Prepend>
-							<InputGroup.Text>$</InputGroup.Text>
-						</InputGroup.Prepend>
-						<FormControl value={props.data && props.data.price} />
-						<InputGroup.Append>
-							<InputGroup.Text>.00</InputGroup.Text>
-						</InputGroup.Append>
-					</InputGroup>
-					<InputGroup className="mb-3">
-						<InputGroup.Prepend>
-							<InputGroup.Text id="basic-addon3">Quantity</InputGroup.Text>
-						</InputGroup.Prepend>
-						<FormControl
-							type="number"
-							aria-describedby="basic-addon3"
-							name="quantity"
-							id="quantity"
-							ref={register({ required: true })}
-							value={data.quantity}
-							onChange={onChange}
-						/>
-						{errors.quantity && <span>This field is required</span>}
-					</InputGroup>
-					<InputGroup className="mb-3">
-						<InputGroup.Prepend>
-							<InputGroup.Text>Total Price</InputGroup.Text>
-						</InputGroup.Prepend>
-						<FormControl
-							type="number"
-							name="total"
-							ref={register({ required: true })}
-							value={(props.data && props.data.price) * data.quantity}
-							disabled
-						/>
-						<InputGroup.Append>
-							<InputGroup.Text>.00</InputGroup.Text>
-						</InputGroup.Append>
-					</InputGroup>
-				</Modal.Body>
-				<Modal.Footer>
-					<Button variant="outline-primary" type="submit">
-						Check Out
-					</Button>
-					<Button variant="outline-danger" onClick={props.onHide}>
-						Close
-					</Button>
-				</Modal.Footer>
-			</form>
+			<Modal.Body>
+				{/* <input
+					type="text"
+					placeholder="Nama"
+					className="login-input"
+					name="name"
+					id="name"
+					value={data.name}
+					onChange={onChange}
+				/> */}
+				${props.data && props.data.price} per tiket
+				<input
+					placeholder="Ticket Price"
+					className="login-input"
+					name="price"
+					id="price"
+					value={props.data && props.data.price}
+				/>
+				<input
+					type="number"
+					placeholder="Quantity"
+					className="login-input"
+					name="quantity"
+					id="quantity"
+					value={data.quantity}
+					onChange={onChange}
+				/>
+				<input
+					type="text"
+					placeholder="Total"
+					className="login-input"
+					name="total"
+					id="total"
+					value={(props.data && props.data.price) * data.quantity}
+				/>
+			</Modal.Body>
+			<Modal.Footer>
+				<Button variant="outline-primary" onClick={bookModals}>
+					Check Out
+				</Button>
+				<Button variant="outline-danger" onClick={props.onHide}>
+					Close
+				</Button>
+			</Modal.Footer>
 		</Modal>
 	);
 }
@@ -154,7 +135,8 @@ const Detail = () => {
 		if (!token) {
 			history.replace("/login");
 		} else {
-			// const jwtdecode = jwt(token);
+			const jwtdecode = jwt(token);
+			console.log(jwtdecode);
 			setModalShow({ isShow, data });
 		}
 	};
