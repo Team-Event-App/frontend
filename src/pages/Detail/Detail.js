@@ -14,43 +14,25 @@ function MyVerticallyCenteredModal(props) {
 	const token = localStorage.getItem("access-token");
 	const jwtdecode = jwt(token);
 	const users = jwtdecode.fullname;
-	let total = 0;
 
-	const [data, setData] = useState({
-		name: users,
-		quantity: 1,
-	});
-
-	const onChange = (event) => {
-		const name = event.currentTarget.name;
-		const value = event.currentTarget.value;
-		const price = event.currentTarget.price;
-		console.log(value);
-		setData({ ...data, [name]: value, price });
-	};
-	console.log(props.data);
-
-	const bookModals = () => {
-		let newData = data;
-		newData.price = (props.data && props.data.price) * data.quantity;
-		axios("https:api.indrakawasan.com/booking/create", {
-			method: "POST",
-			data: newData,
-			headers: {
-				"access-token": localStorage.getItem("access-token"),
-			},
-		})
-			.then((res) => {
-				alert("Booking Success !");
-				window.history.pushState("/");
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	};
+	const history = useHistory();
 
 	return (
 		<Modal
+			onSubmit={(values, actions) => {
+				axios("https:api.indrakawasan.com/booking/create", {
+					method: "POST",
+					data: values,
+				})
+					.then((res) => {
+						alert("Booking Success !");
+						actions.resetForm();
+						history.pushState("/payment");
+					})
+					.catch((err) => {
+						console.log(err);
+					});
+			}}
 			{...props}
 			size="lg"
 			aria-labelledby="contained-modal-title-vcenter"
@@ -62,22 +44,13 @@ function MyVerticallyCenteredModal(props) {
 				</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
-				{/* <input
+				<input
 					type="text"
 					placeholder="Nama"
 					className="login-input"
 					name="name"
 					id="name"
-					value={data.name}
-					onChange={onChange}
-				/> */}
-				${props.data && props.data.price} per tiket
-				<input
-					placeholder="Ticket Price"
-					className="login-input"
-					name="price"
-					id="price"
-					value={props.data && props.data.price}
+					value={users}
 				/>
 				<input
 					type="number"
@@ -85,20 +58,18 @@ function MyVerticallyCenteredModal(props) {
 					className="login-input"
 					name="quantity"
 					id="quantity"
-					value={data.quantity}
-					onChange={onChange}
 				/>
+
 				<input
-					type="text"
+					type="number"
 					placeholder="Total"
 					className="login-input"
 					name="total"
 					id="total"
-					value={(props.data && props.data.price) * data.quantity}
 				/>
 			</Modal.Body>
 			<Modal.Footer>
-				<Button variant="outline-primary" onClick={bookModals}>
+				<Button variant="outline-primary" type="submit">
 					Check Out
 				</Button>
 				<Button variant="outline-danger" onClick={props.onHide}>
@@ -130,14 +101,14 @@ const Detail = () => {
 			});
 	}, [id]);
 
-	const bookingClick = (isShow, data) => {
+	const bookingClick = (props) => {
 		const token = localStorage.getItem("access-token");
 		if (!token) {
 			history.replace("/login");
 		} else {
 			const jwtdecode = jwt(token);
 			console.log(jwtdecode);
-			setModalShow({ isShow, data });
+			setModalShow(props);
 		}
 	};
 
@@ -183,7 +154,7 @@ const Detail = () => {
 							<Button
 								block
 								variant="outline-danger"
-								onClick={() => bookingClick(true, item)}
+								onClick={() => bookingClick(true)}
 							>
 								Buy Ticket
 							</Button>
@@ -266,9 +237,8 @@ const Detail = () => {
 					<Col>{showDetail}</Col>
 				</Row>
 				<MyVerticallyCenteredModal
-					data={modalShow.data}
-					show={modalShow.isShow}
-					onHide={() => setModalShow({ isShow: false })}
+					show={modalShow}
+					onHide={() => setModalShow(false)}
 				/>
 			</Container>
 			<Footer />
