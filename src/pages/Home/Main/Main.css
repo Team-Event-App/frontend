@@ -83,6 +83,7 @@ body {
   box-shadow: 2px 2px 20px #c4c4c4;
   transition: transform 0.5s ease;
   transform: scale(1.1);
+  z-index: 1;
 }
 
 .buttonMore {
@@ -91,15 +92,21 @@ body {
   border-color: #ff001f !important;
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .container {
     max-width: 1400px !important;
   }
-}
+} */
 
-@media (min-width: 1000px) and (max-width: 1199px) {
+/* @media (min-width: 1000px) and (max-width: 1199px) {
   .container {
     max-width: 1200px !important;
   }
-}
+} */
 
+.cardImg{
+  transform: scale(1);
+}
+#cardContainer{
+  margin-right: 35px;
+}
