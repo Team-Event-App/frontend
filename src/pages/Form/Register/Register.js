@@ -4,11 +4,13 @@ import { Formik, Form, ErrorMessage } from "formik";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 
+import * as Yup from 'yup'
+
 import "./Register.css";
 
 const Register = () => {
 	const history = useHistory();
-
+	
 	return (
 		<Container>
 			<div class="sidebar">
@@ -29,17 +31,20 @@ const Register = () => {
 										email: "",
 										password: "",
 									}}
-									validate={(values) => {
-										let errors = {};
-										if (!values.password) {
-											errors.password = (
-												<small className="form-text text-danger">
-													Password is required
-												</small>
-											);
-											return errors;
-										}
-									}}
+									validationSchema={Yup.object().shape({
+										username:Yup.string()
+										.required('username is required'),
+										fullname:Yup.string()
+										.required('Please fill out your name'),
+										phone:Yup.string()
+										.required('Phone number is required'),
+										email:Yup.string()
+										.email('Email is invalid')
+										.required('Email is required'),
+										password : Yup.string()
+										.min(8,'Password must be at least 8 characters')
+										.required('Password is required')
+									})}
 									onSubmit={(values, actions) => {
 										console.log(values);
 
@@ -57,7 +62,7 @@ const Register = () => {
 											});
 									}}
 								>
-									{(props) => (
+									{(props,errors,touched) => (
 										<Form
 											className="register-form"
 											onSubmit={props.handleSubmit}
@@ -74,6 +79,7 @@ const Register = () => {
 												onBlur={props.handleBlur}
 												value={props.values.username}
 											/>
+											<p class="validateString"><ErrorMessage name="username" /></p>
 											<input
 												type="text"
 												placeholder="Full Name"
@@ -84,6 +90,7 @@ const Register = () => {
 												onBlur={props.handleBlur}
 												value={props.values.fullname}
 											/>
+											<p class="validateString"><ErrorMessage name="fullname" /></p>
 											<input
 												type="email"
 												placeholder="Email"
@@ -94,6 +101,7 @@ const Register = () => {
 												onBlur={props.handleBlur}
 												value={props.values.email}
 											/>
+											<p class="validateString"><ErrorMessage name="email" /></p>
 											<input
 												type="text"
 												placeholder="Phone Number"
@@ -104,6 +112,7 @@ const Register = () => {
 												onBlur={props.handleBlur}
 												value={props.values.phone}
 											/>
+											<p class="validateString"><ErrorMessage name="phone" /></p>
 											<div className="input-group-prepend mainPrependPassword">
 												<input
 													type="password"
@@ -119,8 +128,7 @@ const Register = () => {
 													<i className="fa fa-eye password-icon"></i>
 												</div>
 											</div>
-											<span>Password at least 8 Characters</span>
-											<ErrorMessage name="password" />
+											<p class="validateString"><ErrorMessage name="password" /></p>
 											<Button variant="danger" type="submit" className="mt-3">
 												Sign Up
 											</Button>

@@ -264,3 +264,7 @@
 .password-icon{
   cursor: pointer;
 }
+.validateString{
+  font-size: 12px !important;
+  color:red;
+}
