@@ -68,7 +68,7 @@ const Navbars = (props) => {
 
 							<NavDropdown.Item className="navDropItem">
 								<Link to={"/history_purchase"} className="profileSetting">
-									<i className="far fa-clock mr-2"></i>History
+									<i className="far fa-clock mr-2"></i>My Event
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Item className="navDropItem" onClick={logOut}>
