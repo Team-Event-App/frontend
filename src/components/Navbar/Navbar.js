@@ -17,11 +17,14 @@ const Navbars = (props) => {
 	const [user, setUser] = useState([]);
 	const URL = "https://api.indrakawasan.com/user/show";
 
+	// useEffect(() => {
+
+	// },);
 	const logOut = () => {
 		props.logout();
 		history.push("/");
 	};
-
+	//
 	useEffect(
 		() => {
 			axios
@@ -29,6 +32,7 @@ const Navbars = (props) => {
 				.then((res) => {
 					const user = res.data;
 					setUser(user);
+					console.log(user);
 				})
 				.catch((err) => {
 					if (
@@ -42,6 +46,9 @@ const Navbars = (props) => {
 						alert("Sorry , can't get the data from server..");
 					}
 				});
+			// const showUser = user.map((item,index) => {
+			//   console.log(showUser);
+			// })
 
 			if (props.viaLogin) {
 				setViewLogin(
@@ -61,15 +68,13 @@ const Navbars = (props) => {
 							</NavDropdown.Item>
 
 							{/* <NavDropdown.Item className="navDropItem">
-									<Link to="/bookmark">
-										<i className="fas fa-bookmark mr-2"></i>Bookmark
-									</Link>
-								</NavDropdown.Item> */}
+              <Link to="/bookmark">
+                <i className="fas fa-bookmark mr-2"></i>Bookmark
+              </Link>
+            </NavDropdown.Item> */}
 
 							<NavDropdown.Item className="navDropItem">
-								<Link to={"/history_purchase"} className="profileSetting">
-									<i className="far fa-clock mr-2"></i>History
-								</Link>
+								<i className="far fa-clock mr-2"></i>History
 							</NavDropdown.Item>
 							<NavDropdown.Item className="navDropItem" onClick={logOut}>
 								<Link

@@ -8,6 +8,8 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
 
+import jwt from "jwt-decode";
+
 import Main from "./pages/Home/Main/Main";
 import CreateEvent from "./pages/Create_Event/EventCreate";
 
@@ -20,13 +22,15 @@ import Detail from "./pages/Detail/Detail";
 
 import ShowAll from "./pages/Show_All/ShowAll";
 import Profile from "./pages/Profile/Profile";
-import History from "./pages/HistoryPurchase/HistoryPurchase";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
 store.subscribe(() => {
 	console.log(store.getState());
 });
+
+const jwtdecode = jwt(localStorage.getItem("access-token"));
+console.log(jwtdecode);
 
 const App = () => {
 	return (
@@ -41,7 +45,6 @@ const App = () => {
 					<Route path="/event/create" component={CreateEvent} />
 					<Route path="/event/:id" component={Detail} />
 					<Route path="/profile" component={Profile} />
-					<Route path="/history" component={History} />
 					<Route exact path="/" component={Main}>
 						<Main />
 					</Route>
