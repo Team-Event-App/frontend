@@ -8,8 +8,6 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
 
-import jwt from "jwt-decode";
-
 import Main from "./pages/Home/Main/Main";
 import CreateEvent from "./pages/Create_Event/EventCreate";
 
@@ -22,52 +20,37 @@ import Detail from "./pages/Detail/Detail";
 
 import ShowAll from "./pages/Show_All/ShowAll";
 import Profile from "./pages/Profile/Profile";
+import History from "./pages/HistoryPurchase/HistoryPurchase";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
 store.subscribe(() => {
-  console.log(store.getState());
+	console.log(store.getState());
 });
 
-const jwtdecode = jwt(localStorage.getItem("access-token"));
-console.log(jwtdecode);
 
-function App() {
-  return (
-    <Provider store={store}>
-      <Router>
-        <Switch>
-          <Route exact path="/login" component={Login}>
-            <Login />
-          </Route>
-          <Route exact path="/register" component={Register}>
-            <Register />
-          </Route>
-          <Route exact path="/about" component={About}>
-            <About />
-          </Route>
-          <Route exact path="/contact" component={Contact}>
-            <Contact />
-          </Route>
-          <Route exact path="/showall" component={ShowAll}>
-            <ShowAll />
-          </Route>
-          <Route exact path="/event/create" component={CreateEvent}>
-            <CreateEvent />
-          </Route>
-          <Route path="/event/:id" component={Detail}>
-            <Detail />
-          </Route>
-          <Route path="/profile" component={Profile}>
-            <Profile />
-          </Route>
-          <Route exact path="/" component={Main}>
-            <Main />
-          </Route>
-        </Switch>
-      </Router>
-    </Provider>
-  );
-}
+
+const App = () => {
+	return (
+		<Provider store={store}>
+			<Router>
+				<Switch>
+					<Route path="/login" component={Login} />
+					<Route path="/register" component={Register} />
+					<Route path="/about" component={About} />
+					<Route path="/contact" component={Contact} />
+					<Route path="/showall" component={ShowAll} />
+					<Route path="/event/create" component={CreateEvent} />
+					<Route path="/event/:id" component={Detail} />
+					<Route path="/profile" component={Profile} />
+					<Route path="/history_purchase" component={History} />
+					<Route exact path="/" component={Main}>
+						<Main />
+					</Route>
+				</Switch>
+			</Router>
+		</Provider>
+	);
+};
 
 export default App;

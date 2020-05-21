@@ -40,7 +40,16 @@
   text-decoration: none !important;
 }
 
+.historyButton {
+  color: black !;
+  text-decoration: none !important;
+}
+
 .profileSetting:hover {
+  color: black !important;
+}
+
+.historyButton:hover {
   color: black !important;
 }
 
