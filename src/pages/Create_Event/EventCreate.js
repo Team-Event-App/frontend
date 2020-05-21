@@ -107,6 +107,7 @@ class EventCreate extends Component {
 															<option>Nightlife</option>
 															<option>Charity</option>
 															<option>Education</option>
+															<option>Others</option>
 														</select>
 														<small className="form-text text-muted">
 															Your Category Event.
@@ -172,7 +173,7 @@ class EventCreate extends Component {
 															type="text"
 															className="form-control inputText"
 															name="time"
-															placeholder="00.00 - 00.00"
+															placeholder="00.00 - 00.00 (AM/PM)"
 														/>
 													</Col>
 												</Row>
@@ -193,10 +194,10 @@ class EventCreate extends Component {
 													</Col>
 													<Col md={6}>
 														<Field
-															type="date"
+															type="text"
 															className="form-control inputText "
 															name="date"
-															placeholder="Date"
+															placeholder="Day, Mon, Date, Years"
 														/>
 													</Col>
 												</Row>
