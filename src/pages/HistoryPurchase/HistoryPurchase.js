@@ -15,6 +15,9 @@ import Footer from "../../components/Footer/Footer";
 import Event1 from "../../image/color.jpeg";
 import Event2 from "../../image/shawn.png";
 import Event3 from "../../image/beer.jpeg";
+
+import "./HistoryPurchase.css";
+
 class HistoryPurchase extends Component {
 	render() {
 		return (
@@ -39,7 +42,7 @@ class HistoryPurchase extends Component {
 					<Row>
 						<Col>
 							<h2 className="text-center">History Purchase</h2>
-							<div className="underlineCarousel mb-5 mx-auto"></div>
+							<div className="underlineHistory mb-5 mx-auto"></div>
 						</Col>
 					</Row>
 					<Table responsive>
@@ -51,7 +54,7 @@ class HistoryPurchase extends Component {
 								<th>Price</th>
 								<th>Location</th>
 								<th>Images</th>
-								<th>Action</th>
+								<th>Status</th>
 							</tr>
 						</thead>
 						<tbody>
