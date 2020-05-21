@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +12,6 @@ import {
 	FormControl,
 	Card,
 	CardDeck,
-	
 } from "react-bootstrap";
 
 import axios from "axios";
@@ -56,36 +55,40 @@ const Main = () => {
 	const showEvent = data.map((item, index) => {
 		const URL = "https://api.indrakawasan.com/";
 		return (
-			<Row >
-			<Col md={4} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
-				<Card
-					border="secondary"
-					className="mr-5 main-card"
-					key={index}
-					style={{ height: "100%",width:"350px" }}
-				>
-					<Card.Img variant="top" src={`${URL}${item.imageEvent}`} className="cardImg"/>
-					<Card.Body>
-						<Card.Text>{item.title}</Card.Text>
-						<Card.Text>
-							<FontAwesomeIcon icon={faCalendar} /> {item.date}
-						</Card.Text>
-						<Card.Text>
-							<FontAwesomeIcon icon={faClock} /> {item.time}
-						</Card.Text>
-						<Card.Text>
-							<i className="fas fa-map-marker-alt mr-2"></i>
-							{item.location}
-						</Card.Text>
-						<Link
-							to={`/event/${item.id}`}
-							className="btn btn-outline-danger btn-block"
-						>
-							See More
-						</Link>
-					</Card.Body>
-				</Card>
-			</Col>
+			<Row>
+				<Col md={3} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
+					<Card
+						border="secondary"
+						className="mr-5 main-card"
+						key={index}
+						style={{ height: "100%", width: "323px" }}
+					>
+						<Card.Img
+							variant="top"
+							src={`${URL}${item.imageEvent}`}
+							className="cardImg"
+						/>
+						<Card.Body>
+							<Card.Text>{item.title}</Card.Text>
+							<Card.Text>
+								<FontAwesomeIcon icon={faCalendar} /> {item.date}
+							</Card.Text>
+							<Card.Text>
+								<FontAwesomeIcon icon={faClock} /> {item.time}
+							</Card.Text>
+							<Card.Text>
+								<i className="fas fa-map-marker-alt mr-2"></i>
+								{item.location}
+							</Card.Text>
+							<Link
+								to={`/event/${item.id}`}
+								className="btn btn-outline-danger btn-block"
+							>
+								See More
+							</Link>
+						</Card.Body>
+					</Card>
+				</Col>
 			</Row>
 		);
 	});

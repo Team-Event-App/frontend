@@ -1,112 +1,112 @@
 html,
 body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  background-color: whitesmoke;
+	width: 8px;
+	background-color: whitesmoke;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
-  border-radius: 6px;
+	background: linear-gradient(#ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+	border-radius: 6px;
 }
 :hover::-webkit-scrollbar {
-  width: 8px;
+	width: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#d4031b 50%, rgba(190, 3, 25, 0.85) 120%);
+	background: linear-gradient(#d4031b 50%, rgba(190, 3, 25, 0.85) 120%);
 }
 
 .card {
-  border-radius: 10px !important;
-  overflow: hidden;
-  color: black;
+	border-radius: 10px !important;
+	overflow: hidden;
+	color: black;
 }
 .card-body {
-  background-color: #e3e3e3;
+	background-color: #e3e3e3;
 }
 .buttonSearch {
-  border-radius: 20rem !important;
+	border-radius: 20rem !important;
 }
 .main-background {
-  background: url(./../../../image/backgroundhome.jpg) no-repeat;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  height: 32rem;
+	background: url(./../../../image/backgroundhome.jpg) no-repeat;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	height: 32rem;
 }
 
 .main-background h1 {
-  color: white;
-  font-weight: 700;
+	color: white;
+	font-weight: 700;
 }
 
 .mainInput {
-  width: 35rem !important;
-  padding: 1.7rem 4rem !important;
-  border-radius: 20rem !important;
+	width: 35rem !important;
+	padding: 1.7rem 4rem !important;
+	border-radius: 20rem !important;
 }
 .mainInput:focus {
-  border-color: #ff001f !important;
-  box-shadow: #ff001f !important;
+	border-color: #ff001f !important;
+	box-shadow: #ff001f !important;
 }
 .mainSearch {
-  margin-left: -34rem;
-  color: black;
-  border: none !important;
-  color: #ff001f !important;
+	margin-left: -34rem;
+	color: black;
+	border: none !important;
+	color: #ff001f !important;
 }
 
 .mainSearch:hover {
-  color: white !important;
-  background-color: #ff001f !important;
+	color: white !important;
+	background-color: #ff001f !important;
 }
 
 .underlineMain {
-  width: 255px;
-  height: 2px;
-  background-color: #ff001f;
+	width: 255px;
+	height: 2px;
+	background-color: #ff001f;
 }
 
 .card-deck img {
-  height: 280px;
+	height: 280px;
 }
 
 .main-card {
-  box-shadow: 0 5px 5px -2px gray;
-  transform: scale(1);
+	box-shadow: 0 5px 5px -2px gray;
+	transform: scale(1);
 }
 .main-card:hover {
-  box-shadow: 2px 2px 20px #c4c4c4;
-  transition: transform 0.5s ease;
-  transform: scale(1.1);
-  z-index: 1;
+	box-shadow: 2px 2px 20px #c4c4c4;
+	transition: transform 0.5s ease;
+	transform: scale(1.1);
+	z-index: 1;
 }
 
 .buttonMore {
-  color: white !important;
-  background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
-  border-color: #ff001f !important;
+	color: white !important;
+	background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+	border-color: #ff001f !important;
 }
 
-/* @media (min-width: 1200px) {
-  .container {
-    max-width: 1400px !important;
-  }
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1400px !important;
+	}
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+	.container {
+		max-width: 1200px !important;
+	}
+}
+
+.cardImg {
+	transform: scale(1);
+}
+/* #cardContainer {
+	margin-right: 35px;
 } */
-
-/* @media (min-width: 1000px) and (max-width: 1199px) {
-  .container {
-    max-width: 1200px !important;
-  }
-} */
-
-.cardImg{
-  transform: scale(1);
-}
-#cardContainer{
-  margin-right: 35px;
-}
