@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
@@ -7,14 +7,15 @@ import {
 	Row,
 	Col,
 	Jumbotron,
-
+	Button,
+	Form,
+	FormControl,
 	Card,
 	CardDeck,
-	
 } from "react-bootstrap";
 
 import axios from "axios";
-import SearchBar from '../../../components/search/search';
+
 import { Link } from "react-router-dom";
 
 import "../Main/Main.css";
@@ -54,40 +55,54 @@ const Main = () => {
 	const showEvent = data.map((item, index) => {
 		const URL = "https://api.indrakawasan.com/";
 		return (
-			<Row >
-			<Col md={4} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
-				<Card
-					border="secondary"
-					className="mr-5 main-card"
-					key={index}
-					style={{ height: "100%",width:"350px" }}
-				>
-					<Card.Img variant="top" src={`${URL}${item.imageEvent}`} className="cardImg"/>
-					<Card.Body>
-						<Card.Text>{item.title}</Card.Text>
-						<Card.Text>
-							<FontAwesomeIcon icon={faCalendar} /> {item.date}
-						</Card.Text>
-						<Card.Text>
-							<FontAwesomeIcon icon={faClock} /> {item.time}
-						</Card.Text>
-						<Card.Text>
-							<i className="fas fa-map-marker-alt mr-2"></i>
-							{item.location}
-						</Card.Text>
-						<Link
-							to={`/event/${item.id}`}
-							className="btn btn-outline-danger btn-block"
-						>
-							See More
-						</Link>
-					</Card.Body>
-				</Card>
-			</Col>
+			<Row>
+				<Col md={3} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
+					<Card
+						border="secondary"
+						className="mr-5 main-card"
+						key={index}
+						style={{ height: "100%", width: "323px" }}
+					>
+						<Card.Img
+							variant="top"
+							src={`${URL}${item.imageEvent}`}
+							className="cardImg"
+						/>
+						<Card.Body>
+							<Card.Text>{item.title}</Card.Text>
+							<Card.Text>
+								<FontAwesomeIcon icon={faCalendar} /> {item.date}
+							</Card.Text>
+							<Card.Text>
+								<FontAwesomeIcon icon={faClock} /> {item.time}
+							</Card.Text>
+							<Card.Text>
+								<i className="fas fa-map-marker-alt mr-2"></i>
+								{item.location}
+							</Card.Text>
+							<Link
+								to={`/event/${item.id}`}
+								className="btn btn-outline-danger btn-block"
+							>
+								See More
+							</Link>
+						</Card.Body>
+					</Card>
+				</Col>
 			</Row>
 		);
 	});
-	
+	// SET INITIAL STATE FOR QUERY AND EVENTS
+	// CREATE REF FOR SEARCH INPUT
+	// const [query , setQuery] = useState('')
+	// const [events , setEvents] = useState([])
+	// const focusSearch = useRef(null)
+
+	// useEffect(() => {focusSearch.current.focus()},[])
+
+	// const getEvents = async (query) => {
+	// 	const results = await axios(``)
+	// }
 	return (
 		<div>
 			<Navbars />
@@ -97,7 +112,21 @@ const Main = () => {
 						“What you need, is an Event, to remember for a lifetime.”
 					</h1>
 					<h1 className="text-center">― Rehan Waris ―</h1>
-					<SearchBar/>
+					<Row>
+						<Form inline className="mx-auto mt-5 pt-3">
+							<FormControl
+								type="text"
+								placeholder="Search Events"
+								className="mainInput "
+							/>
+							<Button
+								variant="outline-success"
+								className="buttonSearch mainSearch"
+							>
+								<i className="fas fa-search"></i>
+							</Button>
+						</Form>
+					</Row>
 				</Container>
 			</Jumbotron>
 

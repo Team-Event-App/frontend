@@ -8,7 +8,6 @@ import Footer from "../../components/Footer/Footer";
 import Logo from "../../image/logo.png";
 
 import "./Contact.css";
-import axios from "axios";
 
 class Contact extends Component {
   render() {
@@ -18,7 +17,7 @@ class Contact extends Component {
         <div className="container mt-5 pt-5 mb-5">
           <Formik
             initialValues={{
-              fullname: "",
+              fullName: "",
               email: "",
               phone: "",
               message: "",
@@ -49,20 +48,8 @@ class Contact extends Component {
                 return errors;
               }
             }}
-            onSubmit={(values,action) => {
-              axios("https://api.indrakawasan.com/contact/create",{
-                method:"POST",
-                data:values,
-              })
-              .then((res) => {
-                alert('Your message succesfully send');
-                action.resetForm(true);
-              })
-              .catch((err) => {
-                alert('Sorry,We have a problem.')
-              })
-            }}
-            render={(props) => {
+            onSubmit={this.handleSubmit}
+            render={() => {
               return (
                 <div className="container-contact">
                   <Row className="justify-content-center">
@@ -70,18 +57,14 @@ class Contact extends Component {
                       <Card className="p-5 mt-5">
                         <img src={Logo} alt="Logo" />
                         <hr />
-
-                        <Form onSubmit={props.handleSubmit}>
+                        <Form>
                           <div className="form-group">
                             Full Name
                             <Field
                               type="text"
-                              name="fullname"
+                              name="fullName"
                               placeholder="Enter your Name"
                               className="form-control"
-                              value={props.values.fullname}
-                              onChange={props.handleChange}
-                              onBlur={props.handleBlur}
                             />
                             <ErrorMessage name="fullName" />
                           </div>
@@ -92,37 +75,27 @@ class Contact extends Component {
                               name="email"
                               placeholder="Enter your Email Address"
                               className="form-control"
-                              value={props.values.email}
-                              onChange={props.handleChange}
-                              onBlur={props.handleBlur}
                             />
                             <ErrorMessage name="email" />
                           </div>
                           <div className="form-group">
                             Phone Number
                             <Field
-                              type="text"
+                              type="number"
                               name="phone"
                               placeholder="Your Phone number"
                               className="form-control"
-                              value={props.values.phone}
-                              onChange={props.handleChange}
-                              onBlur={props.handleBlur}
                             />
                             <ErrorMessage name="phone" />
                           </div>
                           <div className="form-group">
                             Message
                             <Field
-                            type="text"
                               name="message"
                               as="textarea"
                               rows="4"
                               className="form-control"
                               placeholder="Send your Message Here"
-                              value={props.values.message}
-                              onChange={props.handleChange}
-                              onBlur={props.handleBlur}
                             />
                             <ErrorMessage name="message" />
                           </div>

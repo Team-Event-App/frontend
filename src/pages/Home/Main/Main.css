@@ -46,7 +46,7 @@ body {
 
 .mainInput {
 	width: 35rem !important;
-
+	padding: 1.7rem 4rem !important;
 	border-radius: 20rem !important;
 }
 .mainInput:focus {
@@ -95,15 +95,6 @@ body {
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1400px !important;
-	}
-	
-	.card-deck{
-		margin-left: 50px;
-	}
-
-	.main-card{
-		width: 28n0px !important;
-		margin-left: 20px !important;
 	}
 }
 
