@@ -20,7 +20,7 @@ import Detail from "./pages/Detail/Detail";
 
 import ShowAll from "./pages/Show_All/ShowAll";
 import Profile from "./pages/Profile/Profile";
-import History from "./pages/HistoryPurchase/HistoryPurchase";
+import History from "./pages/History/HistoryEvent";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
