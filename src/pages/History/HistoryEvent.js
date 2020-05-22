@@ -1,5 +1,5 @@
-import React from "react";
-import "./HistoryPurchase.css";
+import React, { useState, useEffect } from "react";
+import "./HistoryEvent.css";
 import {
 	Table,
 	Container,
@@ -12,15 +12,16 @@ import {
 } from "react-bootstrap";
 import { Formik } from "formik";
 import axios from "axios";
+
+import jwt from "jwt-decode";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import Event1 from "../../image/color.jpeg";
-import Event2 from "../../image/shawn.png";
-import Event3 from "../../image/beer.jpeg";
+import HistoryBooking from "./HistoryBooking";
 
-import "./HistoryPurchase.css";
+import "./HistoryEvent.css";
 
-const HistoryPurchase = () => {
+const HistoryEvent = () => {
 	const [modalShow, setModalShow] = React.useState(false);
 	function MyVerticallyCenteredModal(props) {
 		return (
@@ -125,6 +126,48 @@ const HistoryPurchase = () => {
 			</Modal>
 		);
 	}
+
+	const [data, setData] = useState([]);
+	const token = localStorage.getItem("access-token");
+	const jwtdecode = jwt(token);
+	const idUser = jwtdecode.id;
+
+	useEffect(() => {
+		const URL = `https://api.indrakawasan.com/event/getByUserId/${idUser}`;
+
+		axios
+			.get(URL)
+			.then((res) => {
+				setData(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
+
+	const showHistory = data.map((item, index) => {
+		return (
+			<tr key={index}>
+				<td>{index + 1}</td>
+				<td>{item.id}</td>
+				<td>{item.title}</td>
+				<td>{item.date}</td>
+				<td>{item.price}</td>
+				<td>{item.location}</td>
+
+				<td>
+					<Button
+						variant="primary"
+						className="ml-auto mb-2 invoiceButton"
+						onClick={() => setModalShow(true)}
+					>
+						Pay Booking
+					</Button>
+				</td>
+			</tr>
+		);
+	});
+
 	return (
 		<div>
 			<Navbar />
@@ -146,18 +189,12 @@ const HistoryPurchase = () => {
 				</Row>
 				<Row>
 					<Col>
-						<h2 className="text-center">History Purchase</h2>
+						<h2 className="text-center">History Event</h2>
 						<div className="underlineHistory mb-5 mx-auto"></div>
 					</Col>
 				</Row>
+
 				<Row>
-					<Button
-						variant="primary"
-						className="ml-auto mb-2 invoiceButton"
-						onClick={() => setModalShow(true)}
-					>
-						Pay Booking
-					</Button>
 					<MyVerticallyCenteredModal
 						show={modalShow}
 						onHide={() => setModalShow(false)}
@@ -167,66 +204,22 @@ const HistoryPurchase = () => {
 					<thead>
 						<tr>
 							<th>No</th>
+							<th>Event Id</th>
 							<th>Title</th>
 							<th>Date</th>
 							<th>Price</th>
 							<th>Location</th>
-							<th>Images</th>
 							<th>Status</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Making the Most of Two-Colour Counters</td>
-							<td>2020-05-25</td>
-							<td>Rp.25000</td>
-							<td>Zoom</td>
-							<td>
-								<img src={Event1} className="imageTable" alt="event" />
-							</td>
-							<td>
-								<Button variant="primary" className="invoiceButton">
-									Invoice
-								</Button>
-							</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Shawn Mendes The Virtual Tour</td>
-							<td>Sat, May 16, 2020 </td>
-							<td>Free</td>
-							<td>Online Live</td>
-							<td>
-								<img src={Event2} className="imageTable" alt="event" />
-							</td>
-							<td>
-								<Button variant="primary" className="invoiceButton">
-									Invoice
-								</Button>
-							</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>The Virtual Beer Festival</td>
-							<td>2020-05-23</td>
-							<td>45.000</td>
-							<td>Online</td>
-							<td>
-								<img src={Event3} className="imageTable" alt="event" />
-							</td>
-							<td>
-								<Button variant="primary" className="invoiceButton">
-									Invoice
-								</Button>
-							</td>
-						</tr>
-					</tbody>
+					<tbody>{showHistory}</tbody>
 				</Table>
+
+				<HistoryBooking />
 			</Container>
 			<Footer />
 		</div>
 	);
 };
 
-export default HistoryPurchase;
+export default HistoryEvent;

@@ -83,7 +83,7 @@ function MyVerticallyCenteredModal(props) {
 						<InputGroup.Prepend>
 							<InputGroup.Text>$</InputGroup.Text>
 						</InputGroup.Prepend>
-						<FormControl value={props.data && props.data.price} />
+						<FormControl value={props.data && props.data.price} disabled />
 						<InputGroup.Append>
 							<InputGroup.Text>.00</InputGroup.Text>
 						</InputGroup.Append>

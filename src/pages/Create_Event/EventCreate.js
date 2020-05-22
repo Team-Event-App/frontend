@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 
+import jwt from "jwt-decode";
 import axios from "axios";
 
 import "./EventCreate.css";
@@ -20,6 +21,14 @@ class EventCreate extends Component {
 		});
 		formData.append("imageEvent", this.imageRef.current.files[0]);
 		const URL = `https://api.indrakawasan.com/event/create`;
+
+		// const token = localStorage.getItem("access-token");
+		// let userId = "";
+		// if (token) {
+		// 	userId = jwt(token).id;
+		// }
+		// console.log(jwt(token));
+
 		axios
 			.post(URL, formData, {
 				headers: {

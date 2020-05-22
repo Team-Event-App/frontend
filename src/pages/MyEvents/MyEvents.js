@@ -15,7 +15,7 @@ import Footer from "../../components/Footer/Footer";
 import Event1 from "../../image/color.jpeg";
 import Event2 from "../../image/shawn.png";
 import Event3 from "../../image/beer.jpeg";
-class HistoryPurchase extends Component {
+class HistoryEvent extends Component {
 	render() {
 		return (
 			<div>
@@ -65,10 +65,10 @@ class HistoryPurchase extends Component {
 									<img src={Event1} className="imageTable" alt="event" />
 								</td>
 								<td>
-								<Button variant="primary" className="invoiceButton">
+									<Button variant="primary" className="invoiceButton">
 										Edit
 									</Button>
-                                    <Button variant="primary" className="invoiceButton ml-2">
+									<Button variant="primary" className="invoiceButton ml-2">
 										Delete
 									</Button>
 								</td>
@@ -83,10 +83,10 @@ class HistoryPurchase extends Component {
 									<img src={Event2} className="imageTable" alt="event" />
 								</td>
 								<td>
-								<Button variant="primary" className="invoiceButton">
+									<Button variant="primary" className="invoiceButton">
 										Edit
 									</Button>
-                                    <Button variant="primary" className="invoiceButton ml-2">
+									<Button variant="primary" className="invoiceButton ml-2">
 										Delete
 									</Button>
 								</td>
@@ -104,7 +104,7 @@ class HistoryPurchase extends Component {
 									<Button variant="primary" className="invoiceButton">
 										Edit
 									</Button>
-                                    <Button variant="primary" className="invoiceButton ml-2">
+									<Button variant="primary" className="invoiceButton ml-2">
 										Delete
 									</Button>
 								</td>
@@ -118,4 +118,4 @@ class HistoryPurchase extends Component {
 	}
 }
 
-export default HistoryPurchase;
+export default HistoryEvent;
