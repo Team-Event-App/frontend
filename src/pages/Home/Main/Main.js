@@ -35,7 +35,7 @@ const Main = () => {
 		axios
 			.get(URL)
 			.then((res) => {
-				const data = res.data.slice(0, 8);
+				const data = res.data;
 				setData(data);
 			})
 			.catch((err) => {
