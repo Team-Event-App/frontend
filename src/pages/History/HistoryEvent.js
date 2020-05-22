@@ -146,26 +146,34 @@ const HistoryEvent = () => {
 	}, []);
 
 	const showHistory = data.map((item, index) => {
-		return (
-			<tr key={index}>
-				<td>{index + 1}</td>
-				<td>{item.id}</td>
-				<td>{item.title}</td>
-				<td>{item.date}</td>
-				<td>{item.price}</td>
-				<td>{item.location}</td>
+		if (data) {
+			return (
+				<tr key={index}>
+					<td>{index + 1}</td>
+					<td>{item.id}</td>
+					<td>{item.title}</td>
+					<td>{item.date}</td>
+					<td>{item.price}</td>
+					<td>{item.location}</td>
 
-				<td>
-					<Button
-						variant="primary"
-						className="ml-auto mb-2 invoiceButton"
-						onClick={() => setModalShow(true)}
-					>
-						Pay Booking
-					</Button>
-				</td>
-			</tr>
-		);
+					<td>
+						<Button
+							variant="primary"
+							className="ml-auto mb-2 invoiceButton"
+							onClick={() => setModalShow(true)}
+						>
+							Pay Booking
+						</Button>
+					</td>
+				</tr>
+			);
+		} else {
+			return (
+				<tr>
+					<td>Nothing</td>
+				</tr>
+			);
+		}
 	});
 
 	return (

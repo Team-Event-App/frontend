@@ -33,7 +33,9 @@ function MyVerticallyCenteredModal(props) {
 			name: users,
 			quantity: data.quantity,
 			total: data.total,
+			eventTitle: props.data && props.data.title,
 		};
+
 		// console.log(value);
 
 		axios
@@ -54,6 +56,7 @@ function MyVerticallyCenteredModal(props) {
 	const [data, setData] = useState({
 		name: users,
 		quantity: 1,
+		eventTitle: props.data && props.data.title,
 	});
 
 	const onChange = (event) => {
@@ -73,7 +76,7 @@ function MyVerticallyCenteredModal(props) {
 			centered
 		>
 			<Modal.Header closeButton>
-				<Modal.Title id="contained-modal-title-vcenter">
+				<Modal.Title id="contained-modal-title-vcenter" name="eventTitle">
 					<h5>{props.data && props.data.title}</h5>
 				</Modal.Title>
 			</Modal.Header>
