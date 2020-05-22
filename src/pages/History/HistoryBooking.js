@@ -28,21 +28,29 @@ function HistoryBooking() {
 	}, []);
 
 	const showHistoryBooking = data.map((item, index) => {
-		return (
-			<tr key={index}>
-				<td>{index + 1}</td>
-				<td>dari backend</td>
-				<td>{item.quantity}</td>
-				<td>{item.total}</td>
-			</tr>
-		);
+		if (data) {
+			return (
+				<tr key={index}>
+					<td>{index + 1}</td>
+					<td>{item.eventTitle}</td>
+					<td>{item.quantity}</td>
+					<td>{item.total}</td>
+				</tr>
+			);
+		} else {
+			return (
+				<tr>
+					<td>Nothing</td>
+				</tr>
+			);
+		}
 	});
 
 	return (
 		<div>
 			<Row>
 				<Col>
-					<h2 className="text-center mt-5">History Purchase</h2>
+					<h2 className="text-center mt-5">History Booking</h2>
 					<div className="underlineHistory mb-5 mx-auto"></div>
 				</Col>
 			</Row>
