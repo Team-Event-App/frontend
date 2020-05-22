@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, ErrorMessage } from "formik";
 import { Container, Row, Col, Button } from "react-bootstrap";
@@ -10,7 +10,10 @@ import "./Register.css";
 
 const Register = () => {
 	const history = useHistory();
-	
+	const [passwordShown , setPasswordShown] = useState(false);
+	const togglePasswordVisibility = () => {
+		setPasswordShown(passwordShown ? false : true);
+	}
 	return (
 		<Container>
 			<div class="sidebar">
@@ -115,7 +118,7 @@ const Register = () => {
 											<p class="validateString"><ErrorMessage name="phone" /></p>
 											<div className="input-group-prepend mainPrependPassword">
 												<input
-													type="password"
+													type={passwordShown ?"text" : "password"}
 													placeholder="Password"
 													className="register-input"
 													name="password"
@@ -125,7 +128,7 @@ const Register = () => {
 													value={props.values.password}
 												/>
 												<div className="input-group-text passwordPrepend">
-													<i className="fa fa-eye password-icon"></i>
+													<i className="fa fa-eye password-icon" onClick={togglePasswordVisibility}></i>
 												</div>
 											</div>
 											<p class="validateString"><ErrorMessage name="password" /></p>

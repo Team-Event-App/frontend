@@ -267,9 +267,7 @@ class About extends Component {
 										</Card.Title>
 										<Card.Text>
 											<p>
-												This is a wider card with supporting text below as a
-												natural lead-in to additional content. This content is a
-												little bit longer.
+											Only a man who likes ngidols and wants to be a full-stack developer
 											</p>
 										</Card.Text>
 										<Card.Text>
