@@ -79,6 +79,9 @@ class Contact extends Component {
                               name="fullname"
                               placeholder="Enter your Name"
                               className="form-control"
+                              value={props.values.fullname}
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
                             />
                             <ErrorMessage name="fullName" />
                           </div>
@@ -89,27 +92,37 @@ class Contact extends Component {
                               name="email"
                               placeholder="Enter your Email Address"
                               className="form-control"
+                              value={props.values.email}
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
                             />
                             <ErrorMessage name="email" />
                           </div>
                           <div className="form-group">
                             Phone Number
                             <Field
-                              type="number"
+                              type="text"
                               name="phone"
                               placeholder="Your Phone number"
                               className="form-control"
+                              value={props.values.phone}
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
                             />
                             <ErrorMessage name="phone" />
                           </div>
                           <div className="form-group">
                             Message
                             <Field
+                            type="text"
                               name="message"
                               as="textarea"
                               rows="4"
                               className="form-control"
                               placeholder="Send your Message Here"
+                              value={props.values.message}
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
                             />
                             <ErrorMessage name="message" />
                           </div>
