@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import jwt from "jwt-decode";
 
-import profile from "./../../image/profile.png";
+// import profile from "./../../image/profile.png";
 
 const EditProfile = () => {
 	const URL = "https://api.indrakawasan.com/";
@@ -17,7 +17,6 @@ const EditProfile = () => {
 		axios
 			.get(URL)
 			.then((res) => {
-				console.log(res.data);
 				setData(res.data);
 			})
 			.catch((err) => {
@@ -27,10 +26,12 @@ const EditProfile = () => {
 
 	const { register, handleSubmit, errors } = useForm();
 	const onSubmit = (data) => {
+		// console.log(data.imageUrl[0]);
 		axios
 			.put(`https://api.indrakawasan.com/user/edit/${userProfile}`, data, {
 				headers: {
 					"access-token": localStorage.getItem("access-token"),
+					// "Content-Type": "multipart/form-data",
 				},
 			})
 			.then((res) => {
@@ -46,18 +47,22 @@ const EditProfile = () => {
 		<Row className="mb-5 mt-5">
 			<Col md={{ offset: 3, span: 6 }}>
 				<Card>
-					<Card.Img
-						src={`${URL}${data.imageUrl}`}
-						src={profile}
-						className="mx-auto mb-2 mt-3"
-						style={{ width: "10rem" }}
-					/>
-					<div className="d-flex ml-5 pl-5 mb-3 mt-3 justify-content-center">
-						<input type="file" />
-					</div>
-
 					<Card.Body>
 						<Form onSubmit={handleSubmit(onSubmit)}>
+							<Card.Img
+								src={`${URL}${data.imageUrl}`}
+								// src={profile}
+								className="mx-auto mb-2 mt-3 rounded-circle d-block"
+								style={{ width: "200px", height: "200px" }}
+							/>
+							<div className="d-flex ml-5 pl-5 mb-3 mt-3 justify-content-center">
+								<input
+									type="file"
+									name="imageUrl"
+									defaultValue={data.imageUrl}
+								/>
+							</div>
+							<hr style={{ border: "1px solid black" }} />
 							<Form.Group controlId="username">
 								<Form.Label>Username</Form.Label>
 								<Form.Control

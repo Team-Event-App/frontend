@@ -4,16 +4,16 @@ import { Formik, Form, ErrorMessage } from "formik";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 
-import * as Yup from 'yup'
+import * as Yup from "yup";
 
 import "./Register.css";
 
 const Register = () => {
 	const history = useHistory();
-	const [passwordShown , setPasswordShown] = useState(false);
+	const [passwordShown, setPasswordShown] = useState(false);
 	const togglePasswordVisibility = () => {
 		setPasswordShown(passwordShown ? false : true);
-	}
+	};
 	return (
 		<Container>
 			<div class="sidebar">
@@ -35,18 +35,17 @@ const Register = () => {
 										password: "",
 									}}
 									validationSchema={Yup.object().shape({
-										username:Yup.string()
-										.required('username is required'),
-										fullname:Yup.string()
-										.required('Please fill out your name'),
-										phone:Yup.string()
-										.required('Phone number is required'),
-										email:Yup.string()
-										.email('Email is invalid')
-										.required('Email is required'),
-										password : Yup.string()
-										.min(8,'Password must be at least 8 characters')
-										.required('Password is required')
+										username: Yup.string().required("username is required"),
+										fullname: Yup.string().required(
+											"Please fill out your name"
+										),
+										phone: Yup.string().required("Phone number is required"),
+										email: Yup.string()
+											.email("Email is invalid")
+											.required("Email is required"),
+										password: Yup.string()
+											.min(8, "Password must be at least 8 characters")
+											.required("Password is required"),
 									})}
 									onSubmit={(values, actions) => {
 										console.log(values);
@@ -65,7 +64,7 @@ const Register = () => {
 											});
 									}}
 								>
-									{(props,errors,touched) => (
+									{(props, errors, touched) => (
 										<Form
 											className="register-form"
 											onSubmit={props.handleSubmit}
@@ -82,7 +81,9 @@ const Register = () => {
 												onBlur={props.handleBlur}
 												value={props.values.username}
 											/>
-											<p class="validateString"><ErrorMessage name="username" /></p>
+											<p class="validateString">
+												<ErrorMessage name="username" />
+											</p>
 											<input
 												type="text"
 												placeholder="Full Name"
@@ -93,7 +94,9 @@ const Register = () => {
 												onBlur={props.handleBlur}
 												value={props.values.fullname}
 											/>
-											<p class="validateString"><ErrorMessage name="fullname" /></p>
+											<p class="validateString">
+												<ErrorMessage name="fullname" />
+											</p>
 											<input
 												type="email"
 												placeholder="Email"
@@ -104,7 +107,9 @@ const Register = () => {
 												onBlur={props.handleBlur}
 												value={props.values.email}
 											/>
-											<p class="validateString"><ErrorMessage name="email" /></p>
+											<p class="validateString">
+												<ErrorMessage name="email" />
+											</p>
 											<input
 												type="text"
 												placeholder="Phone Number"
@@ -115,10 +120,12 @@ const Register = () => {
 												onBlur={props.handleBlur}
 												value={props.values.phone}
 											/>
-											<p class="validateString"><ErrorMessage name="phone" /></p>
+											<p class="validateString">
+												<ErrorMessage name="phone" />
+											</p>
 											<div className="input-group-prepend mainPrependPassword">
 												<input
-													type={passwordShown ?"text" : "password"}
+													type={passwordShown ? "text" : "password"}
 													placeholder="Password"
 													className="register-input"
 													name="password"
@@ -128,10 +135,15 @@ const Register = () => {
 													value={props.values.password}
 												/>
 												<div className="input-group-text passwordPrepend">
-													<i className="fa fa-eye password-icon" onClick={togglePasswordVisibility}></i>
+													<i
+														className="fa fa-eye password-icon"
+														onClick={togglePasswordVisibility}
+													></i>
 												</div>
 											</div>
-											<p class="validateString"><ErrorMessage name="password" /></p>
+											<p class="validateString">
+												<ErrorMessage name="password" />
+											</p>
 											<Button variant="danger" type="submit" className="mt-3">
 												Sign Up
 											</Button>
