@@ -115,7 +115,7 @@ const HistoryEvent = () => {
 									<Button variant="primary" type="submit">
 										Submit
 									</Button>
-									<Button onClick={props.onHide} variant="danger">
+									<Button variant="outline-danger" onClick={props.onHide}>
 										Close
 									</Button>
 								</Modal.Footer>
@@ -204,8 +204,9 @@ const HistoryEvent = () => {
 
 				<Row>
 					<MyVerticallyCenteredModal
-						show={modalShow}
-						onHide={() => setModalShow(false)}
+						data={modalShow.data}
+						show={modalShow.isShow}
+						onHide={() => setModalShow({ isShow: false })}
 					/>
 				</Row>
 				<Table responsive>

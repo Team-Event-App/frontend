@@ -92,17 +92,7 @@ const Main = () => {
 			</Row>
 		);
 	});
-	// SET INITIAL STATE FOR QUERY AND EVENTS
-	// CREATE REF FOR SEARCH INPUT
-	// const [query , setQuery] = useState('')
-	// const [events , setEvents] = useState([])
-	// const focusSearch = useRef(null)
 
-	// useEffect(() => {focusSearch.current.focus()},[])
-
-	// const getEvents = async (query) => {
-	// 	const results = await axios(``)
-	// }
 	return (
 		<div>
 			<Navbars />
