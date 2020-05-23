@@ -191,9 +191,9 @@ class EventCreate extends Component {
 												<Row className="pl-0 pt-3 pr-3 orgRow">
 													<Col md={6}>
 														<div className="input-group-prepend pl-3">
-															<div className="input-group-text inputPrepend">
+															{/* <div className="input-group-text inputPrepend">
 																Rp.
-															</div>
+															</div> */}
 															<Field
 																type="number"
 																className="form-control inputText"
