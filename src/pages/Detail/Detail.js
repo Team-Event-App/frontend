@@ -47,6 +47,7 @@ function MyVerticallyCenteredModal(props) {
 			.then((res) => {
 				console.log(res);
 				alert("Successful Booking");
+				props.onHide(false);
 			})
 			.catch((err) => {
 				console.log(err);

@@ -35,7 +35,7 @@ const Main = () => {
 		axios
 			.get(URL)
 			.then((res) => {
-				const data = res.data.slice(0, 8);
+				const data = res.data;
 				setData(data);
 			})
 			.catch((err) => {
@@ -92,17 +92,7 @@ const Main = () => {
 			</Row>
 		);
 	});
-	// SET INITIAL STATE FOR QUERY AND EVENTS
-	// CREATE REF FOR SEARCH INPUT
-	// const [query , setQuery] = useState('')
-	// const [events , setEvents] = useState([])
-	// const focusSearch = useRef(null)
 
-	// useEffect(() => {focusSearch.current.focus()},[])
-
-	// const getEvents = async (query) => {
-	// 	const results = await axios(``)
-	// }
 	return (
 		<div>
 			<Navbars />
