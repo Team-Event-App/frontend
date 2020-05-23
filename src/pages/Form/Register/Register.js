@@ -67,6 +67,7 @@ const Register = () => {
 									{(props, errors, touched) => (
 										<Form
 											className="register-form"
+											autocomplete="off"
 											onSubmit={props.handleSubmit}
 										>
 											<h1 className="mb-4">Register</h1>

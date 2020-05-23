@@ -42,7 +42,11 @@ const Login = (props) => {
 						<div className="main-login ">
 							<div className="container-login mx-auto">
 								<div className="form-container sign-in-container">
-									<form onSubmit={handleSubmit} className="login-form">
+									<form
+										onSubmit={handleSubmit}
+										className="login-form"
+										autocomplete="off"
+									>
 										<h1 className="mb-4">Sign in</h1>
 
 										<input
