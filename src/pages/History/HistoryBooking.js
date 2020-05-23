@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Table } from "react-bootstrap";
-import { Modal, Form, Button } from "react-bootstrap";
-import { Formik } from "formik";
+import {Modal , Form , Button} from 'react-bootstrap';
+import { Formik,ErrorMessage } from "formik";
 import axios from "axios";
 import jwt from "jwt-decode";
-
+import * as Yup from 'yup'
 function HistoryBooking() {
 	const [modalShow, setModalShow] = React.useState(false);
 	function MyVerticallyCenteredModal(props) {
@@ -27,6 +27,12 @@ function HistoryBooking() {
 							totalAmount: "",
 							imageProof: null,
 						}}
+						validationSchema={Yup.object().shape({
+							sender:Yup.string()
+							.required('Sender Name is required'),
+							totalAmount:Yup.string()
+							.required('Please fill out total amount your ticket price.'),
+						})}
 						onSubmit={async (values) => {
 							let formData = new FormData();
 
@@ -59,12 +65,16 @@ function HistoryBooking() {
 									type="text"
 									aria-describedby="basic-addon3"
 									name="sender"
+									id="sender"
+									onBlur={props.handleBlur}
 									onChange={props.handleChange}
 									value={props.values.sender}
 								/>
+								<p class="validateString"><ErrorMessage name="sender" /></p>
 								<small className="form-text text-muted">
 									Make sure name is match in proof image.
 								</small>
+								
 								<label className="mt-3">Total Amount</label>
 								<div className="input-group-prepend">
 									{/* <div className="input-group-text">Rp.</div> */}
@@ -73,18 +83,25 @@ function HistoryBooking() {
 										type="number"
 										className="form-control"
 										name="totalAmount"
+										id="totalAmount"
+										onBlur={props.handleBlur}
 										onChange={props.handleChange}
 										value={props.values.totalAmount}
 									/>
+									
 								</div>
+								<p class="validateString"><ErrorMessage name="totalAmount" /></p>
 								<small className="form-text text-muted">
 									Amount total payment.
 								</small>
+								
 								<label className="mt-3">Image</label>
 								<Form.Control
 									type="file"
 									className="form-control"
 									name="imageProof"
+									id="imageProof"
+									onBlur={props.handleBlur}
 									onChange={(event) => {
 										props.setFieldValue(
 											"imageProof",
@@ -92,9 +109,11 @@ function HistoryBooking() {
 										);
 									}}
 								/>
+								<p class="validateString"><ErrorMessage name="imageProof" /></p>
 								<small className="form-text text-muted">
 									Image proof for payment.
 								</small>
+								
 								<Modal.Footer className="mt-4">
 									<Button variant="primary" type="submit">
 										Submit
@@ -169,11 +188,11 @@ function HistoryBooking() {
 				</Col>
 			</Row>
 			<Row>
-				<MyVerticallyCenteredModal
-					show={modalShow}
-					onHide={() => setModalShow(false)}
-				/>
-			</Row>
+					<MyVerticallyCenteredModal
+						show={modalShow}
+						onHide={() => setModalShow(false)}
+					/>
+				</Row>
 			<Table responsive className="mb-5">
 				<thead>
 					<tr>

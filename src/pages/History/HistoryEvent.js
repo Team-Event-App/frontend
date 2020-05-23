@@ -49,9 +49,9 @@ const HistoryEvent = () => {
 					<td>{item.price}</td>
 					<td>{item.location}</td>
 					{/* <td>
-                        <Button className="mr-2" variant="danger">Edit</Button>
-                        <Button variant="danger">Delete</Button>
-                    </td> */}
+						<Button className="mr-2" variant="danger">Edit</Button>
+						<Button variant="danger">Delete</Button>
+					</td> */}
 				</tr>
 			);
 		} else {
