@@ -1,43 +1,43 @@
 .buttonProfile {
-  border-radius: 20rem !important;
+	border-radius: 20rem !important;
 }
 
 .profileText {
-  font-size: 30px;
+	font-size: 30px;
 }
 
 .underlineProfile {
-  width: 275px;
-  height: 2px;
-  background-color: #ff001f;
+	width: 275px;
+	height: 2px;
+	background-color: #ff001f;
 }
 
-.sidebarUser{
-  background-color: #ff001f !important;
-  position: fixed;
-  font-size: 30px;
-  padding: 10px;
-  border-color: #ff001f !important;
-  display: inline !important;
+.sidebarUser {
+	background-color: #ff001f !important;
+	position: fixed;
+	font-size: 30px;
+	padding: 10px;
+	border-color: #ff001f !important;
+	display: inline !important;
 }
-.sidebarPassword{
-  background-color: #ff001f !important;
-  position: fixed;
-  font-size: 30px;
-  padding: 10px;
-  margin-top: 50px;
-  border-color: #ff001f !important;
-  display: inline !important;
+.sidebarPassword {
+	background-color: #ff001f !important;
+	position: fixed;
+	font-size: 30px;
+	padding: 10px;
+	margin-top: 50px;
+	border-color: #ff001f !important;
+	display: inline !important;
 }
-.fa-userr{
-color:white !important;
+.fa-userr {
+	color: white !important;
 }
-.fa-userr:hover{
-  color:rgb(226, 217, 217) !important;
+.fa-userr:hover {
+	color: rgb(226, 217, 217) !important;
 }
-.fa-lock{
-  color:white !important;
+.fa-lock {
+	color: white !important;
 }
-.fa-lock:hover{
-  color:rgb(226, 217, 217) !important;
+.fa-lock:hover {
+	color: rgb(226, 217, 217) !important;
 }
