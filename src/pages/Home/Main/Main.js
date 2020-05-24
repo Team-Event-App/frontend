@@ -55,14 +55,9 @@ const Main = () => {
 	const showEvent = data.map((item, index) => {
 		const URL = "https://api.indrakawasan.com/";
 		return (
-			<Row>
-				<Col md={3} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
-					<Card
-						border="secondary"
-						className="mr-5 main-card"
-						key={index}
-						style={{ height: "100%", width: "323px" }}
-					>
+			<Col md={3} className="my-2 mt-5 pt-2 pl-0 pr-0">
+				<CardDeck>
+					<Card border="secondary" className="mr-5 main-card" key={index}>
 						<Card.Img
 							variant="top"
 							src={`${URL}${item.imageEvent}`}
@@ -88,8 +83,8 @@ const Main = () => {
 							</Link>
 						</Card.Body>
 					</Card>
-				</Col>
-			</Row>
+				</CardDeck>
+			</Col>
 		);
 	});
 
@@ -131,10 +126,8 @@ const Main = () => {
 				</Row>
 			</Container>
 
-			<Container id="cardContainer">
-				<Row>
-					<CardDeck>{showEvent}</CardDeck>
-				</Row>
+			<Container>
+				<Row className="rowEvent">{showEvent}</Row>
 			</Container>
 
 			<Container>
