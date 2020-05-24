@@ -103,6 +103,7 @@ const Trend = () => {
 				<Row>
 					<div className="underlineTrend mb-2 ml-5"></div>
 				</Row>
+
 				<Row className="rowEvent">{showTrend}</Row>
 			</Container>
 		</div>

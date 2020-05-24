@@ -1,33 +1,33 @@
 .trend-background {
-  background: url(./../../../image/background2.jpg) no-repeat;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  padding: 6rem !important;
+	background: url(./../../../image/background2.jpg) no-repeat;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	padding: 6rem !important;
 }
 
 .trend-background h1 {
-  color: white;
-  background-color: black;
-  padding: 1rem !important;
-  margin: 0 20rem;
+	color: white;
+	background-color: black;
+	padding: 1rem !important;
+	margin: 0 20rem;
 }
 
 .hostEvent {
-  background: rgba(0, 0, 0, 0) !important;
+	background: rgba(0, 0, 0, 0) !important;
 }
 
 .buttonCreate.mx-auto {
-  background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
-  border-color: #ff001f !important;
-  width: 12rem;
-  font-size: 1.5rem !important;
+	background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+	border-color: #ff001f !important;
+	width: 12rem;
+	font-size: 1.5rem !important;
 }
 
 .underlineTrend {
-  width: 365px;
-  height: 2px;
-  background-color: #ff001f;
+	width: 365px;
+	height: 2px;
+	background-color: #ff001f;
 }
 .trendCard {
 	box-shadow: 0 5px 5px -2px gray;
@@ -40,16 +40,16 @@
 	transform: scale(1.1);
 	z-index: 1;
 }
-@media all and (max-width:480px) {
-.trend-background{
-  width: 480px;
-  height: 500px;
-}
-.colTrend{
-  display: flex;
-  justify-content: center;
-}
-.trendCard{
-  width: 400px;
-}
+@media all and (max-width: 480px) {
+	.trend-background {
+		width: 480px;
+		height: 500px;
+	}
+	.colTrend{
+		display: flex;
+		justify-content: center;
+	  }
+	  .trendCard{
+		width: 400px;
+	  }
 }

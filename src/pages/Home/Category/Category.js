@@ -19,83 +19,86 @@ import education from "../../../image/Education.jpeg";
 import "./Category.css";
 
 export default class CategoryCarousel extends Component {
-  render() {
-    return (
-      <div>
-        <Jumbotron className="containerCarousel mb-5 bg-white">
-          <Row>
-            <Col>
-              <h2 className="text-center">CATEGORY</h2>
-              <div className="underlineCarousel mb-5 mx-auto"></div>
-              <Carousel
-                centered
-                infinite
-                arrows
-                slidesPerPage={4}
-                autoPlay={2000}
-                breakpoints={{
-                  640: {
-                    slidesPerPage: 1,
-                    arrows: false,
-                  },
-                  900: {
-                    slidesPerPage: 2,
-                    arrows: false,
-                  },
-                  480: {
-                    slidesPerPage: 1,
-                  },
-                }}
-              >
-                <div className="text-center">
-                  <img
-                    src={education}
-                    alt="Education"
-                    className="carouselImg"
-                  />
-                  <h4 className="categoryBlock">Education</h4>
-                </div>
-                <div className="text-center">
-                  <img src={music} alt="Music" className="carouselImg" />
-                  <h4 className="categoryBlock">Music</h4>
-                </div>
-                <div className="text-center">
-                  <img src={art} alt="Art" className="carouselImg" />
-                  <h4 className="categoryBlock">Art</h4>
-                </div>
-                <div className="text-center">
-                  <img src={film} alt="Film" className="carouselImg" />
-                  <h4 className="categoryBlock">Film</h4>
-                </div>
-                <div className="text-center">
-                  <img src={fashion} alt="Fashion" className="carouselImg" />
-                  <h4 className="categoryBlock">Fashion</h4>
-                </div>
-                <div className="text-center">
-                  <img src={sport} alt="Sport" className="carouselImg" />
-                  <h4 className="categoryBlock">Sport</h4>
-                </div>
-                <div className="text-center">
-                  <img
-                    src={nightlife}
-                    alt="Nightlife"
-                    className="carouselImg"
-                  />
-                  <h4 className="categoryBlock">Nightlife</h4>
-                </div>
-                <div className="text-center">
-                  <img src={festival} alt="Festival" className="carouselImg" />
-                  <h4 className="categoryBlock">Festival</h4>
-                </div>
-                <div className="text-center">
-                  <img src={charity} alt="Charity" className="carouselImg" />
-                  <h4 className="categoryBlock">Charity</h4>
-                </div>
-              </Carousel>
-            </Col>
-          </Row>
-        </Jumbotron>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<Jumbotron className="containerCarousel mb-5 bg-white">
+					<Row>
+						<Col>
+							<h2 className="text-center">CATEGORY</h2>
+							<div className="underlineCarousel mb-5 mx-auto"></div>
+							<Carousel
+								centered
+								infinite
+								arrows
+								slidesPerPage={4}
+								autoPlay={2500}
+								breakpoints={{
+									480: {
+										slidesPerPage: 1,
+									},
+									500: {
+										slidesPerPage: 1,
+									},
+									640: {
+										slidesPerPage: 1,
+										arrows: false,
+									},
+									900: {
+										slidesPerPage: 2,
+										arrows: false,
+									},
+								}}
+							>
+								<div className="text-center">
+									<img
+										src={education}
+										alt="Education"
+										className="carouselImg"
+									/>
+									<h4 className="categoryBlock">Education</h4>
+								</div>
+								<div className="text-center">
+									<img src={music} alt="Music" className="carouselImg" />
+									<h4 className="categoryBlock">Music</h4>
+								</div>
+								<div className="text-center">
+									<img src={art} alt="Art" className="carouselImg" />
+									<h4 className="categoryBlock">Art</h4>
+								</div>
+								<div className="text-center">
+									<img src={film} alt="Film" className="carouselImg" />
+									<h4 className="categoryBlock">Film</h4>
+								</div>
+								<div className="text-center">
+									<img src={fashion} alt="Fashion" className="carouselImg" />
+									<h4 className="categoryBlock">Fashion</h4>
+								</div>
+								<div className="text-center">
+									<img src={sport} alt="Sport" className="carouselImg" />
+									<h4 className="categoryBlock">Sport</h4>
+								</div>
+								<div className="text-center">
+									<img
+										src={nightlife}
+										alt="Nightlife"
+										className="carouselImg"
+									/>
+									<h4 className="categoryBlock">Nightlife</h4>
+								</div>
+								<div className="text-center">
+									<img src={festival} alt="Festival" className="carouselImg" />
+									<h4 className="categoryBlock">Festival</h4>
+								</div>
+								<div className="text-center">
+									<img src={charity} alt="Charity" className="carouselImg" />
+									<h4 className="categoryBlock">Charity</h4>
+								</div>
+							</Carousel>
+						</Col>
+					</Row>
+				</Jumbotron>
+			</div>
+		);
+	}
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Col, Card, Button ,Alert} from "react-bootstrap";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-
+import axios from 'axios';
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -17,7 +17,7 @@ class Contact extends Component {
         <div className="container mt-5 pt-5 mb-5">
           <Formik
             initialValues={{
-              fullName: "",
+              fullname: "",
               email: "",
               phone: "",
               message: "",
@@ -48,8 +48,22 @@ class Contact extends Component {
                 return errors;
               }
             }}
-            onSubmit={this.handleSubmit}
-            render={() => {
+            onSubmit={(values, actions) => {
+              console.log(values);
+
+              axios("https://api.indrakawasan.com/contact/create", {
+                method: "POST",
+                data: values,
+              })
+                .then((res) => {
+                  alert("Your Message Successfully sent!");
+                  actions.resetForm(true);
+                })
+                .catch((err) => {
+                  alert("Server Error , try again later.")
+                });
+            }}
+            render={(props) => {
               return (
                 <div className="container-contact">
                   <Row className="justify-content-center">
@@ -57,14 +71,17 @@ class Contact extends Component {
                       <Card className="p-5 mt-5 contactCard">
                         <img src={Logo} alt="Logo" className="logoImage"/>
                         <hr />
-                        <Form>
+                        <Form onSubmit={props.handleSubmit}>
                           <div className="form-group">
                             Full Name
                             <Field
                               type="text"
-                              name="fullName"
+                              name="fullname"
                               placeholder="Enter your Name"
                               className="form-control"
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
+                              value={props.values.fullname}
                             />
                             <ErrorMessage name="fullName" />
                           </div>
@@ -75,16 +92,22 @@ class Contact extends Component {
                               name="email"
                               placeholder="Enter your Email Address"
                               className="form-control"
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
+                              value={props.values.email}
                             />
                             <ErrorMessage name="email" />
                           </div>
                           <div className="form-group">
                             Phone Number
                             <Field
-                              type="number"
+                              type="text"
                               name="phone"
                               placeholder="Your Phone number"
                               className="form-control"
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
+                              value={props.values.phone}
                             />
                             <ErrorMessage name="phone" />
                           </div>
@@ -96,6 +119,9 @@ class Contact extends Component {
                               rows="4"
                               className="form-control"
                               placeholder="Send your Message Here"
+                              onChange={props.handleChange}
+                              onBlur={props.handleBlur}
+                              value={props.values.message}
                             />
                             <ErrorMessage name="message" />
                           </div>
