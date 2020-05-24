@@ -73,6 +73,12 @@ class EventCreate extends Component {
 						);
 						return errors;
 					}
+					if (!values.imageEvent) {
+						errors.imageEvent = (
+							<small className="form-text text-danger">Image is required</small>
+						);
+						return errors;
+					}
 				}}
 				onSubmit={this.handleSubmit}
 				render={(formProps, setFieldValue) => {
@@ -191,9 +197,9 @@ class EventCreate extends Component {
 												<Row className="pl-0 pt-3 pr-3 orgRow">
 													<Col md={6}>
 														<div className="input-group-prepend pl-3">
-															{/* <div className="input-group-text inputPrepend">
-																Rp.
-															</div> */}
+															<div className="input-group-text inputPrepend">
+																$
+															</div>
 															<Field
 																type="number"
 																className="form-control inputText"
@@ -221,6 +227,7 @@ class EventCreate extends Component {
 															style={{ width: "35rem" }}
 															ref={this.imageRef}
 														/>
+														<ErrorMessage name="imageEvent" />
 													</Col>
 												</Row>
 
