@@ -1,139 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .underlineAbout {
-  width: 180px;
-  height: 2px;
-  background-color: #ff001f;
+	width: 180px;
+	height: 2px;
+	background-color: #ff001f;
 }
 
 .calender-img {
-  width: 36rem;
+	width: 36rem;
 }
 
 h3.about-top {
-  margin-top: 8rem !important;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
+	margin-top: 8rem !important;
+	margin-bottom: 2rem;
+	text-transform: uppercase;
+	font-family: "Montserrat", sans-serif;
 }
 
 p.about-text {
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-}
-
-.rounded-image {
-  width: 20rem;
-  margin-right: 2rem !important;
-  border-radius: 10rem !important;
-  box-shadow: 2px 2px 20px #c4c4c4;
-}
-
-.about-card {
-  width: 68rem !important;
-}
-
-.about-card-img {
-  width: 11rem;
-  border-radius: 10rem;
-}
-
-.social-icons {
-  width: 3rem !important;
-}
-
-.photo-grid {
-  margin: 1em 1em;
-  text-align: center;
-  background-color: #c4c4c4;
-}
-
-.photo-grid .grid-item {
-  border: 5px solid white;
-  display: inline-block;
-  margin: 1em;
-  width: 20rem;
-  height: 190px;
-}
-
-.photo-grid img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
-
-.photo-grid figure {
-  height: 180px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.photo-grid figcaption {
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  display: table;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 100;
-}
-
-.photo-grid figcaption p {
-  width: 30rem !important;
-  display: table-cell;
-  font-size: 1.5em;
-  position: relative;
-  top: -40px;
-  vertical-align: middle;
-}
-
-.photo-grid .grid-item:hover figcaption {
-  opacity: 1;
-}
-
-.photo-grid img {
-  display: block;
-  height: auto;
-  transition: all 300ms;
-  max-width: 100%;
-}
-
-.photo-grid .grid-item:hover img {
-  transform: scale(1.4);
-}
-
-.photo-grid figcaption p {
-  display: table-cell;
-  font-size: 1.5em;
-  position: relative;
-  top: -40px;
-  width: 200px;
-
-  transition: all 300ms ease-out;
-  vertical-align: middle;
-}
-
-.photo-grid .grid-item:hover figcaption p {
-  transform: translateY(40px);
-}
-
-.photo-grid figcaption {
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  display: table;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  transition: all 300ms;
-
-  transition-delay: 100ms;
-  z-index: 100;
+	font-size: 20px;
+	font-family: "Montserrat", sans-serif;
 }
