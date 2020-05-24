@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import jwt from "jwt-decode";
 
+import "./Profile.css";
+
 const EditProfile = () => {
 	const URL = "https://api.indrakawasan.com/";
 	const defaultValue = `${URL}public/images/2020-05-23T11:48:46.274Zicon.png`;
@@ -67,7 +69,7 @@ const EditProfile = () => {
 		<Row className="mb-5 mt-5">
 			<Col md={{ offset: 3, span: 6 }}>
 				<Card>
-					<Card.Body>
+					<Card.Body className="profileBody">
 						<Form onSubmit={handleSubmit(onSubmit)}>
 							<Card.Img
 								src={`${URL}${data.imageUrl || defaultValue}`}
