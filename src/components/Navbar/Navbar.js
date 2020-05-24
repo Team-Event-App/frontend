@@ -47,10 +47,10 @@ const Navbars = (props) => {
 				setViewLogin(
 					<>
 						<NavDropdown
-							className="mr-5 pr-4 ml-4"
+							className="mr-5 pr-3 navProfile"
 							title={
 								<span>
-									<i className="fa fa-user fa-fw"></i>Profile
+									<i className="fa fa-user fa-fw "></i>Profile
 								</span>
 							}
 						>
@@ -86,7 +86,7 @@ const Navbars = (props) => {
 				setViewLogin(
 					<Nav>
 						<Link to="/login">
-							<Button className="signInButton   mr-5">
+							<Button className="signInButton signButton">
 								Sign In
 								<i className="fas fa-sign-in-alt ml-2"></i>
 							</Button>
@@ -102,11 +102,11 @@ const Navbars = (props) => {
 	return (
 		<Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
 			<Link to="/" className="ml-3 brand">
-				<img src={Logo} alt="logo" />
+				<img src={Logo} alt="logo" className="imageLogo"/>
 			</Link>
 			<Navbar.Toggle aria-controls="toogle" />
 			<Navbar.Collapse id="toogle">
-				<Nav className="ml-auto">
+				<Nav className="ml-auto navbar-nav">
 					{data}
 					<Link to="/event/create">
 						<Button className="signInButton mr-3">
@@ -114,7 +114,7 @@ const Navbars = (props) => {
 							Create Events
 						</Button>
 					</Link>
-					<Nav className="ml-auto">{viewLogin}</Nav>
+					<Nav className="navProfile">{viewLogin}</Nav>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>

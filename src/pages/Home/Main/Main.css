@@ -112,4 +112,18 @@ body {
 	.container {
 		max-width: 1200px !important;
 	}
+
 }
+@media all and (max-width:480px) {
+	.main-card{
+		margin-left: 60px;
+		width: 400px !important;
+	}
+	}
+.cardImg {
+	transform: scale(1);
+}
+
+/* #cardContainer {
+	margin-right: 35px;
+} */
