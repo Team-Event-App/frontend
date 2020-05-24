@@ -1,24 +1,31 @@
 .carouselImg {
-  height: 200px;
-  width: 350px;
-  border-radius: 1rem 1rem 0 0 !important;
+	height: 200px;
+	width: 350px;
+	border-radius: 1rem 1rem 0 0 !important;
 }
 .BrainhubCarousel__arrowRight {
-  background-color: #ff4b2b;
+	background-color: #ff4b2b;
 }
 .BrainhubCarousel__arrowLeft {
-  background-color: #ff4b2b;
-}
-.buttonImg {
-  width: 50%;
-  color: white;
-  background-color: #ff4b2b !important;
-  border-color: #ff4b2b !important;
-  font-size: 20px !important;
+	background-color: #ff4b2b;
 }
 
 .underlineCarousel {
-  width: 180px;
-  height: 2px;
-  background-color: #ff001f;
+	width: 180px;
+	height: 2px;
+	background-color: #ff001f;
+}
+
+.categoryBlock {
+	display: block;
+	width: 100%;
+	border: none;
+	background-color: #4caf50;
+	color: white;
+	padding: 8px;
+	font-size: 16px;
+	text-align: center;
+	background-color: #ff4b2b !important;
+	border-color: #ff4b2b !important;
+	font-size: 20px !important;
 }

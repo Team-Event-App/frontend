@@ -49,33 +49,30 @@ const Trend = () => {
 		const URL = "https://api.indrakawasan.com/";
 		return (
 			<Col md={3} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
-				<Card
-					border="secondary"
-					className="main-card"
-					key={index}
-					style={{ height: "100%" }}
-				>
-					<Card.Img variant="top" src={`${URL}${item.imageEvent}`} />
-					<Card.Body>
-						<Card.Text>{item.title}</Card.Text>
-						<Card.Text>
-							<FontAwesomeIcon icon={faCalendar} /> {item.date}
-						</Card.Text>
-						<Card.Text>
-							<FontAwesomeIcon icon={faClock} /> {item.time}
-						</Card.Text>
-						<Card.Text>
-							<i className="fas fa-map-marker-alt mr-2"></i>
-							{item.location}
-						</Card.Text>
-						<Link
-							to={`/event/${item.id}`}
-							className="btn btn-outline-danger btn-block"
-						>
-							See More
-						</Link>
-					</Card.Body>
-				</Card>
+				<CardDeck>
+					<Card border="secondary" className="mr-5 main-card" key={index}>
+						<Card.Img variant="top" src={`${URL}${item.imageEvent}`} />
+						<Card.Body>
+							<Card.Text>{item.title}</Card.Text>
+							<Card.Text>
+								<FontAwesomeIcon icon={faCalendar} /> {item.date}
+							</Card.Text>
+							<Card.Text>
+								<FontAwesomeIcon icon={faClock} /> {item.time}
+							</Card.Text>
+							<Card.Text>
+								<i className="fas fa-map-marker-alt mr-2"></i>
+								{item.location}
+							</Card.Text>
+							<Link
+								to={`/event/${item.id}`}
+								className="btn btn-outline-danger btn-block"
+							>
+								See More
+							</Link>
+						</Card.Body>
+					</Card>
+				</CardDeck>
 			</Col>
 		);
 	});
@@ -103,9 +100,7 @@ const Trend = () => {
 				<Row>
 					<div className="underlineTrend mb-2 ml-5"></div>
 				</Row>
-				<Row>
-					<CardDeck>{showTrend}</CardDeck>
-				</Row>
+				<Row className="rowEvent">{showTrend}</Row>
 			</Container>
 		</div>
 	);
