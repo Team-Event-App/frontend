@@ -2,7 +2,6 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -86,7 +85,7 @@ body {
 	transform: scale(1);
 }
 
-.card-body {
+.mainBody {
 	height: 280px;
 }
 
@@ -103,7 +102,7 @@ body {
 	border-color: #ff001f !important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1500) {
 	.container {
 		max-width: 1300px !important;
 	}
@@ -113,8 +112,4 @@ body {
 	.container {
 		max-width: 1200px !important;
 	}
-}
-
-.cardImg {
-	transform: scale(1);
 }
