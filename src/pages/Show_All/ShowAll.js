@@ -12,9 +12,11 @@ import Footer from "../../components/Footer/Footer";
 import "./../Home/Main/Main.css";
 import "./ShowAll.css";
 
-const ShowAll = () => {
+const ShowAll = (props) => {
 	const [data, setData] = useState([]);
-
+	const params = new URLSearchParams(props.location.search);
+	// value search in here
+	const search = params.get("search");
 	useEffect(() => {
 		const URL = "https://api.indrakawasan.com/event/show";
 

@@ -15,8 +15,8 @@ import {
 } from "react-bootstrap";
 
 import axios from "axios";
-
-import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { Link, useHistory } from "react-router-dom";
 
 import "../Main/Main.css";
 
@@ -27,7 +27,16 @@ import Trend from "../Trend/Trend";
 import Category from "./../Category/Category";
 
 const Main = () => {
+	const history = useHistory();
 	const [data, setData] = useState([]);
+	const { handleSubmit, register, errors } = useForm();
+	const onSubmit = (values) => {
+		const { search } = values;
+		history.push({
+			pathname: "/showall",
+			search: `?search=${search}`,
+		});
+	};
 
 	useEffect(() => {
 		const URL = "https://api.indrakawasan.com/event/show";
@@ -94,13 +103,20 @@ const Main = () => {
 					</h1>
 					<h1 className="text-center">― Rehan Waris ―</h1>
 					<Row>
-						<Form inline className="mx-auto mt-5 pt-3">
+						<Form
+							inline
+							className="mx-auto mt-5 pt-3"
+							onSubmit={handleSubmit(onSubmit)}
+						>
 							<FormControl
 								type="text"
 								placeholder="Search Events"
-								className="mainInput "
+								className="mainInput"
+								name="search"
+								ref={register({ required: true })}
 							/>
 							<Button
+								type="submit"
 								variant="outline-success"
 								className="buttonSearch mainSearch"
 							>
