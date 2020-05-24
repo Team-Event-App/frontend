@@ -101,7 +101,7 @@ const Navbars = (props) => {
 
 	return (
 		<Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
-			<Link to="/" className="ml-3 brand">
+			<Link to="/" className="brand">
 				<img src={Logo} alt="logo" className="imageLogo"/>
 			</Link>
 			<Navbar.Toggle aria-controls="toogle" />

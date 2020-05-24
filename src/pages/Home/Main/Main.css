@@ -116,7 +116,7 @@ body {
 }
 @media all and (max-width:480px) {
 	.main-card{
-		margin-left: 60px;
+		margin-left: 100px;
 		width: 400px !important;
 	}
 	}

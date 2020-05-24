@@ -31,7 +31,8 @@
 }
 .trendCard {
 	box-shadow: 0 5px 5px -2px gray;
-	transform: scale(1);
+  transform: scale(1);
+  margin: 5px;
 }
 .trendCard:hover {
 	box-shadow: 2px 2px 20px #c4c4c4;
@@ -44,5 +45,11 @@
   width: 480px;
   height: 500px;
 }
-
+.colTrend{
+  display: flex;
+  justify-content: center;
+}
+.trendCard{
+  width: 400px;
+}
 }

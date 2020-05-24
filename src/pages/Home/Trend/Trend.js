@@ -48,7 +48,7 @@ const Trend = () => {
 	const showTrend = data.map((item, index) => {
 		const URL = "https://api.indrakawasan.com/";
 		return (
-			<Col md={3} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
+			<Col md={3} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0 colTrend" key={index}>
 				<Card
 					border="secondary"
 					className="trendCard"
