@@ -25,7 +25,7 @@ class Contact extends Component {
             validate={(values) => {
               let errors = {};
               if (!values.fullName && !values.email) {
-                errors.fullName = (
+                errors.fullname = (
                   <small className="form-text text-danger">
                     Full Name is required
                   </small>
@@ -83,7 +83,7 @@ class Contact extends Component {
                               onBlur={props.handleBlur}
                               value={props.values.fullname}
                             />
-                            <ErrorMessage name="fullName" />
+                            <ErrorMessage name="fullname" />
                           </div>
                           <div className="form-group">
                             Email Address
