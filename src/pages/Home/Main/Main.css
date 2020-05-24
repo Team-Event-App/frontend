@@ -2,6 +2,7 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -112,18 +113,10 @@ body {
 	.container {
 		max-width: 1200px !important;
 	}
-
 }
-@media all and (max-width:480px) {
-	.main-card{
+@media all and (max-width: 480px) {
+	.main-card {
 		margin-left: 60px;
 		width: 400px !important;
 	}
-	}
-.cardImg {
-	transform: scale(1);
 }
-
-/* #cardContainer {
-	margin-right: 35px;
-} */

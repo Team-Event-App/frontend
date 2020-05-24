@@ -59,7 +59,7 @@ const Main = () => {
 				<CardDeck>
 					<Card border="secondary" className="mr-5 main-card" key={index}>
 						<Card.Img variant="top" src={`${URL}${item.imageEvent}`} />
-						<Card.Body className="mainBody">
+						<Card.Body className="mainBody bg-light">
 							<Card.Text>{item.title}</Card.Text>
 							<Card.Text>
 								<FontAwesomeIcon icon={faCalendar} /> {item.date}
@@ -117,16 +117,13 @@ const Main = () => {
 				<Row>
 					<h2 className="mb-4 ml-5">BROWSE EVENTS</h2>
 				</Row>
+
 				<Row>
 					<div className="underlineMain mb-4 ml-5"></div>
 				</Row>
-			</Container>
 
-			<Container>
 				<Row className="rowEvent">{showEvent}</Row>
-			</Container>
 
-			<Container>
 				<Row>
 					<Col className="text-center mt-4 mb-3">
 						<Link to="/showall" className="btn buttonMore mt-4 mb-4">

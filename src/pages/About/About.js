@@ -1,24 +1,19 @@
 import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Team from "./Team";
 
 import "./About.css";
 
 import calender from "../../image/calender.png";
-import profile from "../../image/profile.png";
 
 import contact from "../../image/about/contact.jpg";
 import host from "../../image/about/host.jpg";
 import event from "../../image/about/event.jpg";
-
-import fb from "../../image/icon/fb.png";
-import ig from "../../image/icon/ig.png";
-import lin from "../../image/icon/in.png";
-import wa from "../../image/icon/wa.png";
 
 class About extends Component {
 	render() {
@@ -112,196 +107,8 @@ class About extends Component {
 					</Row>
 				</Container>
 
-				<Container>
-					<Row>
-						<Col>
-							<h2 className="text-center mt-3">Our Team</h2>
-							<div className="underlineAbout mx-auto"></div>
-						</Col>
-					</Row>
+				<Team />
 
-					<Row className="mt-5 mb-5 text-center">
-						<Col md={4} sm={12}>
-							<img src={profile} alt="" className="rounded-image" />
-						</Col>
-						<Col md={4} sm={12}>
-							<img src={profile} alt="" className="rounded-image" />
-						</Col>
-						<Col md={4} sm={12}>
-							<img src={profile} alt="" className="rounded-image" />
-						</Col>
-					</Row>
-				</Container>
-
-				<Container>
-					<Row>
-						<Card className="mb-3 mt-3 mx-auto about-card">
-							<Row className="no-gutters">
-								<Col md={4}>
-									<img
-										src={profile}
-										className="about-card-img mx-auto d-block"
-										alt="..."
-										style={{ width: "15rem" }}
-									/>
-								</Col>
-								<Col md={8}>
-									<Card.Body>
-										<Card.Title>
-											<h5>Evan Charles</h5>
-										</Card.Title>
-										<Card.Title>
-											<h6>Frontend Developer</h6>
-										</Card.Title>
-										<Card.Text className="mt-3">
-											<h6>
-												“Styles come and go. Good design is a language, not a
-												Style.” <br />
-												-Massimo Vignelli
-											</h6>
-										</Card.Text>
-										<Card.Text>
-											<small className="text-muted">
-												<Link to="www.google.com">
-													<img
-														src={fb}
-														alt="social-icon"
-														className="social-icons"
-													/>
-												</Link>
-												<img
-													src={ig}
-													alt="social-icon"
-													className="social-icons"
-												/>
-												<img
-													src={lin}
-													alt="social-icon"
-													className="social-icons"
-												/>
-												<img
-													src={wa}
-													alt="social-icon"
-													className="social-icons"
-												/>
-											</small>
-										</Card.Text>
-									</Card.Body>
-								</Col>
-							</Row>
-						</Card>
-					</Row>
-					<Row>
-						<Card className="mb-3 mt-3 mx-auto about-card">
-							<Row className="no-gutters">
-								<Col md={4}>
-									<img
-										src={profile}
-										className="about-card-img mx-auto d-block"
-										alt="..."
-										style={{ width: "15rem" }}
-									/>
-								</Col>
-								<Col md={8}>
-									<Card.Body>
-										<Card.Title>
-											<h5>Indra Kawasan</h5>
-										</Card.Title>
-										<Card.Title>
-											<h6>Backend Developer</h6>
-										</Card.Title>
-										<Card.Text>
-											<p>
-												This is a wider card with supporting text below as a
-												natural lead-in to additional content. This content is a
-												little bit longer.
-											</p>
-										</Card.Text>
-										<Card.Text>
-											<small className="text-muted">
-												<img
-													src={fb}
-													alt="social-icon"
-													className="social-icons"
-												/>
-												<img
-													src={ig}
-													alt="social-icon"
-													className="social-icons"
-												/>
-												<img
-													src={lin}
-													alt="social-icon"
-													className="social-icons"
-												/>
-												<img
-													src={wa}
-													alt="social-icon"
-													className="social-icons"
-												/>
-											</small>
-										</Card.Text>
-									</Card.Body>
-								</Col>
-							</Row>
-						</Card>
-					</Row>
-					<Row>
-						<Card className="mb-5 mt-3 mx-auto about-card">
-							<Row className="no-gutters">
-								<Col md={4}>
-									<img
-										src={profile}
-										className="about-card-img mx-auto d-block"
-										alt="..."
-										style={{ width: "15rem" }}
-									/>
-								</Col>
-								<Col md={8}>
-									<Card.Body>
-										<Card.Title>
-											<h5>Ariq Bimantoro</h5>
-										</Card.Title>
-										<Card.Title>
-											<h6>Frontend Developer</h6>
-										</Card.Title>
-										<Card.Text>
-											<p>
-											Only a man who likes ngidols and wants to be a full-stack developer
-											</p>
-										</Card.Text>
-										<Card.Text>
-											<p>
-												<small className="text-muted">
-													<img
-														src={fb}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={ig}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={lin}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={wa}
-														alt="social-icon"
-														className="social-icons"
-													/>
-												</small>
-											</p>
-										</Card.Text>
-									</Card.Body>
-								</Col>
-							</Row>
-						</Card>
-					</Row>
-				</Container>
 				<Footer />
 			</div>
 		);
