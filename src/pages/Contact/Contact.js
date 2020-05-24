@@ -54,8 +54,8 @@ class Contact extends Component {
                 <div className="container-contact">
                   <Row className="justify-content-center">
                     <Col md={6}>
-                      <Card className="p-5 mt-5">
-                        <img src={Logo} alt="Logo" />
+                      <Card className="p-5 mt-5 contactCard">
+                        <img src={Logo} alt="Logo" className="logoImage"/>
                         <hr />
                         <Form>
                           <div className="form-group">
