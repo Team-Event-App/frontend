@@ -2,7 +2,6 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -71,6 +70,12 @@ body {
 	background-color: #ff001f;
 }
 
+.rowEvent {
+	margin-left: -100px !important;
+	margin-right: -100px !important;
+	padding-left: 15px;
+}
+
 .card-deck img {
 	height: 280px;
 }
@@ -79,6 +84,11 @@ body {
 	box-shadow: 0 5px 5px -2px gray;
 	transform: scale(1);
 }
+
+.mainBody {
+	height: 280px;
+}
+
 .main-card:hover {
 	box-shadow: 2px 2px 20px #c4c4c4;
 	transition: transform 0.5s ease;
@@ -92,7 +102,7 @@ body {
 	border-color: #ff001f !important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1500) {
 	.container {
 		max-width: 1300px !important;
 	}

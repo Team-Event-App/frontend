@@ -1,5 +1,4 @@
 import axios from "axios";
-// const url = 'https://api.indrakawasan.com'
 
 import { createBrowserHistory } from "history";
 
