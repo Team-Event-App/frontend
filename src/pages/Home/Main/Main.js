@@ -55,7 +55,7 @@ const Main = () => {
 	const showEvent = data.map((item, index) => {
 		const URL = "https://api.indrakawasan.com/";
 		return (
-			<Row>
+			<Row className="cardRow">
 				<Col md={3} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
 					<Card
 						border="secondary"

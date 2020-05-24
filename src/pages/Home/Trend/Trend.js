@@ -51,7 +51,7 @@ const Trend = () => {
 			<Col md={3} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0" key={index}>
 				<Card
 					border="secondary"
-					className="main-card"
+					className="trendCard"
 					key={index}
 					style={{ height: "100%" }}
 				>
@@ -84,7 +84,7 @@ const Trend = () => {
 		<div>
 			<Jumbotron fluid className="trend-background">
 				<Container>
-					<h1 className="text-center mb-4 hostEvent">Host Your Own Events</h1>
+					<h1 className="mb-4 hostEvent">Host Your Own Events</h1>
 					<Form inline>
 						<Button
 							className="buttonCreate both-line-light mx-auto"

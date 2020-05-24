@@ -30,7 +30,10 @@
   font-size: 24px;
   color: #ff001f;
 }
-
+.navbar-nav{
+  background-color: white !important;
+  border-radius: 0px 0px 10px 10px;
+}
 .navDropItem:active {
   background-color: #ff001f !important;
 }
@@ -58,3 +61,24 @@
 .i-logout:active {
   color: white !important;
 }
+@media all and (max-width:480px) {
+	.imageLogo{
+		height: 60px;
+	}
+	.navbar-nav{
+		padding-bottom: 5px;
+	}
+	.signInButton{
+		margin-left: 150px;
+		margin-top: 10px;
+	}
+	.signButton {
+		margin-right: 170px;
+	}
+	.navProfile{
+		margin-left: 90px !important;
+  }
+  .brand{
+    margin-top: -10px;
+  }
+  }

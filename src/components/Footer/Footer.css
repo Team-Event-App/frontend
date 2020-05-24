@@ -31,3 +31,6 @@
 .footerNav:hover {
   color: black !important;
 }
+@media all and (max-width:480px) {
+  
+}

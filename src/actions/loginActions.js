@@ -8,7 +8,7 @@ export const login = (data) => {
 	return async (dispatch) => {
 		try {
 			const response = await axios.post(
-				"https://api.indrakawasan.com/user/login",
+				`https://api.indrakawasan.com/user/login`,
 				data
 			);
 			console.log(response.data);

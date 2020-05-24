@@ -29,14 +29,20 @@
   height: 2px;
   background-color: #ff001f;
 }
-
-.trend-card {
-  box-shadow: 1px 1px 5px #c4c4c4;
-  transform: scale(1);
+.trendCard {
+	box-shadow: 0 5px 5px -2px gray;
+	transform: scale(1);
 }
-.trend-card:hover {
-  /* border: solid 1px #ccc; */
-  box-shadow: 2px 2px 20px #c4c4c4;
-  transition: transform 0.5s ease;
-  transform: scale(1.1);
+.trendCard:hover {
+	box-shadow: 2px 2px 20px #c4c4c4;
+	transition: transform 0.5s ease;
+	transform: scale(1.1);
+	z-index: 1;
+}
+@media all and (max-width:480px) {
+.trend-background{
+  width: 480px;
+  height: 500px;
+}
+
 }
