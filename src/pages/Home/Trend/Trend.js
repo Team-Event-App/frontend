@@ -19,11 +19,13 @@ import { Link } from "react-router-dom";
 
 import "./Trend.css";
 
+const url = `${process.env.REACT_APP_BASE_URL}`;
+
 const Trend = () => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		const URL = "http://api.evenity.asia/event/show";
+		const URL = `${url}event/show`;
 
 		axios
 			.get(URL)
@@ -46,7 +48,7 @@ const Trend = () => {
 	}, []);
 
 	const showTrend = data.map((item, index) => {
-		const URL = "http://api.evenity.asia/";
+		const URL = `${url}`;
 		return (
 			<Col lg={3} md={6} sm={10} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>

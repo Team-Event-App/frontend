@@ -9,6 +9,8 @@ import "./EventCreate.css";
 import Navbars from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
+const url = `${process.env.REACT_APP_BASE_URL}`;
+
 class EventCreate extends Component {
 	constructor(props) {
 		super(props);
@@ -20,7 +22,7 @@ class EventCreate extends Component {
 			formData.append(key, values[key]);
 		});
 		formData.append("imageEvent", this.imageRef.current.files[0]);
-		const URL = `http://api.evenity.asia/event/create`;
+		const URL = `${url}event/create`;
 
 		axios
 			.post(URL, formData, {
