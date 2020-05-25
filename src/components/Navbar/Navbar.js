@@ -15,7 +15,7 @@ const Navbars = (props) => {
 	const [viewLogin, setViewLogin] = useState();
 	const history = useHistory();
 	const [user, setUser] = useState([]);
-	const URL = "https://api.indrakawasan.com/user/show";
+	const URL = "http://api.evenity.asia/user/show";
 
 	const logOut = () => {
 		props.logout();
@@ -102,7 +102,7 @@ const Navbars = (props) => {
 	return (
 		<Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
 			<Link to="/" className="ml-3 brand">
-				<img src={Logo} alt="logo" className="imageLogo"/>
+				<img src={Logo} alt="logo" className="imageLogo" />
 			</Link>
 			<Navbar.Toggle aria-controls="toogle" />
 			<Navbar.Collapse id="toogle">

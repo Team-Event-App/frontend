@@ -39,7 +39,7 @@ function MyVerticallyCenteredModal(props) {
 		// console.log(value);
 
 		axios
-			.post(`https://api.indrakawasan.com/booking/create/`, value, {
+			.post(`http://api.evenity.asia/booking/create/`, value, {
 				headers: {
 					"access-token": localStorage.getItem("access-token"),
 				},
@@ -144,7 +144,7 @@ const Detail = () => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		const URL = `https://api.indrakawasan.com/event/show/${id}`;
+		const URL = `http://api.evenity.asia/event/show/${id}`;
 
 		axios
 			.get(URL)
@@ -168,7 +168,7 @@ const Detail = () => {
 	};
 
 	const showDetail = data.map((item, index) => {
-		const URL = "https://api.indrakawasan.com/";
+		const URL = "http://api.evenity.asia/";
 
 		return (
 			<Card

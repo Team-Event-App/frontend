@@ -20,14 +20,7 @@ class EventCreate extends Component {
 			formData.append(key, values[key]);
 		});
 		formData.append("imageEvent", this.imageRef.current.files[0]);
-		const URL = `https://api.indrakawasan.com/event/create`;
-
-		// const token = localStorage.getItem("access-token");
-		// let userId = "";
-		// if (token) {
-		// 	userId = jwt(token).id;
-		// }
-		// console.log(jwt(token));
+		const URL = `http://api.evenity.asia/event/create`;
 
 		axios
 			.post(URL, formData, {
