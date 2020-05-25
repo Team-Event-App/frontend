@@ -18,7 +18,7 @@ const ShowAll = (props) => {
 	// value search in here
 	const search = params.get("search");
 	useEffect(() => {
-		const URL = "https://api.indrakawasan.com/event/show";
+		const URL = "http://api.evenity.asia/event/show";
 
 		axios
 			.get(URL)
@@ -41,7 +41,7 @@ const ShowAll = (props) => {
 	}, []);
 
 	const showAllEvent = data.map((item, index) => {
-		const URL = "https://api.indrakawasan.com/";
+		const URL = "http://api.evenity.asia/";
 		return (
 			<Col lg={3} md={6} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
