@@ -69,7 +69,7 @@ const EditPassword = () => {
 								<Card.Img
 									className="mt-5 ml-4 pt-4"
 									src={`${URL}${data.imageUrl}`}
-									src={profile}
+									alt="profile picture"
 									style={{ width: "10rem" }}
 								/>
 							</Col>

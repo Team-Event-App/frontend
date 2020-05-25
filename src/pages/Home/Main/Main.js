@@ -67,7 +67,11 @@ const Main = () => {
 			<Col lg={3} md={6} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
 					<Card border="secondary" className="mr-5 main-card" key={index}>
-						<Card.Img variant="top" src={`${URL}${item.imageEvent}`} />
+						<Card.Img
+							variant="top"
+							src={`${URL}${item.imageEvent}`}
+							alt="imageEvent"
+						/>
 						<Card.Body className="mainBody bg-light">
 							<Card.Text>{item.title}</Card.Text>
 							<Card.Text>
@@ -113,6 +117,7 @@ const Main = () => {
 								placeholder="Search Events"
 								className="mainInput"
 								name="search"
+								autocomplete="off"
 								ref={register({ required: true })}
 							/>
 							<Button
