@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { createBrowserHistory } from "history";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const history = createBrowserHistory();
 export const login = (data) => {

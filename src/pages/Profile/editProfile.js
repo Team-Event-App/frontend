@@ -6,7 +6,7 @@ import jwt from "jwt-decode";
 
 import "./Profile.css";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const EditProfile = () => {
 	const URL = `${url}`;

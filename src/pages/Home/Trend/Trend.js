@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 import "./Trend.css";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const Trend = () => {
 	const [data, setData] = useState([]);
