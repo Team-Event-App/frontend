@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./Team.css";
 
 import Evan from "../../image/about/evan.png";
+import Indra from "../../image/about/Indra.jpeg";
 import profile from "../../image/profile.png";
 
 import fb from "../../image/icon/fb.png";
@@ -26,10 +27,10 @@ class Team extends Component {
 
 					<Row className="mt-5 mb-5 text-center">
 						<Col md={4} sm={12}>
-							<img src={Evan} alt="" className="rounded-image" />
+							<img src={Evan} alt="Evan" className="rounded-image" />
 						</Col>
 						<Col md={4} sm={12}>
-							<img src={profile} alt="" className="rounded-image" />
+							<img src={Indra} alt="" className="rounded-image" />
 						</Col>
 						<Col md={4} sm={12}>
 							<img src={profile} alt="" className="rounded-image" />
@@ -45,7 +46,7 @@ class Team extends Component {
 									<img
 										src={Evan}
 										className="about-card-img mx-auto d-block"
-										alt="..."
+										alt="Evan"
 										style={{ width: "15rem" }}
 									/>
 								</Col>
@@ -72,6 +73,7 @@ class Team extends Component {
 												>
 													<img
 														src={fb}
+														alt="facebook"
 														alt="social-icon"
 														className="social-icons"
 													/>
@@ -82,16 +84,18 @@ class Team extends Component {
 												>
 													<img
 														src={ig}
+														alt="instagram"
 														alt="social-icon"
 														className="social-icons"
 													/>
 												</a>
 												<a
-													href="https://www.linkedin.com/in/evan-charles-%E9%BB%84%E8%A3%95%E5%B3%BB-6385971a7/"
+													href="https://www.linkedin.com/in/evan-charles-6385971a7/"
 													target="blank"
 												>
 													<img
 														src={lin}
+														alt="linkedin"
 														alt="social-icon"
 														className="social-icons"
 													/>
@@ -99,6 +103,7 @@ class Team extends Component {
 												<a href="https://wa.me/0895627436758" target="blank">
 													<img
 														src={wa}
+														alt="whatsapp"
 														alt="social-icon"
 														className="social-icons"
 													/>
@@ -115,9 +120,9 @@ class Team extends Component {
 							<Row className="no-gutters">
 								<Col md={4}>
 									<img
-										src={profile}
+										src={Indra}
 										className="about-card-img mx-auto d-block"
-										alt="..."
+										alt="Indra"
 										style={{ width: "15rem" }}
 									/>
 								</Col>
@@ -130,34 +135,56 @@ class Team extends Component {
 											<h6>Backend Developer</h6>
 										</Card.Title>
 										<Card.Text>
-											<p>
-												This is a wider card with supporting text below as a
-												natural lead-in to additional content. This content is a
-												little bit longer.
-											</p>
+											<h6>
+												"If you canot do great things, do small things in a
+												great way"
+												<br />
+												-Napoleon Hill
+											</h6>
 										</Card.Text>
 										<Card.Text>
 											<small className="text-muted">
-												<img
-													src={fb}
-													alt="social-icon"
-													className="social-icons"
-												/>
-												<img
-													src={ig}
-													alt="social-icon"
-													className="social-icons"
-												/>
-												<img
-													src={lin}
-													alt="social-icon"
-													className="social-icons"
-												/>
-												<img
-													src={wa}
-													alt="social-icon"
-													className="social-icons"
-												/>
+												<a
+													href="https://www.facebook.com/indra.kawasansiahaan"
+													target="blank"
+												>
+													<img
+														src={fb}
+														alt="facebook"
+														alt="social-icon"
+														className="social-icons"
+													/>
+												</a>
+												<a
+													href="https://www.instagram.com/siahaan.shih/"
+													target="blank"
+												>
+													<img
+														src={ig}
+														alt="instagram"
+														alt="social-icon"
+														className="social-icons"
+													/>
+												</a>
+												<a
+													href="https://www.linkedin.com/in/siahaan-kawasan/"
+													target="blank"
+												>
+													<img
+														src={lin}
+														alt="linkedin"
+														alt="social-icon"
+														className="social-icons"
+													/>
+												</a>
+												<a href="https://wa.me/0975642739" target="blank">
+													<img
+														src={wa}
+														alt="whatsapp"
+														alt="social-icon"
+														className="social-icons"
+													/>
+												</a>
 											</small>
 										</Card.Text>
 									</Card.Body>
@@ -172,7 +199,7 @@ class Team extends Component {
 									<img
 										src={profile}
 										className="about-card-img mx-auto d-block"
-										alt="..."
+										alt="Ariq"
 										style={{ width: "15rem" }}
 									/>
 								</Col>
@@ -193,26 +220,38 @@ class Team extends Component {
 										<Card.Text>
 											<p>
 												<small className="text-muted">
-													<img
-														src={fb}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={ig}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={lin}
-														alt="social-icon"
-														className="social-icons"
-													/>
-													<img
-														src={wa}
-														alt="social-icon"
-														className="social-icons"
-													/>
+													<a href="https://www.facebook.com" target="blank">
+														<img
+															src={fb}
+															alt="facebook"
+															alt="social-icon"
+															className="social-icons"
+														/>
+													</a>
+													<a href="https://www.instagram.com" target="blank">
+														<img
+															src={ig}
+															alt="instagram"
+															alt="social-icon"
+															className="social-icons"
+														/>
+													</a>
+													<a href="https://www.linkedin.com" target="blank">
+														<img
+															src={lin}
+															alt="linkedin"
+															alt="social-icon"
+															className="social-icons"
+														/>
+													</a>
+													<a href="https://wa.me/" target="blank">
+														<img
+															src={wa}
+															alt="whatsapp"
+															alt="social-icon"
+															className="social-icons"
+														/>
+													</a>
 												</small>
 											</p>
 										</Card.Text>
