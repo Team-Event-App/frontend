@@ -8,6 +8,8 @@ import * as Yup from "yup";
 
 import "./Register.css";
 
+const url = `${process.env.REACT_APP_BASE_URL}`;
+
 const Register = () => {
 	const history = useHistory();
 	const [passwordShown, setPasswordShown] = useState(false);
@@ -50,7 +52,7 @@ const Register = () => {
 									onSubmit={(values, actions) => {
 										console.log(values);
 
-										axios("http://api.evenity.asia/user/register", {
+										axios(`${url}user/register`, {
 											method: "POST",
 											data: values,
 										})
