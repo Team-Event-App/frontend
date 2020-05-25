@@ -74,7 +74,7 @@ const Main = () => {
 							src={`${URL}${item.imageEvent}`}
 							alt="imageEvent"
 						/>
-						<Card.Body className="mainBody bg-light">
+						<Card.Body className="mainBody ">
 							<Card.Text>{item.title}</Card.Text>
 							<Card.Text>
 								<FontAwesomeIcon icon={faCalendar} /> {item.date}
