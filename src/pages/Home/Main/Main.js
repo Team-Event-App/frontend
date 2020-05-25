@@ -26,6 +26,8 @@ import Footer from "../../../components/Footer/Footer";
 import Trend from "../Trend/Trend";
 import Category from "./../Category/Category";
 
+const url = `${process.env.REACT_APP_BASE_URL}`;
+
 const Main = () => {
 	const history = useHistory();
 	const [data, setData] = useState([]);
@@ -39,7 +41,7 @@ const Main = () => {
 	};
 
 	useEffect(() => {
-		const URL = "http://api.evenity.asia/event/show";
+		const URL = `${url}event/show`;
 
 		axios
 			.get(URL)
@@ -62,7 +64,7 @@ const Main = () => {
 	}, []);
 
 	const showEvent = data.map((item, index) => {
-		const URL = "http://api.evenity.asia/";
+		const URL = `${url}`;
 		return (
 			<Col lg={3} md={6} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>

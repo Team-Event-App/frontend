@@ -2,14 +2,13 @@ import axios from "axios";
 
 import { createBrowserHistory } from "history";
 
+const url = `${process.env.REACT_APP_BASE_URL}`;
+
 const history = createBrowserHistory();
 export const login = (data) => {
 	return async (dispatch) => {
 		try {
-			const response = await axios.post(
-				`http://api.evenity.asia/user/login`,
-				data
-			);
+			const response = await axios.post(`${url}user/login`, data);
 			console.log(response.data);
 			dispatch({
 				type: "LOGIN_SUCCESS",
