@@ -48,7 +48,7 @@ class About extends Component {
 							</p>
 						</Col>
 						<Col md={6} sm={12}>
-							<img src={calender} alt="" className="calender-img" />
+							<img src={calender} alt="calender" className="calender-img" />
 						</Col>
 					</Row>
 				</Container>

@@ -26,7 +26,7 @@ const HistoryEvent = () => {
 	const idUser = jwtdecode.id;
 
 	useEffect(() => {
-		const URL = `https://api.indrakawasan.com/event/getByUserId/${idUser}`;
+		const URL = `http://api.evenity.asia/event/getByUserId/${idUser}`;
 
 		axios
 			.get(URL)

@@ -39,7 +39,7 @@ function MyVerticallyCenteredModal(props) {
 		// console.log(value);
 
 		axios
-			.post(`https://api.indrakawasan.com/booking/create/`, value, {
+			.post(`http://api.evenity.asia/booking/create/`, value, {
 				headers: {
 					"access-token": localStorage.getItem("access-token"),
 				},
@@ -144,7 +144,7 @@ const Detail = () => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		const URL = `https://api.indrakawasan.com/event/show/${id}`;
+		const URL = `http://api.evenity.asia/event/show/${id}`;
 
 		axios
 			.get(URL)
@@ -168,17 +168,17 @@ const Detail = () => {
 	};
 
 	const showDetail = data.map((item, index) => {
-		const URL = "https://api.indrakawasan.com/";
+		const URL = "http://api.evenity.asia/";
 
 		return (
 			<Card
 				border="primary"
 				key={index}
-				className="mx-auto mt-4"
+				className="mx-auto mt-4 cardDetail"
 				style={{ width: "70rem" }}
 			>
 				<Card.Header>
-					<Row>
+					<Row className="rowCard">
 						<Col md={9} sm={12}>
 							<img
 								src={`${URL}${item.imageEvent}`}
@@ -259,7 +259,7 @@ const Detail = () => {
 						</Row>
 
 						<Row
-							className="mt-5 ml-1 bg-light"
+							className="mt-5 ml-1 bg-light rowShare"
 							style={{ borderRadius: "20rem" }}
 						>
 							<Col md={{ offset: 2, span: 4 }}>
@@ -287,7 +287,7 @@ const Detail = () => {
 	return (
 		<div>
 			<Navbar />
-			<Container className="mt-5 pt-5 mb-5">
+			<Container className="mt-5 pt-5 mb-5 containerCard">
 				<Row>
 					<Col>{showDetail}</Col>
 				</Row>

@@ -38,7 +38,7 @@ const Main = () => {
 		});
 	};
 	useEffect(() => {
-		const URL = "https://api.indrakawasan.com/event/show";
+		const URL = "http://api.evenity.asia/event/show";
 
 		axios
 			.get(URL)
@@ -61,9 +61,9 @@ const Main = () => {
 	}, []);
 
 	const showEvent = data.map((item, index) => {
-		const URL = "https://api.indrakawasan.com/";
+		const URL = "http://api.evenity.asia/";
 		return (
-			<Col lg={3} md={6} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
+			<Col lg={3} md={6} sm={10} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
 					<Card border="secondary" className="main-card" key={index}>
 						<Card.Img variant="top" src={`${URL}${item.imageEvent}`} />
@@ -95,7 +95,7 @@ const Main = () => {
 	return (
 		<div>
 			<Navbars />
-			<Jumbotron fluid className="main-background mt-5">
+			<Jumbotron fluid className="main-background">
 				<Container className="pt-3">
 					<h1 className="text-center mt-5 pt-3 mb-3">
 						“What you need, is an Event, to remember for a lifetime.”
@@ -112,6 +112,7 @@ const Main = () => {
 								placeholder="Search Events"
 								className="mainInput"
 								name="search"
+								autocomplete="off"
 								ref={register({ required: true })}
 							/>
 							<Button
@@ -130,7 +131,7 @@ const Main = () => {
 
 			<Container className="browseContainer mt-5 pt-5">
 				<Row>
-					<h2 className="mb-4 ml-5">BROWSE EVENTS</h2>
+					<h2 className="mb-4 ml-5 browseEve">BROWSE EVENTS</h2>
 				</Row>
 
 				<Row>

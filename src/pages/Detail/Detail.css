@@ -1,3 +1,19 @@
 .detailCardImage{
     height: 400px !important;
 }
+@media all and (max-width: 768px) {
+    .detailCardImage{
+        width: 560px !important;
+    }
+    .cardDetail{
+        width: 600px !important;
+    }
+    .containerCard{
+        margin-left: 70px !important;
+    }
+    .rowShare{
+        display: flex !important;
+        
+        padding-left: 170px;
+    }
+}

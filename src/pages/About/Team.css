@@ -28,6 +28,11 @@
 	width: 3rem !important;
 }
 
+.social-icons:hover {
+	border-radius: 50%;
+	box-shadow: 2px 2px 20px black;
+}
+
 .photo-grid {
 	margin: 1em 0em;
 	text-align: center;

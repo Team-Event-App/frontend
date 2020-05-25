@@ -45,3 +45,13 @@
 .fa-lock:hover {
 	color: rgb(226, 217, 217) !important;
 }
+@media all and (max-width: 768px) {
+	.sidebarUser{
+		z-index: 1;
+		margin-left: -115px;
+	}
+	.sidebarPassword{
+		z-index: 1;
+		margin-left: -115px;
+	}
+}

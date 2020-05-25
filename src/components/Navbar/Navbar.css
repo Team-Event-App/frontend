@@ -84,3 +84,19 @@
     margin-left: -50px;
   }
   }
+  @media all and (max-width:768px) {
+    .imageLogo{
+      height: 80px;
+      margin-top: -20px;
+    }
+    .navbar-nav{
+      padding-bottom: 5px;
+    }
+    .signInButton{
+      margin-left: 290px;
+      margin-top: 10px;
+    }
+    .navProfile{
+      margin-left: 160px;
+    }
+  }

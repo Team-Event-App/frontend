@@ -4,17 +4,17 @@ import { div } from "react-router-dom";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
-import { Jumbotron, h4, Row, Col } from "react-bootstrap";
+import { Jumbotron, Row, Col } from "react-bootstrap";
 
-import music from "../../../image/music.jpg";
-import art from "../../../image/art.jpeg";
-import film from "../../../image/film.jpeg";
-import fashion from "../../../image/fashion.jpeg";
-import sport from "../../../image/sport.jpeg";
-import festival from "../../../image/festival.jpeg";
-import nightlife from "../../../image/nightlife.jpeg";
-import charity from "../../../image/charity.jpg";
-import education from "../../../image/Education.jpeg";
+import music from "../../../image/category/music.jpg";
+import art from "../../../image/category/art.jpeg";
+import film from "../../../image/category/film.jpeg";
+import fashion from "../../../image/category/fashion.jpeg";
+import sport from "../../../image/category/sport.jpeg";
+import festival from "../../../image/category/festival.jpeg";
+import nightlife from "../../../image/category/nightlife.jpeg";
+import charity from "../../../image/category/charity.jpg";
+import education from "../../../image/category/Education.jpeg";
 
 import "./Category.css";
 
@@ -37,11 +37,8 @@ export default class CategoryCarousel extends Component {
 									480: {
 										slidesPerPage: 1,
 									},
-									500: {
-										slidesPerPage: 1,
-									},
-									640: {
-										slidesPerPage: 1,
+									768: {
+										slidesPerPage: 2,
 										arrows: false,
 									},
 									900: {

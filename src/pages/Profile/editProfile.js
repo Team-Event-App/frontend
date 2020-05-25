@@ -7,7 +7,7 @@ import jwt from "jwt-decode";
 import "./Profile.css";
 
 const EditProfile = () => {
-	const URL = "https://api.indrakawasan.com/";
+	const URL = "http://api.evenity.asia/";
 	const defaultValue = `${URL}public/images/2020-05-23T11:48:46.274Zicon.png`;
 	const token = localStorage.getItem("access-token");
 	const jwtdecode = jwt(token);
@@ -15,7 +15,7 @@ const EditProfile = () => {
 	const [data, setData] = useState({});
 	let imageRef = useRef();
 	useEffect(() => {
-		const URL = `https://api.indrakawasan.com/user/show/${userProfile}`;
+		const URL = `http://api.evenity.asia/user/show/${userProfile}`;
 		axios
 			.get(URL)
 			.then((res) => {
@@ -50,7 +50,7 @@ const EditProfile = () => {
 		if (image && image[0]) formData.append("imageUrl", image[0], image[0].name);
 
 		axios
-			.put(`https://api.indrakawasan.com/user/edit/${userProfile}`, formData, {
+			.put(`http://api.evenity.asia/user/edit/${userProfile}`, formData, {
 				headers: {
 					"access-token": localStorage.getItem("access-token"),
 					"Content-Type": "multipart/form-data",
@@ -73,6 +73,7 @@ const EditProfile = () => {
 						<Form onSubmit={handleSubmit(onSubmit)}>
 							<Card.Img
 								src={`${URL}${data.imageUrl || defaultValue}`}
+								alt="profile picture"
 								className="mx-auto mb-2 mt-3 rounded-circle d-block"
 								style={myProfile}
 							/>
