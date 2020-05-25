@@ -9,7 +9,7 @@ import "./EventCreate.css";
 import Navbars from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 class EventCreate extends Component {
 	constructor(props) {

@@ -10,7 +10,7 @@ import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import "./Navbar.css";
 import Logo from "./../../image/logo.png";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const Navbars = (props) => {
 	const [data, setData] = useState();

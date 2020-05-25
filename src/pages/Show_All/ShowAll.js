@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
+import {
+	Container,
+	Row,
+	Col,
+	Card,
+	CardDeck,
+	Form,
+	FormControl,
+	Button,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -12,7 +21,7 @@ import Footer from "../../components/Footer/Footer";
 import "./../Home/Main/Main.css";
 import "./ShowAll.css";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const ShowAll = (props) => {
 	const [data, setData] = useState([]);
@@ -87,6 +96,31 @@ const ShowAll = (props) => {
 						<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
 						<div className="underlineShowAll mx-auto mb-5"></div>
 					</Col>
+				</Row>
+
+				<Row>
+					<Form
+						inline
+						className="mx-auto"
+						// onSubmit={handleSubmit(onSubmit)}
+					>
+						<FormControl
+							type="text"
+							placeholder="Search Events"
+							className="mainInput"
+							name="search"
+							autocomplete="off"
+							style={{ border: "1px solid black" }}
+							// ref={register({ required: true })}
+						/>
+						<Button
+							type="submit"
+							variant="outline-success"
+							className="buttonSearch mainSearch"
+						>
+							<i className="fas fa-search"></i>
+						</Button>
+					</Form>
 				</Row>
 
 				<Container>

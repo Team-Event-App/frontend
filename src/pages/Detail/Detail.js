@@ -19,7 +19,7 @@ import Footer from "../../components/Footer/Footer";
 
 import "./Detail.css";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 function MyVerticallyCenteredModal(props) {
 	const { id } = useParams();
