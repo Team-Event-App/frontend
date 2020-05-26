@@ -6,7 +6,7 @@ import axios from "axios";
 import jwt from "jwt-decode";
 import * as Yup from "yup";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 function HistoryBooking() {
 	const [modalShow, setModalShow] = React.useState(false);

@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 import "./Trend.css";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const Trend = () => {
 	const [data, setData] = useState([]);
@@ -58,7 +58,7 @@ const Trend = () => {
 							src={`${URL}${item.imageEvent}`}
 							alt="imageEvent"
 						/>
-						<Card.Body className="mainBody bg-light">
+						<Card.Body className="mainBody">
 							<Card.Text>{item.title}</Card.Text>
 							<Card.Text>
 								<FontAwesomeIcon icon={faCalendar} /> {item.date}

@@ -8,7 +8,7 @@ import * as Yup from "yup";
 
 import "./Register.css";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const Register = () => {
 	const history = useHistory();

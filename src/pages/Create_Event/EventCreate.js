@@ -9,7 +9,7 @@ import "./EventCreate.css";
 import Navbars from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 class EventCreate extends Component {
 	constructor(props) {
@@ -68,12 +68,12 @@ class EventCreate extends Component {
 						);
 						return errors;
 					}
-					if (!values.imageEvent) {
-						errors.imageEvent = (
-							<small className="form-text text-danger">Image is required</small>
-						);
-						return errors;
-					}
+					// if (!values.imageEvent) {
+					// 	errors.imageEvent = (
+					// 		<small className="form-text text-danger">Image is required</small>
+					// 	);
+					// 	return errors;
+					// }
 				}}
 				onSubmit={this.handleSubmit}
 				render={(formProps, setFieldValue) => {
@@ -222,7 +222,7 @@ class EventCreate extends Component {
 															style={{ width: "35rem" }}
 															ref={this.imageRef}
 														/>
-														<ErrorMessage name="imageEvent" />
+														{/* <ErrorMessage name="imageEvent" /> */}
 													</Col>
 												</Row>
 

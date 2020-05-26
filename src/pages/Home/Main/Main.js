@@ -26,7 +26,7 @@ import Footer from "../../../components/Footer/Footer";
 import Trend from "../Trend/Trend";
 import Category from "./../Category/Category";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const Main = () => {
 	const history = useHistory();
