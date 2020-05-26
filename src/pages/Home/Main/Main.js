@@ -40,7 +40,7 @@ const Main = () => {
 		});
 	};
 	useEffect(() => {
-		const URL = `https://api.indrakawasan/event/show`;
+		const URL = `https://api.indrakawasan.com/event/show`;
 
 		axios
 			.get(URL)
@@ -63,7 +63,7 @@ const Main = () => {
 	}, []);
 
 	const showEvent = data.map((item, index) => {
-		const URL = `https://api.indrakawasan/`;
+		const URL = `https://api.indrakawasan.com/`;
 		return (
 			<Col lg={3} md={6} sm={10} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>

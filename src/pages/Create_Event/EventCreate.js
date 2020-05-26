@@ -22,7 +22,7 @@ class EventCreate extends Component {
 			formData.append(key, values[key]);
 		});
 		formData.append("imageEvent", this.imageRef.current.files[0]);
-		const URL = `https://api.indrakawasan/event/create`;
+		const URL = `https://api.indrakawasan.com/event/create`;
 
 		axios
 			.post(URL, formData, {
