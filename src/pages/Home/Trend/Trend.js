@@ -25,7 +25,7 @@ const Trend = () => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		const URL = `https://api.indrakawasan/`;
+		const URL = `https://api.indrakawasan.com/`;
 
 		axios
 			.get(`${URL}event/show`)
@@ -48,7 +48,7 @@ const Trend = () => {
 	}, []);
 
 	const showTrend = data.map((item, index) => {
-		const URL = `https://api.indrakawasan/`;
+		const URL = `https://api.indrakawasan.com/`;
 		return (
 			<Col lg={3} md={6} sm={10} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
