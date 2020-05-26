@@ -5,18 +5,16 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import jwt from "jwt-decode";
 
-import profile from "./../../image/profile.png";
-
-const url = `${process.env.REACT_APP_API_URL}`;
+// const url = `${process.env.REACT_APP_API_URL}`;
 
 const EditPassword = () => {
-	const URL = `${url}`;
+	const URL = `http://api.evenity.asia/`;
 	const token = localStorage.getItem("access-token");
 	const jwtdecode = jwt(token);
 	const userProfile = jwtdecode.id;
 	const [data, setData] = useState({});
 	useEffect(() => {
-		const URL = `${url}user/show/${userProfile}`;
+		const URL = `http://api.evenity.asia/user/show/${userProfile}`;
 		axios
 			.get(URL)
 			.then((res) => {
@@ -31,7 +29,7 @@ const EditPassword = () => {
 	const { register, handleSubmit, errors } = useForm();
 	const onSubmit = (data) => {
 		axios
-			.put(`${url}user/edit/${userProfile}`, data, {
+			.put(`http://api.evenity.asia/user/edit/${userProfile}`, data, {
 				headers: {
 					"access-token": localStorage.getItem("access-token"),
 					"Content-Type": "multipart/form-data",

@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 import "./Team.css";
 
 import Evan from "../../image/about/evan.png";
 import Indra from "../../image/about/Indra.jpeg";
-import profile from "../../image/profile.png";
 import Ariq from "../../image/about/ariq.jpg";
 import fb from "../../image/icon/fb.png";
 import ig from "../../image/icon/ig.png";
@@ -56,7 +54,7 @@ class Team extends Component {
 											<h5>Evan Charles</h5>
 										</Card.Title>
 										<Card.Title>
-											<h6>Frontend Developer</h6>
+											<h6>Fullstack Developer</h6>
 										</Card.Title>
 										<Card.Text className="mt-3">
 											<h6>
@@ -74,7 +72,6 @@ class Team extends Component {
 													<img
 														src={fb}
 														alt="facebook"
-														alt="social-icon"
 														className="social-icons"
 													/>
 												</a>
@@ -85,7 +82,6 @@ class Team extends Component {
 													<img
 														src={ig}
 														alt="instagram"
-														alt="social-icon"
 														className="social-icons"
 													/>
 												</a>
@@ -96,7 +92,6 @@ class Team extends Component {
 													<img
 														src={lin}
 														alt="linkedin"
-														alt="social-icon"
 														className="social-icons"
 													/>
 												</a>
@@ -104,7 +99,6 @@ class Team extends Component {
 													<img
 														src={wa}
 														alt="whatsapp"
-														alt="social-icon"
 														className="social-icons"
 													/>
 												</a>
@@ -132,7 +126,7 @@ class Team extends Component {
 											<h5>Indra Kawasan</h5>
 										</Card.Title>
 										<Card.Title>
-											<h6>Backend Developer</h6>
+											<h6>Fullstack Developer</h6>
 										</Card.Title>
 										<Card.Text>
 											<h6>
@@ -151,7 +145,6 @@ class Team extends Component {
 													<img
 														src={fb}
 														alt="facebook"
-														alt="social-icon"
 														className="social-icons"
 													/>
 												</a>
@@ -162,7 +155,6 @@ class Team extends Component {
 													<img
 														src={ig}
 														alt="instagram"
-														alt="social-icon"
 														className="social-icons"
 													/>
 												</a>
@@ -173,7 +165,6 @@ class Team extends Component {
 													<img
 														src={lin}
 														alt="linkedin"
-														alt="social-icon"
 														className="social-icons"
 													/>
 												</a>
@@ -181,7 +172,6 @@ class Team extends Component {
 													<img
 														src={wa}
 														alt="whatsapp"
-														alt="social-icon"
 														className="social-icons"
 													/>
 												</a>
@@ -209,7 +199,7 @@ class Team extends Component {
 											<h5>Ariq Bimantoro</h5>
 										</Card.Title>
 										<Card.Title>
-											<h6>Frontend Developer</h6>
+											<h6>Fullstack Developer</h6>
 										</Card.Title>
 										<Card.Text>
 											<p>
@@ -224,7 +214,6 @@ class Team extends Component {
 														<img
 															src={fb}
 															alt="facebook"
-															alt="social-icon"
 															className="social-icons"
 														/>
 													</a>
@@ -232,7 +221,6 @@ class Team extends Component {
 														<img
 															src={ig}
 															alt="instagram"
-															alt="social-icon"
 															className="social-icons"
 														/>
 													</a>
@@ -240,7 +228,6 @@ class Team extends Component {
 														<img
 															src={lin}
 															alt="linkedin"
-															alt="social-icon"
 															className="social-icons"
 														/>
 													</a>
@@ -248,7 +235,6 @@ class Team extends Component {
 														<img
 															src={wa}
 															alt="whatsapp"
-															alt="social-icon"
 															className="social-icons"
 														/>
 													</a>
