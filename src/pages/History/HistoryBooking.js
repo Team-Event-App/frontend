@@ -6,7 +6,7 @@ import axios from "axios";
 import jwt from "jwt-decode";
 import * as Yup from "yup";
 
-const url = `${process.env.REACT_APP_API_URL}`;
+// const url = `${process.env.REACT_APP_API_URL}`;
 
 function HistoryBooking() {
 	const [modalShow, setModalShow] = React.useState(false);
@@ -43,13 +43,16 @@ function HistoryBooking() {
 							formData.set("totalAmount", values.totalAmount);
 							formData.append("imageProof", values.imageProof);
 
-							const res = await axios(`${url}payment/create`, {
-								method: "POST",
-								data: formData,
-								headers: {
-									"access-token": localStorage.getItem("access-token"),
-								},
-							});
+							const res = await axios(
+								`http://api.evenity.asia/payment/create`,
+								{
+									method: "POST",
+									data: formData,
+									headers: {
+										"access-token": localStorage.getItem("access-token"),
+									},
+								}
+							);
 
 							console.log(res);
 							alert("Success sending payment.");
@@ -140,7 +143,7 @@ function HistoryBooking() {
 	const userName = jwtdecode.fullname;
 
 	useEffect(() => {
-		const URL = `${url}booking/getName/${userName}`;
+		const URL = `http://api.evenity.asia/booking/getName/${userName}`;
 
 		axios
 			.get(URL, {
