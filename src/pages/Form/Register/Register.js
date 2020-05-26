@@ -52,7 +52,7 @@ const Register = () => {
 									onSubmit={(values, actions) => {
 										console.log(values);
 
-										axios(`http://api.evenity.asia/user/register`, {
+										axios(`https://api.indrakawasan/user/register`, {
 											method: "POST",
 											data: values,
 										})

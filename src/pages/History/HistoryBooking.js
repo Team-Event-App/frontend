@@ -44,7 +44,7 @@ function HistoryBooking() {
 							formData.append("imageProof", values.imageProof);
 
 							const res = await axios(
-								`http://api.evenity.asia/payment/create`,
+								`https://api.indrakawasan/payment/create`,
 								{
 									method: "POST",
 									data: formData,
@@ -143,7 +143,7 @@ function HistoryBooking() {
 	const userName = jwtdecode.fullname;
 
 	useEffect(() => {
-		const URL = `http://api.evenity.asia/booking/getName/${userName}`;
+		const URL = `https://api.indrakawasan/booking/getName/${userName}`;
 
 		axios
 			.get(URL, {
