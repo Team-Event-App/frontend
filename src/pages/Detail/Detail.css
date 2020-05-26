@@ -4,6 +4,7 @@
 @media all and (max-width: 769px) {
     .detailCardImage{
         width: 560px !important;
+        
     }
     .cardDetail{
         width: 600px !important;

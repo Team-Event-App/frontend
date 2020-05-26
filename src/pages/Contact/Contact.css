@@ -22,3 +22,8 @@
       margin-left: -280px;
     }
   }
+  @media all and (max-width:768px) {
+    .contactCard{
+      margin-left: -220px;
+    }
+  }
