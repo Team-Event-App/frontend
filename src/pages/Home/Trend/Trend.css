@@ -53,8 +53,18 @@
 		width: 400px;
 	  }
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 769px) {
 	.trendCard{
 		margin-left: 100px !important;
+	}
+}
+@media all and (max-width: 1280px) {
+	.rowEvent{
+		margin-left: -80px !important;
+	}
+}
+@media all and (max-width: 900px) {
+	.rowTrend{
+		margin-right: -100px !important;
 	}
 }

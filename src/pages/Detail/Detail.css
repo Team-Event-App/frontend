@@ -1,7 +1,7 @@
 .detailCardImage{
     height: 400px !important;
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 769px) {
     .detailCardImage{
         width: 560px !important;
     }

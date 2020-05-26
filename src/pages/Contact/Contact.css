@@ -15,4 +15,10 @@
     width: 300px;
     height: 70px;
   }
-	}
+  }
+  @media all and (max-width: 900px) {
+    .contactCard{
+      width: 700px;
+      margin-left: -280px;
+    }
+  }

@@ -122,11 +122,16 @@ body {
 	}
 }
 
-@media all and (max-width:768px) {
+@media all and (max-width:769px) {
 	.main-card{
 		width: 300px !important;
 		background-color: black !important;
 		margin-left: 100px !important;
 	}
 
+}
+@media all and (max-width: 900px) {
+	.rowEvent{
+		margin-right: -40px !important;
+	}
 }

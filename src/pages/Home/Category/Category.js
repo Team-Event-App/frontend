@@ -45,6 +45,9 @@ export default class CategoryCarousel extends Component {
 										slidesPerPage: 2,
 										arrows: false,
 									},
+									1280:{
+										slidesPerPage: 3,
+									}
 								}}
 							>
 								<div className="text-center">

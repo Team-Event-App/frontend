@@ -19,7 +19,7 @@ import Footer from "../../components/Footer/Footer";
 
 import "./Detail.css";
 
-const url = `${process.env.REACT_APP_API_URL}`;
+// const url = `${process.env.REACT_APP_API_URL}`;
 
 function MyVerticallyCenteredModal(props) {
 	const { id } = useParams();
@@ -41,7 +41,7 @@ function MyVerticallyCenteredModal(props) {
 		// console.log(value);
 
 		axios
-			.post(`${url}booking/create/`, value, {
+			.post(`http://api.evenity.asia/booking/create/`, value, {
 				headers: {
 					"access-token": localStorage.getItem("access-token"),
 				},
@@ -146,7 +146,7 @@ const Detail = () => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		const URL = `${url}event/show/${id}`;
+		const URL = `http://api.evenity.asia/event/show/${id}`;
 
 		axios
 			.get(URL)
@@ -170,7 +170,7 @@ const Detail = () => {
 	};
 
 	const showDetail = data.map((item, index) => {
-		const URL = `${url}`;
+		const URL = `http://api.evenity.asia/`;
 
 		return (
 			<Card
