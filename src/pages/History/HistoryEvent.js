@@ -19,7 +19,7 @@ import HistoryBooking from "./HistoryBooking";
 
 import "./HistoryEvent.css";
 
-const url = `${process.env.REACT_APP_API_URL}`;
+// const url = `${process.env.REACT_APP_API_URL}`;
 
 const HistoryEvent = () => {
 	const [data, setData] = useState([]);
@@ -28,7 +28,7 @@ const HistoryEvent = () => {
 	const idUser = jwtdecode.id;
 
 	useEffect(() => {
-		const URL = `${url}event/getByUserId/${idUser}`;
+		const URL = `http://api.evenity.asia/event/getByUserId/${idUser}`;
 
 		axios
 			.get(URL)

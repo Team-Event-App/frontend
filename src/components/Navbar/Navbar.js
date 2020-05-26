@@ -10,14 +10,14 @@ import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import "./Navbar.css";
 import Logo from "./../../image/logo.png";
 
-const url = `${process.env.REACT_APP_API_URL}`;
+// const url = `${process.env.REACT_APP_API_URL}`;
 
 const Navbars = (props) => {
 	const [data, setData] = useState();
 	const [viewLogin, setViewLogin] = useState();
 	const history = useHistory();
 	const [user, setUser] = useState([]);
-	const URL = `${url}user/show`;
+	const URL = `http://api.evenity.asia/user/show`;
 
 	const logOut = () => {
 		props.logout();
