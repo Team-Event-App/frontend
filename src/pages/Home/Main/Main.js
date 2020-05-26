@@ -67,9 +67,13 @@ const Main = () => {
 		return (
 			<Col lg={3} md={6} sm={10} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
-					<Card border="secondary" className="main-card mr-4" key={index}>
-						<Card.Img variant="top" src={`${URL}${item.imageEvent}`} />
-						<Card.Body className="mainBody ">
+					<Card border="secondary" className="main-card mr-5" key={index}>
+						<Card.Img
+							variant="top"
+							src={`${URL}${item.imageEvent}`}
+							alt="imageEvent"
+						/>
+						<Card.Body className="mainBody">
 							<Card.Text>{item.title}</Card.Text>
 							<Card.Text>
 								<FontAwesomeIcon icon={faCalendar} /> {item.date}

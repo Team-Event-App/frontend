@@ -31,8 +31,8 @@
 }
 .trendCard {
 	box-shadow: 0 5px 5px -2px gray;
-  transform: scale(1);
-  margin: 5px;
+	transform: scale(1);
+	margin: 5px;
 }
 .trendCard:hover {
 	box-shadow: 2px 2px 20px #c4c4c4;
@@ -45,26 +45,26 @@
 		width: 480px;
 		height: 500px;
 	}
-	.colTrend{
+	.colTrend {
 		display: flex;
 		justify-content: center;
-	  }
-	  .trendCard{
+	}
+	.trendCard {
 		width: 400px;
-	  }
+	}
 }
 @media all and (max-width: 769px) {
-	.trendCard{
+	.trendCard {
 		margin-left: 100px !important;
 	}
 }
 @media all and (max-width: 1280px) {
-	.rowEvent{
+	.rowEvent {
 		margin-left: -80px !important;
 	}
 }
 @media all and (max-width: 900px) {
-	.rowTrend{
+	.rowTrend {
 		margin-right: -100px !important;
 	}
 }
