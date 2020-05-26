@@ -8,13 +8,13 @@ import jwt from "jwt-decode";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const EditPassword = () => {
-	const URL = `http://api.evenity.asia/`;
+	const URL = `https://api.indrakawasan/`;
 	const token = localStorage.getItem("access-token");
 	const jwtdecode = jwt(token);
 	const userProfile = jwtdecode.id;
 	const [data, setData] = useState({});
 	useEffect(() => {
-		const URL = `http://api.evenity.asia/user/show/${userProfile}`;
+		const URL = `https://api.indrakawasan/user/show/${userProfile}`;
 		axios
 			.get(URL)
 			.then((res) => {
@@ -29,7 +29,7 @@ const EditPassword = () => {
 	const { register, handleSubmit, errors } = useForm();
 	const onSubmit = (data) => {
 		axios
-			.put(`http://api.evenity.asia/user/edit/${userProfile}`, data, {
+			.put(`https://api.indrakawasan/user/edit/${userProfile}`, data, {
 				headers: {
 					"access-token": localStorage.getItem("access-token"),
 					"Content-Type": "multipart/form-data",

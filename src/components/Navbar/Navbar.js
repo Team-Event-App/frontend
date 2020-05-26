@@ -17,7 +17,7 @@ const Navbars = (props) => {
 	const [viewLogin, setViewLogin] = useState();
 	const history = useHistory();
 	const [user, setUser] = useState([]);
-	const URL = `http://api.evenity.asia/user/show`;
+	const URL = `https://api.indrakawasan/user/show`;
 
 	const logOut = () => {
 		props.logout();
