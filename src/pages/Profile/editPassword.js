@@ -7,7 +7,7 @@ import jwt from "jwt-decode";
 
 import profile from "./../../image/profile.png";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const EditPassword = () => {
 	const URL = `${url}`;

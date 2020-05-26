@@ -7,7 +7,7 @@ import "./Team.css";
 import Evan from "../../image/about/evan.png";
 import Indra from "../../image/about/Indra.jpeg";
 import profile from "../../image/profile.png";
-
+import Ariq from "../../image/about/ariq.jpg";
 import fb from "../../image/icon/fb.png";
 import ig from "../../image/icon/ig.png";
 import lin from "../../image/icon/in.png";
@@ -33,7 +33,7 @@ class Team extends Component {
 							<img src={Indra} alt="" className="rounded-image" />
 						</Col>
 						<Col md={4} sm={12}>
-							<img src={profile} alt="" className="rounded-image" />
+							<img src={Ariq} alt="" className="rounded-image ariqImg" />
 						</Col>
 					</Row>
 				</Container>
@@ -197,7 +197,7 @@ class Team extends Component {
 							<Row className="no-gutters">
 								<Col md={4}>
 									<img
-										src={profile}
+										src={Ariq}
 										className="about-card-img mx-auto d-block"
 										alt="Ariq"
 										style={{ width: "15rem" }}

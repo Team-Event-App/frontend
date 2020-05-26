@@ -19,7 +19,7 @@ import HistoryBooking from "./HistoryBooking";
 
 import "./HistoryEvent.css";
 
-const url = `${process.env.REACT_APP_BASE_URL}`;
+const url = `${process.env.REACT_APP_API_URL}`;
 
 const HistoryEvent = () => {
 	const [data, setData] = useState([]);
