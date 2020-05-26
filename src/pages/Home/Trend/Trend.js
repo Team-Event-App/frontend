@@ -25,10 +25,10 @@ const Trend = () => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		const URL = `${url}event/show`;
+		const URL = `http://api.evenity.asia/`;
 
 		axios
-			.get(URL)
+			.get(`${URL}event/show`)
 			.then((res) => {
 				const data = res.data.slice(1, 5);
 				setData(data);
@@ -48,9 +48,9 @@ const Trend = () => {
 	}, []);
 
 	const showTrend = data.map((item, index) => {
-		const URL = `${url}`;
+		const URL = `http://api.evenity.asia/`;
 		return (
-			<Col lg={3} md={6} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
+			<Col lg={3} md={6} sm={10} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
 					<Card border="secondary" className="trendCard mr-5" key={index}>
 						<Card.Img
@@ -107,7 +107,7 @@ const Trend = () => {
 					<div className="underlineTrend mb-2 ml-5"></div>
 				</Row>
 
-				<Row className="rowEvent">{showTrend}</Row>
+				<Row className="rowEvent rowTrend">{showTrend}</Row>
 			</Container>
 		</div>
 	);

@@ -1,26 +1,47 @@
-import React, { Component } from "react";
-import { Button, Form, Row, FormControl } from "react-bootstrap";
-import AsyncSelect from "react-select/async";
+import React, { Component } from 'react';
+import {Button} from 'react-bootstrap';
 import axios from "axios";
-import './Search.css';
 
 class Search extends Component {
-	render() {
-		return (
-			<Row>
-				<Form inline className="mx-auto mt-5 pt-3" >
-					<FormControl
-						type="text"
-						placeholder="Search Events"
-						className="mainInput searchMain"
-					/>
-					<Button variant="outline-success" className="buttonSearch mainSearch">
-						<i className="fas fa-search"></i>
-					</Button>
-				</Form>
-			</Row>
-		);
-	}
+    constructor(props){
+        super(props);
+        this.state= {
+            suggestions: [],
+            text:''
+        }
+    }
+    onTextChange = (event) => {
+        const value = event.target.value;
+        let suggestions = [];
+        // if(value.length > 0){
+        //     const regex = new RegExp(`^${value}`, 'i');
+        //     suggestions = countries.sort().filter(v => regex.test(v))
+        // }
+
+        this.setState(() => ({
+            suggestions,
+            text: value
+        }))
+    }
+    render(){
+        return(
+            <>
+            <input
+            type="text"
+            placeholder="Search Events"
+            className="mainInput"
+            name="search"
+        />
+        <Button
+            type="submit"
+            variant="outline-success"
+            className="buttonSearch mainSearch"
+        >
+            <i className="fas fa-search"></i>
+        </Button>
+            </>
+        )
+    }
 }
 
 export default Search;

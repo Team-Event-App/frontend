@@ -13,7 +13,7 @@ import {
 	Card,
 	CardDeck,
 } from "react-bootstrap";
-
+import Search from '../../../components/Search/Search'
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
@@ -32,16 +32,15 @@ const Main = () => {
 	const history = useHistory();
 	const [data, setData] = useState([]);
 	const { handleSubmit, register, errors } = useForm();
-	const onSubmit = (values) => {
-		const { search } = values;
-		history.push({
-			pathname: "/showall",
-			search: `?search=${search}`,
-		});
-	};
-
+	// const onSubmit = (values) => {
+	// 	const { search } = values;
+	// 	history.push({
+	// 		pathname: "/showall",
+	// 		search: `?search=${search}`,
+	// 	});
+	// };
 	useEffect(() => {
-		const URL = `${url}event/show`;
+		const URL = `http://api.evenity.asia/event/show`;
 
 		axios
 			.get(URL)
@@ -64,17 +63,13 @@ const Main = () => {
 	}, []);
 
 	const showEvent = data.map((item, index) => {
-		const URL = `${url}`;
+		const URL = `http://api.evenity.asia/`;
 		return (
-			<Col lg={3} md={6} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
+			<Col lg={3} md={6} sm={10} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
-					<Card border="secondary" className="mr-5 main-card" key={index}>
-						<Card.Img
-							variant="top"
-							src={`${URL}${item.imageEvent}`}
-							alt="imageEvent"
-						/>
-						<Card.Body className="mainBody ">
+					<Card border="secondary" className="main-card" key={index}>
+						<Card.Img variant="top" src={`${URL}${item.imageEvent}`} />
+						<Card.Body className="mainBody bg-light">
 							<Card.Text>{item.title}</Card.Text>
 							<Card.Text>
 								<FontAwesomeIcon icon={faCalendar} /> {item.date}
@@ -102,34 +97,35 @@ const Main = () => {
 	return (
 		<div>
 			<Navbars />
-			<Jumbotron fluid className="main-background mt-5">
+			<Jumbotron fluid className="main-background">
 				<Container className="pt-3">
 					<h1 className="text-center mt-5 pt-3 mb-3">
 						“What you need, is an Event, to remember for a lifetime.”
 					</h1>
 					<h1 className="text-center">― Rehan Waris ―</h1>
 					<Row>
-						<Form
+						<Search/>
+						{/* <Form
 							inline
 							className="mx-auto mt-5 pt-3"
 							onSubmit={handleSubmit(onSubmit)}
 						>
-							<FormControl
-								type="text"
-								placeholder="Search Events"
-								className="mainInput"
-								name="search"
-								autocomplete="off"
-								ref={register({ required: true })}
-							/>
-							<Button
-								type="submit"
-								variant="outline-success"
-								className="buttonSearch mainSearch"
-							>
-								<i className="fas fa-search"></i>
-							</Button>
-						</Form>
+							            <FormControl
+            type="text"
+            placeholder="Search Events"
+            className="mainInput"
+            name="search"
+            autocomplete="off"
+            ref={register({ required: true })}
+        />
+        <Button
+            type="submit"
+            variant="outline-success"
+            className="buttonSearch mainSearch"
+        >
+            <i className="fas fa-search"></i>
+        </Button>
+						</Form> */}
 					</Row>
 				</Container>
 			</Jumbotron>
@@ -138,7 +134,7 @@ const Main = () => {
 
 			<Container className="browseContainer mt-5 pt-5">
 				<Row>
-					<h2 className="mb-4 ml-5">BROWSE EVENTS</h2>
+					<h2 className="mb-4 ml-5 browseEve">BROWSE EVENTS</h2>
 				</Row>
 
 				<Row>
