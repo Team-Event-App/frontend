@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 import "./Trend.css";
 
-const url = `${process.env.REACT_APP_API_URL}`;
+// const url = `${process.env.REACT_APP_API_URL}`;
 
 const Trend = () => {
 	const [data, setData] = useState([]);
@@ -52,7 +52,7 @@ const Trend = () => {
 		return (
 			<Col lg={3} md={6} sm={10} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
-					<Card border="secondary" className="trendCard mr-5" key={index}>
+					<Card border="secondary" className="trendCard mr-4" key={index}>
 						<Card.Img
 							variant="top"
 							src={`${URL}${item.imageEvent}`}

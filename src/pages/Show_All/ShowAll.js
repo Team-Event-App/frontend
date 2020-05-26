@@ -21,7 +21,7 @@ import Footer from "../../components/Footer/Footer";
 import "./../Home/Main/Main.css";
 import "./ShowAll.css";
 
-const url = `${process.env.REACT_APP_API_URL}`;
+// const url = `${process.env.REACT_APP_API_URL}`;
 
 const ShowAll = (props) => {
 	const [data, setData] = useState([]);
@@ -29,7 +29,7 @@ const ShowAll = (props) => {
 	// value search in here
 	const search = params.get("search");
 	useEffect(() => {
-		const URL = `${url}event/show`;
+		const URL = `http://api.evenity.asia/event/show`;
 
 		axios
 			.get(URL)
@@ -52,7 +52,7 @@ const ShowAll = (props) => {
 	}, []);
 
 	const showAllEvent = data.map((item, index) => {
-		const URL = `${url}`;
+		const URL = `http://api.evenity.asia/`;
 		return (
 			<Col lg={3} md={6} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
