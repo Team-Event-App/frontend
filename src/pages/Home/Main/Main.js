@@ -118,7 +118,7 @@ const Main = () => {
 								placeholder="Search Events"
 								className="mainInput"
 								name="search"
-								autocomplete="off"
+								autoComplete="off"
 								ref={register({ required: true })}
 							/>
 							<Button
