@@ -85,6 +85,7 @@ body {
 	box-shadow: 0 5px 5px -2px gray;
 	transform: scale(1);
 	margin-left: 5px;
+	margin-right: 50px !important;
 }
 
 .mainBody {
@@ -115,10 +116,21 @@ body {
 		max-width: 1200px !important;
 	}
 }
-@media all and (max-width: 480px) {
+@media all and (max-width : 320px){
+	#mainCard{
+		width: 300px !important;
+	}
+}
+@media all and (max-width: 480px){
 	.main-card {
 		margin-left: 100px;
 		width: 400px !important;
+	}
+	.quotesLanding{
+		font-size: 30px;
+	}
+	.mainInput{
+		width: 300px !important;
 	}
 }
 
@@ -133,4 +145,9 @@ body {
 	.rowEvent {
 		margin-right: -40px !important;
 	}
+}
+@media all and (max-width: 1600px){ 
+  .main-card{
+	  width: 1000px !important;
+  }
 }

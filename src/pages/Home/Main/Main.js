@@ -67,7 +67,7 @@ const Main = () => {
 		return (
 			<Col lg={3} md={6} sm={10} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
-					<Card border="secondary" className="main-card mr-5" key={index}>
+					<Card border="secondary" className="main-card" id="mainCard" key={index}>
 						<Card.Img
 							variant="top"
 							src={`${URL}${item.imageEvent}`}
@@ -103,10 +103,10 @@ const Main = () => {
 			<Navbars />
 			<Jumbotron fluid className="main-background">
 				<Container className="pt-3">
-					<h1 className="text-center mt-5 pt-3 mb-3">
+					<h1 className="text-center mt-5 pt-3 mb-3 quotesLanding">
 						“What you need, is an Event, to remember for a lifetime.”
 					</h1>
-					<h1 className="text-center">― Rehan Waris ―</h1>
+					<h1 className="text-center quotesLanding">― Rehan Waris ―</h1>
 					<Row>
 						<Form
 							inline

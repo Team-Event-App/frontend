@@ -18,3 +18,22 @@
         padding-left: 170px;
     }
 }
+@media all and (max-width:320px){
+    .rowShare{
+        display: flexbox !important;
+        width: 250px !important;
+    }
+    .classShare{
+        width: 200px !important;
+    }
+    .detailCardImage{
+        width: 250px !important;
+        height: 250px !important;
+    }
+    .cardDetail{
+        width: 290px !important;
+    }
+    .containerCard{
+        margin-left: 0px !important;
+    }
+}

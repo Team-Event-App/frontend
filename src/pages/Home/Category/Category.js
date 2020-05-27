@@ -34,6 +34,10 @@ export default class CategoryCarousel extends Component {
 								slidesPerPage={4}
 								autoPlay={2500}
 								breakpoints={{
+									320:{
+										slidesPerPage:1,
+										arrows:false
+									},
 									480: {
 										slidesPerPage: 1,
 									},
@@ -47,6 +51,9 @@ export default class CategoryCarousel extends Component {
 									},
 									1280:{
 										slidesPerPage: 3,
+									},
+									1400:{
+										slidesPerPage:3,
 									}
 								}}
 							>

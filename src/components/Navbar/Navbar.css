@@ -62,7 +62,26 @@
 .i-logout:active {
   color: white !important;
 }
-@media all and (max-width:480px) {
+@media all and (max-width : 320px) {
+.imageLogo{
+  height: 43px !important;
+  width: 250px;
+  margin-top: -10px !important;
+  margin-left: -50px;
+}
+.navbar-nav{
+  width: 300px;
+}
+.nav-link{
+  margin-right: 500px !important;
+}
+.showLogin{
+  margin-right: -auto !important;
+}
+/* Button Create Tidak Muncul */
+
+}
+@media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
 	.imageLogo{
 		height: 60px;
 	}
@@ -116,3 +135,4 @@
       margin-left: 200px;
     }
   }
+ 

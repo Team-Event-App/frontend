@@ -86,15 +86,16 @@ const Trend = () => {
 	return (
 		<div>
 			<Jumbotron fluid className="trend-background">
-				<Container>
+				<Container className="containerHost">
 					<h1 className="mb-4 hostEvent">Host Your Own Events</h1>
 					<Form inline>
+					<Link to="/event/create">
 						<Button
 							className="buttonCreate both-line-light mx-auto"
-							href="/event/create"
 						>
 							Create Events
 						</Button>
+						</Link>
 					</Form>
 				</Container>
 			</Jumbotron>
