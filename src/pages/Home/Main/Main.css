@@ -84,7 +84,7 @@ body {
 .main-card {
 	box-shadow: 0 5px 5px -2px gray;
 	transform: scale(1);
-	margin-left: 30px !important;
+	margin-left: 5px;
 }
 
 .mainBody {
@@ -115,23 +115,22 @@ body {
 		max-width: 1200px !important;
 	}
 }
-@media all and (max-width:480px) {
-	.main-card{
+@media all and (max-width: 480px) {
+	.main-card {
 		margin-left: 100px;
 		width: 400px !important;
 	}
 }
 
-@media all and (max-width:769px) {
-	.main-card{
+@media all and (max-width: 769px) {
+	.main-card {
 		width: 300px !important;
 		background-color: black !important;
 		margin-left: 100px !important;
 	}
-
 }
 @media all and (max-width: 900px) {
-	.rowEvent{
+	.rowEvent {
 		margin-right: -40px !important;
 	}
 }

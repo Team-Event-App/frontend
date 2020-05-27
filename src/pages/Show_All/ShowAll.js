@@ -61,7 +61,7 @@ const ShowAll = (props) => {
 		return (
 			<Col lg={3} md={6} sm={12} className="my-2 mt-5 pt-2 pl-0 pr-0">
 				<CardDeck>
-					<Card border="secondary" className=" main-card mr-4 " key={index}>
+					<Card border="secondary" className=" main-card mr-5 " key={index}>
 						<Card.Img
 							variant="top"
 							src={`${URL}${item.imageEvent}`}
