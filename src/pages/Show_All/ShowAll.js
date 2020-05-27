@@ -25,10 +25,15 @@ import "./ShowAll.css";
 
 const ShowAll = (props) => {
 	const [data, setData] = useState([]);
+	let [search, setSearch] = useState([]);
+
 	const params = new URLSearchParams(props.location.search);
 	// value search in here
-	const search = params.get("search");
+	const searchQuery = params.get("search");
+	
+	
 	useEffect(() => {
+		console.log(searchQuery);
 		const URL = `https://api.indrakawasan.com/event/show`;
 
 		axios
@@ -87,6 +92,20 @@ const ShowAll = (props) => {
 		);
 	});
 
+	const handleSubmit = (event, a, b) => {
+		event.preventDefault()
+		console.log(event);
+		debugger;	
+	}
+
+	const onChangeIput = (event) => {
+		
+		setSearch = ({
+			[event.currentTarget.name] : event.currentTarget.value
+		})
+
+	}
+
 	return (
 		<div>
 			<Navbar />
@@ -102,7 +121,7 @@ const ShowAll = (props) => {
 					<Form
 						inline
 						className="mx-auto"
-						// onSubmit={handleSubmit(onSubmit)}
+						onSubmit={handleSubmit}
 					>
 						<FormControl
 							type="text"
@@ -110,7 +129,9 @@ const ShowAll = (props) => {
 							className="mainInput"
 							name="search"
 							autocomplete="off"
+							value = {search}
 							style={{ border: "1px solid black" }}
+							onChange={onChangeIput}
 							// ref={register({ required: true })}
 						/>
 						<Button
