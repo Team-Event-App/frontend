@@ -30,11 +30,10 @@ const ShowAll = (props) => {
 	const params = new URLSearchParams(props.location.search);
 	// value search in here
 	const searchQuery = params.get("search");
-	
-	
+
 	useEffect(() => {
 		console.log(searchQuery);
-		const URL = `https://api.indrakawasan.com/event/show`;
+		const URL = `https://api.indrakawasan.com/event/show?search=${searchQuery}`;
 
 		axios
 			.get(URL)
@@ -93,18 +92,15 @@ const ShowAll = (props) => {
 	});
 
 	const handleSubmit = (event, a, b) => {
-		event.preventDefault()
+		event.preventDefault();
 		console.log(event);
-		debugger;	
-	}
+	};
 
 	const onChangeIput = (event) => {
-		
-		setSearch = ({
-			[event.currentTarget.name] : event.currentTarget.value
-		})
-
-	}
+		setSearch = {
+			[event.currentTarget.name]: event.currentTarget.value,
+		};
+	};
 
 	return (
 		<div>
@@ -118,18 +114,14 @@ const ShowAll = (props) => {
 				</Row>
 
 				<Row>
-					<Form
-						inline
-						className="mx-auto"
-						onSubmit={handleSubmit}
-					>
+					<Form inline className="mx-auto" onSubmit={handleSubmit}>
 						<FormControl
 							type="text"
 							placeholder="Search Events"
 							className="mainInput"
 							name="search"
 							autocomplete="off"
-							value = {search}
+							value={search}
 							style={{ border: "1px solid black" }}
 							onChange={onChangeIput}
 							// ref={register({ required: true })}

@@ -108,7 +108,6 @@ const Main = () => {
 					</h1>
 					<h1 className="text-center">― Rehan Waris ―</h1>
 					<Row>
-						{/* <Search /> */}
 						<Form
 							inline
 							className="mx-auto mt-5 pt-3"
