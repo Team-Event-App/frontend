@@ -75,6 +75,7 @@ const Main = () => {
 						/>
 						<Card.Body className="mainBody">
 							<Card.Text>{item.title}</Card.Text>
+							<Card.Text>Category : {item.category}</Card.Text>
 							<Card.Text>
 								<FontAwesomeIcon icon={faCalendar} /> {item.date}
 							</Card.Text>

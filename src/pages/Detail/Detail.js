@@ -201,13 +201,8 @@ const Detail = () => {
 					<div className="mt-2" style={{ borderTop: "1px solid black" }}></div>
 
 					<Row className="mt-3">
-						<Col md={1}>
-							<i className="fas fa-share-alt"></i>
-						</Col>
-						<Col md={1}>
-							<i className="far fa-bookmark"></i>
-						</Col>
-						<Col md={{ span: 3, offset: 7 }}>
+						
+						<Col md={{ span: 3, offset: 9 }}>
 							<Button
 								block
 								variant="outline-danger"
@@ -232,7 +227,7 @@ const Detail = () => {
 								</Card.Text>
 							</Col>
 
-							<Col md={3}>
+							<Col md={3} className="mb-5 pb-3">
 								<h5 className="mb-4">Date And Time</h5>
 								<Card.Text>
 									<i className="far fa-calendar-alt mr-2"></i>
@@ -253,33 +248,11 @@ const Detail = () => {
 									<span style={{ color: "red" }}>Organizer by </span>{" "}
 									{item.organizerName}
 								</Card.Text>
-								{/* <Card.Text>
-									<span style={{ color: "red" }}>Responsible by </span>{" "}
-									{item.responsibleName}
-								</Card.Text> */}
+							
 							</Col>
 						</Row>
 
-						<Row
-							className="mt-5 ml-1 bg-light rowShare"
-							style={{ borderRadius: "20rem" }}
-						>
-							<Col md={{ offset: 2, span: 4 }}>
-								<h4>Share this Event</h4>
-							</Col>
-							<Col md={1}>
-								<i className="fab fa-facebook-square fa-2x"></i>
-							</Col>
-							<Col md={1}>
-								<i className="fab fa-whatsapp fa-2x"></i>
-							</Col>
-							<Col md={1}>
-								<i className="fas fa-envelope fa-2x"></i>
-							</Col>
-							<Col md={1}>
-								<i className="far fa-copy fa-2x"></i>
-							</Col>
-						</Row>
+						
 					</Container>
 				</Card.Body>
 			</Card>
