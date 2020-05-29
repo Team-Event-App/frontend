@@ -108,7 +108,7 @@ const Main = () => {
 						“What you need, is an Event, to remember for a lifetime.”
 					</h1>
 					<h1 className="text-center quotesLanding quotes2">― Rehan Waris ―</h1>
-					{/* <Row>
+					<Row>
 						<Form
 							inline
 							className="mx-auto mt-5 pt-3"
@@ -130,7 +130,7 @@ const Main = () => {
 								<i className="fas fa-search"></i>
 							</Button>
 						</Form>
-					</Row> */}
+					</Row>
 				</Container>
 			</Jumbotron>
 

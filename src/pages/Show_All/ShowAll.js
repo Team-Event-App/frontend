@@ -142,7 +142,7 @@ const ShowAll = (props) => {
 					</Col>
 				</Row>
 
-				<Row>
+				{/* <Row>
 					<Form inline className="mx-auto" onSubmit={handleSubmit}>
 						<FormControl
 							type="text"
@@ -161,7 +161,7 @@ const ShowAll = (props) => {
 							<i className="fas fa-search"></i>
 						</Button>
 					</Form>
-				</Row>
+				</Row> */}
 
 				<Container>
 					<Row className="rowEvent">{showAll}</Row>
