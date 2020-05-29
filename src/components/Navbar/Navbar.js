@@ -47,9 +47,9 @@ const Navbars = (props) => {
 
 			if (props.viaLogin) {
 				setViewLogin(
-					<>
+					<div className="showLogin">
 						<NavDropdown
-							className="mr-5 pr-3 navProfile"
+							className="mr-5 pr-3 navProfile nav-link-profile"
 							title={
 								<span>
 									<i className="fa fa-user fa-fw "></i>Profile
@@ -81,7 +81,7 @@ const Navbars = (props) => {
 								Logout
 							</NavDropdown.Item>
 						</NavDropdown>
-					</>
+					</div>
 				);
 			} else {
 				setData();
@@ -111,7 +111,7 @@ const Navbars = (props) => {
 				<Nav className="ml-auto navbar-nav">
 					{data}
 					<Link to="/event/create">
-						<Button className="signInButton mr-3">
+						<Button className="signInButton mr-3 createButton">
 							<i className="fas fa-plus mr-2 "></i>
 							Create Events
 						</Button>

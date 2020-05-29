@@ -264,7 +264,7 @@ const Detail = () => {
 							className="mt-5 ml-1 bg-light rowShare"
 							style={{ borderRadius: "20rem" }}
 						>
-							<Col md={{ offset: 2, span: 4 }}>
+							<Col md={{ offset: 2, span: 4 }} className="classShare">
 								<h4>Share this Event</h4>
 							</Col>
 							<Col md={1}>

@@ -160,7 +160,7 @@ class EventCreate extends Component {
 															as="textarea"
 															rows="4"
 															name="description"
-															className="form-control inputText"
+															className="form-control inputText descText"
 															style={{ width: "35rem" }}
 															placeholder="Description"
 														/>
@@ -217,7 +217,7 @@ class EventCreate extends Component {
 													<Col md={8}>
 														<input
 															type="file"
-															className="form-control inputText"
+															className="form-control inputText descText"
 															name="imageEvent"
 															style={{ width: "35rem" }}
 															ref={this.imageRef}
@@ -232,7 +232,7 @@ class EventCreate extends Component {
 															name="detail"
 															as="textarea"
 															rows="4"
-															className="form-control inputText"
+															className="form-control inputText descText"
 															style={{ width: "35rem" }}
 															placeholder="Detail"
 														/>

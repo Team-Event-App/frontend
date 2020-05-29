@@ -62,9 +62,28 @@
 .i-logout:active {
   color: white !important;
 }
-@media all and (max-width:480px) {
+/* @media all and (min-width : 320px) {
+.imageLogo{
+  height: 43px !important;
+  width: 250px;
+  margin-top: -10px !important;
+  margin-left: -50px;
+}
+.navbar-nav{
+  width: 300px;
+}
+.nav-link{
+  margin-right: 500px !important;
+}
+.showLogin{
+  margin-right: -auto !important;
+}
+
+} */
+/* @media only screen and (min-device-width: 480px){
 	.imageLogo{
-		height: 60px;
+    height: 60px;
+    margin-left: -45px !important;
 	}
 	.navbar-nav{
 		padding-bottom: 5px;
@@ -72,7 +91,7 @@
 	.signInButton{
 		margin-left: 150px;
 		margin-top: 10px;
-	}
+  }
 	.signButton {
 		margin-right: 170px;
 	}
@@ -99,8 +118,8 @@
     .navProfile{
       margin-left: 160px;
     }
-  }
-  @media all and (max-width: 900px) {
+  } */
+  /* @media all and (min-width: 900px) {
     .imageLogo{
       height: 70px;
       margin-top:-20px
@@ -115,4 +134,5 @@
     .navProfile{
       margin-left: 200px;
     }
-  }
+  } */
+ 
