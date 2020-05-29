@@ -55,7 +55,7 @@
 		margin-left: -115px;
 	}
 }
-@media all and (max-width:320px){
+@media all and (min-width:320px){
 	.sidebarUser{
 		z-index:1;
 		margin-left: 10px !important;
@@ -68,5 +68,10 @@
 	}
 	.cardPass{
 		width: 300px !important;
+	}
+}
+@media all and (min-width:480px){
+	.sidebarUser{
+
 	}
 }

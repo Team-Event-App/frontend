@@ -1,7 +1,7 @@
 .detailCardImage{
     height: 400px !important;
 }
-@media all and (max-width: 769px) {
+/* @media all and (min-width: 769px) {
     .detailCardImage{
         width: 560px !important;
         
@@ -18,7 +18,7 @@
         padding-left: 170px;
     }
 }
-@media all and (max-width:320px){
+@media all and (min-width:320px){
     .rowShare{
         display: flexbox !important;
         width: 250px !important;
@@ -36,4 +36,4 @@
     .containerCard{
         margin-left: 0px !important;
     }
-}
+} */

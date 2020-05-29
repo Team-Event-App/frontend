@@ -6,30 +6,30 @@
   max-width: 1100px;
   margin-left: 8rem;
 }
-@media all and (max-width:320px){
+/* @media all and (min-width:320px){
   .contactCard{
     width: 350px !important;
     margin-left: -155px !important;
   }
 }
-@media all and (max-width: 480px){
+@media all and (min-width: 480px){
   .contactCard{
-    width: 400px;
-    margin-left: -100px;
+    width: 400px !important;
+    margin-left: -100px !important;
   }
   .logoImage{
     width: 300px;
     height: 70px;
   }
   }
-  @media all and (max-width: 900px) {
+  @media all and (min-width: 900px) {
     .contactCard{
       width: 700px;
       margin-left: -280px;
     }
   }
-  @media all and (max-width:768px) {
+  @media all and (min-width:768px) {
     .contactCard{
       margin-left: -220px;
     }
-  }
+  } */

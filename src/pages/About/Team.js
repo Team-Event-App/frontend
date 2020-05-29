@@ -5,7 +5,7 @@ import "./Team.css";
 
 import Evan from "../../image/about/evan.png";
 import Indra from "../../image/about/Indra.jpeg";
-import Ariq from "../../image/about/ariq.jpg";
+import Ariq from "../../image/about/Ariq.jpg";
 import fb from "../../image/icon/fb.png";
 import ig from "../../image/icon/ig.png";
 import lin from "../../image/icon/in.png";

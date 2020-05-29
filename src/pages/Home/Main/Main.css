@@ -28,6 +28,9 @@ body {
 .card-body {
 	background-color: #e3e3e3;
 }
+.contQuotes{
+	margin-top: 100px !important;
+}
 .buttonSearch {
 	border-radius: 20rem !important;
 }
@@ -104,7 +107,7 @@ body {
 	background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
 	border-color: #ff001f !important;
 }
-
+/* 
 @media (min-width: 1200px) and (max-width: 1500) {
 	.container {
 		max-width: 1300px !important;
@@ -116,14 +119,13 @@ body {
 		max-width: 1200px !important;
 	}
 }
-@media all and (max-width : 320px){
+@media all and (min-width : 320px){
 	#mainCard{
 		width: 300px !important;
 	}
 }
-@media all and (max-width: 480px){
-	.main-card {
-		margin-left: 100px;
+@media all and (min-width: 480px){
+	#mainCard{
 		width: 400px !important;
 	}
 	.quotesLanding{
@@ -134,20 +136,20 @@ body {
 	}
 }
 
-@media all and (max-width: 769px) {
+@media all and (min-width: 769px) {
 	.main-card {
 		width: 300px !important;
 		background-color: black !important;
 		margin-left: 100px !important;
 	}
 }
-@media all and (max-width: 900px) {
+@media all and (min-width: 900px) {
 	.rowEvent {
 		margin-right: -40px !important;
 	}
 }
-@media all and (max-width: 1600px){ 
+@media all and (min-width: 1600px){ 
   .main-card{
 	  width: 1000px !important;
   }
-}
+} */

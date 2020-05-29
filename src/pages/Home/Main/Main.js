@@ -102,12 +102,12 @@ const Main = () => {
 		<div>
 			<Navbars />
 			<Jumbotron fluid className="main-background">
-				<Container className="pt-3">
-					<h1 className="text-center mt-5 pt-3 mb-3 quotesLanding">
+				<Container className="pt-3 contQuotes">
+					<h1 className="text-center mt-5 pt-3 mb-3 quotesLanding quotes1">
 						“What you need, is an Event, to remember for a lifetime.”
 					</h1>
-					<h1 className="text-center quotesLanding">― Rehan Waris ―</h1>
-					<Row>
+					<h1 className="text-center quotesLanding quotes2">― Rehan Waris ―</h1>
+					{/* <Row>
 						<Form
 							inline
 							className="mx-auto mt-5 pt-3"
@@ -129,7 +129,7 @@ const Main = () => {
 								<i className="fas fa-search"></i>
 							</Button>
 						</Form>
-					</Row>
+					</Row> */}
 				</Container>
 			</Jumbotron>
 

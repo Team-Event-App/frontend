@@ -22,6 +22,7 @@
 	border-color: #ff001f !important;
 	width: 12rem;
 	font-size: 1.5rem !important;
+	margin-left: 450px !important;
 }
 
 .underlineTrend {
@@ -40,7 +41,7 @@
 	transform: scale(1.1);
 	z-index: 1;
 }
-@media all and (max-width:320px){
+/* @media all and (min-width:320px){
 	.card-deck{
 		margin-left: -40px !important;
 	}
@@ -56,7 +57,7 @@
 		font-size: 60px;
 	}
 }
-@media all and (max-width: 480px){
+@media all and (min-width: 480px){
 	.trend-background {
 		width: 480px;
 		height: 500px;
@@ -69,18 +70,18 @@
 		width: 400px;
 	}
 }
-@media all and (max-width: 769px) {
+@media all and (min-width: 769px) {
 	.trendCard {
 		margin-left: 100px !important;
 	}
 }
-@media all and (max-width: 1280px) {
+@media all and (min-width: 1280px) {
 	.rowEvent {
 		margin-left: -80px !important;
 	}
 }
-@media all and (max-width: 900px) {
+@media all and (min-width: 900px) {
 	.rowTrend {
 		margin-right: -100px !important;
 	}
-}
+} */
