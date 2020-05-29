@@ -63,7 +63,7 @@ const EditPassword = () => {
 		<div>
 			<Row className="mt-5 mb-5 ">
 				<Col md={{ offset: 2, span: 8 }}>
-					<Card className="mx-auto mb-5 mt-5 " style={{ width: "36rem" }}>
+					<Card className="mx-auto mb-5 mt-5 cardPass" style={{ width: "36rem" }}>
 						<Row>
 							<Col md={4}>
 								<Card.Img

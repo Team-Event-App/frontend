@@ -5,7 +5,7 @@ import "./Team.css";
 
 import Evan from "../../image/about/evan.png";
 import Indra from "../../image/about/Indra.jpeg";
-import Ariq from "../../image/about/ariq.jpg";
+import Ariq from "../../image/about/Ariq.jpg";
 import fb from "../../image/icon/fb.png";
 import ig from "../../image/icon/ig.png";
 import lin from "../../image/icon/in.png";
@@ -19,11 +19,9 @@ class Team extends Component {
 					<Row className="mb-3">
 						<Col>
 							<h2 className="text-center mt-3">Our Team</h2>
-							<div className="underlineAbout mx-auto"></div>
+							<div className="underlineAbout mx-auto mb-5"></div>
 						</Col>
 					</Row>
-
-					
 				</Container>
 
 				<Container>

@@ -102,7 +102,7 @@ const ShowAll = (props) => {
 		event.preventDefault();
 		const newSearch = event.target[0].value;
 		console.log(newSearch);
-		if (newSearch === "" && newSearch === null && newSearch === undefined) {
+		if (newSearch == "" && newSearch == null && newSearch == undefined) {
 			const url2 = `https://api.indrakawasan.com/event/show`;
 			axios
 				.get(url2)

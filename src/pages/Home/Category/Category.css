@@ -29,3 +29,8 @@
 	border-color: #ff4b2b !important;
 	font-size: 20px !important;
 }
+/* @media all and (min-width: 320px){
+	.carouselImg{
+		width: 280px !important;
+	}
+} */
