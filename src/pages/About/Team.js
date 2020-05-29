@@ -19,19 +19,7 @@ class Team extends Component {
 					<Row>
 						<Col>
 							<h2 className="text-center mt-3">Our Team</h2>
-							<div className="underlineAbout mx-auto"></div>
-						</Col>
-					</Row>
-
-					<Row className="mt-5 mb-5 text-center">
-						<Col md={4} sm={12}>
-							<img src={Evan} alt="Evan" className="rounded-image" />
-						</Col>
-						<Col md={4} sm={12}>
-							<img src={Indra} alt="" className="rounded-image" />
-						</Col>
-						<Col md={4} sm={12}>
-							<img src={Ariq} alt="" className="rounded-image ariqImg" />
+							<div className="underlineAbout mx-auto mb-5"></div>
 						</Col>
 					</Row>
 				</Container>
