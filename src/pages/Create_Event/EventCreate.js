@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 
-import jwt from "jwt-decode";
 import axios from "axios";
 
 import "./EventCreate.css";
@@ -15,6 +14,7 @@ class EventCreate extends Component {
 	constructor(props) {
 		super(props);
 		this.imageRef = React.createRef();
+		this.imageShowRef = React.createRef();
 	}
 	handleSubmit = (values, actions) => {
 		var formData = new FormData();
@@ -32,16 +32,26 @@ class EventCreate extends Component {
 				},
 			})
 			.then((response) => {
-				console.log(response);
-
 				actions.setSubmitting(false);
 				actions.resetForm();
 				alert("Succesfully add Event");
 			})
 			.catch((err) => {
-				console.log(err);
+				this.props.history.push("/login")
 			});
 	};
+
+	handleImageChange = (event) => {
+		const inputFile = event.currentTarget;
+		if ( inputFile.files && inputFile.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = (event) => {
+				this.imageShowRef.current.setAttribute('src', event.target.result);
+			}
+			reader.readAsDataURL(inputFile.files[0]);
+		}
+	}
 
 	render() {
 		return (
@@ -68,12 +78,6 @@ class EventCreate extends Component {
 						);
 						return errors;
 					}
-					// if (!values.imageEvent) {
-					// 	errors.imageEvent = (
-					// 		<small className="form-text text-danger">Image is required</small>
-					// 	);
-					// 	return errors;
-					// }
 				}}
 				onSubmit={this.handleSubmit}
 				render={(formProps, setFieldValue) => {
@@ -91,12 +95,9 @@ class EventCreate extends Component {
 													<Field
 														type="text"
 														placeholder="Title"
-														className="form-control inputText"
+														className="form-control inputText btn-block mb-2"
 														name="title"
 													/>
-													<small className="form-text text-muted">
-														Your Event Main Title.
-													</small>
 													<ErrorMessage name="title" />
 												</Col>
 
@@ -105,7 +106,7 @@ class EventCreate extends Component {
 														<Field
 															as="select"
 															type="text"
-															className="form-control inputText "
+															className="form-control inputText mb-2"
 															name="category"
 														>
 															<option>Music</option>
@@ -120,9 +121,6 @@ class EventCreate extends Component {
 															<option>Education</option>
 															<option>Others</option>
 														</Field>
-														<small className="form-text text-muted">
-															Your Category Event.
-														</small>
 													</Col>
 													<Col md={7}>
 														<Field
@@ -158,7 +156,7 @@ class EventCreate extends Component {
 														<Field
 															type="text"
 															as="textarea"
-															rows="4"
+															rows="3"
 															name="description"
 															className="form-control inputText descText"
 															style={{ width: "35rem" }}
@@ -205,7 +203,7 @@ class EventCreate extends Component {
 													</Col>
 													<Col md={6}>
 														<Field
-															type="text"
+															type="datetime"
 															className="form-control inputText "
 															name="date"
 															placeholder="Day, Mon, Date, Years"
@@ -221,12 +219,15 @@ class EventCreate extends Component {
 															name="imageEvent"
 															style={{ width: "35rem" }}
 															ref={this.imageRef}
+															onChange={this.handleImageChange}
+															required
 														/>
-														{/* <ErrorMessage name="imageEvent" /> */}
+													
+													<img src="#" alt="" ref={this.imageShowRef} className="imageShow" />
 													</Col>
 												</Row>
 
-												<Row className="pl-3 pb-3 pt-3">
+												<Row className="pl-3 mb-4">
 													<Col as={Col} md={6}>
 														<Field
 															name="detail"

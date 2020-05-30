@@ -57,7 +57,8 @@ class Footer extends Component {
 									<Form inline className="mx-auto mt-3 mb-3">
 										<FormControl
 											type="text"
-											placeholder="Enter your email here"
+											// placeholder="Enter your email here"
+											placeholder="Coming soon ..."
 											className="formInput"
 										/>
 										<Button variant="primary" className="buttonSubscribe ml-2">

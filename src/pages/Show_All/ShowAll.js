@@ -3,9 +3,9 @@ import {
 	Container,
 	Row,
 	Col,
-	Form,
-	FormControl,
-	Button,
+	// Form,
+	// FormControl,
+	// Button,
 } from "react-bootstrap";
 import axios from "axios";
 
@@ -68,7 +68,7 @@ const ShowAll = (props) => {
 					alert("Sorry we have server problem , Try again later.. ");
 				}
 			});
-	}, []);
+	}, [searchQuery]);
 
 	const showAllEvent = data.map((data) => {
 		return (
@@ -98,36 +98,36 @@ const ShowAll = (props) => {
 		);
 	});
 
-	const handleSubmit = (event, a, b) => {
-		event.preventDefault();
-		const newSearch = event.target[0].value;
-		console.log(newSearch);
-		if (newSearch == "" && newSearch == null && newSearch == undefined) {
-			const url2 = `https://api.indrakawasan.com/event/show`;
-			axios
-				.get(url2)
-				.then((res) => {
-					setData(res.data);
-				})
-				.catch((err) => {
-					if (
-						err &&
-						err.response &&
-						err.response.data &&
-						err.response.data.message
-					) {
-						alert(err.response.data.message);
-					} else {
-						alert("Sorry we have server problem , Try again later.. ");
-					}
-				});
-		} else {
-			const url = `https://api.indrakawasan.com/event/show/${newSearch}`;
-			axios.get(url).then((res) => {
-				setSearch(res.data);
-			});
-		}
-	};
+	// const handleSubmit = (event, a, b) => {
+	// 	event.preventDefault();
+	// 	const newSearch = event.target[0].value;
+	// 	console.log(newSearch);
+	// 	if (newSearch === "" && newSearch === null && newSearch === undefined) {
+	// 		const url2 = `https://api.indrakawasan.com/event/show`;
+	// 		axios
+	// 			.get(url2)
+	// 			.then((res) => {
+	// 				setData(res.data);
+	// 			})
+	// 			.catch((err) => {
+	// 				if (
+	// 					err &&
+	// 					err.response &&
+	// 					err.response.data &&
+	// 					err.response.data.message
+	// 				) {
+	// 					alert(err.response.data.message);
+	// 				} else {
+	// 					alert("Sorry we have server problem , Try again later.. ");
+	// 				}
+	// 			});
+	// 	} else {
+	// 		const url = `https://api.indrakawasan.com/event/show/${newSearch}`;
+	// 		axios.get(url).then((res) => {
+	// 			setSearch(res.data);
+	// 		});
+	// 	}
+	// };
 
 	const showAll = searchQuery ? showAllSearch : showAllEvent;
 
