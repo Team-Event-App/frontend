@@ -73,7 +73,8 @@ const Main = () => {
 							src={`${URL}${item.imageEvent}`}
 							alt="imageEvent"
 						/>
-						<Card.Body className="mainBody">
+						<div style={{borderTop : "1px solid black"}}></div>
+						<Card.Body className="mainBody bg-white">
 							<Card.Text>{item.title}</Card.Text>
 							<Card.Text>Category : {item.category}</Card.Text>
 							<Card.Text>
