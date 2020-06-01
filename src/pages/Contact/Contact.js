@@ -17,20 +17,20 @@ class Contact extends Component {
 				<div className="container mt-5 pt-5 mb-5">
 					<Formik
 						initialValues={{
-							fullname: "",
-							email: "",
+							username: "",
+							_replyto: "",
 							phone: "",
 							message: "",
 						}}
 						validate={(values) => {
 							let errors = {};
-							if (!values.fullName && !values.email) {
-								errors.fullname = (
+							if (!values.username && !values._replyto) {
+								errors.username = (
 									<small className="form-text text-danger">
-										Full Name is required
+										Username is required
 									</small>
 								);
-								errors.email = (
+								errors._replyto = (
 									<small className="form-text text-danger">
 										Email Address is required
 									</small>
@@ -56,6 +56,9 @@ class Contact extends Component {
 								data: values,
 							})
 								.then((res) => {
+									axios
+										.post("https://formspree.io/xvowaovj", values
+										)
 									alert("Your Message Successfully sent!");
 									actions.resetForm(true);
 								})
@@ -71,37 +74,37 @@ class Contact extends Component {
 											<Card className="p-5 mt-5 contactCard">
 												<img src={Logo} alt="Logo" className="logoImage" />
 												<hr />
-												<Form onSubmit={props.handleSubmit}>
+												<Form onSubmit={props.handleSubmit} action="https://formspree.io/xvowaovj" method="POST">
 													<div className="form-group">
-														Full Name
+														Username
 														<Field
 															type="text"
-															name="fullname"
+															name="username"
 															placeholder="Enter your Name"
 															className="form-control"
 															onChange={props.handleChange}
 															onBlur={props.handleBlur}
-															value={props.values.fullname}
+															value={props.values.username}
 														/>
-														<ErrorMessage name="fullname" />
+														<ErrorMessage name="username" />
 													</div>
 													<div className="form-group">
 														Email Address
 														<Field
 															type="email"
-															name="email"
+															name="_replyto"
 															placeholder="Enter your Email Address"
 															className="form-control"
 															onChange={props.handleChange}
 															onBlur={props.handleBlur}
-															value={props.values.email}
+															value={props.values._replyto}
 														/>
-														<ErrorMessage name="email" />
+														<ErrorMessage name="_replyto" />
 													</div>
 													<div className="form-group">
 														Phone Number
 														<Field
-															type="text"
+															type="number"
 															name="phone"
 															placeholder="Your Phone number"
 															className="form-control"
