@@ -18,7 +18,14 @@ const Navbars = (props) => {
 	const history = useHistory();
 	const [user, setUser] = useState([]);
 	const URL = `https://api.indrakawasan.com/user/show`;
-
+	const pushKlik = () => {
+		const token = localStorage.getItem("access-token");
+		if (!token) {
+			history.push("/login");
+		} else {
+			history.push("/event/create")
+		}
+	};
 	const logOut = () => {
 		props.logout();
 		history.push("/");
@@ -111,7 +118,7 @@ const Navbars = (props) => {
 				<Nav className="ml-auto navbar-nav">
 					{data}
 					<Link to="/event/create">
-						<Button className="signInButton mr-3 createButton">
+						<Button className="signInButton mr-3 createButton" onClick={pushKlik}>
 							<i className="fas fa-plus mr-2 "></i>
 							Create Events
 						</Button>

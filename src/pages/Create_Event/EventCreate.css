@@ -57,3 +57,25 @@
     width: 230px !important;
   }
 } */
+.smallCreate{
+  font-size: 12px;
+  color:rgb(70, 67, 67);
+  margin-bottom: -3px !important;
+  margin-top: -7px !important;
+}
+.smallCreate1{
+  font-size: 12px;
+  color:rgb(70, 67, 67);
+  margin-bottom: -3px !important;
+  margin-top: 0px !important;
+}
+.smallCreate2{
+  font-size: 12px;
+  color:rgb(70, 67, 67);
+  margin-bottom: -3px !important;
+  margin-top: 0px !important;
+  margin-left: 15px;
+}
+.timeBox{
+  width: 240px !important;
+}
