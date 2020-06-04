@@ -198,7 +198,7 @@ class EventCreate extends Component {
                               colon=":"
                             />
                             <p className="smallCreate1">
-                              What time is your event (with format PM/AM).
+                              What time is your event (00:00 PM/AM).
                             </p>
                           </Col>
                         </Row>
