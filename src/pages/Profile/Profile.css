@@ -1,77 +1,79 @@
 .profileBody {
-	height: 45rem;
+  height: 45rem;
 }
 
 .buttonProfile {
-	border-radius: 20rem !important;
+  border-radius: 20rem !important;
 }
 
 .profileText {
-	font-size: 30px;
+  font-size: 30px;
 }
 
 .underlineProfile {
-	width: 275px;
-	height: 2px;
-	background-color: #ff001f;
+  width: 275px;
+  height: 2px;
+  background-color: #ff001f;
 }
 
 .sidebarUser {
-	background-color: #ff001f !important;
-	position: fixed;
-	font-size: 30px;
-	padding: 10px;
-	border-color: #ff001f !important;
-	display: inline !important;
+  background-color: #ff001f !important;
+  position: fixed;
+  font-size: 30px;
+  padding: 10px;
+  border-color: #ff001f !important;
+  display: inline !important;
 }
 .sidebarPassword {
-	background-color: #ff001f !important;
-	position: fixed;
-	font-size: 30px;
-	padding: 10px;
-	margin-top: 50px;
-	border-color: #ff001f !important;
-	display: inline !important;
+  background-color: #ff001f !important;
+  position: fixed;
+  font-size: 30px;
+  padding: 10px;
+  margin-top: 50px;
+  border-color: #ff001f !important;
+  display: inline !important;
 }
+
+.passwordPrepend {
+  padding: 0.64rem 0.75rem !important;
+  margin-bottom: 0 !important;
+}
+
 .fa-userr {
-	color: white !important;
+  color: white !important;
 }
 .fa-userr:hover {
-	color: rgb(226, 217, 217) !important;
+  color: rgb(226, 217, 217) !important;
 }
 .fa-lock {
-	color: white !important;
+  color: white !important;
 }
 .fa-lock:hover {
-	color: rgb(226, 217, 217) !important;
+  color: rgb(226, 217, 217) !important;
 }
-@media all and (max-width: 768px) {
-	.sidebarUser{
-		z-index: 1;
-		margin-left: -115px;
-	}
-	.sidebarPassword{
-		z-index: 1;
-		margin-left: -115px;
-	}
-}
-@media all and (min-width:320px){
-	.sidebarUser{
-		z-index:1;
-		margin-left: 10px !important;
-		margin-top: -70px !important;
-	}
-	.sidebarPassword{
-		z-index:1;
-		margin-top: -10px !important;
-		margin-left: 10px !important;
-	}
-	.cardPass{
-		width: 300px !important;
-	}
-}
-@media all and (min-width:480px){
-	.sidebarUser{
 
-	}
+@media all and (max-width: 768px) {
+  .sidebarUser {
+    z-index: 1;
+    margin-left: -115px;
+  }
+  .sidebarPassword {
+    z-index: 1;
+    margin-left: -115px;
+  }
+}
+@media all and (min-width: 320px) {
+  .sidebarUser {
+    z-index: 1;
+    margin-left: 10px !important;
+    margin-top: -70px !important;
+  }
+  .sidebarPassword {
+    z-index: 1;
+    margin-top: -10px !important;
+    margin-left: 10px !important;
+  }
+  .cardPass {
+    width: 550px !important;
+  }
 }
