@@ -97,6 +97,7 @@ class EventCreate extends Component {
                             placeholder="Title"
                             className="form-control inputText btn-block mb-2"
                             name="title"
+                            required
                           />
                           <p className="smallCreate">Your Event Title Name.</p>
                           <ErrorMessage name="title" />
@@ -109,6 +110,7 @@ class EventCreate extends Component {
                               type="text"
                               className="form-control inputText mb-2"
                               name="category"
+                              required
                             >
                               <option>Music</option>
                               <option>Art</option>
@@ -130,6 +132,7 @@ class EventCreate extends Component {
                               className="form-control inputText"
                               placeholder="Max People"
                               name="limitPeople"
+                              required
                             />
                             <p className="smallCreate1">
                               Limit people for your event.
@@ -144,6 +147,7 @@ class EventCreate extends Component {
                               className="form-control inputText"
                               name="organizerName"
                               placeholder="Organizer Name"
+                              required
                             />
                             <p className="smallCreate1">Organizer Name.</p>
                           </Col>
@@ -153,6 +157,7 @@ class EventCreate extends Component {
                               className="form-control inputText"
                               name="responsibleName"
                               placeholder="Responsible Name"
+                              required
                             />
                             <p className="smallCreate1">
                               Who is responsible for your event.
@@ -170,6 +175,7 @@ class EventCreate extends Component {
                               className="form-control inputText descText"
                               style={{ width: "35rem" }}
                               placeholder="Description"
+                              required
                             />
                             <p className="smallCreate1">
                               Description for your event.
@@ -184,6 +190,7 @@ class EventCreate extends Component {
                               className="form-control inputText"
                               name="location"
                               placeholder="Venue Location"
+                              required
                             />
                             <p className="smallCreate1">Your event location.</p>
                           </Col>
@@ -196,6 +203,7 @@ class EventCreate extends Component {
                               className="form-control inputText timeBox"
                               name="time"
                               colon=":"
+                              required
                             />
                             <p className="smallCreate1">
                               What time is your event (with format PM/AM).
@@ -214,6 +222,7 @@ class EventCreate extends Component {
                                 className="form-control inputText"
                                 name="price"
                                 placeholder="Price"
+                                required
                               />
                             </div>
                             <p className="smallCreate2">
@@ -226,6 +235,7 @@ class EventCreate extends Component {
                               className="form-control inputText "
                               name="date"
                               placeholder="Day, Mon, Date, Years"
+                              required
                             />
                             <p className="smallCreate1">
                               When is your event held?
@@ -252,6 +262,7 @@ class EventCreate extends Component {
                               alt=""
                               ref={this.imageShowRef}
                               className="imageShow"
+                              required
                             />
                           </Col>
                         </Row>
@@ -265,6 +276,7 @@ class EventCreate extends Component {
                               className="form-control inputText descText"
                               style={{ width: "35rem" }}
                               placeholder="Detail"
+                              required
                             />
                             <p className="smallCreate1">Your event detail.</p>
                           </Col>

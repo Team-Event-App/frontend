@@ -13,7 +13,6 @@ import {
   Card,
   CardDeck,
 } from "react-bootstrap";
-// import Search from "../../../components/Search/Search";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
@@ -129,13 +128,8 @@ const Main = () => {
                 autoComplete="off"
                 ref={register({ required: true })}
               />
-              <Button
-                type="submit"
-                variant="outline-success"
-                className="buttonSearch mainSearch"
-              >
-                <i className="fas fa-search search-icon"></i>
-              </Button>
+
+              <i className="fa fa-search buttonSearch "></i>
             </Form>
           </Row>
         </Container>

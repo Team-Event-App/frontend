@@ -10,6 +10,11 @@
   font-size: 30px;
 }
 
+.accountLink,
+.passwordLink {
+  margin-left: 0.7rem !important;
+}
+
 .underlineProfile {
   width: 275px;
   height: 2px;
@@ -29,7 +34,6 @@
   position: fixed;
   font-size: 30px;
   padding: 10px;
-  margin-top: 50px;
   border-color: #ff001f !important;
   display: inline !important;
 }
@@ -37,6 +41,7 @@
 .passwordPrepend {
   padding: 0.64rem 0.75rem !important;
   margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }
 
 .fa-userr {

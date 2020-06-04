@@ -77,6 +77,23 @@ const EditPassword = () => {
                 <Card.Body className="p-4">
                   <Form onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group controlId="formBasicPassword">
+                      <Form.Label>Current Password</Form.Label>
+                      <div className="input-group-prepend mainPrependPassword">
+                        <Form.Control
+                          type={passwordShown1 ? "text" : "password"}
+                          placeholder="Current Password"
+                          ref={register({ required: true })}
+                        />
+                        <div className="input-group-text passwordPrepend">
+                          <i
+                            className="fa fa-eye password-icon"
+                            onClick={togglePasswordVisibility1}
+                          ></i>
+                        </div>
+                      </div>
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicPassword">
                       <Form.Label>New Password</Form.Label>
                       <div className="input-group-prepend mainPrependPassword">
                         <Form.Control
@@ -93,7 +110,7 @@ const EditPassword = () => {
                       </div>
                     </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword">
+                    {/* <Form.Group controlId="formBasicPassword">
                       <Form.Label>Confirm New Password</Form.Label>
                       <div className="input-group-prepend mainPrependPassword">
                         <Form.Control
@@ -108,7 +125,7 @@ const EditPassword = () => {
                           ></i>
                         </div>
                       </div>
-                    </Form.Group>
+                    </Form.Group> */}
                   </Form>
                   <Button
                     type="submit"

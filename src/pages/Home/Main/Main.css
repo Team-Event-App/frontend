@@ -40,11 +40,11 @@ body {
 }
 
 .buttonSearch {
+  padding: 0.5rem;
+  margin-left: -16.8rem !important;
   border-radius: 20rem !important;
-}
-
-.search-icon {
-  margin-left: 17rem !important;
+  font-size: 1.2rem;
+  color: #ff001f !important;
 }
 
 .main-background {
@@ -70,9 +70,7 @@ body {
   border-color: #ff001f !important;
   box-shadow: #ff001f !important;
 }
-.mainSearch {
-  margin-left: -34rem;
-  color: black;
+/* .mainSearch {
   border: none !important;
   color: #ff001f !important;
 }
@@ -80,7 +78,7 @@ body {
 .mainSearch:hover {
   color: white !important;
   background-color: #ff001f !important;
-}
+} */
 
 .underlineMain {
   width: 255px;
