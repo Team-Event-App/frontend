@@ -1,5 +1,4 @@
 import axios from "axios";
-
 import { createBrowserHistory } from "history";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
@@ -18,8 +17,7 @@ export const login = (data, match) => {
         type: "LOGIN_SUCCESS",
         payload: response.data,
       });
-      history.push("/");
-      window.location.reload();
+      history.replace("/");
     } catch (error) {
       dispatch({
         type: "LOGIN_FAILED",
