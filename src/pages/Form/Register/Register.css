@@ -257,14 +257,17 @@
   color: black;
   text-decoration: none;
 }
-.passwordPrepend{
+
+.passwordPrepend {
   height: 75%;
   margin-top: 8px !important;
+  padding: 0.5rem 0.1rem !important;
 }
-.password-icon{
+
+.password-icon {
   cursor: pointer;
 }
-.validateString{
+.validateString {
   font-size: 12px !important;
-  color:red;
+  color: red;
 }

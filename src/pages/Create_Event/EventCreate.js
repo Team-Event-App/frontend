@@ -96,7 +96,7 @@ class EventCreate extends Component {
                             type="text"
                             placeholder="Title"
                             className="form-control inputText btn-block mb-2"
-							name="title"
+                            name="title"
                           />
                           <p className="smallCreate">Your Event Title Name.</p>
                           <ErrorMessage name="title" />
@@ -192,7 +192,7 @@ class EventCreate extends Component {
                         <Row className="pl-3 pt-3">
                           <Col md={12}>
                             <Field
-							  type="time"
+                              type="time"
                               className="form-control inputText timeBox"
                               name="time"
                               colon=":"
