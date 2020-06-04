@@ -25,7 +25,7 @@ const App = (props) => {
     <>
       <Router>
         <Switch>
-          <Route path="/login" component={Login} />
+          <Route path="/login">{props.viaLogin ? <Main /> : <Login />}</Route>
           <Route path="/register" component={Register} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
@@ -33,7 +33,6 @@ const App = (props) => {
           <Route path="/event/create">
             {props.viaLogin ? <CreateEvent /> : <Login />}
           </Route>
-
           <Route path="/event/:id" component={Detail} />
           <Route path="/profile" component={Profile} />
           <Route path="/history" component={History} />

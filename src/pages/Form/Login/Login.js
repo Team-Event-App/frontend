@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, Link, NavLink, useRouteMatch } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 import "./Login.css";
@@ -19,13 +19,10 @@ const Login = (props) => {
     });
   };
 
-  // const history = useHistory();
-  const match = useRouteMatch();
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    props.login(data, match);
-    // history.push("/login");
+    props.login(data);
   };
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisibility = () => {
