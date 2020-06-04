@@ -75,7 +75,7 @@ const EditProfile = () => {
             <Form onSubmit={handleSubmit(onSubmit)}>
               <Card.Img
                 src={`${URL}${data.imageUrl || defaultValue}`}
-                alt="profile picture"
+                alt=""
                 className="mx-auto mb-2 mt-3 rounded-circle d-block"
                 style={myProfile}
               />

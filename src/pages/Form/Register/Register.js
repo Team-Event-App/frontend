@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, ErrorMessage } from "formik";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 
 import * as Yup from "yup";
@@ -127,8 +134,8 @@ const Register = () => {
                         <ErrorMessage name="phone" />
                       </p>
 
-                      <div className="input-group-prepend mainPrependPassword">
-                        <input
+                      <InputGroup>
+                        <FormControl
                           type={passwordShown ? "text" : "password"}
                           placeholder="Password"
                           className="register-input"
@@ -138,13 +145,16 @@ const Register = () => {
                           onBlur={props.handleBlur}
                           value={props.values.password}
                         />
-                        <div className="input-group-text passwordPrepend">
-                          <i
-                            className="fa fa-eye password-icon"
-                            onClick={togglePasswordVisibility}
-                          ></i>
-                        </div>
-                      </div>
+                        <InputGroup.Append className="mt-2">
+                          <div className="input-group-text passwordPrepend">
+                            <i
+                              className="fa fa-eye password-icon"
+                              onClick={togglePasswordVisibility}
+                            ></i>
+                          </div>
+                        </InputGroup.Append>
+                      </InputGroup>
+
                       <p className="validateString">
                         <ErrorMessage name="password" />
                       </p>
