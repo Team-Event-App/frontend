@@ -259,9 +259,13 @@
 }
 
 .passwordPrepend {
-  height: 75%;
-  margin-top: 8px !important;
-  padding: 0.5rem 0.1rem !important;
+  height: 3rem;
+}
+
+.form-control {
+  background-color: #eee !important;
+  border-radius: none !important;
+  height: 3rem !important;
 }
 
 .password-icon {
