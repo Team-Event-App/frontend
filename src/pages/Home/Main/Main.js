@@ -134,7 +134,7 @@ const Main = () => {
                 variant="outline-success"
                 className="buttonSearch mainSearch"
               >
-                <i className="fas fa-search"></i>
+                <i className="fas fa-search search-icon"></i>
               </Button>
             </Form>
           </Row>
