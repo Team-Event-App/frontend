@@ -20,16 +20,10 @@ export const login = (data, match) => {
       history.replace("/");
     } catch (error) {
       dispatch({
-        type: "LOGIN_FAILED",
-        payload: true,
+        type: "MODAL_ERROR_SHOW",
+        payload: "Either your email or password is wrong.",
       });
     }
-  };
-};
-
-export const closeModal = () => {
-  return {
-    type: "HIDE_MODAL",
   };
 };
 

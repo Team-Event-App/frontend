@@ -4,11 +4,14 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import jwt from "jwt-decode";
 
+import { connect } from "react-redux";
+import { showSuccess } from "./../../actions/modalActions";
+
 import "./Profile.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
-const EditProfile = () => {
+const EditProfile = (props) => {
   const URL = `https://api.indrakawasan.com/`;
   const defaultValue = `${URL}public/images/2020-05-23T11:48:46.274Zicon.png`;
   const token = localStorage.getItem("access-token");
@@ -60,7 +63,7 @@ const EditProfile = () => {
       })
       .then((res) => {
         console.log(res);
-        alert("Your profile already changed");
+        props.showSuccess("Your profile already changed");
       })
       .catch((err) => {
         console.log(err);
@@ -143,4 +146,6 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+const mapDispatchToProps = { showSuccess };
+
+export default connect(null, mapDispatchToProps)(EditProfile);

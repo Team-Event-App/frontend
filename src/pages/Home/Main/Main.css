@@ -66,10 +66,16 @@ body {
   border-radius: 20rem !important;
   margin: -1rem -17rem !important;
 }
+
+input.mainInput {
+  background-color: white !important;
+}
+
 .mainInput:focus {
   border-color: #ff001f !important;
   box-shadow: #ff001f !important;
 }
+
 /* .mainSearch {
   border: none !important;
   color: #ff001f !important;
