@@ -18,6 +18,7 @@ const Login = (props) => {
     email: "",
     password: "",
   });
+
   const handleChange = (event) => {
     const { name, value } = event.currentTarget;
     setData({
