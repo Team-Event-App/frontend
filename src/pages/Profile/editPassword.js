@@ -5,9 +5,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import jwt from "jwt-decode";
 
+import { connect } from "react-redux";
+import { showSuccess } from "./../../actions/modalActions";
+
+import "./Profile.css";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
-const EditPassword = () => {
+const EditPassword = (props) => {
   const URL = `https://api.indrakawasan.com/`;
   const token = localStorage.getItem("access-token");
   const jwtdecode = jwt(token);
@@ -19,7 +23,6 @@ const EditPassword = () => {
       .get(URL)
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -29,7 +32,7 @@ const EditPassword = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     axios
-      .put(`https://api.indrakawasan.com/user/edit/${userProfile}`, data, {
+      .put(`https://api.indrakawasan.com/user/editPassword`, data, {
         headers: {
           "access-token": localStorage.getItem("access-token"),
           "Content-Type": "multipart/form-data",
@@ -37,7 +40,7 @@ const EditPassword = () => {
       })
       .then((res) => {
         console.log(res);
-        alert("Your password already changed");
+        props.showSuccess("Your password already changed");
       })
       .catch((err) => {
         console.log(err);
@@ -54,10 +57,10 @@ const EditPassword = () => {
     setPasswordShown2(passwordShown2 ? false : true);
   };
 
-  const [passwordShown3, setPasswordShown3] = useState(false);
-  const togglePasswordVisibility3 = () => {
-    setPasswordShown3(passwordShown3 ? false : true);
-  };
+  // const [passwordShown3, setPasswordShown3] = useState(false);
+  // const togglePasswordVisibility3 = () => {
+  //   setPasswordShown3(passwordShown3 ? false : true);
+  // };
 
   return (
     <div>
@@ -76,12 +79,13 @@ const EditPassword = () => {
               <Col md={8}>
                 <Card.Body className="p-4">
                   <Form onSubmit={handleSubmit(onSubmit)}>
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group controlId="oldPassword">
                       <Form.Label>Current Password</Form.Label>
                       <div className="input-group-prepend mainPrependPassword">
                         <Form.Control
                           type={passwordShown1 ? "text" : "password"}
                           placeholder="Current Password"
+                          name="oldPassword"
                           ref={register({ required: true })}
                         />
                         <div className="input-group-text passwordPrepend">
@@ -93,11 +97,12 @@ const EditPassword = () => {
                       </div>
                     </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group controlId="password">
                       <Form.Label>New Password</Form.Label>
                       <div className="input-group-prepend mainPrependPassword">
                         <Form.Control
                           type={passwordShown2 ? "text" : "password"}
+                          name="password"
                           placeholder="New Password"
                           ref={register({ required: true })}
                         />
@@ -110,7 +115,7 @@ const EditPassword = () => {
                       </div>
                     </Form.Group>
 
-                    {/* <Form.Group controlId="formBasicPassword">
+                    {/* <Form.Group>
                       <Form.Label>Confirm New Password</Form.Label>
                       <div className="input-group-prepend mainPrependPassword">
                         <Form.Control
@@ -145,4 +150,6 @@ const EditPassword = () => {
   );
 };
 
-export default EditPassword;
+const mapDispatchToProps = { showSuccess };
+
+export default connect(null, mapDispatchToProps)(EditPassword);

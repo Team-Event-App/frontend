@@ -46,7 +46,6 @@ const EditProfile = (props) => {
   const onSubmit = (data) => {
     const formData = new FormData();
 
-    console.log(data);
     for (const [key, value] of Object.entries(data)) {
       formData.append(key, value);
     }
