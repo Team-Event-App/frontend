@@ -13,7 +13,7 @@ import Register from "./pages/Form/Register/Register";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Detail from "./pages/Detail/Detail";
-
+import SearchCategory from "./pages/Search/SearchCat";
 import ShowAll from "./pages/Show_All/ShowAll";
 import Profile from "./pages/Profile/Profile";
 import History from "./pages/History/HistoryEvent";
@@ -29,7 +29,8 @@ const App = (props) => {
           <Route path="/register" component={Register} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route path="/showall" component={ShowAll} />
+          <Route path="/searchtitle" component={ShowAll} />
+          <Route path="/searchcategory" component={SearchCategory}/>
           <Route path="/event/create">
             {props.viaLogin ? <CreateEvent /> : <Login />}
           </Route>

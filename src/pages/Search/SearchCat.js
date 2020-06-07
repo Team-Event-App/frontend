@@ -15,7 +15,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
 import "./../Home/Main/Main.css";
-import "./ShowAll.css";
+import "./SearchCat.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
@@ -49,7 +49,7 @@ const ShowAll = (props) => {
 	}, []);
 
 	useEffect(() => {
-		const URL2 = `https://api.indrakawasan.com/event/getTitle?search=${searchQuery}`;
+		const URL2 = `https://api.indrakawasan.com/event/getCategory?search=${searchQuery}`;
 
 		axios
 			.get(URL2)

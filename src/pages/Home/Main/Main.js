@@ -31,14 +31,21 @@ import Category from "./../Category/Category";
 const Main = () => {
   const history = useHistory();
   const [data, setData] = useState([]);
-  const { handleSubmit, register, errors } = useForm();
+  const { handleSubmit, register} = useForm();
   const onSubmit = (values) => {
-    const { search } = values;
+    const { search} = values;
     history.push({
-      pathname: "/showall",
+      pathname: "/searchtitle",
       search: `?search=${search}`,
     });
   };
+  const cariCategory = (values) => {
+    const {search} = values;
+    history.push({
+      pathname:"/searchcategory",
+      search:`?search=${search}`,
+    })
+  }
   useEffect(() => {
     const URL = `https://api.indrakawasan.com/event/show`;
 
@@ -123,11 +130,32 @@ const Main = () => {
             >
               <FormControl
                 type="text"
-                placeholder="Search Events"
+                placeholder="Search By Title"
                 className="mainInput"
                 name="search"
                 autoComplete="off"
                 ref={register({ required: true })}
+              />
+              <Button
+                type="submit"
+                variant="outline-success"
+                className="buttonSearch mainSearch"
+              >
+                <i className="fas fa-search"></i>
+              </Button>
+            </Form>
+            <Form
+              inline
+              className="mx-auto mt-5 pt-3"
+              onSubmit={handleSubmit(cariCategory)}
+            >
+              <FormControl
+                type="text"
+                placeholder="Search By Category"
+                className="mainInput"
+                name="search"
+                autoComplete="off"
+                ref={register({ required: false })}
               />
               <Button
                 type="submit"

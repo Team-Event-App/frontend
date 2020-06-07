@@ -48,7 +48,7 @@ const Navbars = (props) => {
 					) {
 						alert(err.response.data.message);
 					} else {
-						alert("Sorry , can't get the data from server..");
+						alert("Sorry , please sign in again..");
 					}
 				});
 
