@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
 
 import "./Login.css";
 import { connect } from "react-redux";
@@ -11,6 +18,7 @@ const Login = (props) => {
     email: "",
     password: "",
   });
+
   const handleChange = (event) => {
     const { name, value } = event.currentTarget;
     setData({
@@ -58,8 +66,9 @@ const Login = (props) => {
                       value={data.email}
                       onChange={handleChange}
                     />
-                    <div className="input-group-prepend mainPrependPassword">
-                      <input
+
+                    <InputGroup>
+                      <FormControl
                         type={passwordShown ? "text" : "password"}
                         placeholder="Password"
                         className="login-input"
@@ -68,13 +77,16 @@ const Login = (props) => {
                         value={data.password}
                         onChange={handleChange}
                       />
-                      <div className="input-group-text passwordPrepend">
-                        <i
-                          className="fa fa-eye password-icon"
-                          onClick={togglePasswordVisibility}
-                        ></i>
-                      </div>
-                    </div>
+                      <InputGroup.Append className="mt-2">
+                        <div className="input-group-text passwordPrepend">
+                          <i
+                            className="fa fa-eye password-icon"
+                            onClick={togglePasswordVisibility}
+                          ></i>
+                        </div>
+                      </InputGroup.Append>
+                    </InputGroup>
+
                     <NavLink to="/register">Forgot your password?</NavLink>
                     <button>Sign In</button>
                   </form>

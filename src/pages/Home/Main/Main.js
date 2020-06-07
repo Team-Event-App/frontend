@@ -7,13 +7,12 @@ import {
   Row,
   Col,
   Jumbotron,
-  Button,
   Form,
   FormControl,
   Card,
+  Button,
   CardDeck,
 } from "react-bootstrap";
-// import Search from "../../../components/Search/Search";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
@@ -136,13 +135,8 @@ const Main = () => {
                 autoComplete="off"
                 ref={register({ required: true })}
               />
-              <Button
-                type="submit"
-                variant="outline-success"
-                className="buttonSearch mainSearch"
-              >
-                <i className="fas fa-search"></i>
-              </Button>
+
+              <i className="fa fa-search buttonSearch "></i>
             </Form>
             <Form
               inline
@@ -157,13 +151,7 @@ const Main = () => {
                 autoComplete="off"
                 ref={register({ required: false })}
               />
-              <Button
-                type="submit"
-                variant="outline-success"
-                className="buttonSearch mainSearch"
-              >
-                <i className="fas fa-search"></i>
-              </Button>
+              <i className="fa fa-search buttonSearch "></i>
             </Form>
           </Row>
         </Container>
