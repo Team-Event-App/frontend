@@ -48,9 +48,8 @@ function MyVerticallyCenteredModal(props) {
 				},
 			})
 			.then((res) => {
-				console.log(res);
 				props.showSuccess("Successful Booking")
-				alert("Successful Booking");
+				// alert("Successful Booking");
 				props.onHide(false);
 			})
 			.catch((err) => {
@@ -140,7 +139,7 @@ function MyVerticallyCenteredModal(props) {
 	);
 }
 
-const Detail = () => {
+const Detail = (props) => {
 	const history = useHistory();
 	const [modalShow, setModalShow] = React.useState(false);
 	const { id } = useParams();
@@ -203,7 +202,7 @@ const Detail = () => {
 					<div className="mt-2" style={{ borderTop: "1px solid black" }}></div>
 
 					<Row className="mt-3">
-						
+
 						<Col md={{ span: 3, offset: 9 }}>
 							<Button
 								block
@@ -250,7 +249,7 @@ const Detail = () => {
 									<span style={{ color: "red" }}>Organizer by </span>{" "}
 									{item.organizerName}
 								</Card.Text>
-							
+
 							</Col>
 						</Row>
 					</Container>

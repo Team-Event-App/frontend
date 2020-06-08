@@ -6,10 +6,18 @@ import axios from "axios";
 import jwt from "jwt-decode";
 import * as Yup from "yup";
 
+import { connect } from 'react-redux'
+import { showSuccess } from '../../actions/modalActions'
+
+import './History.css'
+
 // const url = `${process.env.REACT_APP_API_URL}`;
 
-function HistoryBooking() {
+const HistoryBooking = (props) => {
 	const [modalShow, setModalShow] = React.useState(false);
+
+	const handleClose = () => setModalShow(false)
+
 	function MyVerticallyCenteredModal(props) {
 		return (
 			<Modal
@@ -53,7 +61,7 @@ function HistoryBooking() {
 									},
 								}
 							);
-							console.log(res);
+							// props.showSuccess("Success sending payment")
 							alert("Success sending payment.");
 							console.log(formData.get("sender"));
 							console.log(formData.get("totalAmount"));
@@ -72,7 +80,7 @@ function HistoryBooking() {
 									onChange={props.handleChange}
 									value={props.values.sender}
 								/>
-								<p class="validateString">
+								<p className="validateString">
 									<ErrorMessage name="sender" />
 								</p>
 								<small className="form-text text-muted">
@@ -93,7 +101,7 @@ function HistoryBooking() {
 										value={props.values.totalAmount}
 									/>
 								</div>
-								<p class="validateString">
+								<p className="validateString">
 									<ErrorMessage name="totalAmount" />
 								</p>
 								<small className="form-text text-muted">
@@ -113,10 +121,8 @@ function HistoryBooking() {
 											event.currentTarget.files[0]
 										);
 									}}
+									required
 								/>
-								<p class="validateString">
-									<ErrorMessage name="imageProof" />
-								</p>
 								<small className="form-text text-muted">
 									Image proof for payment.
 								</small>
@@ -125,7 +131,7 @@ function HistoryBooking() {
 									<Button variant="primary" type="submit">
 										Submit
 									</Button>
-									<Button onClick={props.onHide} variant="danger">
+									<Button variant="danger" onClick={handleClose}>
 										Close
 									</Button>
 								</Modal.Footer>
@@ -216,4 +222,8 @@ function HistoryBooking() {
 	);
 }
 
-export default HistoryBooking;
+const mapDispatchToProps = {
+	showSuccess
+}
+
+export default connect(null, mapDispatchToProps)(HistoryBooking);
