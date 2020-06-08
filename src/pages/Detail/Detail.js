@@ -13,6 +13,8 @@ import {
 	InputGroup,
 	FormControl,
 } from "react-bootstrap";
+import { connect } from 'react-redux'
+import { showSuccess } from './../../actions/modalActions'
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -38,7 +40,6 @@ function MyVerticallyCenteredModal(props) {
 			eventTitle: props.data && props.data.title,
 		};
 
-		// console.log(value);
 
 		axios
 			.post(`https://api.indrakawasan.com/booking/create/`, value, {
@@ -48,6 +49,7 @@ function MyVerticallyCenteredModal(props) {
 			})
 			.then((res) => {
 				console.log(res);
+				props.showSuccess("Successful Booking")
 				alert("Successful Booking");
 				props.onHide(false);
 			})
@@ -251,27 +253,6 @@ const Detail = () => {
 							
 							</Col>
 						</Row>
-
-						<Row
-							className="mt-5 ml-1 bg-light rowShare"
-							style={{ borderRadius: "20rem" }}
-						>
-							<Col md={{ offset: 2, span: 4 }} className="classShare">
-								<h4>Share this Event</h4>
-							</Col>
-							<Col md={1}>
-								<i className="fab fa-facebook-square fa-2x"></i>
-							</Col>
-							<Col md={1}>
-								<i className="fab fa-whatsapp fa-2x"></i>
-							</Col>
-							<Col md={1}>
-								<i className="fas fa-envelope fa-2x"></i>
-							</Col>
-							<Col md={1}>
-								<i className="far fa-copy fa-2x"></i>
-							</Col>
-						</Row>
 					</Container>
 				</Card.Body>
 			</Card>
@@ -296,4 +277,6 @@ const Detail = () => {
 	);
 };
 
-export default Detail;
+const mapDispatchToProps = { showSuccess };
+
+export default connect(null, mapDispatchToProps)(Detail);

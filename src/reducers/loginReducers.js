@@ -26,7 +26,6 @@ const login = (state = initialState, action) => {
       return {
         ...state,
         isShow: true,
-        // errorMessage: "Either your email or password is wrong.",
       };
 
     case "HIDE_MODAL":
