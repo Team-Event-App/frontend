@@ -40,16 +40,7 @@ const Navbars = (props) => {
           setUser(user);
         })
         .catch((err) => {
-          if (
-            err &&
-            err.response &&
-            err.response.data &&
-            err.response.data.message
-          ) {
-            alert(err.response.data.message);
-          } else {
-            alert("Sorry , can't get the data from server..");
-          }
+          throw(err);
         });
 
       if (props.viaLogin) {

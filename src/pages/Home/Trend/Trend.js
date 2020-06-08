@@ -34,16 +34,7 @@ const Trend = () => {
         setData(data);
       })
       .catch((err) => {
-        if (
-          err &&
-          err.response &&
-          err.response.data &&
-          err.response.data.message
-        ) {
-          alert(err.response.data.message);
-        } else {
-          alert("Sorry we have server problem , Please wait.. ");
-        }
+        throw(err);
       });
   }, []);
 
