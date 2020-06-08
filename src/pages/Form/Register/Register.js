@@ -57,7 +57,6 @@ const Register = () => {
                       .required("Password is required"),
                   })}
                   onSubmit={(values, actions) => {
-                    console.log(values);
 
                     axios(`https://api.indrakawasan.com/user/register`, {
                       method: "POST",

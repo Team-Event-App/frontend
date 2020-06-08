@@ -53,7 +53,6 @@ function HistoryBooking() {
 									},
 								}
 							);
-
 							console.log(res);
 							alert("Success sending payment.");
 							console.log(formData.get("sender"));

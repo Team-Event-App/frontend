@@ -3,6 +3,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import axios from "axios";
 
+import { connect } from "react-redux";
+import { showSuccess } from "./../../actions/modalActions";
+
 import "./EventCreate.css";
 import Navbars from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -33,10 +36,12 @@ class EventCreate extends Component {
       .then((response) => {
         actions.setSubmitting(false);
         actions.resetForm();
-        alert("Succesfully add Event");
+        this.props.showSuccess("Succesfully add Event")
+        this.imageRef.current.value = ""
+        this.imageShowRef.current.setAttribute("src","")
       })
       .catch((err) => {
-        this.props.history.push("/login");
+        console.log(err)
       });
   };
 
@@ -79,7 +84,7 @@ class EventCreate extends Component {
           }
         }}
         onSubmit={this.handleSubmit}
-        render={(formProps, setFieldValue) => {
+        render={(formProps) => {
           return (
             <div className="mainEvent">
               <Navbars />
@@ -304,4 +309,6 @@ class EventCreate extends Component {
     );
   }
 }
-export default EventCreate;
+const mapDispatchToProps = { showSuccess };
+
+export default connect(null, mapDispatchToProps)(EventCreate);

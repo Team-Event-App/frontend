@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import axios from "axios";
+
+import  { connect } from 'react-redux'
+import { showSuccess } from './../../actions/modalActions'
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-
 import Logo from "../../image/logo.png";
 
 import "./Contact.css";
@@ -49,7 +52,6 @@ class Contact extends Component {
 							}
 						}}
 						onSubmit={(values, actions) => {
-							console.log(values);
 
 							axios("https://api.indrakawasan.com/contact/create", {
 								method: "POST",
@@ -59,7 +61,7 @@ class Contact extends Component {
 									axios
 										.post("https://formspree.io/xvowaovj", values
 										)
-									alert("Your Message Successfully sent!");
+									this.props.showSuccess("Your Message Successfully sent!")
 									actions.resetForm(true);
 								})
 								.catch((err) => {
@@ -147,4 +149,6 @@ class Contact extends Component {
 	}
 }
 
-export default Contact;
+const mapDispatchToProps = { showSuccess }
+
+export default connect(null,mapDispatchToProps)(Contact);
