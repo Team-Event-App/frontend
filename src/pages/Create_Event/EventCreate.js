@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
-import TimeField from "react-simple-timefield";
 import axios from "axios";
 
 import "./EventCreate.css";
