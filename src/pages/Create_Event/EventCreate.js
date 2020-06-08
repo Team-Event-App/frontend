@@ -36,9 +36,9 @@ class EventCreate extends Component {
       .then((response) => {
         actions.setSubmitting(false);
         actions.resetForm();
-        this.props.showSuccess("Succesfully add Event")
         this.imageRef.current.value = ""
-        this.imageShowRef.current.setAttribute("src","")
+        this.imageShowRef.current.setAttribute("src", "")
+        this.props.showSuccess("Succesfully add Event")
       })
       .catch((err) => {
         console.log(err)
