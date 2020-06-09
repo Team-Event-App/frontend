@@ -29,7 +29,7 @@ const EditProfile = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [userProfile]);
 
   const image = `${URL}${data.imageUrl || "public/images/oke.jpeg"}`;
   const imageNotFound = `${URL}public/images/oke.jpeg`;
@@ -42,7 +42,7 @@ const EditProfile = (props) => {
     height: "200px",
   };
 
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, /*errors*/ } = useForm();
   const onSubmit = (data) => {
     const formData = new FormData();
 
@@ -97,6 +97,7 @@ const EditProfile = (props) => {
                   name="username"
                   defaultValue={data.username}
                   ref={register({ required: true })}
+                  autoComplete="off"
                 />
               </Form.Group>
 
@@ -107,6 +108,7 @@ const EditProfile = (props) => {
                   name="fullname"
                   defaultValue={data.fullname}
                   ref={register({ required: true })}
+                  autoComplete="off"
                 />
               </Form.Group>
 
@@ -117,6 +119,7 @@ const EditProfile = (props) => {
                   name="email"
                   defaultValue={data.email}
                   ref={register({ required: true })}
+                  autoComplete="off"
                 />
               </Form.Group>
 
@@ -127,6 +130,7 @@ const EditProfile = (props) => {
                   name="phone"
                   defaultValue={data.phone}
                   ref={register({ required: true })}
+                  autoComplete="off"
                 />
               </Form.Group>
               <Button

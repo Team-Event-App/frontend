@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { logout } from "../../actions/loginActions";
 import { connect } from "react-redux";
@@ -16,8 +15,6 @@ const Navbars = (props) => {
   const [data, setData] = useState();
   const [viewLogin, setViewLogin] = useState();
   const history = useHistory();
-  const [user, setUser] = useState([]);
-  const URL = `https://api.indrakawasan.com/event/show`;
   const pushKlik = () => {
     const token = localStorage.getItem("access-token");
     if (!token) {
@@ -33,16 +30,6 @@ const Navbars = (props) => {
 
   useEffect(
     () => {
-      axios
-        .get(URL)
-        .then((res) => {
-          const user = res.data;
-          setUser(user);
-        })
-        .catch((err) => {
-          throw(err);
-        });
-
       if (props.viaLogin) {
         setViewLogin(
           <div className="showLogin">
@@ -59,12 +46,6 @@ const Navbars = (props) => {
                   <i className="fas fa-envelope fa-fw"></i> User Profile
                 </Link>
               </NavDropdown.Item>
-
-              {/* <NavDropdown.Item className="navDropItem">
-									<Link to="/bookmark">
-										<i className="fas fa-bookmark mr-2"></i>Bookmark
-									</Link>
-								</NavDropdown.Item> */}
 
               <NavDropdown.Item className="navDropItem">
                 <Link to={"/history"} className="profileSetting">
@@ -96,7 +77,7 @@ const Navbars = (props) => {
       }
     },
     [props.viaLogin],
-    []
+    [logOut]
   );
 
   return (

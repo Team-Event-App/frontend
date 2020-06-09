@@ -4,7 +4,6 @@ import {
 	Container,
 	Form,
 	FormControl,
-	Button,
 	Row,
 	Col,
 } from "react-bootstrap";
@@ -42,7 +41,10 @@ const HistoryEvent = () => {
 				console.log(err);
 
 			});
-	}, []);
+	},
+		[idUser],
+		[token]
+	);
 
 	const showHistory = data.map((item, index) => {
 		if (data) {
