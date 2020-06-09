@@ -3,8 +3,8 @@ import { Row, Col, Card, Button } from "react-bootstrap";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import axios from "axios";
 
-import  { connect } from 'react-redux'
-import { showSuccess } from './../../actions/modalActions'
+import { connect } from 'react-redux'
+import { showSuccess, showError } from './../../actions/modalActions'
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -65,7 +65,7 @@ class Contact extends Component {
 									actions.resetForm(true);
 								})
 								.catch((err) => {
-									alert("Server Error , try again later.");
+									this.props.showError("Server Error , try again later.");
 								});
 						}}
 						render={(props) => {
@@ -149,6 +149,6 @@ class Contact extends Component {
 	}
 }
 
-const mapDispatchToProps = { showSuccess }
+const mapDispatchToProps = { showSuccess, showError }
 
-export default connect(null,mapDispatchToProps)(Contact);
+export default connect(null, mapDispatchToProps)(Contact);

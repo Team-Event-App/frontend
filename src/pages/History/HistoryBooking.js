@@ -61,8 +61,7 @@ const HistoryBooking = (props) => {
 									},
 								}
 							);
-							// props.showSuccess("Success sending payment")
-							alert("Success sending payment.");
+							props.showSuccess("Success sending payment")
 							console.log(formData.get("sender"));
 							console.log(formData.get("totalAmount"));
 							console.log(formData.get("imageProof"));
@@ -204,6 +203,7 @@ const HistoryBooking = (props) => {
 				<MyVerticallyCenteredModal
 					show={modalShow}
 					onHide={() => setModalShow(false)}
+					showSuccess={props.showSuccess}
 				/>
 			</Row>
 			<Table responsive className="mb-5">
