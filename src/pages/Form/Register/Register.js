@@ -12,12 +12,14 @@ import {
 import { Link, useHistory } from "react-router-dom";
 
 import * as Yup from "yup";
+import { connect } from 'react-redux'
+import { showSuccess } from '../../../actions/modalActions'
 
 import "./Register.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
-const Register = () => {
+const Register = (props) => {
   const history = useHistory();
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisibility = () => {
@@ -63,7 +65,7 @@ const Register = () => {
                       data: values,
                     })
                       .then((res) => {
-                        alert("Register Success!");
+                        props.showSuccess("Register Success!");
                         actions.resetForm(true);
                         history.push("/login");
                       })
@@ -159,7 +161,7 @@ const Register = () => {
                       </p>
                       <Button variant="danger" type="submit" className="mt-3">
                         Sign Up
-                      </Button>
+                        </Button>
                     </Form>
                   )}
                 </Formik>
@@ -186,4 +188,8 @@ const Register = () => {
   );
 };
 
-export default Register;
+const mapDispatchToProps = {
+  showSuccess
+}
+
+export default connect(null, mapDispatchToProps)(Register);

@@ -49,7 +49,6 @@ function MyVerticallyCenteredModal(props) {
 			})
 			.then((res) => {
 				props.showSuccess("Successful Booking")
-				// alert("Successful Booking");
 				props.onHide(false);
 			})
 			.catch((err) => {
@@ -269,6 +268,7 @@ const Detail = (props) => {
 					data={modalShow.data}
 					show={modalShow.isShow}
 					onHide={() => setModalShow({ isShow: false })}
+					showSuccess={props.showSuccess}
 				/>
 			</Container>
 			<Footer />
