@@ -2,14 +2,6 @@
   height: 5rem;
   box-shadow: 2px 2px 20px #c4c4c4;
 }
-.brand {
-  color: #000000;
-  font-size: 3rem;
-  font-family: "Allura", cursive;
-  text-transform: uppercase;
-  
-}
-
 .signInButton {
   color: white !important;
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
@@ -61,6 +53,30 @@
 
 .i-logout:active {
   color: white !important;
+}
+.searchNav{
+  margin-left: 220px;
+  width: 20px !important;
+}
+.searchNav2{
+  width: 20rem !important;
+  padding: 1.7rem 4rem !important;
+  border-radius: 20rem !important;
+  margin: -1rem -17rem !important;
+}
+input.searchNav2{
+  background-color: white !important;
+}
+.searchNav2:focus {
+  border-color: #ff001f !important;
+  box-shadow: #ff001f !important;
+}
+.iconSearchNav{
+  padding: 0.5rem;
+  margin-left: -2rem !important;
+  border-radius: 20rem !important;
+  font-size: 1.2rem;
+  color: #ff001f !important;
 }
 /* @media all and (min-width : 320px) {
 .imageLogo{
