@@ -9,14 +9,13 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 
-import { connect } from 'react-redux'
-import { showError } from '../../actions/modalActions'
-
 import Card from "../../components/Card/Card";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+
 import "./../Home/Main/Main.css";
-import "./ShowAll.css";
+import "./Search_Title.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
@@ -25,7 +24,7 @@ const ShowAll = (props) => {
 	const [search, setSearch] = useState([]);
 
 	const params = new URLSearchParams(props.location.search);
-	const searchQuery = params.get("search");
+	const searchQuery = params.getAll("search");
 
 	// show data when user go to page
 	useEffect(() => {
@@ -42,15 +41,15 @@ const ShowAll = (props) => {
 					err.response.data &&
 					err.response.data.message
 				) {
-					props.showError(err.response.data.message);
+					alert(err.response.data.message);
 				} else {
-					props.showError("Sorry we have server problem , Try again later.. ");
+					alert("Sorry we have server problem , Try again later.. ");
 				}
 			});
 	}, []);
 
 	useEffect(() => {
-		const URL2 = `https://api.indrakawasan.com/event/show?search=${searchQuery}`;
+		const URL2 = `https://api.indrakawasan.com/event/getTitle?search=${searchQuery}`;
 
 		axios
 			.get(URL2)
@@ -64,9 +63,9 @@ const ShowAll = (props) => {
 					err.response.data &&
 					err.response.data.message
 				) {
-					props.showError(err.response.data.message);
+					alert(err.response.data.message);
 				} else {
-					props.showError("Sorry we have server problem , Try again later.. ");
+					alert("Sorry we have server problem , Try again later.. ");
 				}
 			});
 	}, [searchQuery]);
@@ -84,7 +83,6 @@ const ShowAll = (props) => {
 			</Col>
 		);
 	});
-
 	const showAllSearch = search.map((data) => {
 		return (
 			<Col
@@ -117,9 +115,9 @@ const ShowAll = (props) => {
 	// 					err.response.data &&
 	// 					err.response.data.message
 	// 				) {
-	// 					props.showError(err.response.data.message);
+	// 					alert(err.response.data.message);
 	// 				} else {
-	// 					props.showError("Sorry we have server problem , Try again later.. ");
+	// 					alert("Sorry we have server problem , Try again later.. ");
 	// 				}
 	// 			});
 	// 	} else {
@@ -131,7 +129,7 @@ const ShowAll = (props) => {
 	// };
 
 	const showAll = searchQuery ? showAllSearch : showAllEvent;
-
+	
 	return (
 		<div>
 			<Navbar />
@@ -174,8 +172,4 @@ const ShowAll = (props) => {
 	);
 };
 
-const mapDispatchToProps = {
-	showError
-}
-
-export default connect(null, mapDispatchToProps)(ShowAll);
+export default ShowAll;

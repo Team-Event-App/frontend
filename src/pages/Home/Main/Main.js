@@ -7,14 +7,17 @@ import {
   Row,
   Col,
   Jumbotron,
-  Form,
-  FormControl,
+  // Form,
+  // FormControl,
   Card,
+  // Button,
   CardDeck,
 } from "react-bootstrap";
 import axios from "axios";
-import { useForm } from "react-hook-form";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
+
+import { connect } from 'react-redux'
+import { showError } from '../../../actions/modalActions'
 
 import { connect } from 'react-redux'
 import { showError } from '../../../actions/modalActions'
@@ -29,16 +32,23 @@ import "../Main/Main.css";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const Main = (props) => {
-  const history = useHistory();
+
   const [data, setData] = useState([]);
-  const { handleSubmit, register, errors } = useForm();
-  const onSubmit = (values) => {
-    const { search } = values;
-    history.push({
-      pathname: "/showall",
-      search: `?search=${search}`,
-    });
-  };
+  // const { handleSubmit, register} = useForm();
+  // const onSubmit = (values) => {
+  //   const { searchT} = values;
+  //   history.push({
+  //     pathname: "/searchtitle",
+  //     search: `?search=${searchT}`,
+  //   });
+  // };
+  // const cariCategory = (values) => {
+  //   const {search} = values;
+  //   history.push({
+  //     pathname:"/searchcategory",
+  //     search:`?search=${search}`,
+  //   })
+  // }
   useEffect(() => {
     const URL = `https://api.indrakawasan.com/event/show`;
 
@@ -116,6 +126,13 @@ const Main = (props) => {
           </h1>
           <h1 className="text-center quotesLanding quotes2">― Rehan Waris ―</h1>
           <Row>
+          <Col className="text-center mt-4 mb-3">
+            <Link to="/allevents" className="btn buttonMore mt-4 mb-4">
+              <h5>Search Events</h5>
+            </Link>
+          </Col>
+        </Row>
+          {/* <Row>
             <Form
               inline
               className="mx-auto mt-5 pt-3"
@@ -123,16 +140,31 @@ const Main = (props) => {
             >
               <FormControl
                 type="text"
-                placeholder="Search Events"
+                placeholder="Search By Title"
+                className="mainInput"
+                name="searchT"
+                autoComplete="off"
+                ref={register({ required: false })}
+              />
+              
+              <i className="fa fa-search buttonSearch "></i>
+            </Form>
+            <Form
+              inline
+              className="mx-auto mt-5 pt-3"
+              onSubmit={handleSubmit(cariCategory)}
+            >
+              <FormControl
+                type="text"
+                placeholder="Search By Category"
                 className="mainInput"
                 name="search"
                 autoComplete="off"
-                ref={register({ required: true })}
+                ref={register({ required: false })}
               />
-
               <i className="fa fa-search buttonSearch "></i>
             </Form>
-          </Row>
+          </Row> */}
         </Container>
       </Jumbotron>
 
@@ -151,7 +183,7 @@ const Main = (props) => {
 
         <Row>
           <Col className="text-center mt-4 mb-3">
-            <Link to="/showall" className="btn buttonMore mt-4 mb-4">
+            <Link to="/allevents" className="btn buttonMore mt-4 mb-4">
               <h5>More Events</h5>
             </Link>
           </Col>

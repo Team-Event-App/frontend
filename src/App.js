@@ -11,10 +11,11 @@ import Login from "./pages/Form/Login/Login";
 
 import Register from "./pages/Form/Register/Register";
 import About from "./pages/About/About";
+import allEvent from "./pages/All_Events/ShowAll";
 import Contact from "./pages/Contact/Contact";
 import Detail from "./pages/Detail/Detail";
-
-import ShowAll from "./pages/Show_All/ShowAll";
+import SearchCategory from "./pages/Search/SearchCat";
+import ShowAll from "./pages/Search_Title/Search_Title";
 import Profile from "./pages/Profile/Profile";
 import History from "./pages/History/HistoryEvent";
 
@@ -29,7 +30,9 @@ const App = (props) => {
           <Route path="/register" component={Register} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route path="/showall" component={ShowAll} />
+          <Route path="/searchtitle" component={ShowAll} />
+          <Route path="/allevents" component={allEvent}/>
+          <Route path="/searchcategory" component={SearchCategory}/>
           <Route path="/event/create">
             {props.viaLogin ? <CreateEvent /> : <Login />}
           </Route>
