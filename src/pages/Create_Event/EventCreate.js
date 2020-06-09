@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
-<<<<<<< HEAD
-
-=======
->>>>>>> 195018ff6780fc9ff81dac330f5e32b06aee4a96
 import axios from "axios";
 
 import { connect } from "react-redux";

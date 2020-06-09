@@ -5,6 +5,13 @@ export const showSuccess = (message) => {
   };
 };
 
+export const showError = (message) => {
+  return {
+    type: "MODAL_ERROR_SHOW",
+    payload: message
+  }
+}
+
 export const closeModalError = () => {
   return {
     type: "MODAL_ERROR_HIDE",

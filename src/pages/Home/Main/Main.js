@@ -14,10 +14,12 @@ import {
   CardDeck,
 } from "react-bootstrap";
 import axios from "axios";
-import { useForm } from "react-hook-form";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 import "../Main/Main.css";
+
+import { connect } from 'react-redux'
+import { showError } from '../../../actions/modalActions'
 
 import Navbars from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
@@ -27,7 +29,7 @@ import Category from "./../Category/Category";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
-const Main = () => {
+const Main = (props) => {
   // const history = useHistory();
   const [data, setData] = useState([]);
   // const { handleSubmit, register} = useForm();
@@ -61,9 +63,9 @@ const Main = () => {
           err.response.data &&
           err.response.data.message
         ) {
-          alert(err.response.data.message);
+          props.showError(err.response.data.message);
         } else {
-          alert("Sorry we have server problem , Try again later.. ");
+          props.showError("Sorry we have server problem , Try again later.. ");
         }
       });
   }, []);
@@ -193,4 +195,8 @@ const Main = () => {
   );
 };
 
-export default Main;
+const mapDispatchToProps = {
+  showError
+}
+
+export default connect(null, mapDispatchToProps)(Main);

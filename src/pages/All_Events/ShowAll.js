@@ -6,6 +6,10 @@ import {
 	Form,
 	FormControl,
 } from "react-bootstrap";
+
+import { connect } from 'react-redux'
+import { showError } from '../../actions/modalActions'
+
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import Card from "../../components/Card/Card";
@@ -51,9 +55,9 @@ const ShowAll = (props) => {
 					err.response.data &&
 					err.response.data.message
 				) {
-					alert(err.response.data.message);
+					props.showError(err.response.data.message);
 				} else {
-					alert("Sorry we have server problem , Try again later.. ");
+					props.showError("Sorry we have server problem , Try again later.. ");
 				}
 			});
 	}, []);

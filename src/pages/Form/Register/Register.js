@@ -12,12 +12,14 @@ import {
 import { Link, useHistory } from "react-router-dom";
 
 import * as Yup from "yup";
+import { connect } from 'react-redux'
+import { showSuccess, showError } from '../../../actions/modalActions'
 
 import "./Register.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
-const Register = () => {
+const Register = (props) => {
   const history = useHistory();
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisibility = () => {
@@ -57,23 +59,19 @@ const Register = () => {
                       .required("Password is required"),
                   })}
                   onSubmit={(values, actions) => {
-<<<<<<< HEAD
-                    console.log(values);
-                    
-=======
 
->>>>>>> 195018ff6780fc9ff81dac330f5e32b06aee4a96
                     axios(`https://api.indrakawasan.com/user/register`, {
                       method: "POST",
                       data: values,
                     })
                       .then((res) => {
-                        alert("Register Success!");
-                        actions.resetForm(true);
+                        props.showSuccess("Register Success!");
+                        actions.resetForm();
                         history.push("/login");
                       })
                       .catch((err) => {
                         console.log(err);
+                        props.showError("Please check your Input Form again...")
                       });
                   }}
                 >
@@ -164,7 +162,7 @@ const Register = () => {
                       </p>
                       <Button variant="danger" type="submit" className="mt-3">
                         Sign Up
-                      </Button>
+                        </Button>
                     </Form>
                   )}
                 </Formik>
@@ -191,4 +189,9 @@ const Register = () => {
   );
 };
 
-export default Register;
+const mapDispatchToProps = {
+  showSuccess,
+  showError
+}
+
+export default connect(null, mapDispatchToProps)(Register);
