@@ -9,11 +9,12 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 
-import Card from "../../components/Card/Card";
+import { connect } from 'react-redux'
+import { showError } from '../../actions/modalActions'
 
+import Card from "../../components/Card/Card";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-
 import "./../Home/Main/Main.css";
 import "./SearchCat.css";
 
@@ -41,9 +42,9 @@ const ShowAll = (props) => {
 					err.response.data &&
 					err.response.data.message
 				) {
-					alert(err.response.data.message);
+					props.showError(err.response.data.message);
 				} else {
-					alert("Sorry we have server problem , Try again later.. ");
+					props.showError("Sorry we have server problem , Try again later.. ");
 				}
 			});
 	}, []);
@@ -63,9 +64,9 @@ const ShowAll = (props) => {
 					err.response.data &&
 					err.response.data.message
 				) {
-					alert(err.response.data.message);
+					props.showError(err.response.data.message);
 				} else {
-					alert("Sorry we have server problem , Try again later.. ");
+					props.showError("Sorry we have server problem , Try again later.. ");
 				}
 			});
 	}, [searchQuery]);
@@ -116,9 +117,9 @@ const ShowAll = (props) => {
 	// 					err.response.data &&
 	// 					err.response.data.message
 	// 				) {
-	// 					alert(err.response.data.message);
+	// 					props.showError(err.response.data.message);
 	// 				} else {
-	// 					alert("Sorry we have server problem , Try again later.. ");
+	// 					props.showError("Sorry we have server problem , Try again later.. ");
 	// 				}
 	// 			});
 	// 	} else {
@@ -173,4 +174,8 @@ const ShowAll = (props) => {
 	);
 };
 
-export default ShowAll;
+const mapDispatchToProps = {
+	showError
+}
+
+export default connect(null, mapDispatchToProps)(ShowAll);
