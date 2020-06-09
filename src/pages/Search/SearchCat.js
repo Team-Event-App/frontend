@@ -24,7 +24,7 @@ const ShowAll = (props) => {
 	const [search, setSearch] = useState([]);
 
 	const params = new URLSearchParams(props.location.search);
-	const searchQuery = params.get("search");
+	const searchQuery = params.get("searchh");
 
 	// show data when user go to page
 	useEffect(() => {

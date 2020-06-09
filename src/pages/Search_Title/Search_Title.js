@@ -15,7 +15,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
 import "./../Home/Main/Main.css";
-import "./ShowAll.css";
+import "./Search_Title.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
@@ -24,7 +24,7 @@ const ShowAll = (props) => {
 	const [search, setSearch] = useState([]);
 
 	const params = new URLSearchParams(props.location.search);
-	const searchQuery = params.get("search");
+	const searchQuery = params.getAll("search");
 
 	// show data when user go to page
 	useEffect(() => {
@@ -83,7 +83,6 @@ const ShowAll = (props) => {
 			</Col>
 		);
 	});
-
 	const showAllSearch = search.map((data) => {
 		return (
 			<Col
@@ -130,7 +129,7 @@ const ShowAll = (props) => {
 	// };
 
 	const showAll = searchQuery ? showAllSearch : showAllEvent;
-
+	
 	return (
 		<div>
 			<Navbar />
