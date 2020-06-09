@@ -19,9 +19,6 @@ import { Link} from "react-router-dom";
 import { connect } from 'react-redux'
 import { showError } from '../../../actions/modalActions'
 
-import { connect } from 'react-redux'
-import { showError } from '../../../actions/modalActions'
-
 import Navbars from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 import Trend from "../Trend/Trend";
