@@ -47,7 +47,7 @@ const ShowAll = (props) => {
 					props.showError("Sorry we have server problem , Try again later.. ");
 				}
 			});
-	}, []);
+	}, [props]);
 
 	useEffect(() => {
 		const URL2 = `https://api.indrakawasan.com/event/getCategory?search=${searchQuery}`;
@@ -69,7 +69,7 @@ const ShowAll = (props) => {
 					props.showError("Sorry we have server problem , Try again later.. ");
 				}
 			});
-	}, [searchQuery]);
+	}, [searchQuery], [props]);
 
 	const showAllEvent = data.map((data) => {
 		return (

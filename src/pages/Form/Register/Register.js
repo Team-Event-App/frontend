@@ -70,7 +70,6 @@ const Register = (props) => {
                         history.push("/login");
                       })
                       .catch((err) => {
-                        console.log(err);
                         props.showError("Please check your Input Form again...")
                       });
                   }}
