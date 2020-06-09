@@ -13,7 +13,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import * as Yup from "yup";
 import { connect } from 'react-redux'
-import { showSuccess } from '../../../actions/modalActions'
+import { showSuccess, showError } from '../../../actions/modalActions'
 
 import "./Register.css";
 
@@ -66,11 +66,12 @@ const Register = (props) => {
                     })
                       .then((res) => {
                         props.showSuccess("Register Success!");
-                        actions.resetForm(true);
+                        actions.resetForm();
                         history.push("/login");
                       })
                       .catch((err) => {
                         console.log(err);
+                        props.showError("Please check your Input Form again...")
                       });
                   }}
                 >
@@ -189,7 +190,8 @@ const Register = (props) => {
 };
 
 const mapDispatchToProps = {
-  showSuccess
+  showSuccess,
+  showError
 }
 
 export default connect(null, mapDispatchToProps)(Register);
