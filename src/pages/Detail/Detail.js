@@ -13,6 +13,8 @@ import {
 	InputGroup,
 	FormControl,
 } from "react-bootstrap";
+import { connect } from 'react-redux'
+import { showSuccess } from './../../actions/modalActions'
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -38,7 +40,6 @@ function MyVerticallyCenteredModal(props) {
 			eventTitle: props.data && props.data.title,
 		};
 
-		// console.log(value);
 
 		axios
 			.post(`https://api.indrakawasan.com/booking/create/`, value, {
@@ -47,8 +48,8 @@ function MyVerticallyCenteredModal(props) {
 				},
 			})
 			.then((res) => {
-				console.log(res);
-				alert("Successful Booking");
+				props.showSuccess("Successful Booking")
+				// alert("Successful Booking");
 				props.onHide(false);
 			})
 			.catch((err) => {
@@ -138,7 +139,7 @@ function MyVerticallyCenteredModal(props) {
 	);
 }
 
-const Detail = () => {
+const Detail = (props) => {
 	const history = useHistory();
 	const [modalShow, setModalShow] = React.useState(false);
 	const { id } = useParams();
@@ -201,7 +202,7 @@ const Detail = () => {
 					<div className="mt-2" style={{ borderTop: "1px solid black" }}></div>
 
 					<Row className="mt-3">
-						
+
 						<Col md={{ span: 3, offset: 9 }}>
 							<Button
 								block
@@ -248,28 +249,7 @@ const Detail = () => {
 									<span style={{ color: "red" }}>Organizer by </span>{" "}
 									{item.organizerName}
 								</Card.Text>
-							
-							</Col>
-						</Row>
 
-						<Row
-							className="mt-5 ml-1 bg-light rowShare"
-							style={{ borderRadius: "20rem" }}
-						>
-							<Col md={{ offset: 2, span: 4 }} className="classShare">
-								<h4>Share this Event</h4>
-							</Col>
-							<Col md={1}>
-								<i className="fab fa-facebook-square fa-2x"></i>
-							</Col>
-							<Col md={1}>
-								<i className="fab fa-whatsapp fa-2x"></i>
-							</Col>
-							<Col md={1}>
-								<i className="fas fa-envelope fa-2x"></i>
-							</Col>
-							<Col md={1}>
-								<i className="far fa-copy fa-2x"></i>
 							</Col>
 						</Row>
 					</Container>
@@ -296,4 +276,6 @@ const Detail = () => {
 	);
 };
 
-export default Detail;
+const mapDispatchToProps = { showSuccess };
+
+export default connect(null, mapDispatchToProps)(Detail);

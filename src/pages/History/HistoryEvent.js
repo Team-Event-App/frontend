@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./HistoryEvent.css";
 import {
 	Table,
 	Container,
@@ -17,7 +16,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import HistoryBooking from "./HistoryBooking";
 
-import "./HistoryEvent.css";
+import "./History.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
@@ -31,12 +30,17 @@ const HistoryEvent = () => {
 		const URL = `https://api.indrakawasan.com/event/getByUserId/${idUser}`;
 
 		axios
-			.get(URL)
+			.get(URL, {
+				headers: {
+					"access-token": token,
+				}
+			})
 			.then((res) => {
 				setData(res.data);
 			})
 			.catch((err) => {
 				console.log(err);
+
 			});
 	}, []);
 
@@ -70,18 +74,19 @@ const HistoryEvent = () => {
 			<Navbar />
 			<Container className="mt-5 pt-5 mb-4">
 				<Row>
-					<Form inline className="mx-auto mt-5 mb-5">
+					<Form
+						inline
+						className="mx-auto mt-5 mb-5"
+					>
 						<FormControl
 							type="text"
-							placeholder="Search Purchase"
-							className="mainInput "
+							placeholder="Search Events"
+							className="mainInput"
+							name="search"
+							autoComplete="off"
 						/>
-						<Button
-							variant="outline-success"
-							className="buttonSearch mainSearch"
-						>
-							<i className="fas fa-search"></i>
-						</Button>
+
+						<i className="fa fa-search buttonSearch "></i>
 					</Form>
 				</Row>
 				<Row>
