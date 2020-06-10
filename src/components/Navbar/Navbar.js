@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { logout } from "../../actions/loginActions";
+import { logoutModal } from '../../actions/modalActions'
 import { connect } from "react-redux";
 import axios from "axios"
 import { Navbar, Nav, NavDropdown, Form, FormControl,Button } from "react-bootstrap";
@@ -34,8 +34,7 @@ const Navbars = (props) => {
     }
   };
   const logOut = () => {
-    props.logout();
-    history.push("/");
+    props.logoutModal();
   };
 
   useEffect(
@@ -147,6 +146,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = { logout };
+const mapDispatchToProps = { logoutModal };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbars);
