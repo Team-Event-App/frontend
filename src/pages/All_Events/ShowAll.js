@@ -23,23 +23,23 @@ import "./ShowAll.css";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const ShowAll = (props) => {
-    const [data, setData] = useState([]);
-    const history = useHistory();
-    const { handleSubmit, register} = useForm();
-    const onSubmit = (values) => {
-      const { searchh} = values;
-      history.push({
-        pathname: "/searchtitle",
-        search: `?search=${searchh}`,
-      });
-    };
-    const cariCategory = (values) => {
-      const {search} = values;
-      history.push({
-        pathname:"/searchcategory",
-        search:`?search=${search}`,
-      })
-    }
+	const [data, setData] = useState([]);
+	const history = useHistory();
+	const { handleSubmit, register } = useForm();
+	const onSubmit = (values) => {
+		const { searchh } = values;
+		history.push({
+			pathname: "/searchtitle",
+			search: `?search=${searchh}`,
+		});
+	};
+	const cariCategory = (values) => {
+		const { search } = values;
+		history.push({
+			pathname: "/searchcategory",
+			search: `?search=${search}`,
+		})
+	}
 	// show data when user go to page
 	useEffect(() => {
 		const URL = `https://api.indrakawasan.com/event/show`;
@@ -60,7 +60,7 @@ const ShowAll = (props) => {
 					props.showError("Sorry we have server problem , Try again later.. ");
 				}
 			});
-	}, []);
+	}, [props]);
 	const showAllEvent = data.map((data) => {
 		return (
 			<Col
@@ -78,39 +78,39 @@ const ShowAll = (props) => {
 		<div>
 			<Navbar />
 			<Container className="mt-5 pt-5 mb-5">
-            <Row className="mb-5">
-            <Form
-              inline
-              className="mx-auto mt-5 pt-3"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <FormControl
-                type="text"
-                placeholder="Search By Title"
-                className="mainInput"
-                name="searchh"
-                autoComplete="off"
-                ref={register({ required: false })}
-              />
-              
-              <i className="fa fa-search buttonSearch "></i>
-            </Form>
-            <Form
-              inline
-              className="mx-auto mt-5 pt-3"
-              onSubmit={handleSubmit(cariCategory)}
-            >
-              <FormControl
-                type="text"
-                placeholder="Search By Category"
-                className="mainInput"
-                name="search"
-                autoComplete="off"
-                ref={register({ required: false })}
-              />
-              <i className="fa fa-search buttonSearch "></i>
-            </Form>
-          </Row>
+				<Row className="mb-5">
+					<Form
+						inline
+						className="mx-auto mt-5 pt-3"
+						onSubmit={handleSubmit(onSubmit)}
+					>
+						<FormControl
+							type="text"
+							placeholder="Search By Title"
+							className="mainInput"
+							name="searchh"
+							autoComplete="off"
+							ref={register({ required: false })}
+						/>
+
+						<i className="fa fa-search buttonSearch "></i>
+					</Form>
+					<Form
+						inline
+						className="mx-auto mt-5 pt-3"
+						onSubmit={handleSubmit(cariCategory)}
+					>
+						<FormControl
+							type="text"
+							placeholder="Search By Category"
+							className="mainInput"
+							name="search"
+							autoComplete="off"
+							ref={register({ required: false })}
+						/>
+						<i className="fa fa-search buttonSearch "></i>
+					</Form>
+				</Row>
 				<Row>
 					<Col>
 						<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
@@ -127,4 +127,8 @@ const ShowAll = (props) => {
 	);
 };
 
-export default ShowAll;
+const mapDispatchToProps = {
+	showError
+}
+
+export default connect(null, mapDispatchToProps)(ShowAll);

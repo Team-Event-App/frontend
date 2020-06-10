@@ -164,7 +164,6 @@ const Detail = (props) => {
 		if (!token) {
 			history.replace("/login");
 		} else {
-			const jwtdecode = jwt(token);
 			setModalShow({ isShow, data });
 		}
 	};

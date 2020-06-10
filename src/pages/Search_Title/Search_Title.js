@@ -70,19 +70,19 @@ const ShowAll = (props) => {
 			});
 	}, [searchQuery]);
 
-	const showAllEvent = data.map((data) => {
-		return (
-			<Col
-				key={data.id}
-				lg={3}
-				md={6}
-				sm={12}
-				className="my-2 mt-5 pt-2 pl-0 pr-0"
-			>
-				<Card item={data} />
-			</Col>
-		);
-	});
+	// const showAllEvent = data.map((data) => {
+	// 	return (
+	// 		<Col
+	// 			key={data.id}
+	// 			lg={3}
+	// 			md={6}
+	// 			sm={12}
+	// 			className="my-2 mt-5 pt-2 pl-0 pr-0"
+	// 		>
+	// 			<Card item={data} />
+	// 		</Col>
+	// 	);
+	// });
 	const showAllSearch = search.map((data) => {
 		return (
 			<Col
@@ -96,7 +96,14 @@ const ShowAll = (props) => {
 			</Col>
 		);
 	});
-
+	const show404 = () => {
+		return(
+			<div>
+			<h3>404 page not found</h3>
+			<p>We are sorry but the page you are looking for does not exist.</p>
+		  </div>
+		)
+	}
 	// const handleSubmit = (event, a, b) => {
 	// 	event.preventDefault();
 	// 	const newSearch = event.target[0].value;
@@ -128,8 +135,8 @@ const ShowAll = (props) => {
 	// 	}
 	// };
 
-	const showAll = searchQuery ? showAllSearch : showAllEvent;
-	
+	const showAll = searchQuery ? showAllSearch : show404;
+
 	return (
 		<div>
 			<Navbar />
@@ -163,7 +170,7 @@ const ShowAll = (props) => {
 				</Row> */}
 
 				<Container>
-					<Row className="rowEvent">{showAll}</Row>
+			<Row className="rowEvent">{showAll}</Row>
 				</Container>
 			</Container>
 

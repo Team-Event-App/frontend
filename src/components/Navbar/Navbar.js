@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { logout } from "../../actions/loginActions";
 import { connect } from "react-redux";
-
+import axios from "axios"
 import { Navbar, Nav, NavDropdown, Form, FormControl,Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./Navbar.css";
@@ -68,14 +67,8 @@ const Navbars = (props) => {
                 </Link>
               </NavDropdown.Item>
 
-              {/* <NavDropdown.Item className="navDropItem">
-									<Link to="/bookmark">
-										<i className="fas fa-bookmark mr-2"></i>Bookmark
-									</Link>
-								</NavDropdown.Item> */}
-
               <NavDropdown.Item className="navDropItem">
-                <Link to={"/history"} className="profileSetting">
+                <Link to="/history" className="profileSetting">
                   <i className="far fa-clock mr-2"></i>History
                 </Link>
               </NavDropdown.Item>
@@ -104,7 +97,7 @@ const Navbars = (props) => {
       }
     },
     [props.viaLogin],
-    []
+    [logOut]
   );
 
   return (

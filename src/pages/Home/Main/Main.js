@@ -14,7 +14,7 @@ import {
   CardDeck,
 } from "react-bootstrap";
 import axios from "axios";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { connect } from 'react-redux'
 import { showError } from '../../../actions/modalActions'
@@ -67,7 +67,7 @@ const Main = (props) => {
           props.showError("Sorry we have server problem , Try again later.. ");
         }
       });
-  }, []);
+  }, [props]);
 
   const showEvent = data.map((item, index) => {
     const URL = `https://api.indrakawasan.com/`;
@@ -123,13 +123,12 @@ const Main = (props) => {
           </h1>
           <h1 className="text-center quotesLanding quotes2">― Rehan Waris ―</h1>
           <Row>
-          <Col className="text-center mt-4 mb-3">
-            <Link to="/allevents" className="btn buttonMore mt-4">
-              <h5>Search Events<i class="fa fa-chevron-right ml-2 mt-1"></i></h5>
-              
-            </Link>
-          </Col>
-        </Row>
+            <Col className="text-center mt-4 mb-3">
+              <Link to="/allevents" className="btn buttonMore mt-4 mb-4">
+                <h5>Search Events <i class="fa fa-chevron-right ml-1"></i></h5>
+              </Link>
+            </Col>
+          </Row>
           {/* <Row>
             <Form
               inline

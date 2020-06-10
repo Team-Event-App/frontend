@@ -70,7 +70,6 @@ const Register = (props) => {
                         history.push("/login");
                       })
                       .catch((err) => {
-                        console.log(err);
                         props.showError("Please check your Input Form again...")
                       });
                   }}
@@ -123,7 +122,7 @@ const Register = (props) => {
                         <ErrorMessage name="email" />
                       </p>
                       <input
-                        type="text"
+                        type="number"
                         placeholder="Phone Number"
                         className="register-input"
                         name="phone"
