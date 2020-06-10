@@ -31,12 +31,14 @@ const App = (props) => {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/searchtitle" component={ShowAll} />
-          <Route path="/allevents" component={allEvent}/>
-          <Route path="/searchcategory" component={SearchCategory}/>
+          <Route path="/allevents" component={allEvent} />
+          <Route path="/searchcategory" component={SearchCategory} />
           <Route path="/event/create">
             {props.viaLogin ? <CreateEvent /> : <Login />}
           </Route>
-          <Route path="/event/:id" component={Detail} />
+          <Route path="/event/:id">
+            {props.viaLogin ? <Detail /> : <Login />}
+          </Route>
           <Route path="/profile" component={Profile} />
           <Route path="/history" component={History} />
           <Route exact path="/" component={Main} />
