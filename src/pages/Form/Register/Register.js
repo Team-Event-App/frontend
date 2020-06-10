@@ -122,7 +122,7 @@ const Register = (props) => {
                         <ErrorMessage name="email" />
                       </p>
                       <input
-                        type="text"
+                        type="number"
                         placeholder="Phone Number"
                         className="register-input"
                         name="phone"

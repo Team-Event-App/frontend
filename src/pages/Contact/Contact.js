@@ -87,6 +87,7 @@ class Contact extends Component {
 															onChange={props.handleChange}
 															onBlur={props.handleBlur}
 															value={props.values.username}
+															autoComplete="off"
 														/>
 														<ErrorMessage name="username" />
 													</div>
@@ -100,6 +101,7 @@ class Contact extends Component {
 															onChange={props.handleChange}
 															onBlur={props.handleBlur}
 															value={props.values._replyto}
+															autoComplete="off"
 														/>
 														<ErrorMessage name="_replyto" />
 													</div>
@@ -113,6 +115,7 @@ class Contact extends Component {
 															onChange={props.handleChange}
 															onBlur={props.handleBlur}
 															value={props.values.phone}
+															autoComplete="off"
 														/>
 														<ErrorMessage name="phone" />
 													</div>
@@ -127,6 +130,7 @@ class Contact extends Component {
 															onChange={props.handleChange}
 															onBlur={props.handleBlur}
 															value={props.values.message}
+															autoComplete="off"
 														/>
 														<ErrorMessage name="message" />
 													</div>
