@@ -20,7 +20,6 @@ import Profile from "./pages/Profile/Profile";
 import History from "./pages/History/HistoryEvent";
 
 import Modals from "./components/Modals/index";
-import { login } from "./actions/loginActions";
 
 const App = (props) => {
   return (
