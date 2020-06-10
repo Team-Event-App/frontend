@@ -8,12 +8,13 @@ import {
 	// Button,
 } from "react-bootstrap";
 import axios from "axios";
-
+import {useHistory} from "react-router-dom";
 import Card from "../../components/Card/Card";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-
+import { connect } from "react-redux";
+import { showError } from "./../../actions/modalActions";
 import "./../Home/Main/Main.css";
 import "./Search_Title.css";
 
@@ -22,7 +23,7 @@ import "./Search_Title.css";
 const ShowAll = (props) => {
 	const [data, setData] = useState([]);
 	const [search, setSearch] = useState([]);
-
+	const history = useHistory();
 	const params = new URLSearchParams(props.location.search);
 	const searchQuery = params.getAll("search");
 
@@ -47,14 +48,26 @@ const ShowAll = (props) => {
 				}
 			});
 	}, []);
-
+	const show404 = () => {
+		return(
+			<div>
+			<h3>404 page not found</h3>
+			<p>We are sorry but the page you are looking for does not exist.</p>
+		  </div>
+		)
+	}
 	useEffect(() => {
 		const URL2 = `https://api.indrakawasan.com/event/getTitle?search=${searchQuery}`;
 
 		axios
 			.get(URL2)
 			.then((res) => {
-				setSearch(res.data);
+				if(res.data <= 0){
+					return <h1>Search Not Found</h1>
+
+				}else{
+					setSearch(res.data);
+				}
 			})
 			.catch((err) => {
 				if (
@@ -72,17 +85,10 @@ const ShowAll = (props) => {
 
 	const showAllEvent = data.map((data) => {
 		return (
-			<Col
-				key={data.id}
-				lg={3}
-				md={6}
-				sm={12}
-				className="my-2 mt-5 pt-2 pl-0 pr-0"
-			>
-				<Card item={data} />
-			</Col>
+			props.showError("Value can't be blank."),
+			history.push("/allevents")
 		);
-	});
+	},[data]);
 	const showAllSearch = search.map((data) => {
 		return (
 			<Col
@@ -96,14 +102,7 @@ const ShowAll = (props) => {
 			</Col>
 		);
 	});
-	const show404 = () => {
-		return(
-			<div>
-			<h3>404 page not found</h3>
-			<p>We are sorry but the page you are looking for does not exist.</p>
-		  </div>
-		)
-	}
+
 	// const handleSubmit = (event, a, b) => {
 	// 	event.preventDefault();
 	// 	const newSearch = event.target[0].value;
@@ -179,4 +178,8 @@ const ShowAll = (props) => {
 	);
 };
 
-export default ShowAll;
+const mapDispatchToProps = {
+	showError
+}
+
+export default connect(null, mapDispatchToProps)(ShowAll);
