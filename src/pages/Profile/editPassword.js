@@ -12,6 +12,7 @@ import "./Profile.css";
 
 const EditPassword = (props) => {
   const URL = `https://api.indrakawasan.com/`;
+  const defaultValue = `${URL}public/images/2020-05-23T11:48:46.274Zicon.png`;
   const token = localStorage.getItem("access-token");
   const jwtdecode = jwt(token);
   const userProfile = jwtdecode.id;
@@ -56,10 +57,16 @@ const EditPassword = (props) => {
     setPasswordShown2(passwordShown2 ? false : true);
   };
 
-  // const [passwordShown3, setPasswordShown3] = useState(false);
-  // const togglePasswordVisibility3 = () => {
-  //   setPasswordShown3(passwordShown3 ? false : true);
-  // };
+  const image = `${URL}${data.imageUrl || "public/images/oke.jpeg"}`;
+  const imageNotFound = `${URL}public/images/oke.jpeg`;
+
+  const myProfile = {
+    backgroundImage: `Url(${image}), Url(${imageNotFound})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    width: "200px",
+    height: "200px",
+  };
 
   return (
     <div>
@@ -69,10 +76,10 @@ const EditPassword = (props) => {
             <Row>
               <Col md={4}>
                 <Card.Img
-                  className="mt-5 ml-3 "
-                  src={`${URL}${data.imageUrl}`}
+                  src={`${URL}${data.imageUrl || defaultValue}`}
                   alt=""
-                  style={{ width: "10rem" }}
+                  className="mx-auto mb-2 mt-3 rounded-circle d-block"
+                  style={myProfile}
                 />
               </Col>
               <Col md={8}>

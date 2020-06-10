@@ -27,8 +27,8 @@ export const login = (data, match) => {
   };
 };
 
-export const logout = () => {
-  return {
-    type: "LOGOUT_SUCCESS",
-  };
-};
+// export const logout = () => {
+//   return {
+//     type: "LOGOUT_SUCCESS",
+//   };
+// };
