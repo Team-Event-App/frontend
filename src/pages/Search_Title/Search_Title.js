@@ -70,19 +70,19 @@ const ShowAll = (props) => {
 			});
 	}, [searchQuery]);
 
-	// const showAllEvent = data.map((data) => {
-	// 	return (
-	// 		<Col
-	// 			key={data.id}
-	// 			lg={3}
-	// 			md={6}
-	// 			sm={12}
-	// 			className="my-2 mt-5 pt-2 pl-0 pr-0"
-	// 		>
-	// 			<Card item={data} />
-	// 		</Col>
-	// 	);
-	// });
+	const showAllEvent = data.map((data) => {
+		return (
+			<Col
+				key={data.id}
+				lg={3}
+				md={6}
+				sm={12}
+				className="my-2 mt-5 pt-2 pl-0 pr-0"
+			>
+				<Card item={data} />
+			</Col>
+		);
+	});
 	const showAllSearch = search.map((data) => {
 		return (
 			<Col
@@ -135,7 +135,7 @@ const ShowAll = (props) => {
 	// 	}
 	// };
 
-	const showAll = searchQuery ? showAllSearch : show404;
+	const showAll = searchQuery ? showAllSearch : showAllEvent;
 
 	return (
 		<div>

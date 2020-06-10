@@ -80,3 +80,11 @@
   width: 240px !important;
   
 }
+.timeBox{ 
+  cursor:pointer;
+  display: block;
+  width:20px;
+  color: #ff001f !important;
+  text-align:center;
+  position:relative;
+} 
