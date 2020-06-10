@@ -23,3 +23,16 @@ export const closeModalSuccess = () => {
     type: "MODAL_SUCCESS_HIDE",
   };
 };
+
+export const logoutModal = (message) => {
+  return {
+    type: "MODAL_LOGOUT_SHOW",
+    payload: message,
+  }
+}
+
+export const closeModalLogout = () => {
+  return {
+    type: "MODAL_LOGOUT_HIDE",
+  };
+};

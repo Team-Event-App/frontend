@@ -1,6 +1,8 @@
 const initialState = {
+  viaLogin: localStorage.getItem("access-token"),
   error: { isShow: false, message: "" },
   success: { isShow: false, message: "" },
+  logout: { isShow: false, message: "" },
 };
 
 const modal = (state = initialState, action) => {
@@ -40,6 +42,27 @@ const modal = (state = initialState, action) => {
           message: "",
         },
       };
+
+    case "MODAL_LOGOUT_SHOW":
+      localStorage.removeItem("access-token");
+      return {
+        ...state,
+        logout: {
+          isShow: true,
+          viaLogin: "",
+          message: "",
+        }
+      }
+
+    case "MODAL_LOGOUT_HIDE":
+      return {
+        ...state,
+        logout: {
+          isShow: false,
+          message: "",
+        },
+      };
+
 
     default:
       return state;
