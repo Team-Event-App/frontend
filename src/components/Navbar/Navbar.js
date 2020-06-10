@@ -48,7 +48,7 @@ const Navbars = (props) => {
               </NavDropdown.Item>
 
               <NavDropdown.Item className="navDropItem">
-                <Link to={"/history"} className="profileSetting">
+                <Link to="/history" className="profileSetting">
                   <i className="far fa-clock mr-2"></i>History
                 </Link>
               </NavDropdown.Item>

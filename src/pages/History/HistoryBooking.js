@@ -62,6 +62,7 @@ const HistoryBooking = (props) => {
 								}
 							);
 							props.showSuccess("Success sending payment")
+							props.onHide(false);
 							console.log(formData.get("sender"));
 							console.log(formData.get("totalAmount"));
 							console.log(formData.get("imageProof"));
