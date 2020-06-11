@@ -129,39 +129,6 @@ const Main = (props) => {
               </Link>
             </Col>
           </Row>
-          {/* <Row>
-            <Form
-              inline
-              className="mx-auto mt-5 pt-3"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <FormControl
-                type="text"
-                placeholder="Search By Title"
-                className="mainInput"
-                name="searchT"
-                autoComplete="off"
-                ref={register({ required: false })}
-              />
-              
-              <i className="fa fa-search buttonSearch "></i>
-            </Form>
-            <Form
-              inline
-              className="mx-auto mt-5 pt-3"
-              onSubmit={handleSubmit(cariCategory)}
-            >
-              <FormControl
-                type="text"
-                placeholder="Search By Category"
-                className="mainInput"
-                name="search"
-                autoComplete="off"
-                ref={register({ required: false })}
-              />
-              <i className="fa fa-search buttonSearch "></i>
-            </Form>
-          </Row> */}
         </Container>
       </Jumbotron>
 

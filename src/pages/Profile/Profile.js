@@ -23,9 +23,9 @@ const Profile = () => {
         <Row>
           <div className="sidebarUser">
             <Link
-              exact
+              exact="true"
               to="/profile"
-              activeClassName="active"
+              activeclassname="active"
               className="accountLink"
             >
               <i className="fas fa-user fa-userr mr-2"></i>
@@ -33,9 +33,9 @@ const Profile = () => {
           </div>
           <div className="sidebarPassword">
             <Link
-              exact
+              exact="true"
               to="/profile/editpassword"
-              activeClassName="active"
+              activeclassname="active"
               className="passwordLink"
             >
               <i className="fas fa-lock mr-2"></i>
