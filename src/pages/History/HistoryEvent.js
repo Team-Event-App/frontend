@@ -42,26 +42,27 @@ const HistoryEvent = () => {
 
 			});
 	},
-		[idUser],
-		[token]
+		[idUser, token]
 	);
 
-	const showHistory = data.map((item, index) => {
-		if (data) {
-			return (
-				<tr key={index}>
-					<td>{index + 1}</td>
-					<td>{item.id}</td>
-					<td>{item.title}</td>
-					<td>{item.date}</td>
-					<td>{item.price}</td>
-					<td>{item.location}</td>
-					{/* <td>
-						<Button className="mr-2" variant="danger">Edit</Button>
-						<Button variant="danger">Delete</Button>
-					</td> */}
-				</tr>
-			);
+	const showHistory = () => {
+		if (data.length) {
+			data.map((item, index) => {
+				return (
+					<tr key={index}>
+						<td>{index + 1}</td>
+						<td>{item.id}</td>
+						<td>{item.title}</td>
+						<td>{item.date}</td>
+						<td>{item.price}</td>
+						<td>{item.location}</td>
+						{/* <td>
+							<Button className="mr-2" variant="danger">Edit</Button>
+							<Button variant="danger">Delete</Button>
+						</td> */}
+					</tr>
+				);
+			});
 		} else {
 			return (
 				<tr>
@@ -69,7 +70,8 @@ const HistoryEvent = () => {
 				</tr>
 			);
 		}
-	});
+
+	}
 
 	return (
 		<div>
@@ -109,7 +111,7 @@ const HistoryEvent = () => {
 							{/* <th>Action</th> */}
 						</tr>
 					</thead>
-					<tbody>{showHistory}</tbody>
+					<tbody>{showHistory()}</tbody>
 				</Table>
 
 				<HistoryBooking />

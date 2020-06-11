@@ -125,7 +125,7 @@ const Main = (props) => {
           <Row>
             <Col className="text-center mt-4 mb-3">
               <Link to="/allevents" className="btn buttonMore mt-4 mb-4">
-                <h5>Search Events <i class="fa fa-chevron-right ml-1"></i></h5>
+                <h5>Browse Events <i className="fa fa-chevron-right ml-1"></i></h5>
               </Link>
             </Col>
           </Row>

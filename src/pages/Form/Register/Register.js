@@ -20,6 +20,7 @@ import "./Register.css";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const Register = (props) => {
+  const [errorEmail, setErrorEmail] = useState({})
   const history = useHistory();
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisibility = () => {
@@ -65,12 +66,17 @@ const Register = (props) => {
                       data: values,
                     })
                       .then((res) => {
+                        console.log(res)
                         props.showSuccess("Register Success!");
                         actions.resetForm();
                         history.push("/login");
                       })
                       .catch((err) => {
-                        props.showError("Please check your Input Form again...")
+                        console.log(err.message)
+                        // props.showError("Please check your Input Form again...")
+                        setErrorEmail(err.message)
+                        console.log(errorEmail)
+
                       });
                   }}
                 >
@@ -122,7 +128,7 @@ const Register = (props) => {
                         <ErrorMessage name="email" />
                       </p>
                       <input
-                        type="number"
+                        type="text"
                         placeholder="Phone Number"
                         className="register-input"
                         name="phone"
