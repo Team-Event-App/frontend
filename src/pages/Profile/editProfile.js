@@ -61,7 +61,6 @@ const EditProfile = (props) => {
         },
       })
       .then((res) => {
-        console.log(res);
         props.showSuccess("Your profile already changed");
       })
       .catch((err) => {

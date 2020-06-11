@@ -8,7 +8,6 @@ import {
 	// Button,
 } from "react-bootstrap";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 import Card from "../../components/Card/Card";
 
 import Navbar from "../../components/Navbar/Navbar";
@@ -23,7 +22,6 @@ import "./Search_Title.css";
 const ShowAll = (props) => {
 	const [data, setData] = useState([]);
 	const [search, setSearch] = useState([]);
-	const history = useHistory();
 	const params = new URLSearchParams(props.location.search);
 	const searchQuery = params.get("search");
 
@@ -73,14 +71,14 @@ const ShowAll = (props) => {
 	const showAllEvent = data.map((data) => {
 		return (
 			<Col
-			key={data.id}
-			lg={3}
-			md={6}
-			sm={12}
-			className="my-2 mt-5 pt-2 pl-0 pr-0"
-		>
-			<Card item={data} />
-		</Col>
+				key={data.id}
+				lg={3}
+				md={6}
+				sm={12}
+				className="my-2 mt-5 pt-2 pl-0 pr-0"
+			>
+				<Card item={data} />
+			</Col>
 		);
 	});
 	const showAllSearch = search.map((data) => {
@@ -97,28 +95,28 @@ const ShowAll = (props) => {
 		);
 	});
 	const showAll = searchQuery ? showAllSearch : showAllEvent;
-	
-	if(search.length === 0){
+
+	if (search.length === 0) {
 		return (
 			<div>
-			<Navbar />
-			<Container className="mt-5 pt-5 mb-5">
-				<Row>
-					<Col>
-						<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
-						<div className="underlineShowAll mx-auto mb-5"></div>
-					</Col>
-				</Row>
-				<Container>
-					<Row className="rowEvent">
-						<h1 className="text-center"><h3>404 search not found</h3>
-					<p className="mb-5">We are sorry but the event you are looking for does not exist.</p></h1>
+				<Navbar />
+				<Container className="mt-5 pt-5 mb-5">
+					<Row>
+						<Col>
+							<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
+							<div className="underlineShowAll mx-auto mb-5"></div>
+						</Col>
 					</Row>
+					<Container>
+						<Row className="rowEvent">
+							<h1 className="text-center"><h3>404 search not found</h3>
+								<p className="mb-5">We are sorry but the event you are looking for does not exist.</p></h1>
+						</Row>
+					</Container>
 				</Container>
-			</Container>
 
-			<Footer />
-		</div>
+				<Footer />
+			</div>
 		)
 	}
 	return (
