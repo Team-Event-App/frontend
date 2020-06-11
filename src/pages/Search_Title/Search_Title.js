@@ -25,7 +25,7 @@ const ShowAll = (props) => {
 	const [search, setSearch] = useState([]);
 	const history = useHistory();
 	const params = new URLSearchParams(props.location.search);
-	const searchQuery = params.getAll("search");
+	const searchQuery = params.get("search");
 
 	// show data when user go to page
 	useEffect(() => {
@@ -48,28 +48,13 @@ const ShowAll = (props) => {
 				}
 			});
 	}, []);
-
-	// const show404 = () => {
-	// 	return (
-	// 		<div>
-	// 			<h3>404 page not found</h3>
-	// 			<p>We are sorry but the page you are looking for does not exist.</p>
-	// 		</div>
-	// 	)
-	// }
-
 	useEffect(() => {
 		const URL2 = `https://api.indrakawasan.com/event/getTitle?search=${searchQuery}`;
 
 		axios
 			.get(URL2)
 			.then((res) => {
-				if (res.data <= 0) {
-					return <h1>Search Not Found</h1>
-
-				} else {
-					setSearch(res.data);
-				}
+				setSearch(res.data);
 			})
 			.catch((err) => {
 				if (
@@ -87,10 +72,17 @@ const ShowAll = (props) => {
 
 	const showAllEvent = data.map((data) => {
 		return (
-			props.showError("Value can't be blank."),
-			history.push("/allevents")
+			<Col
+			key={data.id}
+			lg={3}
+			md={6}
+			sm={12}
+			className="my-2 mt-5 pt-2 pl-0 pr-0"
+		>
+			<Card item={data} />
+		</Col>
 		);
-	}, [data]);
+	});
 	const showAllSearch = search.map((data) => {
 		return (
 			<Col
@@ -104,40 +96,31 @@ const ShowAll = (props) => {
 			</Col>
 		);
 	});
-
-	// const handleSubmit = (event, a, b) => {
-	// 	event.preventDefault();
-	// 	const newSearch = event.target[0].value;
-	// 	console.log(newSearch);
-	// 	if (newSearch === "" && newSearch === null && newSearch === undefined) {
-	// 		const url2 = `https://api.indrakawasan.com/event/show`;
-	// 		axios
-	// 			.get(url2)
-	// 			.then((res) => {
-	// 				setData(res.data);
-	// 			})
-	// 			.catch((err) => {
-	// 				if (
-	// 					err &&
-	// 					err.response &&
-	// 					err.response.data &&
-	// 					err.response.data.message
-	// 				) {
-	// 					alert(err.response.data.message);
-	// 				} else {
-	// 					alert("Sorry we have server problem , Try again later.. ");
-	// 				}
-	// 			});
-	// 	} else {
-	// 		const url = `https://api.indrakawasan.com/event/show/${newSearch}`;
-	// 		axios.get(url).then((res) => {
-	// 			setSearch(res.data);
-	// 		});
-	// 	}
-	// };
-
 	const showAll = searchQuery ? showAllSearch : showAllEvent;
+	
+	if(search.length === 0){
+		return (
+			<div>
+			<Navbar />
+			<Container className="mt-5 pt-5 mb-5">
+				<Row>
+					<Col>
+						<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
+						<div className="underlineShowAll mx-auto mb-5"></div>
+					</Col>
+				</Row>
+				<Container>
+					<Row className="rowEvent">
+						<h1 className="text-center"><h3>404 search not found</h3>
+					<p className="mb-5">We are sorry but the event you are looking for does not exist.</p></h1>
+					</Row>
+				</Container>
+			</Container>
 
+			<Footer />
+		</div>
+		)
+	}
 	return (
 		<div>
 			<Navbar />
