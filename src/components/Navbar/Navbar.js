@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { logoutModal } from '../../actions/modalActions'
 import { connect } from "react-redux";
-import axios from "axios"
-import { Navbar, Nav, NavDropdown, Form, FormControl,Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./Navbar.css";
 import Logo from "./../../image/logo.png";
@@ -12,19 +11,17 @@ import Logo from "./../../image/logo.png";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const Navbars = (props) => {
-  const [data, setData] = useState();
   const [viewLogin, setViewLogin] = useState();
   const history = useHistory();
-  const [user, setUser] = useState([]);
-  const URL = `https://api.indrakawasan.com/event/show`;
-  const { handleSubmit, register} = useForm();
+  const { handleSubmit, register } = useForm();
   const onSubmit = (values) => {
-    const { searchh} = values;
+    const { searchh } = values;
     history.push({
       pathname: "/searchtitle",
       search: `?search=${searchh}`,
     });
   };
+
   const pushKlik = () => {
     const token = localStorage.getItem("access-token");
     if (!token) {
@@ -33,21 +30,9 @@ const Navbars = (props) => {
       history.push("/event/create");
     }
   };
-  const logOut = () => {
-    props.logoutModal();
-  };
 
   useEffect(
     () => {
-      axios
-        .get(URL)
-        .then((res) => {
-          const user = res.data;
-          setUser(user);
-        })
-        .catch((err) => {
-          throw err;
-        });
 
       if (props.viaLogin) {
         setViewLogin(
@@ -71,7 +56,7 @@ const Navbars = (props) => {
                   <i className="far fa-clock mr-2"></i>History
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item className="navDropItem" onClick={logOut}>
+              <NavDropdown.Item className="navDropItem" onClick={props.logoutModal}>
                 <Link
                   to="#"
                   className="fas fa-sign-out-alt i-logout mr-2"
@@ -82,7 +67,6 @@ const Navbars = (props) => {
           </div>
         );
       } else {
-        setData();
         setViewLogin(
           <Nav>
             <Link to="/login">
@@ -95,8 +79,7 @@ const Navbars = (props) => {
         );
       }
     },
-    [props.viaLogin],
-    [logOut]
+    [props.viaLogin, props.logoutModal]
   );
 
   return (
@@ -123,7 +106,6 @@ const Navbars = (props) => {
       <Navbar.Toggle aria-controls="toogle" />
       <Navbar.Collapse id="toogle">
         <Nav className="ml-auto navbar-nav">
-          {data}
           <Link to="/event/create">
             <Button
               className="signInButton mr-3 createButton"

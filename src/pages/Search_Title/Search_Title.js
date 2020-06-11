@@ -8,7 +8,7 @@ import {
 	// Button,
 } from "react-bootstrap";
 import axios from "axios";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Card from "../../components/Card/Card";
 
 import Navbar from "../../components/Navbar/Navbar";
@@ -48,24 +48,26 @@ const ShowAll = (props) => {
 				}
 			});
 	}, []);
-	const show404 = () => {
-		return(
-			<div>
-			<h3>404 page not found</h3>
-			<p>We are sorry but the page you are looking for does not exist.</p>
-		  </div>
-		)
-	}
+
+	// const show404 = () => {
+	// 	return (
+	// 		<div>
+	// 			<h3>404 page not found</h3>
+	// 			<p>We are sorry but the page you are looking for does not exist.</p>
+	// 		</div>
+	// 	)
+	// }
+
 	useEffect(() => {
 		const URL2 = `https://api.indrakawasan.com/event/getTitle?search=${searchQuery}`;
 
 		axios
 			.get(URL2)
 			.then((res) => {
-				if(res.data <= 0){
+				if (res.data <= 0) {
 					return <h1>Search Not Found</h1>
 
-				}else{
+				} else {
 					setSearch(res.data);
 				}
 			})
@@ -88,7 +90,7 @@ const ShowAll = (props) => {
 			props.showError("Value can't be blank."),
 			history.push("/allevents")
 		);
-	},[data]);
+	}, [data]);
 	const showAllSearch = search.map((data) => {
 		return (
 			<Col
@@ -169,7 +171,7 @@ const ShowAll = (props) => {
 				</Row> */}
 
 				<Container>
-			<Row className="rowEvent">{showAll}</Row>
+					<Row className="rowEvent">{showAll}</Row>
 				</Container>
 			</Container>
 

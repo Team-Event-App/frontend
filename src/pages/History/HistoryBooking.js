@@ -51,7 +51,7 @@ const HistoryBooking = (props) => {
 							formData.set("totalAmount", values.totalAmount);
 							formData.append("imageProof", values.imageProof);
 
-							const res = await axios(
+							await axios(
 								`https://api.indrakawasan.com/payment/create`,
 								{
 									method: "POST",
@@ -63,9 +63,9 @@ const HistoryBooking = (props) => {
 							);
 							props.showSuccess("Success sending payment")
 							props.onHide(false);
-							console.log(formData.get("sender"));
-							console.log(formData.get("totalAmount"));
-							console.log(formData.get("imageProof"));
+							// console.log(formData.get("sender"));
+							// console.log(formData.get("totalAmount"));
+							// console.log(formData.get("imageProof"));
 						}}
 					>
 						{(props) => (
@@ -162,7 +162,7 @@ const HistoryBooking = (props) => {
 			.catch((err) => {
 				console.log(err);
 			});
-	}, []);
+	}, [userName, token]);
 
 	const showHistoryBooking = data.map((item, index) => {
 		if (data) {

@@ -69,7 +69,7 @@ const ShowAll = (props) => {
 					props.showError("Sorry we have server problem , Try again later.. ");
 				}
 			});
-	}, [searchQuery], [props]);
+	}, [searchQuery, props]);
 
 	const showAllEvent = data.map((data) => {
 		return (

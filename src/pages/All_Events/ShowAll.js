@@ -25,7 +25,6 @@ import "./ShowAll.css";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const ShowAll = (props) => {
-	const [data, setData] = useState([]);
 	const history = useHistory();
 	const { handleSubmit, register } = useForm();
 	const onSubmit = (values) => {
@@ -65,28 +64,6 @@ const ShowAll = (props) => {
 
 	//Change Page
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-	// show data when user go to page
-	useEffect(() => {
-		const URL = `https://api.indrakawasan.com/event/show`;
-		axios
-			.get(URL)
-			.then((res) => {
-				setData(res.data);
-			})
-			.catch((err) => {
-				if (
-					err &&
-					err.response &&
-					err.response.data &&
-					err.response.data.message
-				) {
-					props.showError(err.response.data.message);
-				} else {
-					props.showError("Sorry we have server problem , Try again later.. ");
-				}
-			});
-	}, [props]);
 
 	return (
 		<div>
