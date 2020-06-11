@@ -236,8 +236,9 @@ class EventCreate extends Component {
                           <Col md={6}>
                             <Field
                               type="date"
-                              className="form-control inputText "
+                              className="form-control inputText"
                               name="date"
+                              id="inputDate"
                               placeholder="Day, Mon, Date, Years"
                               required
                             />

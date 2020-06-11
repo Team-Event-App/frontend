@@ -5,8 +5,8 @@ import axios from "axios";
 import jwt from "jwt-decode";
 
 import { connect } from "react-redux";
-import { showSuccess } from "./../../actions/modalActions";
-
+import { showSuccess} from "./../../actions/modalActions";
+import {showError} from "./../../actions/modalActions";
 import "./Profile.css";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
@@ -16,7 +16,10 @@ const EditPassword = (props) => {
   const token = localStorage.getItem("access-token");
   const jwtdecode = jwt(token);
   const userProfile = jwtdecode.id;
-  const [data, setData] = useState({});
+  const [data, setData] = useState({
+    oldPassword: "",
+    password: "",
+  });
   useEffect(() => {
     const URL = `https://api.indrakawasan.com/user/show/${userProfile}`;
     axios
@@ -29,21 +32,30 @@ const EditPassword = (props) => {
       });
   }, [userProfile]);
   /* errors */
-  const { register, handleSubmit, /* errors */ } = useForm();
+  const { register, handleSubmit /* errors */ } = useForm();
   const onSubmit = (data) => {
-    axios
-      .put(`https://api.indrakawasan.com/user/editPassword`, data, {
-        headers: {
-          "access-token": localStorage.getItem("access-token"),
-          "Content-Type": "multipart/form-data",
-        },
-      })
+    axios(`https://api.indrakawasan.com/user/editPassword`, {
+      method: "PUT",
+      data: data,
+      headers: {
+        "access-token": localStorage.getItem("access-token"),
+      },
+    })
       .then((res) => {
         console.log(res);
-        props.showSuccess("Your password already changed");
+        props.showSuccess("Your password succesfully changed.");
       })
       .catch((err) => {
-        console.log(err);
+				if (
+					err &&
+					err.response &&
+					err.response.data &&
+					err.response.data.message
+				) {
+					props.showError(err.response.data.message);
+				} else {
+					props.showError("Password Incorrect");
+				}
       });
   };
 
@@ -137,15 +149,15 @@ const EditPassword = (props) => {
                         </div>
                       </div>
                     </Form.Group> */}
+                    <Button
+                      type="submit"
+                      variant="outline-danger"
+                      className="buttonProfile "
+                      block
+                    >
+                      Save
+                    </Button>
                   </Form>
-                  <Button
-                    type="submit"
-                    variant="outline-danger"
-                    className="buttonProfile "
-                    block
-                  >
-                    Save
-                  </Button>
                 </Card.Body>
               </Col>
             </Row>
@@ -156,6 +168,6 @@ const EditPassword = (props) => {
   );
 };
 
-const mapDispatchToProps = { showSuccess };
+const mapDispatchToProps = { showSuccess , showError};
 
 export default connect(null, mapDispatchToProps)(EditPassword);

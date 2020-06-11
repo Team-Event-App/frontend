@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { logoutModal } from '../../actions/modalActions'
 import { connect } from "react-redux";
-
-import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
-
+import axios from "axios"
+import { Navbar, Nav, NavDropdown, Form, FormControl,Button } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 import "./Navbar.css";
 import Logo from "./../../image/logo.png";
 
@@ -15,6 +15,16 @@ const Navbars = (props) => {
   const [data, setData] = useState();
   const [viewLogin, setViewLogin] = useState();
   const history = useHistory();
+  const [user, setUser] = useState([]);
+  const URL = `https://api.indrakawasan.com/event/show`;
+  const { handleSubmit, register} = useForm();
+  const onSubmit = (values) => {
+    const { searchh} = values;
+    history.push({
+      pathname: "/searchtitle",
+      search: `?search=${searchh}`,
+    });
+  };
   const pushKlik = () => {
     const token = localStorage.getItem("access-token");
     if (!token) {
@@ -29,6 +39,16 @@ const Navbars = (props) => {
 
   useEffect(
     () => {
+      axios
+        .get(URL)
+        .then((res) => {
+          const user = res.data;
+          setUser(user);
+        })
+        .catch((err) => {
+          throw err;
+        });
+
       if (props.viaLogin) {
         setViewLogin(
           <div className="showLogin">
@@ -81,9 +101,25 @@ const Navbars = (props) => {
 
   return (
     <Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
-      <Link to="/" className="ml-3 brand">
+      <Link to="/" className="mr-3 brand">
         <img src={Logo} alt="logo" className="imageLogo" />
       </Link>
+      <Form
+        inline
+        className="searchNav"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <FormControl
+          type="text"
+          placeholder="Search By Title"
+          className="searchNav2"
+          name="searchh"
+          autoComplete="off"
+          ref={register({ required: false })}
+        />
+
+        <i className="fa fa-search iconSearchNav"></i>
+      </Form>
       <Navbar.Toggle aria-controls="toogle" />
       <Navbar.Collapse id="toogle">
         <Nav className="ml-auto navbar-nav">
