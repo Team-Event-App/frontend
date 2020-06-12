@@ -12,6 +12,8 @@ import {
 	Modal,
 	InputGroup,
 	FormControl,
+	Tooltip,
+	OverlayTrigger
 } from "react-bootstrap";
 import { connect } from 'react-redux'
 import { showSuccess } from './../../actions/modalActions'
@@ -144,6 +146,11 @@ const Detail = (props) => {
 	const { id } = useParams();
 
 	const [data, setData] = useState([]);
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
 
 	useEffect(() => {
 		const URL = `https://api.indrakawasan.com/event/show/${id}`;
@@ -181,12 +188,34 @@ const Detail = (props) => {
 				<Card.Header>
 					<Row className="rowCard">
 						<Col md={9} sm={12}>
-							<img
-								src={`${URL}${item.imageEvent}`}
-								alt="imageEvent"
-								style={{ width: "50rem", height: "300px" }}
-								className="detailCardImage"
-							/>
+							<>
+								<OverlayTrigger
+									key='bottom'
+									placement='bottom'
+									overlay={
+										<Tooltip>
+											Click Here to Preview
+         							    </Tooltip>
+									}
+								>
+									<Button variant="" onClick={handleShow}>
+										<img
+											src={`${URL}${item.imageEvent}`}
+											alt="imageEvent"
+											style={{ width: "50rem", height: "300px", objectFit: "cover" }}
+											className="detailCardImage"
+										/>
+									</Button>
+								</OverlayTrigger>
+
+								<Modal show={show} onHide={handleClose} centered>
+									<img
+										src={`${URL}${item.imageEvent}`}
+										alt="imageEvent"
+										style={{ objectFit: "cover" }}
+									/>
+								</Modal>
+							</>
 						</Col>
 
 						<Col md={3} sm={12} className="mt-5">
