@@ -140,7 +140,7 @@ const Register = (props) => {
 
                       <InputGroup>
                         <FormControl
-                          type="number"
+                          type="string"
                           placeholder="Phone Number"
                           className="register-input"
                           name="phone"
