@@ -1,6 +1,5 @@
 .detailCardImage{
     height: 400px !important;
-    object-fit: cover;
 }
 /* @media all and (min-width: 769px) {
     .detailCardImage{

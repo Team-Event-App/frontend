@@ -104,7 +104,7 @@ const ShowAll = (props) => {
 				</Row>
 				<Row>
 					<Col>
-						<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
+						<h3 className="text-center mt-3">DISCOVER EVENTS</h3>
 						<div className="underlineShowAll mx-auto"></div>
 					</Col>
 				</Row>

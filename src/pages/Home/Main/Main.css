@@ -29,12 +29,14 @@ body {
 .card-body {
   background-color: #e3e3e3;
 }
-.contQuotes h1.quotes1 {
-  font-size: 2.5rem !important;
+.contQuotes h3.quotes1 {
+  color: white !important;
+  font-size: 2.2rem !important;
   font-weight: 500 !important;
 }
 
-.contQuotes h1.quotes2 {
+.contQuotes h3.quotes2 {
+  color: white !important;
   font-size: 2rem !important;
   font-weight: 400 !important;
 }
@@ -99,8 +101,9 @@ input.mainInput {
 }
 
 .card-deck img {
-  height: 280px;
-  /* object-fit: cover; */
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
 .main-card {
@@ -125,6 +128,7 @@ input.mainInput {
   color: white !important;
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
+  padding: 0.7rem !important;
 }
 /* 
 @media (min-width: 1200px) and (max-width: 1500) {

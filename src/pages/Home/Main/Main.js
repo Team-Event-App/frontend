@@ -117,11 +117,11 @@ const Main = (props) => {
     <div>
       <Navbars />
       <Jumbotron fluid className="main-background">
-        <Container className="pt-3 contQuotes">
-          <h1 className="text-center mt-5 pt-3 mb-3 quotesLanding quotes1">
+        <Container className="pt-5 contQuotes">
+          <h3 className="text-center mt-5 pt-3 mb-3 quotesLanding quotes1">
             “What you need, is an Event, to remember for a lifetime.”
-          </h1>
-          <h1 className="text-center quotesLanding quotes2">― Rehan Waris ―</h1>
+          </h3>
+          <h3 className="text-center quotesLanding quotes2 pb-3">― Rehan Waris ―</h3>
           <Row>
             <Col className="text-center mt-4 mb-3">
               <Link to="/allevents" className="btn buttonMore mt-4 mb-4">
@@ -136,7 +136,7 @@ const Main = (props) => {
 
       <Container className="browseContainer mt-5 pt-5">
         <Row>
-          <h2 className="mb-4 ml-5 browseEve">BROWSE EVENTS</h2>
+          <h3 className=" ml-5 browseEve">BROWSE EVENTS</h3>
         </Row>
 
         <Row>
@@ -148,7 +148,7 @@ const Main = (props) => {
         <Row>
           <Col className="text-center mt-4 mb-3">
             <Link to="/allevents" className="btn buttonMore mt-4 mb-4">
-              <h5>More Events</h5>
+              <h5>More Events  <i className="fa fa-chevron-right ml-1"></i></h5>
             </Link>
           </Col>
         </Row>
