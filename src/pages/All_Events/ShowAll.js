@@ -13,7 +13,7 @@ import { showError } from '../../actions/modalActions'
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/Navbar2/Navbar2";
 import Footer from "../../components/Footer/Footer";
 
 import Posts from '../../components/Pagination/Posts';

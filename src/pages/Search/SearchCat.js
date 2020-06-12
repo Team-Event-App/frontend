@@ -3,24 +3,40 @@ import {
 	Container,
 	Row,
 	Col,
-	// Form,
-	// FormControl,
-	// Button,
+	Form,
+	FormControl,
 } from "react-bootstrap";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Card from "../../components/Card/Card";
-
-import Navbar from "../../components/Navbar/Navbar";
+import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar2/Navbar2";
 import Footer from "../../components/Footer/Footer";
 import { connect } from "react-redux";
 import { showError } from "./../../actions/modalActions";
 import "./../Home/Main/Main.css";
 import "./SearchCat.css";
-
+import { useForm } from "react-hook-form";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const ShowAll = (props) => {
+	const { handleSubmit, register } = useForm();
+	const onSubmit = (values) => {
+		const { searchh } = values;
+		history.push({
+			pathname: "/searchtitle",
+			search: `?search=${searchh}`,
+		});
+	};
+	const cariCategory = (values) => {
+		const { search } = values;
+		history.push({
+			pathname: "/searchcategory",
+			search: `?search=${search}`,
+		})
+	}
+
+
 	const [data, setData] = useState([]);
 	const [search, setSearch] = useState([]);
 	const history = useHistory();
@@ -103,6 +119,39 @@ const ShowAll = (props) => {
 			<div>
 			<Navbar />
 			<Container className="mt-5 pt-5 mb-5">
+			<Row className="mb-5">
+					<Form
+						inline
+						className="mx-auto mt-5 pt-3"
+						onSubmit={handleSubmit(onSubmit)}
+					>
+						<FormControl
+							type="text"
+							placeholder="Search By Title"
+							className="mainInput"
+							name="searchh"
+							autoComplete="off"
+							ref={register({ required: false })}
+						/>
+
+						<i className="fa fa-search buttonSearch "></i>
+					</Form>
+					<Form
+						inline
+						className="mx-auto mt-5 pt-3"
+						onSubmit={handleSubmit(cariCategory)}
+					>
+						<FormControl
+							type="text"
+							placeholder="Search By Category"
+							className="mainInput"
+							name="search"
+							autoComplete="off"
+							ref={register({ required: false })}
+						/>
+						<i className="fa fa-search buttonSearch "></i>
+					</Form>
+				</Row>
 				<Row>
 					<Col>
 						<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
@@ -111,9 +160,15 @@ const ShowAll = (props) => {
 				</Row>
 				<Container>
 					<Row className="rowEvent">
-						<h1 className="text-center"><h3>404 search not found</h3>
-					<p className="mb-5">We are sorry but the category you are looking for does not exist.</p></h1>
+						<h3 className="mx-auto">Category Not Found</h3>
 					</Row>
+					<Row>
+            <Col className="text-center mt-4 mb-3">
+              <Link to="/allevents" className="btn buttonMore mt-4 mb-4">
+                <h5>Browse Events <i className="fa fa-chevron-right ml-1"></i></h5>
+              </Link>
+            </Col>
+          </Row>
 				</Container>
 			</Container>
 
@@ -125,6 +180,39 @@ const ShowAll = (props) => {
 		<div>
 			<Navbar />
 			<Container className="mt-5 pt-5 mb-5">
+			<Row className="mb-5">
+					<Form
+						inline
+						className="mx-auto mt-5 pt-3"
+						onSubmit={handleSubmit(onSubmit)}
+					>
+						<FormControl
+							type="text"
+							placeholder="Search By Title"
+							className="mainInput"
+							name="searchh"
+							autoComplete="off"
+							ref={register({ required: false })}
+						/>
+
+						<i className="fa fa-search buttonSearch "></i>
+					</Form>
+					<Form
+						inline
+						className="mx-auto mt-5 pt-3"
+						onSubmit={handleSubmit(cariCategory)}
+					>
+						<FormControl
+							type="text"
+							placeholder="Search By Category"
+							className="mainInput"
+							name="search"
+							autoComplete="off"
+							ref={register({ required: false })}
+						/>
+						<i className="fa fa-search buttonSearch "></i>
+					</Form>
+				</Row>
 				<Row>
 					<Col>
 						<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
