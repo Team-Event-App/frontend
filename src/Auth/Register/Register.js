@@ -13,7 +13,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import * as Yup from "yup";
 import { connect } from 'react-redux'
-import { showSuccess, showError } from '../../../actions/modalActions'
+import { showSuccess, showError } from '../../actions/modalActions'
 
 import "./Register.css";
 
