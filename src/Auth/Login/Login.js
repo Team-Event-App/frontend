@@ -11,7 +11,7 @@ import {
 import { Link, NavLink } from "react-router-dom";
 
 import { connect } from "react-redux";
-import { login } from "../../../actions/loginActions";
+import { login } from "../../actions/loginActions";
 import "./Login.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
