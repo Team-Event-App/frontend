@@ -104,7 +104,7 @@ function MyVerticallyCenteredModal(props) {
 							type="number"
 							aria-describedby="basic-addon3"
 							name="quantity"
-							id="quantity"
+							id="quantities"
 							ref={register({ required: true })}
 							value={data.quantity}
 							onChange={onChange}
@@ -120,7 +120,6 @@ function MyVerticallyCenteredModal(props) {
 							name="total"
 							ref={register({ required: true })}
 							value={(props.data && props.data.price) * data.quantity}
-							disabled
 						/>
 						<InputGroup.Append>
 							<InputGroup.Text>.00</InputGroup.Text>

@@ -1,12 +1,15 @@
 import React from 'react'
 import Card from '../Card/Card';
 import { Row, Col } from 'react-bootstrap'
+import './Posts.css'
 
 
 const Posts = ({ posts, loading }) => {
 
     if (loading) {
-        return <h2>Loading ...</h2>
+        return (
+            <div class="loader"></div>
+        )
     }
 
     return (
