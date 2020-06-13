@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
 import {
   Container,
   Row,
   Col,
   Jumbotron,
-  // Form,
-  // FormControl,
-  Card,
-  // Button,
-  CardDeck,
 } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -23,6 +16,8 @@ import Navbars from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 import Trend from "../Trend/Trend";
 import Category from "./../Category/Category";
+
+import Loader from '../../../components/Loader/Loader'
 import "../Main/Main.css";
 
 
@@ -30,30 +25,19 @@ import "../Main/Main.css";
 
 const Main = (props) => {
 
-  const [data, setData] = useState([]);
-  // const { handleSubmit, register} = useForm();
-  // const onSubmit = (values) => {
-  //   const { searchT} = values;
-  //   history.push({
-  //     pathname: "/searchtitle",
-  //     search: `?search=${searchT}`,
-  //   });
-  // };
-  // const cariCategory = (values) => {
-  //   const {search} = values;
-  //   history.push({
-  //     pathname:"/searchcategory",
-  //     search:`?search=${search}`,
-  //   })
-  // }
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const URL = `https://api.indrakawasan.com/event/show`;
 
+    setLoading(true);
     axios
       .get(URL)
       .then((res) => {
         const data = res.data.slice(0, 8);
-        setData(data);
+        setPosts(data);
+        setLoading(false);
       })
       .catch((err) => {
         if (
@@ -68,50 +52,6 @@ const Main = (props) => {
         }
       });
   }, [props]);
-
-  const showEvent = data.map((item, index) => {
-    const URL = `https://api.indrakawasan.com/`;
-    return (
-      <Col
-        lg={3}
-        md={6}
-        sm={10}
-        className="my-2 mt-5 pt-2 pl-0 pr-0"
-        key={index}
-      >
-        <CardDeck>
-          <Card border="secondary" className="main-card" id="mainCard">
-            <Card.Img
-              variant="top"
-              src={`${URL}${item.imageEvent}`}
-              alt="imageEvent"
-            />
-            <div style={{ borderTop: "1px solid black" }}></div>
-            <Card.Body className="mainBody bg-white">
-              <Card.Text>{item.title}</Card.Text>
-              <Card.Text>Category : {item.category}</Card.Text>
-              <Card.Text>
-                <FontAwesomeIcon icon={faCalendar} /> {item.date}
-              </Card.Text>
-              <Card.Text>
-                <FontAwesomeIcon icon={faClock} /> {item.time}
-              </Card.Text>
-              <Card.Text>
-                <i className="fas fa-map-marker-alt mr-2"></i>
-                {item.location}
-              </Card.Text>
-              <Link
-                to={`/event/${item.id}`}
-                className="btn btn-outline-danger btn-block"
-              >
-                See More
-              </Link>
-            </Card.Body>
-          </Card>
-        </CardDeck>
-      </Col>
-    );
-  });
 
   return (
     <div>
@@ -143,7 +83,9 @@ const Main = (props) => {
           <div className="underlineMain mb-4 ml-5"></div>
         </Row>
 
-        <Row className="rowEvent">{showEvent}</Row>
+        <div>
+          <Loader posts={posts} loading={loading} />
+        </div>
 
         <Row>
           <Col className="text-center mt-4 mb-3">
