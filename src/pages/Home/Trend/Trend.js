@@ -1,99 +1,48 @@
 import React, { useState, useEffect } from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
-
 import {
   Container,
   Row,
-  Col,
   Jumbotron,
   Button,
-  Form,
-  Card,
-  CardDeck,
 } from "react-bootstrap";
-
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import Loader from '../../../components/Loader/Loader'
 import "./Trend.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const Trend = () => {
-  const [data, setData] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const URL = `https://api.indrakawasan.com/`;
+    const URL = `https://api.indrakawasan.com/event/show`;
 
+    setLoading(true);
     axios
-      .get(`${URL}event/show`)
+      .get(URL)
       .then((res) => {
         const data = res.data.slice(1, 5);
-        setData(data);
+        setPosts(data);
+        setLoading(false);
       })
       .catch((err) => {
-        throw (err);
+        throw (err)
       });
   }, []);
-
-  const showTrend = data.map((item, index) => {
-    const URL = `https://api.indrakawasan.com/`;
-    return (
-      <Col
-        lg={3}
-        md={6}
-        sm={10}
-        className="my-2 mt-5 pt-2 pl-0 pr-0"
-        key={index}
-      >
-        <CardDeck>
-          <Card border="secondary" className="trendCard mr-5">
-            <Card.Img
-              variant="top"
-              src={`${URL}${item.imageEvent}`}
-              alt="imageEvent"
-            />
-            <div style={{ borderTop: "1px solid black" }}></div>
-            <Card.Body className="mainBody bg-white">
-              <Card.Text>{item.title}</Card.Text>
-              <Card.Text>Category : {item.category}</Card.Text>
-              <Card.Text>
-                <FontAwesomeIcon icon={faCalendar} /> {item.date}
-              </Card.Text>
-              <Card.Text>
-                <FontAwesomeIcon icon={faClock} /> {item.time}
-              </Card.Text>
-              <Card.Text>
-                <i className="fas fa-map-marker-alt mr-2"></i>
-                {item.location}
-              </Card.Text>
-              <Link
-                to={`/event/${item.id}`}
-                className="btn btn-outline-danger btn-block"
-              >
-                See More
-              </Link>
-            </Card.Body>
-          </Card>
-        </CardDeck>
-      </Col>
-    );
-  });
 
   return (
     <div>
       <Jumbotron fluid className="trend-background">
         <Container className="containerHost">
           <h2 className="mb-4 hostEvent">Host Your Own Events</h2>
-          <Form inline>
-            <Link to="/event/create">
-              <Button className="buttonCreate both-line-light mx-auto">
-                Create Events
+          <Link to="/event/create">
+            <Button className="buttonCreate both-line-light mx-auto">
+              Create Events
               </Button>
-            </Link>
-          </Form>
+          </Link>
         </Container>
       </Jumbotron>
 
@@ -105,7 +54,10 @@ const Trend = () => {
           <div className="underlineTrend mb-2 ml-5"></div>
         </Row>
 
-        <Row className="rowEvent rowTrend">{showTrend}</Row>
+        <div>
+          <Loader posts={posts} loading={loading} />
+        </div>
+
       </Container>
     </div>
   );

@@ -7,9 +7,9 @@ import { connect } from "react-redux";
 import Main from "./pages/Home/Main/Main";
 import CreateEvent from "./pages/Create_Event/EventCreate";
 
-import Login from "./pages/Form/Login/Login";
+import Login from "./Auth/Login/Login";
+import Register from "./Auth/Register/Register";
 
-import Register from "./pages/Form/Register/Register";
 import About from "./pages/About/About";
 import allEvent from "./pages/All_Events/ShowAll";
 import Contact from "./pages/Contact/Contact";

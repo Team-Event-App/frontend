@@ -1,28 +1,30 @@
 import React from 'react'
 import Card from '../Card/Card';
 import { Row, Col } from 'react-bootstrap'
-import './Posts.css'
+import '../Pagination/Posts.css'
 
 
 const Posts = ({ posts, loading }) => {
 
     if (loading) {
         return (
-            <div class="loader"></div>
+            <>
+                <div className="loader"></div>
+            </>
         )
     }
 
     return (
         <Row>
-            {posts.map(data => (
+            {posts.map(item => (
                 <Col
-                    key={data.id}
+                    key={item.id}
                     lg={3}
                     md={6}
                     sm={12}
-                    className="my-5 mt-5 pt-2 pl-0 pr-0"
+                    className="mt-4 mb-5 pl-0 pr-0"
                 >
-                    <Card item={data} />
+                    <Card item={item} />
                 </Col>
             ))}
         </Row>

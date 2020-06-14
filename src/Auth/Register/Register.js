@@ -13,7 +13,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import * as Yup from "yup";
 import { connect } from 'react-redux'
-import { showSuccess, showError } from '../../../actions/modalActions'
+import { showSuccess, showError } from '../../actions/modalActions'
 
 import "./Register.css";
 
@@ -140,7 +140,7 @@ const Register = (props) => {
 
                       <InputGroup>
                         <FormControl
-                          type="string"
+                          type="tel"
                           placeholder="Phone Number"
                           className="register-input"
                           name="phone"
