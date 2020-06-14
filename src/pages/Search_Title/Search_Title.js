@@ -7,7 +7,6 @@ import {
 	FormControl,
 } from "react-bootstrap";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 import Card from "../../components/Card/Card";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar2/Navbar2";
@@ -17,11 +16,12 @@ import { showError } from "./../../actions/modalActions";
 import { useForm } from "react-hook-form";
 import "./../Home/Main/Main.css";
 import "./Search_Title.css";
-
+import { useHistory } from "react-router-dom";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const ShowAll = (props) => {
 	const { handleSubmit, register } = useForm();
+	const history = useHistory();
 	const onSubmit = (values) => {
 		const { searchh } = values;
 		history.push({
@@ -39,7 +39,6 @@ const ShowAll = (props) => {
 
 	const [data, setData] = useState([]);
 	const [search, setSearch] = useState([]);
-	const history = useHistory();
 	const params = new URLSearchParams(props.location.search);
 	const searchQuery = params.get("search");
 
@@ -89,14 +88,14 @@ const ShowAll = (props) => {
 	const showAllEvent = data.map((data) => {
 		return (
 			<Col
-			key={data.id}
-			lg={3}
-			md={6}
-			sm={12}
-			className="my-2 mt-5 pt-2 pl-0 pr-0"
-		>
-			<Card item={data} />
-		</Col>
+				key={data.id}
+				lg={3}
+				md={6}
+				sm={12}
+				className="my-2 mt-5 pt-2 pl-0 pr-0"
+			>
+				<Card item={data} />
+			</Col>
 		);
 	});
 	const showAllSearch = search.map((data) => {
@@ -113,8 +112,8 @@ const ShowAll = (props) => {
 		);
 	});
 	const showAll = searchQuery ? showAllSearch : showAllEvent;
-	
-	if(search.length === 0){
+
+	if (search.length === 0) {
 		return (
 			<div>
 			<Navbar />
@@ -172,10 +171,9 @@ const ShowAll = (props) => {
             </Col>
           </Row>
 				</Container>
-			</Container>
-
-			<Footer />
-		</div>
+				</Container>
+				<Footer />
+			</div>
 		)
 	}
 	return (

@@ -4,10 +4,7 @@
   box-sizing: border-box;
   overflow-y: hidden;
 }
-.login-input:focus {
-  border-color: #ff001f !important;
-  box-shadow: #ff001f !important;
-}
+
 .container-login {
   background: #f6f5f7;
   display: flex;
@@ -87,6 +84,11 @@
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
+}
+
+.login-input:focus {
+  border-color: #ff001f !important;
+  box-shadow: #ff001f !important;
 }
 
 .input {

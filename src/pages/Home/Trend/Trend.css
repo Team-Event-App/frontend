@@ -6,11 +6,11 @@
   padding: 6rem !important;
 }
 
-.trend-background h1 {
+.trend-background h2 {
   color: white;
   background-color: black;
   padding: 1rem !important;
-  margin: 1rem 18rem !important;
+  margin: 1rem 22rem !important;
 }
 
 .hostEvent {
@@ -21,7 +21,8 @@
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
   width: 12rem;
-  font-size: 1.5rem !important;
+  font-size: 1.25rem !important;
+  padding: 0.7rem !important;
   margin-left: 450px !important;
 }
 

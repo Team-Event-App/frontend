@@ -34,7 +34,7 @@ const Trend = () => {
         setData(data);
       })
       .catch((err) => {
-        throw(err);
+        throw (err);
       });
   }, []);
 
@@ -86,7 +86,7 @@ const Trend = () => {
     <div>
       <Jumbotron fluid className="trend-background">
         <Container className="containerHost">
-          <h1 className="mb-4 hostEvent">Host Your Own Events</h1>
+          <h2 className="mb-4 hostEvent">Host Your Own Events</h2>
           <Form inline>
             <Link to="/event/create">
               <Button className="buttonCreate both-line-light mx-auto">
@@ -99,7 +99,7 @@ const Trend = () => {
 
       <Container className="mb-5">
         <Row>
-          <h2 className="mb-2 mt-5 ml-5">TOP TRENDINGS EVENTS</h2>
+          <h3 className="mb-2 mt-5 ml-5">TOP TRENDINGS EVENTS</h3>
         </Row>
         <Row>
           <div className="underlineTrend mb-2 ml-5"></div>

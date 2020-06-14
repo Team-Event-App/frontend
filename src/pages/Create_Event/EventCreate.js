@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component,useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import axios from "axios";
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
 import { showSuccess } from "./../../actions/modalActions";
 
@@ -18,6 +19,15 @@ class EventCreate extends Component {
     this.imageRef = React.createRef();
     this.imageShowRef = React.createRef();
   }
+  state = {
+    startDate: new Date()
+  };
+ 
+  handleChange = date => {
+    this.setState({
+      startDate: date
+    });
+  };
   handleSubmit = (values, actions) => {
     var formData = new FormData();
     Object.keys(values).forEach(function (key) {
@@ -41,7 +51,7 @@ class EventCreate extends Component {
         this.props.showSuccess("Succesfully add Event")
       })
       .catch((err) => {
-        console.log(err)
+        window.alert(err)
       });
   };
 
@@ -56,7 +66,7 @@ class EventCreate extends Component {
       reader.readAsDataURL(inputFile.files[0]);
     }
   };
-
+  
   render() {
     return (
       <Formik
@@ -234,14 +244,23 @@ class EventCreate extends Component {
                             </p>
                           </Col>
                           <Col md={6}>
-                            <Field
+                          <DatePicker
+                          selected={this.state.startDate}
+                          onChange={this.handleChange}
+                          minDate={new Date()}
+                          placeholderText="Select a day"
+                          name="date"
+                          className="form-control inputText"
+                          required
+                        />
+                            {/* <Field
                               type="date"
                               className="form-control inputText"
                               name="date"
-                              id="inputDate"
+                              id="dateField"
                               placeholder="Day, Mon, Date, Years"
                               required
-                            />
+                            /> */}
                             <p className="smallCreate1">
                               When is your event held?
                             </p>

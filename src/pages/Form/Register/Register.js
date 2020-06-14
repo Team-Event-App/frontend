@@ -51,7 +51,9 @@ const Register = (props) => {
                     fullname: Yup.string().required(
                       "Please fill out your name"
                     ),
-                    phone: Yup.string().required("Phone number is required"),
+                    phone: Yup.string()
+                      .required("Phone number is required")
+                      .max(15, "Your phone number is too long"),
                     email: Yup.string()
                       .email("Email is invalid")
                       .required("Email is required"),
@@ -86,57 +88,68 @@ const Register = (props) => {
                       autoComplete="off"
                       onSubmit={props.handleSubmit}
                     >
-                      <h1 className="mb-4">Register</h1>
+                      <h1 className="mb-4 mt-5">Register</h1>
 
-                      <input
-                        type="text"
-                        placeholder="User Name"
-                        className="register-input"
-                        name="username"
-                        id="username"
-                        onChange={props.handleChange}
-                        onBlur={props.handleBlur}
-                        value={props.values.username}
-                      />
+                      <InputGroup>
+                        <FormControl
+                          type="text"
+                          placeholder="User Name"
+                          className="register-input"
+                          name="username"
+                          id="username"
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                          value={props.values.username}
+                        ></FormControl>
+                      </InputGroup>
                       <p className="validateString">
                         <ErrorMessage name="username" />
                       </p>
-                      <input
-                        type="text"
-                        placeholder="Full Name"
-                        className="register-input"
-                        name="fullname"
-                        id="fullname"
-                        onChange={props.handleChange}
-                        onBlur={props.handleBlur}
-                        value={props.values.fullname}
-                      />
+
+                      <InputGroup>
+                        <FormControl
+                          type="text"
+                          placeholder="Full Name"
+                          className="register-input"
+                          name="fullname"
+                          id="fullname"
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                          value={props.values.fullname}
+                        ></FormControl>
+                      </InputGroup>
                       <p className="validateString">
                         <ErrorMessage name="fullname" />
                       </p>
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        className="register-input"
-                        name="email"
-                        id="email"
-                        onChange={props.handleChange}
-                        onBlur={props.handleBlur}
-                        value={props.values.email}
-                      />
+
+                      <InputGroup>
+                        <FormControl
+                          type="email"
+                          placeholder="Email"
+                          className="register-input"
+                          name="email"
+                          id="email"
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                          value={props.values.email}
+                        ></FormControl>
+                      </InputGroup>
                       <p className="validateString">
                         <ErrorMessage name="email" />
                       </p>
-                      <input
-                        type="text"
-                        placeholder="Phone Number"
-                        className="register-input"
-                        name="phone"
-                        id="phone"
-                        onChange={props.handleChange}
-                        onBlur={props.handleBlur}
-                        value={props.values.phone}
-                      />
+
+                      <InputGroup>
+                        <FormControl
+                          type="string"
+                          placeholder="Phone Number"
+                          className="register-input"
+                          name="phone"
+                          id="phone"
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                          value={props.values.phone}
+                        ></FormControl>
+                      </InputGroup>
                       <p className="validateString">
                         <ErrorMessage name="phone" />
                       </p>
