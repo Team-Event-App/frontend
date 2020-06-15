@@ -62,6 +62,7 @@ const Register = (props) => {
                       .required("Password is required"),
                   })}
                   onSubmit={(values, actions) => {
+                    values.phone = values.phone.toString();
 
                     axios(`https://api.indrakawasan.com/user/register`, {
                       method: "POST",
@@ -140,7 +141,7 @@ const Register = (props) => {
 
                       <InputGroup>
                         <FormControl
-                          type="tel"
+                          type="number"
                           placeholder="Phone Number"
                           className="register-input"
                           name="phone"

@@ -116,7 +116,6 @@ function MyVerticallyCenteredModal(props) {
 							<InputGroup.Text>Total Price</InputGroup.Text>
 						</InputGroup.Prepend>
 						<FormControl
-							type="number"
 							name="total"
 							ref={register({ required: true })}
 							value={(props.data && props.data.price) * data.quantity}
