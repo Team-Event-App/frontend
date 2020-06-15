@@ -5,7 +5,7 @@ import { createBrowserHistory } from "history";
 
 const history = createBrowserHistory();
 
-export const login = (data, match) => {
+export const login = (data) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(
@@ -26,9 +26,3 @@ export const login = (data, match) => {
     }
   };
 };
-
-// export const logout = () => {
-//   return {
-//     type: "LOGOUT_SUCCESS",
-//   };
-// };

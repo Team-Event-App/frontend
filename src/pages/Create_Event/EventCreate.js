@@ -1,4 +1,4 @@
-import React, { Component,useEffect } from "react";
+import React, { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import axios from "axios";
@@ -22,7 +22,8 @@ class EventCreate extends Component {
   state = {
     startDate: new Date()
   };
- 
+
+
   handleChange = date => {
     this.setState({
       startDate: date
@@ -66,7 +67,7 @@ class EventCreate extends Component {
       reader.readAsDataURL(inputFile.files[0]);
     }
   };
-  
+
   render() {
     return (
       <Formik
@@ -244,23 +245,16 @@ class EventCreate extends Component {
                             </p>
                           </Col>
                           <Col md={6}>
-                          <DatePicker
-                          selected={this.state.startDate}
-                          onChange={this.handleChange}
-                          minDate={new Date()}
-                          placeholderText="Select a day"
-                          name="date"
-                          className="form-control inputText"
-                          required
-                        />
-                            {/* <Field
-                              type="date"
-                              className="form-control inputText"
+                            <DatePicker
+                              selected={this.state.startDate}
+                              onChange={this.handleChange}
+                              minDate={new Date()}
+                              placeholderText="Select a day"
                               name="date"
-                              id="dateField"
-                              placeholder="Day, Mon, Date, Years"
+                              className="form-control inputText"
                               required
-                            /> */}
+                            />
+
                             <p className="smallCreate1">
                               When is your event held?
                             </p>

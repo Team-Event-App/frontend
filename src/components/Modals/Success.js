@@ -7,7 +7,7 @@ const Success = (props) => {
   return (
     <Modal show={props.isShow} onHide={props.closeModal}>
       <Modal.Header closeButton className="bg-success">
-        <Modal.Title className="text-white">Successfully !!</Modal.Title>
+        <Modal.Title className="text-white">Success</Modal.Title>
       </Modal.Header>
       <Modal.Body>{props.messages}</Modal.Body>
     </Modal>
