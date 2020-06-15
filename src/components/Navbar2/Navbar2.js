@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { logoutModal } from '../../actions/modalActions'
 import { connect } from "react-redux";
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
-import { useForm } from "react-hook-form";
+import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import "./Navbar2.css";
 import Logo from "./../../image/logo.png";
 

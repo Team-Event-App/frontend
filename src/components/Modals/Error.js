@@ -7,7 +7,7 @@ const Error = (props) => {
   return (
     <Modal show={props.isShow} onHide={props.closeModal}>
       <Modal.Header closeButton className="bg-danger">
-        <Modal.Title className="text-white">Something Wrong !!</Modal.Title>
+        <Modal.Title className="text-white">Error</Modal.Title>
       </Modal.Header>
       <Modal.Body>{props.messages}</Modal.Body>
     </Modal>
