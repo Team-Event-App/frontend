@@ -257,7 +257,7 @@ class EventCreate extends Component {
                               type="date"
                               className="form-control inputText"
                               name="date"
-                              id="dateField"
+                              id="inputDate"
                               placeholder="Day, Mon, Date, Years"
                               required
                             /> */}
