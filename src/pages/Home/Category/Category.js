@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { div } from "react-router-dom";
 
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";

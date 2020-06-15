@@ -6,7 +6,6 @@
   color: white !important;
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
-  /* margin-left: 350px; */
 }
 .signInButton:hover {
   background-color: rgba(255, 0, 31, 0.85) !important;
