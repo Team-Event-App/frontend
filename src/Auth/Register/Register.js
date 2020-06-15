@@ -140,9 +140,9 @@ const Register = (props) => {
 
                       <InputGroup>
                         <FormControl
-                          type="tel"
+                          type="number"
                           placeholder="Phone Number"
-                          className="register-input"
+                          className="register-input phone"
                           name="phone"
                           id="phone"
                           onChange={props.handleChange}

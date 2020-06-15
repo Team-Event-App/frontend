@@ -125,8 +125,9 @@ const EditProfile = (props) => {
               <Form.Group controlId="phone">
                 <Form.Label>Phone Number</Form.Label>
                 <Form.Control
-                  type="tel"
+                  type="number"
                   name="phone"
+                  className="phone"
                   defaultValue={data.phone}
                   ref={register({ required: true })}
                   autoComplete="off"

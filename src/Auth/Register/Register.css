@@ -280,3 +280,15 @@
   font-size: 12px !important;
   color: red;
 }
+
+/* Chrome, Safari, Edge, Opera */
+input.phone::-webkit-outer-spin-button,
+input.phone::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input.phone[type=number] {
+  -moz-appearance: textfield;
+}
