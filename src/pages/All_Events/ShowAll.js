@@ -24,7 +24,7 @@ import "./ShowAll.css";
 
 // const url = `${process.env.REACT_APP_API_URL}`;
 
-const ShowAll = (props) => {
+const ShowAll = () => {
 	const history = useHistory();
 	const { handleSubmit, register } = useForm();
 	const onSubmit = (values) => {
