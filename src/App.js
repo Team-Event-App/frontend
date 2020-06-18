@@ -14,7 +14,7 @@ import About from "./pages/About/About";
 import allEvent from "./pages/All_Events/ShowAll";
 import Contact from "./pages/Contact/Contact";
 import Detail from "./pages/Detail/Detail";
-import SearchCategory from "./pages/Search/SearchCat";
+import SearchCategory from "./pages/SearchCat/SearchCat";
 import ShowAll from "./pages/Search_Title/Search_Title";
 import Profile from "./pages/Profile/Profile";
 import History from "./pages/History/HistoryEvent";

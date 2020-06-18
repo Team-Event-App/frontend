@@ -6,20 +6,25 @@ import {
 	Form,
 	FormControl,
 } from "react-bootstrap";
+
 import axios from "axios";
-import Card from "../../components/Card/Card";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 import Navbar from "../../components/Navbar2/Navbar2";
 import Footer from "../../components/Footer/Footer";
+import Card from "../../components/Card/Card";
+
 import { connect } from "react-redux";
 import { showError } from "./../../actions/modalActions";
 import { useForm } from "react-hook-form";
+
 import "./../Home/Main/Main.css";
 import "./Search_Title.css";
-import { useHistory } from "react-router-dom";
+
 // const url = `${process.env.REACT_APP_API_URL}`;
 
-const ShowAll = (props) => {
+const SearchTitle = (props) => {
 	const { handleSubmit, register } = useForm();
 	const history = useHistory();
 	const onSubmit = (values) => {
@@ -119,61 +124,61 @@ const ShowAll = (props) => {
 	if (search.length === 0) {
 		return (
 			<div>
-			<Navbar />
-			<Container className="mt-5 pt-5 mb-5">
-			<Row className="mb-5">
-					<Form
-						inline
-						className="mx-auto mt-5 pt-3"
-						onSubmit={handleSubmit(onSubmit)}
-					>
-						<FormControl
-							type="text"
-							placeholder="Search By Title"
-							className="mainInput"
-							name="searchh"
-							autoComplete="off"
-							ref={register({ required: false })}
-						/>
+				<Navbar />
+				<Container className="mt-5 pt-5 mb-5">
+					<Row className="mb-5">
+						<Form
+							inline
+							className="mx-auto mt-5 pt-3"
+							onSubmit={handleSubmit(onSubmit)}
+						>
+							<FormControl
+								type="text"
+								placeholder="Search By Title"
+								className="mainInput"
+								name="searchh"
+								autoComplete="off"
+								ref={register({ required: false })}
+							/>
 
-						<i className="fa fa-search buttonSearch "></i>
-					</Form>
-					<Form
-						inline
-						className="mx-auto mt-5 pt-3"
-						onSubmit={handleSubmit(cariCategory)}
-					>
-						<FormControl
-							type="text"
-							placeholder="Search By Category"
-							className="mainInput"
-							name="search"
-							autoComplete="off"
-							ref={register({ required: false })}
-						/>
-						<i className="fa fa-search buttonSearch "></i>
-					</Form>
-				</Row>
-				<Row>
-					<Col>
-						<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
-						<div className="underlineShowAll mx-auto mb-5"></div>
-					</Col>
-				</Row>
-				<Container>
-					<Row className="rowEvent">
-						<div className="mx-auto">
-						<h3>Event not found</h3>
-						</div>
+							<i className="fa fa-search buttonSearch "></i>
+						</Form>
+						<Form
+							inline
+							className="mx-auto mt-5 pt-3"
+							onSubmit={handleSubmit(cariCategory)}
+						>
+							<FormControl
+								type="text"
+								placeholder="Search By Category"
+								className="mainInput"
+								name="search"
+								autoComplete="off"
+								ref={register({ required: false })}
+							/>
+							<i className="fa fa-search buttonSearch "></i>
+						</Form>
 					</Row>
 					<Row>
-            <Col className="text-center mt-4 mb-3">
-              <Link to="/allevents" className="btn buttonMore mt-4 mb-4">
-                <h5>Browse Events <i className="fa fa-chevron-right ml-1"></i></h5>
-              </Link>
-            </Col>
-          </Row>
-				</Container>
+						<Col>
+							<h2 className="text-center mt-3">DISCOVER EVENTS</h2>
+							<div className="underlineShowAll mx-auto mb-5"></div>
+						</Col>
+					</Row>
+					<Container>
+						<Row className="rowEvent">
+							<div className="mx-auto">
+								<h3>Event not found</h3>
+							</div>
+						</Row>
+						<Row>
+							<Col className="text-center mt-4 mb-3">
+								<Link to="/allevents" className="btn buttonMore mt-4 mb-4">
+									<h5>Browse Events <i className="fa fa-chevron-right ml-1"></i></h5>
+								</Link>
+							</Col>
+						</Row>
+					</Container>
 				</Container>
 				<Footer />
 			</div>
@@ -183,7 +188,7 @@ const ShowAll = (props) => {
 		<div>
 			<Navbar />
 			<Container className="mt-5 pt-5 mb-5">
-			<Row className="mb-5">
+				<Row className="mb-5">
 					<Form
 						inline
 						className="mx-auto mt-5 pt-3"
@@ -222,28 +227,6 @@ const ShowAll = (props) => {
 						<div className="underlineShowAll mx-auto mb-5"></div>
 					</Col>
 				</Row>
-
-				{/* <Row>
-					<Form inline className="mx-auto" onSubmit={handleSubmit}>
-						<FormControl
-							type="text"
-							placeholder="Search Events"
-							className="mainInput"
-							name="search"
-							autoComplete="off"
-							defaultValue={searchQuery}
-							style={{ border: "1px solid black" }}
-						/>
-						<Button
-							type="submit"
-							variant="outline-success"
-							className="buttonSearch mainSearch"
-						>
-							<i className="fas fa-search"></i>
-						</Button>
-					</Form>
-				</Row> */}
-
 				<Container>
 					<Row className="rowEvent">{showAll}</Row>
 				</Container>
@@ -258,4 +241,4 @@ const mapDispatchToProps = {
 	showError
 }
 
-export default connect(null, mapDispatchToProps)(ShowAll);
+export default connect(null, mapDispatchToProps)(SearchTitle);
