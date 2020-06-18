@@ -12,7 +12,13 @@
   border-color: white !important;
   color: white !important;
   background-color: rgba(255, 0, 31, 0.85) !important;
+  box-shadow: 2px 2px 2px  #ffffff;
 }
+
+.buttonSubscribe span{
+  font-weight: bold;
+}
+
 .jumbotronNewsLetter {
   background-color: #ff001f !important;
   color: white;
@@ -32,4 +38,55 @@
   color: #cbcbcb !important;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+}
+
+@media (min-width : 768px) and (max-width : 1199px ){
+  .buttonSubscribe{
+    margin-top: 0.5rem;
+  }
+}
+
+@media (min-width : 576px) and (max-width : 767px) {
+  .Subscribe{
+    margin-left: 6rem;
+  }
+}
+
+@media (min-width : 526px) and (max-width : 575px) {
+  .Subscribe{
+    margin-left: 6.4rem;
+  }
+}
+
+@media (min-width : 510px) and (max-width : 525px) {
+  .Subscribe{
+    margin-left: 5rem;
+  }
+}
+
+@media (min-width : 500px) and (max-width : 509px) {
+  .Subscribe {
+    margin-left: 4rem;
+  }
+}
+
+@media (min-width : 418px) and (max-width : 499px){
+  .Subscribe{
+    margin-left: 3rem;
+  }
+}
+
+@media (min-width : 402px) and (max-width : 417px){
+  .Subscribe{
+    margin-left: 2rem !important;
+  }
+}
+
+@media only screen and (max-width : 369px){
+  .Subscribe{
+    margin-left: 2rem !important;
+  }
+  .buttonSubscribe{
+    margin-top: 0.5rem;
+  }
 }

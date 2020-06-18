@@ -39,7 +39,7 @@ class Footer extends Component {
                 </div>
               </Col>
               <Col md={4} sm={12}>
-                <div className="mt-5 pt-5  text-center">
+                <div className="mt-5 pt-3 text-center">
                   <Link to="/about" className="footerNav">
                     <h5>About Us</h5>
                   </Link>
@@ -48,7 +48,7 @@ class Footer extends Component {
                   </Link>
                 </div>
               </Col>
-              <Col md={4} sm={12}>
+              <Col md={4} sm={12} className="Subscribe">
                 <div className="text-left mt-5 pt-3">
                   <h5>
                     <b>Subscribe to our Newsletter</b>
@@ -62,7 +62,7 @@ class Footer extends Component {
                       className="formInput"
                     />
                     <Button variant="primary" className="buttonSubscribe ml-2">
-                      SUBSCRIBE
+                      <span>SUBSCRIBE</span>
                     </Button>
                   </Form>
                 </div>
