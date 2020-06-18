@@ -20,7 +20,6 @@ import Profile from "./pages/Profile/Profile";
 import History from "./pages/History/HistoryEvent";
 
 import Modals from "./components/Modals/index";
-//import Alert from './components/Alert/Alert'
 
 const App = (props) => {
   return (
@@ -46,7 +45,6 @@ const App = (props) => {
         </Switch>
       </Router>
       <Modals />
-      {/* <Alert /> */}
     </>
   );
 };

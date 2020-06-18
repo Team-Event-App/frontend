@@ -1,7 +1,14 @@
 .detailCardImage{
     height: 400px !important;
+    width: 100%;
     object-fit: cover;
 }
+
+img.imagePreview{
+    width: 100%;
+    height: 100%;
+}
+
 
 /* Chrome, Safari, Edge, Opera */
 input.phone::-webkit-outer-spin-button,
@@ -15,7 +22,7 @@ input.phone[type=number] {
   -moz-appearance: textfield;
 }
 
-/* @media all and (min-width: 769px) {
+@media all and (min-width: 769px) {
     .detailCardImage{
         width: 560px !important;
         
@@ -50,4 +57,4 @@ input.phone[type=number] {
     .containerCard{
         margin-left: 0px !important;
     }
-} */
+}

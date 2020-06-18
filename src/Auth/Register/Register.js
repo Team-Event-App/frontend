@@ -20,7 +20,6 @@ import "./Register.css";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const Register = (props) => {
-  const [errorEmail, setErrorEmail] = useState({})
   const history = useHistory();
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisibility = () => {
@@ -75,11 +74,7 @@ const Register = (props) => {
                         history.push("/login");
                       })
                       .catch((err) => {
-                        console.log(err.message)
-                        // props.showError("Please check your Input Form again...")
-                        setErrorEmail(err.message)
-                        console.log(errorEmail)
-
+                        props.showError(err.response.data.message)
                       });
                   }}
                 >

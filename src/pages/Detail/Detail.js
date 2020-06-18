@@ -196,7 +196,7 @@ const Detail = (props) => {
          							    </Tooltip>
 									}
 								>
-									<Button variant="" onClick={handleShow}>
+									<Button onClick={handleShow}>
 										<img
 											src={`${URL}${item.imageEvent}`}
 											alt="imageEvent"
@@ -210,7 +210,7 @@ const Detail = (props) => {
 									<img
 										src={`${URL}${item.imageEvent}`}
 										alt="imageEvent"
-										style={{ objectFit: "cover" }}
+										className="imagePreview"
 									/>
 								</Modal>
 							</>

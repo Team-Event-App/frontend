@@ -76,6 +76,7 @@ const Login = (props) => {
                           id="email"
                           value={data.email}
                           onChange={handleChange}
+                          required
                         ></FormControl>
                       </InputGroup>
 
@@ -88,6 +89,7 @@ const Login = (props) => {
                           id="password"
                           value={data.password}
                           onChange={handleChange}
+                          required
                         />
 
                         <InputGroup.Append className="mt-2">
@@ -118,7 +120,7 @@ const Login = (props) => {
                     <p>
                       To keep connected with us please login with your
                       personal info
-                      </p>
+                    </p>
                     <NavLink to="/register" style={{ color: "white" }}>
                       Don't have an account?
                       </NavLink>
