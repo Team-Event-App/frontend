@@ -1,8 +1,6 @@
 .navbar {
   height: 5rem;
-  box-shadow: 2px 2px 20px #c4c4c4;background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(255,0,31,0) 100%);
-}
+  }
 
 .imageLogo {
   margin-left: 3rem;
