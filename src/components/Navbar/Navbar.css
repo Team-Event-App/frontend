@@ -69,7 +69,7 @@
 
 input.searchNav2{
   background-color: white !important;
-  margin-left: -12rem !important;
+  margin-left: -10rem !important;
 }
   
 .searchNav2:focus {
@@ -83,7 +83,8 @@ input.searchNav2{
   font-size: 1.2rem;
   color: #ff001f !important;
 }
-/* @media all and (min-width : 320px) {
+
+/* media all and (min-width : 320px) {
 .imageLogo{
   height: 43px !important;
   width: 250px;
@@ -156,4 +157,3 @@ input.searchNav2{
       margin-left: 200px;
     }
   } */
- 
