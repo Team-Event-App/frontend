@@ -86,17 +86,21 @@ const ShowAll = (props) => {
 	}, [searchQuery]);
 
 	const showAllEvent = data.map((data) => {
-		return (
-			<Col
-				key={data.id}
-				lg={3}
-				md={6}
-				sm={12}
-				className="my-2 mt-5 pt-2 pl-0 pr-0"
-			>
-				<Card item={data} />
-			</Col>
-		);
+			if(searchQuery === ""){
+				return(
+					props.showError("Value can't be blank."),
+					history.push("/allevents")
+				)
+			}else{
+				return(
+					<Row className="rowEvent">
+						<div className="mx-auto">
+						<h3>Category not found</h3>
+						</div>
+					</Row>
+				)
+			}
+
 	});
 	const showAllSearch = search.map((data) => {
 		return (

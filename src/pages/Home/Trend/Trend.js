@@ -5,6 +5,7 @@ import {
   Row,
   Jumbotron,
   Button,
+  Col
 } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -37,12 +38,20 @@ const Trend = () => {
     <div>
       <Jumbotron fluid className="trend-background">
         <Container className="containerHost">
-          <h2 className="mb-4 hostEvent">Host Your Own Events</h2>
+          <Row>
+            <Col>
+          <h2 className="mb-4 hostEvent text-center">Host Your Own Events</h2>
+          </Col>
+          </Row>
+          <Row>
+            <Col className="text-center">
           <Link to="/event/create">
-            <Button className="buttonCreate both-line-light mx-auto">
+            <Button className="buttonCreate both-line-light">
               Create Events
               </Button>
           </Link>
+          </Col>
+          </Row>
         </Container>
       </Jumbotron>
 

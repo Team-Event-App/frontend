@@ -69,7 +69,7 @@ const Register = (props) => {
                     })
                       .then((res) => {
                         console.log(res)
-                        props.showSuccess("Register Success!");
+                        props.showSuccess("Register Success, Notification has been send to your email.");
                         actions.resetForm();
                         history.push("/login");
                       })

@@ -80,7 +80,7 @@
     font-size: 1.2rem;
     color: #ff001f !important;
   }
-  /* @media all and (min-width : 320px) {
+   @media all and (max-width : 320px) {
   .imageLogo{
     height: 43px !important;
     width: 250px;
@@ -97,8 +97,8 @@
     margin-right: -auto !important;
   }
   
-  } */
-  /* @media only screen and (min-device-width: 480px){
+  } 
+   @media only screen and (max-width: 480px){
       .imageLogo{
       height: 60px;
       margin-left: -45px !important;
@@ -136,8 +136,8 @@
       .navProfile{
         margin-left: 160px;
       }
-    } */
-    /* @media all and (min-width: 900px) {
+    } 
+     @media all and (max-width: 900px) {
       .imageLogo{
         height: 70px;
         margin-top:-20px
@@ -152,5 +152,5 @@
       .navProfile{
         margin-left: 200px;
       }
-    } */
+    } 
    

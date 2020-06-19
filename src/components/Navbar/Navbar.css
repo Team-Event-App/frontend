@@ -61,10 +61,8 @@
 }
 
 .searchNav2{
-  width: 20rem !important;
-  padding: 1.7rem 4rem !important;
   border-radius: 20rem !important;
-  border : 1px solid #ff001f !important
+  border : 1px solid #ff001f !important;
 }
 
 input.searchNav2{
@@ -83,10 +81,9 @@ input.searchNav2{
   font-size: 1.2rem;
   color: #ff001f !important;
 }
-
-/* media all and (min-width : 320px) {
+@media all and (max-width : 320px) {
 .imageLogo{
-  height: 43px !important;
+  height: 20px !important;
   width: 250px;
   margin-top: -10px !important;
   margin-left: -50px;
@@ -100,9 +97,16 @@ input.searchNav2{
 .showLogin{
   margin-right: -auto !important;
 }
-
-} */
-/* @media only screen and (min-device-width: 480px){
+input.searchNav2{
+  display: none;
+  visibility: hidden;
+}
+.iconSearchNav{
+  display: none;
+  visibility: hidden;
+}
+}
+@media only screen and (max-device-width: 480px){
 	.imageLogo{
     height: 60px;
     margin-left: -45px !important;
@@ -124,6 +128,14 @@ input.searchNav2{
     margin-top: -10px;
     margin-left: -50px;
   }
+  input.searchNav2{
+    display: none;
+    visibility: hidden;
+  }
+  .iconSearchNav{
+    display: none;
+    visibility: hidden;
+  }
   }
   @media all and (max-width:768px) {
     .imageLogo{
@@ -140,8 +152,8 @@ input.searchNav2{
     .navProfile{
       margin-left: 160px;
     }
-  } */
-  /* @media all and (min-width: 900px) {
+  }
+   @media all and (max-width: 900px) {
     .imageLogo{
       height: 70px;
       margin-top:-20px
@@ -156,4 +168,5 @@ input.searchNav2{
     .navProfile{
       margin-left: 200px;
     }
-  } */
+  } 
+ 

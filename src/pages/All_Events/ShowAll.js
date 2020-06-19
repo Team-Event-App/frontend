@@ -69,7 +69,7 @@ const ShowAll = () => {
 		<div>
 			<Navbar />
 			<Container className="mt-5 pt-5 mb-5">
-				<Row className="mb-5">
+				<Row>
 					<Form
 						inline
 						className="mx-auto mt-5 pt-3"
@@ -86,7 +86,10 @@ const ShowAll = () => {
 
 						<i className="fa fa-search buttonSearch "></i>
 					</Form>
-					<Form
+
+				</Row>
+				<Row className="mb-5">
+				<Form
 						inline
 						className="mx-auto mt-5 pt-3"
 						onSubmit={handleSubmit(cariCategory)}

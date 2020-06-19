@@ -23,7 +23,7 @@ input.phone[type=number] {
   -moz-appearance: textfield;
 }
 
-/* @media all and (min-width: 769px) {
+@media all and (min-width: 769px) {
     .detailCardImage{
         width: 560px !important;
         
@@ -58,4 +58,4 @@ input.phone[type=number] {
     .containerCard{
         margin-left: 0px !important;
     }
-} */
+}
