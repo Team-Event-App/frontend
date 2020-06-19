@@ -25,6 +25,7 @@ body {
   border-radius: 10px !important;
   overflow: hidden;
   color: black;
+  height: 32rem;
 }
 .card-body {
   background-color: #e3e3e3;
@@ -77,16 +78,6 @@ input.mainInput {
   border-color: #ff001f !important;
   box-shadow: #ff001f !important;
 }
-
-/* .mainSearch {
-  border: none !important;
-  color: #ff001f !important;
-}
-
-.mainSearch:hover {
-  color: white !important;
-  background-color: #ff001f !important;
-} */
 
 .underlineMain {
   width: 255px;
@@ -142,7 +133,7 @@ input.mainInput {
 		max-width: 1200px !important;
 	}
 }
-@media all and (max-width : 320px){
+/* @media all and (max-width : 320px){
 	#mainCard{
 		width: 300px !important;
   }
@@ -161,14 +152,6 @@ input.mainInput {
 		width: 300px !important;
 	}
 }
-
-@media all and (max-width: 769px) {
-	.main-card {
-		width: 300px !important;
-		background-color: black !important;
-		margin-left: 100px !important;
-	}
-}
 @media all and (max-width: 900px) {
 	.rowEvent {
 		margin-right: -40px !important;
@@ -176,6 +159,106 @@ input.mainInput {
 }
 @media all and (max-width: 1600px){ 
   .main-card{
-	  width: 1000px !important;
+    width: 1000px !important;
+    padding: 0.5rem !important;
+  }
+} */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .main-card {
+		width: 300px !important;
+		background-color: black !important;
+		margin-left: 100px !important;
+	}
+  .main-background {
+    background: url(./../../../image/backgroundhome.jpg) no-repeat;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 28rem;
+  }
+
+  .contQuotes h3.quotes1 {
+    padding-top: 2rem !important;
+    color: white !important;
+    font-size: 2rem !important;
+    font-weight: 500 !important;
+  }
+  
+  .contQuotes h3.quotes2 {
+    color: white !important;
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+  }
+
+  .buttonMore {
+    color: white !important;
+    background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+    border-color: #ff001f !important;
+    padding: 0.3rem !important;
+  }
+  
+  
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-background {
+    background: url(./../../../image/backgroundhome.jpg) no-repeat;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 28rem;
+  }
+
+  .contQuotes h3.quotes1 {
+    padding-top: 0.8rem !important;
+    color: white !important;
+    font-size: 1.8rem !important;
+    font-weight: 500 !important;
+  }
+  
+  .contQuotes h3.quotes2 {
+    color: white !important;
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+  }
+
+  .buttonMore {
+    color: white !important;
+    background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+    border-color: #ff001f !important;
+    padding: 0.3rem !important;
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .main-background {
+    background: url(./../../../image/backgroundhome.jpg) no-repeat;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 28rem;
+  }
+
+  .contQuotes h3.quotes1 {
+    padding-top: 2rem !important;
+    color: white !important;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+  }
+  
+  .contQuotes h3.quotes2 {
+    color: white !important;
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+  }
+
+  .buttonMore {
+    color: white !important;
+    background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+    border-color: #ff001f !important;
+    padding: 0.2rem !important;
   }
 }
