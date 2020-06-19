@@ -39,11 +39,9 @@ export default class CategoryCarousel extends Component {
 									},
 									480: {
 										slidesPerPage: 1,
-										arrows: false
 									},
 									769: {
 										slidesPerPage: 1,
-										arrows: false,
 									},
 									900: {
 										slidesPerPage: 2,
