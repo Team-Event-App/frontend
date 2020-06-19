@@ -39,8 +39,8 @@ const Trend = () => {
       <Jumbotron fluid className="trend-background">
         <Container className="containerHost">
           <Row>
-            <Col className="text-center">
-          <h2 className="mb-4 hostEvent">Host Your Own Events</h2>
+            <Col>
+          <h2 className="mb-4 hostEvent text-center">Host Your Own Events</h2>
           </Col>
           </Row>
           <Row>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { logoutModal } from '../../actions/modalActions'
 import { connect } from "react-redux";
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button ,Container,Col,Row} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./Navbar.css";
 import Logo from "./../../image/logo.png";
@@ -83,10 +83,17 @@ const Navbars = (props) => {
   );
 
   return (
+    <Container>
     <Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
+      <Row>
+        <Col>
       <Link to="/" className="mr-3 brand">
         <img src={Logo} alt="logo" className="imageLogo" />
       </Link>
+      </Col>
+      </Row>
+      <Row>
+        <Col>
       <Form
         inline
         className="searchNav"
@@ -103,6 +110,8 @@ const Navbars = (props) => {
 
         <i className="fa fa-search iconSearchNav"></i>
       </Form>
+      </Col>
+      </Row>
       <Navbar.Toggle aria-controls="toogle" />
       <Navbar.Collapse id="toogle">
         <Nav className="ml-auto navbar-nav">
@@ -119,6 +128,7 @@ const Navbars = (props) => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+    </Container>
   );
 };
 
