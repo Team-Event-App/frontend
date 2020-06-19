@@ -196,14 +196,13 @@ const Detail = (props) => {
          							    </Tooltip>
 									}
 								>
-									<Button onClick={handleShow}>
+									<div onClick={handleShow}>
 										<img
 											src={`${URL}${item.imageEvent}`}
 											alt="imageEvent"
-											style={{ width: "50rem", height: "300px", objectFit: "cover" }}
 											className="detailCardImage"
 										/>
-									</Button>
+									</div>
 								</OverlayTrigger>
 
 								<Modal show={show} onHide={handleClose} centered>

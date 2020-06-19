@@ -1,7 +1,8 @@
 .detailCardImage{
+    width: 50rem !important;
     height: 400px !important;
-    width: 100%;
     object-fit: cover;
+    cursor: zoom-in;
 }
 
 img.imagePreview{
