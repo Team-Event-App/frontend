@@ -10,20 +10,19 @@
   color: white;
   background-color: black;
   padding: 1rem !important;
-  margin: 1rem 22rem !important;
 }
 
 .hostEvent {
   background: rgba(0, 0, 0, 0) !important;
 }
 
-.buttonCreate.mx-auto {
+.buttonCreate {
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
   width: 12rem;
   font-size: 1.25rem !important;
   padding: 0.7rem !important;
-  margin-left: 450px !important;
+  font-weight: 500 !important;
 }
 
 .underlineTrend {
@@ -42,7 +41,13 @@
   transform: scale(1.1);
   z-index: 1;
 }
+/* 	
 @media all and (max-width:320px){
+	.trend-background h2{
+		margin-top: 4rem;
+		margin-left: -1rem !important;
+	}
+
 	.card-deck{
 		margin-left: -40px !important;
 	}
@@ -53,11 +58,35 @@
 	.containerHost{
 		margin-left: -75px !important;
 	}
-	.hostEvent{
-		margin-left: 40px !important;
-		font-size: 60px;
+} */
+
+@media all and (max-width : 460px) {
+	.trend-background {
+		width: 480px;
+		height: 500px;
 	}
+	.trend-background h2 {
+		font-size: 1.7rem !important;
+		margin-left: -3rem !important;
+	}
+	.colTrend {
+		display: flex;
+		justify-content: center;
+	}
+	.trendCard {
+		width: 400px;
+	}
+	.containerHost{
+		margin-top: 3rem;
+	}
+
+	.buttonCreate {
+		margin-left: -3rem;
+		padding : 0.3rem !important;
+	}
+	
 }
+
 @media all and (max-width: 480px){
 	.trend-background {
 		width: 480px;
@@ -70,19 +99,33 @@
 	.trendCard {
 		width: 400px;
 	}
+	.containerHost{
+		margin-top: 3rem;
+		margin-left: 0 !important;
+	}
+	
 }
 @media all and (max-width: 769px) {
 	.trendCard {
 		margin-left: 100px !important;
 	}
+	.trend-background h2{
+		font-size: 1.8rem;
+	}
 }
+
+@media all and (max-width: 900px) {
+	.rowTrend {
+		margin-right: -100px !important;
+	}
+}
+
 @media all and (max-width: 1280px) {
 	.rowEvent {
 		margin-left: -80px !important;
 	}
 }
-@media all and (max-width: 900px) {
-	.rowTrend {
-		margin-right: -100px !important;
-	}
+
+@media (min-width : 1203px) and (max-width : 1319px) {
+
 }
