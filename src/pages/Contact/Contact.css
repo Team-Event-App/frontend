@@ -7,6 +7,10 @@
   margin-left: 8rem;
 }
 
+.logoImage-contact{
+  margin: 0 6rem;
+}
+
 
 
 @media all and (max-width:320px){
@@ -15,24 +19,40 @@
     margin-left: -155px !important;
   }
 }
+
 @media all and (max-width: 480px){
   .contactCard{
     width: 400px !important;
     margin-left: -100px !important;
   }
-  .logoImage{
+  .logoImage-contact{
     width: 300px;
     height: 70px;
   }
   }
-  @media all and (max-width: 900px) {
+ 
+  @media all and (max-width:768px) {
+    .logoImage-contact{
+      width: 180px;
+      margin: 0 4rem;
+    }
+
     .contactCard{
-      width: 700px;
-      margin-left: -280px;
+      width: 395px !important;
+      margin-left: -60px !important;
     }
   }
-  @media all and (max-width:768px) {
+  @media all and (max-width: 900px) {
     .contactCard{
-      margin-left: -220px;
+      width: 475px;
+      margin-left: -170px;
+    }
+  }
+
+  @media all and (max-width: 1008px) {
+    .contactCard{
+      width: 475px;
+      margin-left: -6rem;
+      margin-right: -6rem;
     }
   }

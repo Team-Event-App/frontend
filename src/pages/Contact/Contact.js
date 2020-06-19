@@ -74,7 +74,7 @@ class Contact extends Component {
 									<Row className="justify-content-center">
 										<Col md={6}>
 											<Card className="p-5 mt-5 contactCard">
-												<img src={Logo} alt="Logo" className="logoImage" />
+												<img src={Logo} alt="Logo" className="logoImage-contact" />
 												<hr />
 												<Form onSubmit={props.handleSubmit} action="https://formspree.io/xvowaovj" method="POST">
 													<div className="form-group">

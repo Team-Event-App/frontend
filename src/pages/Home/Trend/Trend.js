@@ -40,17 +40,18 @@ const Trend = () => {
         <Container className="containerHost">
           <Row>
             <Col>
-          <h2 className="mb-4 hostEvent text-center">Host Your Own Events</h2>
-          </Col>
+              <h2 className="mb-4 hostEvent text-center">Host Your Own Events</h2>
+            </Col>
           </Row>
           <Row>
             <Col className="text-center">
-          <Link to="/event/create">
-            <Button className="buttonCreate both-line-light">
-              Create Events
+              <Link to="/event/create">
+                <Button className="buttonCreate both-line-light">
+                  <i className="fas fa-plus mr-2 "></i>
+                  Create Events
               </Button>
-          </Link>
-          </Col>
+              </Link>
+            </Col>
           </Row>
         </Container>
       </Jumbotron>
