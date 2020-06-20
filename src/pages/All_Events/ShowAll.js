@@ -70,6 +70,12 @@ const ShowAll = () => {
 			<Navbar />
 			<Container className="mt-5 pt-5 mb-5">
 				<Row>
+					<Col>
+						<h3 className="text-center mt-5">DISCOVER EVENTS</h3>
+						<div className="underlineShowAll mx-auto"></div>
+					</Col>
+				</Row>
+				<Row>
 					<Form
 						inline
 						className="mx-auto mt-5 pt-3"
@@ -89,7 +95,7 @@ const ShowAll = () => {
 
 				</Row>
 				<Row className="mb-5">
-				<Form
+					<Form
 						inline
 						className="mx-auto mt-5 pt-3"
 						onSubmit={handleSubmit(cariCategory)}
@@ -105,12 +111,7 @@ const ShowAll = () => {
 						<i className="fa fa-search buttonSearch "></i>
 					</Form>
 				</Row>
-				<Row>
-					<Col>
-						<h3 className="text-center mt-3">DISCOVER EVENTS</h3>
-						<div className="underlineShowAll mx-auto"></div>
-					</Col>
-				</Row>
+
 				<div>
 					<Posts posts={currentPosts} loading={loading} />
 					<Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { logoutModal } from '../../actions/modalActions'
 import { connect } from "react-redux";
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button ,Container} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./Navbar.css";
 import Logo from "./../../image/logo.png";
@@ -38,10 +38,10 @@ const Navbars = (props) => {
         setViewLogin(
           <div className="showLogin">
             <NavDropdown
-              className="mr-5 pr-3 navProfile nav-link-profile"
+              className="mr-5 pr-3 navProfile"
               title={
                 <span>
-                  <i className="fa fa-user fa-fw "></i>Profile
+                  <i className="fa fa-user fa-fw"></i>Profile
                 </span>
               }
             >
@@ -69,12 +69,8 @@ const Navbars = (props) => {
       } else {
         setViewLogin(
           <Nav>
-            <Link to="/login" className="linkSign">
-            <i className="fas fa-sign-in-alt mr-2"></i>
-                Sign In
-            </Link>
             <Link to="/login" className="buttonSign">
-              <Button className="signInButton signButton">
+              <Button className="signInButton">
                 Sign In
                 <i className="fas fa-sign-in-alt ml-2"></i>
               </Button>
@@ -88,46 +84,42 @@ const Navbars = (props) => {
 
   return (
     <Container>
-    <Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
-      <Link to="/" className="mr-3 brandLogo">
-        <img src={Logo} alt="logo" className="imageLogo2" />
-      </Link>
-      <Form
-        inline
-        className="searchNav"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <FormControl
-          type="text"
-          placeholder="Search By Title"
-          className="searchNav2"
-          name="searchh"
-          autoComplete="off"
-          ref={register({ required: false })}
-        />
+      <Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
+        <Link to="/" className="mr-3">
+          <img src={Logo} alt="logo" className="imageLogo2" />
+        </Link>
+        <Form
+          inline
+          className="searchNav"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <FormControl
+            type="text"
+            placeholder="Search By Title"
+            className="searchNav2"
+            name="searchh"
+            autoComplete="off"
+            ref={register({ required: false })}
+          />
 
-        <i className="fa fa-search iconSearchNav"></i>
-      </Form>
-      <Navbar.Toggle aria-controls="toogle" />
-      <Navbar.Collapse id="toogle">
-        <Nav className="ml-auto navbar-nav text-center">
-        <Link to="/event/create" className="linkCreate2">
-              <i className="fas fa-plus mr-2 "></i>
-              Create Events
-          </Link>
-          <Link to="/event/create" className="linkCreate">
-            <Button
-              className="signInButton mr-3 createButton"
-              onClick={pushKlik}
-            >
-              <i className="fas fa-plus mr-2 "></i>
+          <i className="fa fa-search iconSearchNav"></i>
+        </Form>
+        <Navbar.Toggle aria-controls="toogle" />
+        <Navbar.Collapse id="toogle">
+          <Nav className="ml-auto navbar-nav text-center">
+            <Link to="/event/create">
+              <Button
+                className="signInButton mr-3"
+                onClick={pushKlik}
+              >
+                <i className="fas fa-plus mr-2 "></i>
               Create Events
             </Button>
-          </Link>
-          <Nav className="navProfile">{viewLogin}</Nav>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+            </Link>
+            <Nav className="navProfile">{viewLogin}</Nav>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </Container>
   );
 };
