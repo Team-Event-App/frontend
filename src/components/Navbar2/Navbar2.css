@@ -80,13 +80,18 @@
     font-size: 1.2rem;
     color: #ff001f !important;
   }
-   @media all and (max-width : 320px) {
-  .imageLogo{
-    height: 43px !important;
-    width: 250px;
-    margin-top: -10px !important;
-    margin-left: -50px;
+  @media all and (max-width:321px){
+    #createLink{
+      display: none !important;
+      visibility: hidden !important;
+    }
   }
+   @media all and (max-width : 320px) {
+  .imageLogo2{
+    margin-top: -10px !important;
+    margin-left: 100px !important;
+  }
+ 
   .navbar-nav{
     width: 300px;
   }

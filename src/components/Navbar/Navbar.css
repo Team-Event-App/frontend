@@ -5,7 +5,18 @@
 .imageLogo {
   margin-left: 3rem;
 }
-
+.linkCreate{
+  visibility: visible;
+}
+.linkCreate2{
+  visibility: hidden;
+  display: none;
+  color: gray;
+}
+.linkSign{
+  display: none;
+  visibility: hidden;
+}
 .signInButton {
   color: white !important;
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
@@ -81,21 +92,37 @@ input.searchNav2{
   font-size: 1.2rem;
   color: #ff001f !important;
 }
-@media all and (max-width : 320px) {
+@media all and (max-width : 321px) {
+  .fixed-top{
+    height: 150px !important;
+  }
 .imageLogo{
-  height: 20px !important;
+  height: 70px !important;
   width: 250px;
-  margin-top: -10px !important;
-  margin-left: -50px;
+  margin-top: 10px !important;
+}
+.showLogin{
+  margin-left: -170px !important;
+}
+.linkCreate2{
+  visibility: visible;
+  display: block;
+}
+.linkCreate{
+  margin-left: 13px;
+  color: gray;
+  display: none;
+  visibility: hidden;
 }
 .navbar-nav{
-  width: 300px;
+  margin-right: 100px;
+  width: 300px !important;
+}
+.createButton{
+  visibility: visible !important;
 }
 .nav-link{
   margin-right: 500px !important;
-}
-.showLogin{
-  margin-right: -auto !important;
 }
 input.searchNav2{
   display: none;
@@ -105,12 +132,23 @@ input.searchNav2{
   display: none;
   visibility: hidden;
 }
+.buttonSign{
+  visibility: hidden;
+  display: none;
+}
+.linkSign{
+  margin-right: 160px;
+  color: gray;
+}
 }
 @media only screen and (max-device-width: 480px){
 	.imageLogo{
     height: 60px;
-    margin-left: -45px !important;
-	}
+    margin-left: 0px !important;
+  }
+  .navLogo{
+    margin-left: 110px;
+  }
 	.navbar-nav{
 		padding-bottom: 5px;
 	}
@@ -151,6 +189,14 @@ input.searchNav2{
     }
     .navProfile{
       margin-left: 160px;
+    }
+    input.searchNav2{
+      display: none;
+      visibility: hidden;
+    }
+    .iconSearchNav{
+      display: none;
+      visibility: hidden;
     }
   }
    @media all and (max-width: 900px) {
