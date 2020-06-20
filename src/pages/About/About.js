@@ -23,13 +23,13 @@ class About extends Component {
 				<Container className="mt-5 pt-5 mb-5">
 					<Row>
 						<Col>
-							<h2 className="text-center mt-3">About Us</h2>
+							<h2 className="text-center mt-3 about-title">About Us</h2>
 							<div className="underlineAbout mx-auto"></div>
 						</Col>
 					</Row>
 
 					<Row>
-						<Col md={6} sm={12}>
+						<Col md={6} xl={6} sm={12}>
 							<h3 className="about-top">
 								What is <span style={{ color: "red" }}>Evenity</span>?
 							</h3>
@@ -55,7 +55,7 @@ class About extends Component {
 
 				<Container className="mb-5 pb-3 ">
 					<Row>
-						<Col md={4} sm={12}>
+						<Col md={4} xl={4} sm={12}>
 							<div className="photo-grid">
 								<div className="grid-item">
 									<Link to="/event/create">
@@ -70,7 +70,7 @@ class About extends Component {
 							</div>
 						</Col>
 
-						<Col md={4} sm={12}>
+						<Col lg={4} md={8} sm={12}>
 							<div className="photo-grid">
 								<div className="grid-item">
 									<Link to="/">
