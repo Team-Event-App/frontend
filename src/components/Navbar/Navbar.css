@@ -1,4 +1,5 @@
 .navbar {
+  height: 5rem !important;
   box-shadow: 2px 2px 20px #c4c4c4;
 }
 
