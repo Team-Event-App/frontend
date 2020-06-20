@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { logoutModal } from '../../actions/modalActions'
 import { connect } from "react-redux";
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button ,Container,Col,Row} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button ,Container} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./Navbar.css";
 import Logo from "./../../image/logo.png";
@@ -69,7 +69,11 @@ const Navbars = (props) => {
       } else {
         setViewLogin(
           <Nav>
-            <Link to="/login">
+            <Link to="/login" className="linkSign">
+            <i className="fas fa-sign-in-alt mr-2"></i>
+                Sign In
+            </Link>
+            <Link to="/login" className="buttonSign">
               <Button className="signInButton signButton">
                 Sign In
                 <i className="fas fa-sign-in-alt ml-2"></i>
@@ -85,15 +89,9 @@ const Navbars = (props) => {
   return (
     <Container>
     <Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
-      <Row>
-        <Col>
-      <Link to="/" className="mr-3 brand">
-        <img src={Logo} alt="logo" className="imageLogo" />
+      <Link to="/" className="mr-3 brandLogo">
+        <img src={Logo} alt="logo" className="imageLogo2" />
       </Link>
-      </Col>
-      </Row>
-      <Row>
-        <Col>
       <Form
         inline
         className="searchNav"
@@ -110,12 +108,14 @@ const Navbars = (props) => {
 
         <i className="fa fa-search iconSearchNav"></i>
       </Form>
-      </Col>
-      </Row>
       <Navbar.Toggle aria-controls="toogle" />
       <Navbar.Collapse id="toogle">
-        <Nav className="ml-auto navbar-nav">
-          <Link to="/event/create">
+        <Nav className="ml-auto navbar-nav text-center">
+        <Link to="/event/create" className="linkCreate2">
+              <i className="fas fa-plus mr-2 "></i>
+              Create Events
+          </Link>
+          <Link to="/event/create" className="linkCreate">
             <Button
               className="signInButton mr-3 createButton"
               onClick={pushKlik}

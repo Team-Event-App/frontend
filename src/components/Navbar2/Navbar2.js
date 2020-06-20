@@ -74,13 +74,13 @@ const Navbars = (props) => {
 
   return (
     <Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
-      <Link to="/" className="mr-3 brand">
-        <img src={Logo} alt="logo" className="imageLogo" />
+      <Link to="/" className="mr-3 brandLogo">
+        <img src={Logo} alt="logo" className="imageLogo2" />
       </Link>
       <Navbar.Toggle aria-controls="toogle" />
       <Navbar.Collapse id="toogle">
         <Nav className="ml-auto navbar-nav">
-          <Link to="/event/create">
+          <Link to="/event/create" id="createLink">
             <Button
               className="signInButton mr-3 createButton"
               onClick={pushKlik}

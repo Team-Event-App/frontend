@@ -45,7 +45,7 @@ const Trend = () => {
           </Row>
           <Row>
             <Col className="text-center">
-              <Link to="/event/create">
+              <Link to="/event/create" className="buttonLink">
                 <Button className="buttonCreate both-line-light">
                   <i className="fas fa-plus mr-2 "></i>
                   Create Events
