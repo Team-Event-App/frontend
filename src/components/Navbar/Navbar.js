@@ -36,7 +36,7 @@ const Navbars = (props) => {
 
       if (props.viaLogin) {
         setViewLogin(
-          <div className="showLogin">
+          <div className="showLogin mr-5">
             <NavDropdown
               className="mr-5 pr-3 navProfile nav-link-profile"
               title={
@@ -73,7 +73,7 @@ const Navbars = (props) => {
             <i className="fas fa-sign-in-alt mr-2"></i>
                 Sign In
             </Link>
-            <Link to="/login" className="buttonSign">
+            <Link to="/login" className="buttonSign ">
               <Button className="signInButton signButton">
                 Sign In
                 <i className="fas fa-sign-in-alt ml-2"></i>
@@ -89,12 +89,12 @@ const Navbars = (props) => {
   return (
     <Container>
     <Navbar bg="white" variant="light" expand="lg" className="navbar fixed-top">
-      <Link to="/" className="mr-3 brandLogo">
+      <Link to="/" className="brandLogo">
         <img src={Logo} alt="logo" className="imageLogo2" />
       </Link>
       <Form
         inline
-        className="searchNav mr-5"
+        className="searchNav"
         onSubmit={handleSubmit(onSubmit)}
       >
         <FormControl
@@ -110,12 +110,12 @@ const Navbars = (props) => {
       </Form>
       <Navbar.Toggle aria-controls="toogle" />
       <Navbar.Collapse id="toogle">
-        <Nav className="ml-auto navbar-nav text-center">
-        <Link to="/event/create" className="linkCreate2">
+        <Nav className="ml-auto">
+        <Link to="/event/create" className="linkCreate2 text-center">
               <i className="fas fa-plus mr-2 "></i>
               Create Events
           </Link>
-          <Link to="/event/create" className="linkCreate">
+          <Link to="/event/create" className="linkCreate text-center">
             <Button
               className="signInButton mr-3 createButton"
               onClick={pushKlik}

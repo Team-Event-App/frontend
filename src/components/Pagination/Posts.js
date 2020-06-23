@@ -8,7 +8,7 @@ const Posts = ({ posts, loading }) => {
 
     if (loading) {
         return (
-            <div class="loader"></div>
+            <div className="loader"></div>
         )
     }
 

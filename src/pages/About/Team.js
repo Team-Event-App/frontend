@@ -18,7 +18,7 @@ class Team extends Component {
 				<Container>
 					<Row className="mb-3">
 						<Col>
-							<h2 className="text-center mt-3">Our Team</h2>
+							<h2 className="text-center mt-3 about-title">Our Team</h2>
 							<div className="underlineAbout mx-auto mb-5"></div>
 						</Col>
 					</Row>
@@ -26,7 +26,7 @@ class Team extends Component {
 
 				<Container>
 					<Row>
-						<Card className="mb-3 mt-3 mx-auto about-card">
+						<Card className="mb-3  mx-auto about-card">
 							<Row className="no-gutters">
 								<Col md={4}>
 									<img

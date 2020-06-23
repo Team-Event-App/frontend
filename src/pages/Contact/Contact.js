@@ -77,7 +77,7 @@ class Contact extends Component {
 												<img src={Logo} alt="Logo" className="logoImage-contact" />
 												<hr />
 												<Form onSubmit={props.handleSubmit} action="https://formspree.io/xvowaovj" method="POST">
-													<div className="form-group">
+													<div className="form-group contactInput">
 														Username
 														<Field
 															type="text"
@@ -91,7 +91,7 @@ class Contact extends Component {
 														/>
 														<ErrorMessage name="username" />
 													</div>
-													<div className="form-group">
+													<div className="form-group contactInput">
 														Email Address
 														<Field
 															type="email"
@@ -105,7 +105,7 @@ class Contact extends Component {
 														/>
 														<ErrorMessage name="_replyto" />
 													</div>
-													<div className="form-group">
+													<div className="form-group contactInput">
 														Phone Number
 														<Field
 															type="number"
@@ -119,7 +119,7 @@ class Contact extends Component {
 														/>
 														<ErrorMessage name="phone" />
 													</div>
-													<div className="form-group">
+													<div className="form-group contactInput">
 														Message
 														<Field
 															name="message"

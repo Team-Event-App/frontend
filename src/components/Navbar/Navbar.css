@@ -95,6 +95,10 @@ input.searchNav2{
 @media all and (max-width : 321px) {
   .fixed-top{
     height: 150px !important;
+    display: inline-block !important;
+  }
+  .imageLogo2{
+    margin-left: -18px !important;
   }
 .imageLogo{
   height: 70px !important;
@@ -121,9 +125,7 @@ input.searchNav2{
 .createButton{
   visibility: visible !important;
 }
-.nav-link{
-  margin-right: 500px !important;
-}
+
 input.searchNav2{
   display: none;
   visibility: hidden;
@@ -139,6 +141,8 @@ input.searchNav2{
 .linkSign{
   margin-right: 160px;
   color: gray;
+  visibility: visible;
+  display: block;
 }
 }
 @media only screen and (max-device-width: 480px){
@@ -174,6 +178,34 @@ input.searchNav2{
     display: none;
     visibility: hidden;
   }
+  .fixed-top{
+    height: 110px !important;
+  }
+  .linkCreate2{
+    visibility: visible;
+    display: block;
+  }
+  .linkCreate{
+    visibility: hidden;
+    display: none;
+  }
+  }
+  @media all and (max-width:600px){
+    .navbar-nav{
+      width: 550px;
+    }
+    .createButton{
+      width:120px !important;
+    }
+    button.signInButton{
+      margin-left: 80px;
+    }
+    .showLogin{
+      margin-left: -150px;
+    }
+.navProfile{
+  width: 100px !important;
+}
   }
   @media all and (max-width:768px) {
     .imageLogo{
@@ -215,4 +247,13 @@ input.searchNav2{
       margin-left: 200px;
     }
   } 
+  @media all and (max-width:991px){
+    .navProfile{
+      margin-left: 39%;
+      width: 100px;
+    }
+    .navbar-nav{
+      height: 230px;
+    }
+  }
  
