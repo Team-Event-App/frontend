@@ -94,7 +94,7 @@ const Navbars = (props) => {
       </Link>
       <Form
         inline
-        className="searchNav"
+        className="searchNav mr-5"
         onSubmit={handleSubmit(onSubmit)}
       >
         <FormControl
