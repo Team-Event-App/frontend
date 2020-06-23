@@ -33,19 +33,25 @@ export default class CategoryCarousel extends Component {
 								slidesPerPage={4}
 								autoPlay={2500}
 								breakpoints={{
-									321:{
-										slidesPerPage:1,
-										arrows:false
-									},
 									320: {
 										slidesPerPage: 1,
-										arrows: false
+										arrows: false,
 									},
 									480: {
 										slidesPerPage: 1,
+										arrows: false,
+									},
+									600: {
+										slidesPerPage: 1,
+										arrows: false,
+									},
+									640: {
+										slidesPerPage: 1.4,
+										arrows: false,
 									},
 									769: {
-										slidesPerPage: 1,
+										slidesPerPage: 1.8,
+										arrows: false,
 									},
 									900: {
 										slidesPerPage: 2,
@@ -55,29 +61,45 @@ export default class CategoryCarousel extends Component {
 										slidesPerPage: 2,
 										arrows: false,
 									},
+									1000: {
+										slidesPerPage: 2.2,
+										arrows: true,
+									},
+									1030: {
+										slidesPerPage: 2.2,
+										arrows: true,
+									},
+									1080: {
+										slidesPerPage: 2.2,
+										arrows: true,
+									},
 									1100: {
 										slidesPerPage: 2.5,
-										arrows: false,
+										arrows: true,
 									},
 									1200: {
 										slidesPerPage: 2.5,
-										arrows: false,
+										arrows: true,
 									},
 									1280: {
-										slidesPerPage: 2.5,
-										arrows: false,
+										slidesPerPage: 2.8,
+										arrows: true,
 									},
 									1400: {
 										slidesPerPage: 3,
+										arrows: true,
 									},
 									1500: {
-										slidesPerPage: 3,
+										slidesPerPage: 3.3,
+										arrows: true,
 									},
 									1530: {
 										slidesPerPage: 3.3,
+										arrows: true,
 									},
 									1590: {
 										slidesPerPage: 3.5,
+										arrows: true,
 									},
 									1680: {
 										slidesPerPage: 3.8,
