@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { logoutModal } from '../../actions/modalActions'
 import { connect } from "react-redux";
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
-import "./../Navbar/Navbar.css";
+import "./Navbar2.css";
 import Logo from "./../../image/logo.png";
 
 // const url = `${process.env.REACT_APP_API_URL}`;

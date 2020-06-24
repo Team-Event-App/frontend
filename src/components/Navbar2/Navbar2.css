@@ -1,25 +1,39 @@
-/* .navbar {
+.navbar {
   height: 5rem;
   box-shadow: 2px 2px 20px #c4c4c4;
 }
-
-.imageLogo2 {
-  margin-left: 3rem !important;
-}
-
 .signInButton {
   color: white !important;
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
+  /* margin-left: 350px; */
+}
+.signInButton:hover {
+  background-color: rgba(255, 0, 31, 0.85) !important;
 }
 
+.logout-button {
+  text-decoration: none !important;
+  font-size: 24px;
+  color: black;
+}
+
+.logout-button:hover {
+  text-decoration: none !important;
+  font-size: 24px;
+  color: #ff001f;
+}
 .navbar-nav{
-  background-color: none !important;
+  background-color: white !important;
   border-radius: 0px 0px 10px 10px;
 }
-
 .navDropItem:active {
   background-color: #ff001f !important;
+}
+
+.historyButton {
+  color: black !;
+  text-decoration: none !important;
 }
 
 .profileSetting {
@@ -27,31 +41,34 @@
   text-decoration: none !important;
 }
 
+.profileSetting:hover {
+  color: black !important;
+}
+
 .profileSetting:active{
   color: white !important;
+}
+
+.historyButton:hover {
+  color: black !important;
 }
 
 .i-logout:active {
   color: white !important;
 }
-
 .searchNav{
   margin-left: 220px;
   width: 20px !important;
 }
-
 .searchNav2{
   width: 20rem !important;
   padding: 1.7rem 4rem !important;
   border-radius: 20rem !important;
   margin: -1rem -17rem !important;
 }
-
 input.searchNav2{
   background-color: white !important;
-  margin-left: -10rem !important;
 }
-
 .searchNav2:focus {
   border-color: #ff001f !important;
   box-shadow: #ff001f !important;
@@ -62,84 +79,82 @@ input.searchNav2{
   border-radius: 20rem !important;
   font-size: 1.2rem;
   color: #ff001f !important;
-} */
-
-/*
+}
 @media all and (max-width:321px){
-    #createLink{
-      display: none !important;
-      visibility: hidden !important;
+  #createLink{
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+ @media all and (max-width : 320px) {
+.imageLogo2{
+  margin-top: -10px !important;
+  margin-left: 100px !important;
+}
+
+.navbar-nav{
+  width: 300px;
+}
+.nav-link{
+  margin-right: 500px !important;
+}
+.showLogin{
+  margin-right: -auto !important;
+}
+
+} 
+ @media only screen and (max-width: 480px){
+    .imageLogo{
+    height: 60px;
+    margin-left: -45px !important;
     }
+    .navbar-nav{
+        padding-bottom: 5px;
+    }
+    .signInButton{
+        margin-left: 150px;
+        margin-top: 10px;
   }
-   @media all and (max-width : 320px) {
-  .imageLogo2{
-    margin-top: -10px !important;
-    margin-left: 100px !important;
+    .signButton {
+        margin-right: 170px;
+    }
+    .navProfile{
+        margin-left: 90px !important;
   }
- 
-  .navbar-nav{
-    width: 300px;
+  .brand{
+    margin-top: -10px;
+    margin-left: -50px;
   }
-  .nav-link{
-    margin-right: 500px !important;
   }
-  .showLogin{
-    margin-right: -auto !important;
-  }
-  
+  @media all and (max-width:768px) {
+    .imageLogo{
+      height: 80px;
+      margin-top: -20px;
+    }
+    .navbar-nav{
+      padding-bottom: 5px;
+    }
+    .signInButton{
+      margin-left: 290px;
+      margin-top: 10px;
+    }
+    .navProfile{
+      margin-left: 160px;
+    }
   } 
-   @media only screen and (max-width: 480px){
-      .imageLogo{
-      height: 60px;
-      margin-left: -45px !important;
-      }
-      .navbar-nav{
-          padding-bottom: 5px;
-      }
-      .signInButton{
-          margin-left: 150px;
-          margin-top: 10px;
+   @media all and (max-width: 900px) {
+    .imageLogo{
+      height: 70px;
+      margin-top:-20px
     }
-      .signButton {
-          margin-right: 170px;
-      }
-      .navProfile{
-          margin-left: 90px !important;
+    .navbar-nav{
+      padding-bottom: 5px;
     }
-    .brand{
-      margin-top: -10px;
-      margin-left: -50px;
+    .signInButton{
+      margin-left: 370px;
+      margin-top: 10px;
     }
+    .navProfile{
+      margin-left: 200px;
     }
-    @media all and (max-width:768px) {
-      .imageLogo{
-        height: 80px;
-        margin-top: -20px;
-      }
-      .navbar-nav{
-        padding-bottom: 5px;
-      }
-      .signInButton{
-        margin-left: 290px;
-        margin-top: 10px;
-      }
-      .navProfile{
-        margin-left: 160px;
-      }
-    } 
-     @media all and (max-width: 900px) {
-      .imageLogo{
-        height: 70px;
-        margin-top:-20px
-      }
-      .navbar-nav{
-        padding-bottom: 5px;
-      }
-      .signInButton{
-        margin-left: 370px;
-        margin-top: 10px;
-      }
-      .navProfile{
-        margin-left: 200px;
-      }
-    }  */
+  } 

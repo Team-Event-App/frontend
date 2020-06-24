@@ -30,12 +30,12 @@
   display: inline !important;
 }
 .sidebarPassword {
+  margin-top: 60px;
   background-color: #ff001f !important;
   position: fixed;
   font-size: 30px;
   padding: 10px;
   border-color: #ff001f !important;
-  display: inline !important;
 }
 
 .passwordPrepend {

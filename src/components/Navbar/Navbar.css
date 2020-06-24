@@ -1,25 +1,53 @@
 .navbar {
-  height: 5rem !important;
-  box-shadow: 2px 2px 20px #c4c4c4;
-}
+  height: 5rem;
+  }
 
-.imageLogo2 {
-  margin-left: 3rem !important;
+.imageLogo {
+  margin-left: 3rem;
 }
-
+.linkCreate{
+  visibility: visible;
+}
+.linkCreate2{
+  visibility: hidden;
+  display: none;
+  color: gray;
+}
+.linkSign{
+  display: none;
+  visibility: hidden;
+}
 .signInButton {
   color: white !important;
   background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
   border-color: #ff001f !important;
 }
-
-.navbar-nav{
-  background-color: none !important;
-  border-radius: 0px 0px 10px 10px;
+.signInButton:hover {
+  background-color: rgba(255, 0, 31, 0.85) !important;
 }
 
+.logout-button {
+  text-decoration: none !important;
+  font-size: 24px;
+  color: black;
+}
+
+.logout-button:hover {
+  text-decoration: none !important;
+  font-size: 24px;
+  color: #ff001f;
+}
+.navbar-nav{
+  background-color: white !important;
+  border-radius: 0px 0px 10px 10px;
+}
 .navDropItem:active {
   background-color: #ff001f !important;
+}
+
+.historyButton {
+  color: black !;
+  text-decoration: none !important;
 }
 
 .profileSetting {
@@ -27,31 +55,32 @@
   text-decoration: none !important;
 }
 
+.profileSetting:hover {
+  color: black !important;
+}
+
 .profileSetting:active{
   color: white !important;
+}
+
+.historyButton:hover {
+  color: black !important;
 }
 
 .i-logout:active {
   color: white !important;
 }
 
-.searchNav{
-  margin-left: 220px;
-  width: 20px !important;
-}
-
 .searchNav2{
-  width: 20rem !important;
-  padding: 1.7rem 4rem !important;
   border-radius: 20rem !important;
-  margin: -1rem -17rem !important;
+  border : 1px solid #ff001f !important;
 }
 
 input.searchNav2{
   background-color: white !important;
   margin-left: -10rem !important;
 }
-
+  
 .searchNav2:focus {
   border-color: #ff001f !important;
   box-shadow: #ff001f !important;
@@ -63,60 +92,122 @@ input.searchNav2{
   font-size: 1.2rem;
   color: #ff001f !important;
 }
-
-#createLink, .showLogin{
-  margin-top: 1rem;
-  text-align: center;
-}
-
-/* @media all and (max-width:321px){
-  #createLink{
-    display: none !important;
-    visibility: hidden !important;
+@media all and (max-width : 321px) {
+  .fixed-top{
+    height: 150px !important;
+    display: inline-block !important;
   }
-}
- @media all and (max-width : 320px) {
   .imageLogo2{
-    margin-top: -10px !important;
-    margin-left: 100px !important;
+    margin-left: -18px !important;
   }
+.imageLogo{
+  height: 70px !important;
+  width: 250px;
+  margin-top: 10px !important;
+}
+.showLogin{
+  margin-left: -170px !important;
+}
+.linkCreate2{
+  visibility: visible;
+  display: block;
+}
+.linkCreate{
+  margin-left: 13px;
+  color: gray;
+  display: none;
+  visibility: hidden;
+}
+.navbar-nav{
+  margin-right: 100px;
+  width: 300px !important;
+}
+.createButton{
+  visibility: visible !important;
+}
 
-  .navbar-nav{
-    width: 300px;
-  }
-  .nav-link{
-    margin-right: 500px !important;
-  }
-  .showLogin{
-    margin-right: -auto !important;
-  }
-} 
-
- @media only screen and (max-width: 480px){
-    .imageLogo{
+input.searchNav2{
+  display: none;
+  visibility: hidden;
+}
+.iconSearchNav{
+  display: none;
+  visibility: hidden;
+}
+.buttonSign{
+  visibility: hidden;
+  display: none;
+}
+.linkSign{
+  margin-right: 160px;
+  color: gray;
+  visibility: visible;
+  display: block;
+}
+}
+@media only screen and (max-device-width: 480px){
+	.imageLogo{
     height: 60px;
-    margin-left: -45px !important;
-    }
-    .navbar-nav{
-        padding-bottom: 5px;
-    }
-    .signInButton{
-        margin-left: 150px;
-        margin-top: 10px;
+    margin-left: 0px !important;
   }
-    .signButton {
-        margin-right: 170px;
-    }
-    .navProfile{
-        margin-left: 90px !important;
+  .navLogo{
+    margin-left: 110px;
+  }
+	.navbar-nav{
+		padding-bottom: 5px;
+	}
+	.signInButton{
+		margin-left: 150px;
+		margin-top: 10px;
+  }
+	.signButton {
+		margin-right: 170px;
+	}
+	.navProfile{
+		margin-left: 90px !important;
   }
   .brand{
     margin-top: -10px;
     margin-left: -50px;
   }
+  input.searchNav2{
+    display: none;
+    visibility: hidden;
+  }
+  .iconSearchNav{
+    display: none;
+    visibility: hidden;
+  }
+  .fixed-top{
+    height: 110px !important;
+  }
+  .linkCreate2{
+    visibility: visible;
+    display: block;
+  }
+  .linkCreate{
+    visibility: hidden;
+    display: none;
+  }
+  }
+  @media all and (max-width:600px){
+    .navbar-nav{
+      width: 550px;
+    }
+    .createButton{
+      width:120px !important;
+    }
+    button.signInButton{
+      margin-left: 80px;
+    }
+    .showLogin{
+      margin-left: -150px;
+    }
+.navProfile{
+  width: 100px !important;
 }
-
-@media all and (max-width:768px) {
+  }
+  @media all and (max-width:768px) {
     .imageLogo{
       height: 80px;
       margin-top: -20px;
@@ -131,9 +222,16 @@ input.searchNav2{
     .navProfile{
       margin-left: 160px;
     }
-}
-
-@media all and (max-width: 900px) {
+    input.searchNav2{
+      display: none;
+      visibility: hidden;
+    }
+    .iconSearchNav{
+      display: none;
+      visibility: hidden;
+    }
+  }
+   @media all and (max-width: 900px) {
     .imageLogo{
       height: 70px;
       margin-top:-20px
@@ -148,6 +246,14 @@ input.searchNav2{
     .navProfile{
       margin-left: 200px;
     }
-}  */
-
-
+  } 
+  @media all and (max-width:991px){
+    .navProfile{
+      margin-left: 39%;
+      width: 100px;
+    }
+    .navbar-nav{
+      height: 230px;
+    }
+  }
+ 
