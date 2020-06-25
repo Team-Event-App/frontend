@@ -68,7 +68,7 @@ const Main = (props) => {
           </Row>
           <Row>
             <Col className="text-center">
-          
+
             </Col>
           </Row>
         </Container>
@@ -78,7 +78,7 @@ const Main = (props) => {
 
       <Container className="browseContainer mt-5 pt-5">
         <Row>
-          <h3 className=" ml-5 browseEve">BROWSE EVENTS</h3>
+          <h3 className=" ml-5 browseEve textTitle">BROWSE EVENTS</h3>
         </Row>
 
         <Row>
