@@ -24,7 +24,7 @@ export default class CategoryCarousel extends Component {
 				<Jumbotron className="containerCarousel mb-5 bg-white">
 					<Row>
 						<Col>
-							<h3 className="text-center">CATEGORY</h3>
+							<h3 className="text-center textTitle">CATEGORY</h3>
 							<div className="underlineCarousel mb-5 mx-auto"></div>
 							<Carousel
 								centered
@@ -47,6 +47,10 @@ export default class CategoryCarousel extends Component {
 									},
 									640: {
 										slidesPerPage: 1.4,
+										arrows: false,
+									},
+									680: {
+										slidesPerPage: 1.6,
 										arrows: false,
 									},
 									769: {

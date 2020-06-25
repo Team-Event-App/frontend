@@ -10,7 +10,7 @@ const card = (props) => {
 
 	return (
 		<CardDeck>
-			<Card border="secondary" className=" main-card mr-5">
+			<Card border="secondary" className="main-card mr-5">
 				<Card.Img
 					variant="top"
 					src={`${URL}${item.imageEvent}`}

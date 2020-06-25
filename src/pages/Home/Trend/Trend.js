@@ -58,7 +58,7 @@ const Trend = () => {
 
       <Container className="mb-5">
         <Row>
-          <h3 className="mb-2 mt-5 ml-5">TOP TRENDINGS EVENTS</h3>
+          <h3 className="mb-2 mt-5 ml-3 textTitle">TOP TRENDINGS EVENTS</h3>
         </Row>
         <Row>
           <div className="underlineTrend mb-2 ml-5"></div>

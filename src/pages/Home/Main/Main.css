@@ -89,6 +89,7 @@ input.mainInput {
   margin-left: -100px !important;
   margin-right: -100px !important;
   padding-left: 15px;
+  padding-right: 15px;
 }
 
 .card-deck img {
@@ -122,54 +123,7 @@ input.mainInput {
   padding: 0.7rem !important;
 }
 
-@media (min-width: 1200px) and (max-width: 1500) {
-	.container {
-		max-width: 1300px !important;
-	}
-}
-
-@media (min-width: 1000px) and (max-width: 1199px) {
-	.container {
-		max-width: 1200px !important;
-	}
-}
-/* @media all and (max-width : 320px){
-	#mainCard{
-		width: 300px !important;
-  }
-  .quotesLanding{
-    font-size: 5px !important;
-  }
-}
-@media all and (max-width: 480px){
-	#mainCard{
-		width: 400px !important;
-	}
-	.quotesLanding{
-		font-size: 30px;
-	}
-	.mainInput{
-		width: 300px !important;
-	}
-}
-@media all and (max-width: 900px) {
-	.rowEvent {
-		margin-right: -40px !important;
-	}
-}
-@media all and (max-width: 1600px){ 
-  .main-card{
-    width: 1000px !important;
-    padding: 0.5rem !important;
-  }
-} */
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .main-card {
-		width: 300px !important;
-		background-color: black !important;
-		margin-left: 100px !important;
-	}
+@media (min-width: 768px) and (max-width: 991.98px) {
   .main-background {
     background: url(./../../../image/backgroundhome.jpg) no-repeat;
     position: relative;
@@ -190,19 +144,57 @@ input.mainInput {
     font-size: 1.4rem !important;
     font-weight: 400 !important;
   }
+  .card-deck img{
+    width: 100%;
+    height: 200px;
+  }
+  .buttonMore {
+    color: white !important;
+    background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+    border-color: #ff001f !important;
+    padding: 0.3rem !important;
+  } 
+}
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main-background {
+    background: url(./../../../image/backgroundhome.jpg) no-repeat;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 28rem;
+  }
+  .contQuotes h3.quotes1 {
+    padding-top: 0.8rem !important;
+    color: white !important;
+    font-size: 1.8rem !important;
+    font-weight: 500 !important;
+  }
+  .contQuotes h3.quotes2 {  
+    color: white !important;
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+  }
+  .card-deck {
+    width: 75%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 15px !important;
+    margin-left: 85px !important;
+  }
+  img.card-img-top{
+    width: 100%;
+    height: 250px;
+  }
   .buttonMore {
     color: white !important;
     background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
     border-color: #ff001f !important;
     padding: 0.3rem !important;
   }
-  
-  
 }
 
-
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width : 481px) and (max-width : 575.98px){
   .main-background {
     background: url(./../../../image/backgroundhome.jpg) no-repeat;
     position: relative;
@@ -212,28 +204,37 @@ input.mainInput {
   }
 
   .contQuotes h3.quotes1 {
-    padding-top: 0.8rem !important;
+    padding-top: 2rem !important;
     color: white !important;
-    font-size: 1.8rem !important;
+    font-size: 1.5rem !important;
     font-weight: 500 !important;
   }
   
   .contQuotes h3.quotes2 {
     color: white !important;
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
     font-weight: 400 !important;
   }
-
+  .card-deck {
+    width: 75%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 15px !important;
+    margin-left: 85px !important;
+  }
+  img.card-img-top{
+    width: 100%;
+    height: 250px;
+  }
   .buttonMore {
     color: white !important;
     background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
     border-color: #ff001f !important;
-    padding: 0.3rem !important;
+    padding: 0.2rem !important;
   }
 }
 
-
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 430px) and (max-width: 480px) {
   .main-background {
     background: url(./../../../image/backgroundhome.jpg) no-repeat;
     position: relative;
@@ -255,6 +256,117 @@ input.mainInput {
     font-weight: 400 !important;
   }
 
+  .card-deck {
+    width: 75%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 15px !important;
+    margin-left: 79px !important;
+  }
+  img.card-img-top{
+    width: 100%;
+    height: 250px;
+  }
+
+  .buttonMore {
+    color: white !important;
+    background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+    border-color: #ff001f !important;
+    padding: 0.2rem !important;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 429px) {
+  .main-background {
+    background: url(./../../../image/backgroundhome.jpg) no-repeat;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 28rem;
+  }
+
+  .contQuotes h3.quotes1 {
+    padding-top: 2rem !important;
+    color: white !important;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+  }
+  
+  .contQuotes h3.quotes2 {
+    color: white !important;
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+  }
+  .card-deck {
+    width: 80%;
+    height: 560px !important;
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 15px !important;
+    margin-left: 60px !important;
+  }
+  img.card-img-top{
+    width: 100%;
+    height: 250px;
+  }
+  .buttonMore {
+    color: white !important;
+    background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
+    border-color: #ff001f !important;
+    padding: 0.2rem !important;
+  }
+}
+
+@media (min-width: 319px) and (max-width: 359px) {
+  .main-background {
+    background: url(./../../../image/backgroundhome.jpg) no-repeat;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 28rem;
+  }
+
+  .contQuotes h3.quotes1 {
+    padding-top: 2rem !important;
+    color: white !important;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+  }
+  
+  .contQuotes h3.quotes2 {
+    color: white !important;
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+  }
+  .textTitle{
+    font-size: 22px;
+    text-align: center;
+  }
+  .underlineMain{
+    width: 65%;
+  }
+  .underlineCarousel{
+    width: 50%;
+  }
+  .underlineTrend{
+    width: 60%;
+    text-align: center;
+  }
+  .trend-background h2 {
+    font-size: 1.7rem !important;
+    margin-top: 2em;
+    margin-left: -7rem !important;
+  }
+  .buttonCreate {
+    margin-left: -8rem;
+    padding: 0.3rem !important;
+  }
+  .card-deck{
+    margin-left: 20px;
+  }
+  .main-card{
+    margin-left: 30px;
+  }
   .buttonMore {
     color: white !important;
     background: linear-gradient(90deg, #ff001f 50%, rgba(255, 0, 31, 0.85) 120%);
