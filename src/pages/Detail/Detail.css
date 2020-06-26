@@ -23,39 +23,58 @@ input.phone[type=number] {
   -moz-appearance: textfield;
 }
 
-@media all and (min-width: 769px) {
-    .detailCardImage{
-        width: 560px !important;
-        
-    }
+@media (min-width : 1200px){
     .cardDetail{
-        width: 600px !important;
-    }
-    .containerCard{
-        margin-left: 70px !important;
-    }
-    .rowShare{
-        display: flex !important;
-        
-        padding-left: 170px;
+        width: 70rem !important;
     }
 }
-@media all and (min-width:320px){
-    .rowShare{
-        display: flexbox !important;
-        width: 250px !important;
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .detailCardImage{
+        width: 40rem !important;
     }
-    .classShare{
-        width: 200px !important;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .detailCardImage{
+        width: 30rem !important;
+        height: 280px !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .detailCardImage{
+        width: 29rem !important;
+        height: 300px !important;
+    }
+}
+
+@media (min-width : 430px) and (max-width: 575.98px) {
+    .cardDetail{
+        width: 25rem !important;
     }
     .detailCardImage{
-        width: 250px !important;
-        height: 250px !important;
+        width: 22.5rem !important;
+        height: 300px !important;
     }
+}
+
+@media (min-width : 350px) and (max-width: 429.98px) {
     .cardDetail{
-        width: 290px !important;
+        width: 20rem !important;
     }
-    .containerCard{
-        margin-left: 0px !important;
+    .detailCardImage{
+        width: 17.5rem !important;
+        height: 300px !important;
+    }
+}
+
+@media (min-width : 319px) and (max-width: 349.98px) {
+    .cardDetail{
+        width: 17rem !important;
+    }
+    .detailCardImage{
+        width: 14.5rem !important;
+        height: 300px !important;
     }
 }
