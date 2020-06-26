@@ -181,7 +181,6 @@ const Detail = (props) => {
 				border="primary"
 				key={index}
 				className="mx-auto mt-4 cardDetail"
-				style={{ width: "70rem" }}
 			>
 				<Card.Header>
 					<Row className="rowCard">
