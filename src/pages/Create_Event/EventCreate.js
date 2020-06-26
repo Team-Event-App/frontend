@@ -52,7 +52,7 @@ class EventCreate extends Component {
         this.props.showSuccess("Succesfully add Event")
       })
       .catch((err) => {
-        window.alert(err)
+        window.alert(err.response.data.message)
       });
   };
 
