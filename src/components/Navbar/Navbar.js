@@ -45,18 +45,18 @@ const Navbars = (props) => {
                 </span>
               }
             >
-              <NavDropdown.Item className="navDropItem">
+              <NavDropdown.Item className="navDropItem text-center">
                 <Link to="/profile" className="profileSetting">
                   <i className="fas fa-envelope fa-fw"></i> User Profile
                 </Link>
               </NavDropdown.Item>
 
-              <NavDropdown.Item className="navDropItem">
+              <NavDropdown.Item className="navDropItem text-center">
                 <Link to="/history" className="profileSetting">
                   <i className="far fa-clock mr-2"></i>History
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item className="navDropItem" onClick={props.logoutModal}>
+              <NavDropdown.Item className="navDropItem text-center" onClick={props.logoutModal}>
                 <Link
                   to="#"
                   className="fas fa-sign-out-alt i-logout mr-2"
@@ -69,12 +69,12 @@ const Navbars = (props) => {
       } else {
         setViewLogin(
           <Nav>
-            <Link to="/login" className="linkSign">
+            <Link to="/login" className="linkSign text-center">
               <i className="fas fa-sign-in-alt mr-2"></i>
                 Sign In
             </Link>
-            <Link to="/login" className="buttonSign ">
-              <Button className="signInButton signButton">
+            <Link to="/login" className="buttonSign mx-auto">
+              <Button className="signButton">
                 Sign In
                 <i className="fas fa-sign-in-alt ml-2"></i>
               </Button>
@@ -117,7 +117,7 @@ const Navbars = (props) => {
           </Link>
             <Link to="/event/create" className="linkCreate text-center">
               <Button
-                className="signInButton mr-3 createButton"
+                className="signInButton createButton"
                 onClick={pushKlik}
               >
                 <i className="fas fa-plus mr-2 "></i>
