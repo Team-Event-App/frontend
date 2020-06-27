@@ -256,9 +256,7 @@ p.about-text {
 		margin-left: -20px;	
 	}
 	img.calender-img{
-		width: 24rem;
-		margin-top: 9rem;
-		margin-left: 0;
+		display: none;
 	}
 	.photo-grid .grid-item{
 		margin: 0em -10em;
@@ -297,11 +295,5 @@ p.about-text {
 	.photo-grid{
 		margin-left: 0rem !important;
 		background-color: transparent;
-	}
-}
-
-@media all and (max-width : 766px) {
-	.calender-img {
-		display: none;
 	}
 }

@@ -33,6 +33,13 @@
 	box-shadow: 2px 2px 20px black;
 }
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.about-card{
+		width: 25rem !important;
+		text-align: center;
+	}
+}
+
 @media all and (max-width : 575px) {
 	.about-card{
 		width: 28rem !important;	

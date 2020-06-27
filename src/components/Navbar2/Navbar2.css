@@ -80,6 +80,7 @@ input.searchNav2{
   font-size: 1.2rem;
   color: #ff001f !important;
 }
+
 @media all and (max-width:321px){
   #createLink{
     display: none !important;
@@ -103,58 +104,5 @@ input.searchNav2{
 }
 
 } 
- @media only screen and (max-width: 480px){
-    .imageLogo{
-    height: 60px;
-    margin-left: -45px !important;
-    }
-    .navbar-nav{
-        padding-bottom: 5px;
-    }
-    .signInButton{
-        margin-left: 150px;
-        margin-top: 10px;
-  }
-    .signButton {
-        margin-right: 170px;
-    }
-    .navProfile{
-        margin-left: 90px !important;
-  }
-  .brand{
-    margin-top: -10px;
-    margin-left: -50px;
-  }
-  }
-  @media all and (max-width:768px) {
-    .imageLogo{
-      height: 80px;
-      margin-top: -20px;
-    }
-    .navbar-nav{
-      padding-bottom: 5px;
-    }
-    .signInButton{
-      margin-left: 290px;
-      margin-top: 10px;
-    }
-    .navProfile{
-      margin-left: 160px;
-    }
-  } 
-   @media all and (max-width: 900px) {
-    .imageLogo{
-      height: 70px;
-      margin-top:-20px
-    }
-    .navbar-nav{
-      padding-bottom: 5px;
-    }
-    .signInButton{
-      margin-left: 370px;
-      margin-top: 10px;
-    }
-    .navProfile{
-      margin-left: 200px;
-    }
-  } 
+
+/* Media Query at Navbar.css */
