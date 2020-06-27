@@ -42,6 +42,9 @@ const App = (props) => {
           <Route path="/profile" component={Profile} />
           <Route path="/history" component={History} />
           <Route exact path="/" component={Main} />
+
+          {/* Admin Page */}
+
         </Switch>
       </Router>
       <Modals />
