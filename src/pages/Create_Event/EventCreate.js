@@ -187,7 +187,7 @@ class EventCreate extends Component {
                               as="textarea"
                               rows="3"
                               name="description"
-                              className="form-control inputText descText"
+                              className="form-control inputText descText formLength"
                               style={{ width: "35rem" }}
                               placeholder="Description"
                               required
@@ -199,7 +199,7 @@ class EventCreate extends Component {
                         </Row>
 
                         <Row className="pl-3 pt-3">
-                          <Col xs={5}>
+                          <Col xs={8}>
                             <Field
                               type="text"
                               className="form-control inputText"
@@ -251,11 +251,10 @@ class EventCreate extends Component {
                               minDate={new Date()}
                               placeholderText="Select a day"
                               name="date"
-                              className="form-control inputText"
+                              className="form-control inputText ml-3 mt-3"
                               required
                             />
-
-                            <p className="smallCreate1">
+                            <p className="smallCreate1 ml-3">
                               When is your event held?
                             </p>
                           </Col>
@@ -265,7 +264,7 @@ class EventCreate extends Component {
                           <Col md={8}>
                             <input
                               type="file"
-                              className="form-control inputText descText"
+                              className="form-control inputText descText formLength"
                               name="imageEvent"
                               style={{ width: "35rem" }}
                               ref={this.imageRef}
@@ -286,12 +285,12 @@ class EventCreate extends Component {
                         </Row>
 
                         <Row className="pl-3 mb-4">
-                          <Col as={Col} md={6}>
+                          <Col as={Col} md={12}>
                             <Field
                               name="detail"
                               as="textarea"
                               rows="4"
-                              className="form-control inputText descText"
+                              className="form-control inputText descText formLength"
                               style={{ width: "35rem" }}
                               placeholder="Detail"
                               required
