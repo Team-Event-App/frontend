@@ -102,13 +102,13 @@ const Login = (props) => {
                         </InputGroup.Append>
                       </InputGroup>
 
-                      <NavLink to="/register">Forgot your password?</NavLink>
+                      <NavLink to="/register">Don't have an account yet ? Make one here</NavLink>
                       <button>Sign In</button>
                     </Form>
                   )}
                 </Formik>
               </div>
-              <div className="overlay-container">
+              <div className="overlay-container overlay-container-login">
                 <div className="overlay">
                   <div className="overlay-panel overlay-left">
                     <button className="ghost" id="signIn">

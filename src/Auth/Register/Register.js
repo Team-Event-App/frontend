@@ -10,7 +10,10 @@ import {
   FormControl,
 } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
-
+import {
+  BrowserView,
+  MobileView,
+} from "react-device-detect";
 import * as Yup from "yup";
 import { connect } from 'react-redux'
 import { showSuccess, showError } from '../../actions/modalActions'
@@ -26,7 +29,8 @@ const Register = (props) => {
     setPasswordShown(passwordShown ? false : true);
   };
   return (
-    <Container>
+    <div>
+    <Container className="containerRegister">
       <div className="sidebar">
         <Link to="/">
           <i className="fa fa-fw fa-home"></i>
@@ -174,7 +178,11 @@ const Register = (props) => {
                       <p className="validateString">
                         <ErrorMessage name="password" />
                       </p>
-                      <Button variant="danger" type="submit" className="mt-3">
+                      <p></p>
+                    <Link to="/login">
+                    Have an account? Login Here
+                    </Link>
+                      <Button variant="danger" type="submit">
                         Sign Up
                         </Button>
                     </Form>
@@ -200,6 +208,7 @@ const Register = (props) => {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 

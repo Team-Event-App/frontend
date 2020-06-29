@@ -4,6 +4,17 @@
   box-sizing: border-box;
   overflow-y: hidden;
   margin: 10rem 0 !important;
+  z-index: 0;
+}
+.sidebar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: #f94c66;
+  overflow-x: hidden;
+  margin-top: 10%;
+  padding: 10px 10px 10px 10px;
 }
 .container-register {
   background: #f6f5f7;
@@ -223,16 +234,7 @@
   height: 40px;
   width: 40px;
 }
-.sidebar {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #f94c66;
-  overflow-x: hidden;
-  margin-top: 10%;
-  padding: 10px 10px 10px 10px;
-}
+
 .sidebar a {
   border: 1px solid white;
   border-radius: 50%;
@@ -291,4 +293,26 @@ input.phone::-webkit-inner-spin-button {
 /* Firefox */
 input.phone[type=number] {
   -moz-appearance: textfield;
+}
+@media all and (max-width : 400px){
+.overlay-container-regis{
+  visibility: hidden;
+}
+.container-register{
+  height: 650px ;
+}
+.register-form{
+  width: 380px;
+  height: 600px;
+}
+}
+@media all and (max-width:360px){
+  .register-form{
+    width: 350px;
+  }
+}
+@media all and (max-width:320px){
+  .register-form{
+    width: 310px;
+  }
 }
