@@ -65,8 +65,10 @@ const Login = (props) => {
                       className="login-form"
                       autoComplete="off"
                     >
-                      <h1 className="mb-4">Sign in</h1>
-
+                      <div className="divSignText">
+                      <h1 className="mb-4 signText">Sign in</h1>
+                      </div>
+                      <Row className="rowEmail">
                       <InputGroup>
                         <FormControl
                           type="email"
@@ -79,7 +81,8 @@ const Login = (props) => {
                           required
                         ></FormControl>
                       </InputGroup>
-
+                      </Row>
+                      <Row className="rowPassword">
                       <InputGroup>
                         <FormControl
                           type={passwordShown ? "text" : "password"}
@@ -101,7 +104,7 @@ const Login = (props) => {
                           </div>
                         </InputGroup.Append>
                       </InputGroup>
-
+                      </Row>
                       <NavLink to="/register">Don't have an account yet ? Make one here</NavLink>
                       <button>Sign In</button>
                     </Form>

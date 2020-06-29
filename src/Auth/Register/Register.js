@@ -89,7 +89,7 @@ const Register = (props) => {
                       onSubmit={props.handleSubmit}
                     >
                       <h1 className="mb-4 mt-5">Register</h1>
-
+                      <Row className="rowOtherInput">
                       <InputGroup>
                         <FormControl
                           type="text"
@@ -153,7 +153,8 @@ const Register = (props) => {
                       <p className="validateString">
                         <ErrorMessage name="phone" />
                       </p>
-
+                      </Row>
+                      <Row className="rowPasswordRegister">
                       <InputGroup>
                         <FormControl
                           type={passwordShown ? "text" : "password"}
@@ -174,7 +175,7 @@ const Register = (props) => {
                           </div>
                         </InputGroup.Append>
                       </InputGroup>
-
+                      </Row>
                       <p className="validateString">
                         <ErrorMessage name="password" />
                       </p>

@@ -294,6 +294,20 @@ input.phone::-webkit-inner-spin-button {
 input.phone[type=number] {
   -moz-appearance: textfield;
 }
+.rowPasswordRegister{
+  width: 100% ;
+}
+.rowOtherInput{
+  width: 100%;
+}
+@media all and (max-width:460px){
+  .overlay-container-regis{
+    visibility: hidden;
+  }
+  .register-form{
+    width: 430px;
+  }
+}
 @media all and (max-width : 400px){
 .overlay-container-regis{
   visibility: hidden;

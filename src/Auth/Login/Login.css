@@ -4,7 +4,12 @@
   box-sizing: border-box;
   overflow-y: hidden;
 }
-
+.rowPassword{
+  width: 100% !important;
+}
+.rowEmail{
+  width: 100% !important;
+}
 .container-login {
   background: #f6f5f7;
   display: flex;
@@ -200,21 +205,29 @@
   height: 40px;
   width: 40px;
 }
+@media all and (max-width:460px){
+  .login-form{
+    width: 230px !important;
+  }
+  .divSignText{
+    width: 200px;
+  }
+}
 @media all and (max-width:400px){
   .overlay-container-login{
     visibility: hidden;
   }
   .login-form{
-    width: 380px;
+    width: 380px !important;
   }
 }
 @media all and (max-width:360px){
   .login-form{
-    width: 350px;
+    width: 350px !important;
   }
 }
 @media all and (max-width:320px){
   .login-form{
-    width: 310px;
+    width: 310px !important;
   }
 }
