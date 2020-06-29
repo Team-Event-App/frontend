@@ -10,10 +10,6 @@ import {
   FormControl,
 } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
-import {
-  BrowserView,
-  MobileView,
-} from "react-device-detect";
 import * as Yup from "yup";
 import { connect } from 'react-redux'
 import { showSuccess, showError } from '../../actions/modalActions'
