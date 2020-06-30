@@ -176,7 +176,7 @@ const Register = (props) => {
                         <ErrorMessage name="password" />
                       </p>
                       <p></p>
-                    <Link to="/login">
+                    <Link to="/login" className="haveText2">
                     Have an account? Login Here
                     </Link>
                       <Button variant="danger" type="submit">

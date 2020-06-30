@@ -105,7 +105,7 @@ const Login = (props) => {
                         </InputGroup.Append>
                       </InputGroup>
                       </Row>
-                      <NavLink to="/register">Don't have an account yet ? Make one here</NavLink>
+                      <NavLink to="/register" className="haveText2">Don't have an account yet ? Make one here</NavLink>
                       <button>Sign In</button>
                     </Form>
                   )}
