@@ -300,12 +300,18 @@ input.phone[type=number] {
 .rowOtherInput{
   width: 100%;
 }
+.haveText2{
+  visibility: hidden;
+}
 @media all and (max-width:460px){
   .overlay-container-regis{
     visibility: hidden;
   }
   .register-form{
     width: 430px;
+  }
+  .haveText2{
+    visibility: visible;
   }
 }
 @media all and (max-width : 400px){
