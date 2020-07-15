@@ -181,7 +181,9 @@
 /* .container-login.right-panel-active .overlay-left {
   transform: translateX(0);
 } */
-
+.googleButton span{
+  color:black !important;
+}
 .overlay-right {
   right: 0;
   transform: translateX(0);

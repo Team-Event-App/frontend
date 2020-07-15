@@ -5,7 +5,7 @@ import axios from "axios";
 import jwt from "jwt-decode";
 
 import { connect } from "react-redux";
-import { showSuccess } from "./../../actions/modalActions";
+import { showSuccess ,showError} from "./../../actions/modalActions";
 
 import "./Profile.css";
 
@@ -64,7 +64,7 @@ const EditProfile = (props) => {
         props.showSuccess("Your profile already changed");
       })
       .catch((err) => {
-        console.log(err);
+        props.showError(err.response.data.message);
       });
   };
 
@@ -149,6 +149,6 @@ const EditProfile = (props) => {
   );
 };
 
-const mapDispatchToProps = { showSuccess };
+const mapDispatchToProps = { showSuccess ,showError};
 
 export default connect(null, mapDispatchToProps)(EditProfile);

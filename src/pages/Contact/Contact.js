@@ -65,7 +65,7 @@ class Contact extends Component {
 									actions.resetForm(true);
 								})
 								.catch((err) => {
-									this.props.showError("Server Error , try again later.");
+									this.props.showError(err.response.data.message);
 								});
 						}}
 						render={(props) => {
