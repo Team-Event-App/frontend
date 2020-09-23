@@ -5,7 +5,7 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
-import { showSuccess } from "./../../actions/modalActions";
+import { showSuccess ,showError} from "./../../actions/modalActions";
 
 import "./EventCreate.css";
 import Navbars from "../../components/Navbar/Navbar";
@@ -52,7 +52,7 @@ class EventCreate extends Component {
         this.props.showSuccess("Succesfully add Event")
       })
       .catch((err) => {
-        window.alert(err.response.data.message)
+        this.props.showError(err.response.data.message);
       });
   };
 
@@ -322,6 +322,6 @@ class EventCreate extends Component {
     );
   }
 }
-const mapDispatchToProps = { showSuccess };
+const mapDispatchToProps = { showSuccess,showError };
 
 export default connect(null, mapDispatchToProps)(EventCreate);

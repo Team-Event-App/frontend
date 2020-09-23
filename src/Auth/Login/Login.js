@@ -9,7 +9,8 @@ import {
   FormControl,
 } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
-
+import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
 import { connect } from "react-redux";
 import { login } from "../../actions/loginActions";
 import "./Login.css";
@@ -21,7 +22,12 @@ const Login = (props) => {
     email: "",
     password: "",
   });
-
+  const responseFacebook = (response) => {
+    console.log(response);
+  }
+  const responseGoogle = (response) => {
+    console.log(response);
+  }
   const handleChange = (event) => {
     const { name, value } = event.currentTarget;
     setData({
@@ -104,6 +110,24 @@ const Login = (props) => {
                           </div>
                         </InputGroup.Append>
                       </InputGroup>
+                        <div>
+                          <FacebookLogin
+                          appId='288165879086784'
+                          autoLoad={false}
+                          fields="name,email,picture"
+                          callback={responseFacebook}
+                          />
+                            Login with Facebook
+                        </div>
+                        <div>
+                          <GoogleLogin
+                          clientId='364245340189-hb6cniils09bc2oi73akr60knd49ht87.apps.googleusercontent.com'
+                          onSuccess={responseGoogle}
+                          onFailure={responseGoogle}
+                          buttonText="Login with Google"
+                          className="googleButton"
+                          />
+                        </div>
                       </Row>
                       <NavLink to="/register" className="haveText2">Don't have an account yet ? Make one here</NavLink>
                       <button>Sign In</button>
