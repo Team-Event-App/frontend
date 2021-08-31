@@ -44,7 +44,7 @@ function MyVerticallyCenteredModal(props) {
 
 
 		axios
-			.post(`https://api.indrakawasan.com/booking/create/`, value, {
+			.post(`http://api.mentorinaja.com:8000/booking/create/`, value, {
 				headers: {
 					"access-token": localStorage.getItem("access-token"),
 				},
@@ -151,7 +151,7 @@ const Detail = (props) => {
 
 
 	useEffect(() => {
-		const URL = `https://api.indrakawasan.com/event/show/${id}`;
+		const URL = `http://api.mentorinaja.com:8000/event/show/${id}`;
 
 		axios
 			.get(URL)
@@ -174,7 +174,7 @@ const Detail = (props) => {
 	};
 
 	const showDetail = data.map((item, index) => {
-		const URL = `https://api.indrakawasan.com/`;
+		const URL = `http://api.mentorinaja.com:8000/`;
 
 		return (
 			<Card

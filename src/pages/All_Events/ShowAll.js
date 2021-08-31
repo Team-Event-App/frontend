@@ -50,7 +50,7 @@ const ShowAll = () => {
 	useEffect(() => {
 		const fetchPosts = async () => {
 			setLoading(true);
-			const res = await axios.get(`https://api.indrakawasan.com/event/show`);
+			const res = await axios.get(`http://api.mentorinaja.com:8000/event/show`);
 			setPosts(res.data);
 			setLoading(false);
 		}

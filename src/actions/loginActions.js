@@ -9,7 +9,7 @@ export const login = (data) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(
-        `https://api.indrakawasan.com/user/login`,
+        `http://api.mentorinaja.com:8000/user/login`,
         data
       );
 

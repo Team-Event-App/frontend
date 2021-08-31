@@ -19,7 +19,7 @@ const Trend = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const URL = `https://api.indrakawasan.com/event/show`;
+    const URL = `http://api.mentorinaja.com:8000/event/show`;
 
     setLoading(true);
     axios

@@ -44,7 +44,7 @@ const ShowAll = (props) => {
 
 	// show data when user go to page
 	useEffect(() => {
-		const URL = `https://api.indrakawasan.com/event/show`;
+		const URL = `http://api.mentorinaja.com:8000/event/show`;
 		axios
 			.get(URL)
 			.then((res) => {
@@ -64,7 +64,7 @@ const ShowAll = (props) => {
 			});
 	}, []);
 	useEffect(() => {
-		const URL2 = `https://api.indrakawasan.com/event/getCategory?search=${searchQuery}`;
+		const URL2 = `http://api.mentorinaja.com:8000/event/getCategory?search=${searchQuery}`;
 
 		axios
 			.get(URL2)

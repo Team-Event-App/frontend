@@ -12,7 +12,7 @@ import "./Profile.css";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const EditProfile = (props) => {
-  const URL = `https://api.indrakawasan.com/`;
+  const URL = `http://api.mentorinaja.com:8000/`;
   const defaultValue = `${URL}public/images/2020-05-23T11:48:46.274Zicon.png`;
   const token = localStorage.getItem("access-token");
   const jwtdecode = jwt(token);
@@ -20,7 +20,7 @@ const EditProfile = (props) => {
   const [data, setData] = useState({});
   let imageRef = useRef();
   useEffect(() => {
-    const URL = `https://api.indrakawasan.com/user/show/${userProfile}`;
+    const URL = `http://api.mentorinaja.com:8000/user/show/${userProfile}`;
     axios
       .get(URL)
       .then((res) => {
@@ -54,7 +54,7 @@ const EditProfile = (props) => {
     if (image && image[0]) formData.append("imageUrl", image[0], image[0].name);
 
     axios
-      .put(`https://api.indrakawasan.com/user/edit/${userProfile}`, formData, {
+      .put(`http://api.mentorinaja.com:8000/user/edit/${userProfile}`, formData, {
         headers: {
           "access-token": localStorage.getItem("access-token"),
           "Content-Type": "multipart/form-data",

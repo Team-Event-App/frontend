@@ -63,7 +63,7 @@ const Register = (props) => {
                   onSubmit={(values, actions) => {
                     values.phone = values.phone.toString();
 
-                    axios(`https://api.indrakawasan.com/user/register`, {
+                    axios(`http://api.mentorinaja.com:8000/user/register`, {
                       method: "POST",
                       data: values,
                     })

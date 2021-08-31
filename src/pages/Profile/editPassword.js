@@ -11,7 +11,7 @@ import "./Profile.css";
 // const url = `${process.env.REACT_APP_API_URL}`;
 
 const EditPassword = (props) => {
-  const URL = `https://api.indrakawasan.com/`;
+  const URL = `http://api.mentorinaja.com:8000/`;
   const defaultValue = `${URL}public/images/2020-05-23T11:48:46.274Zicon.png`;
   const token = localStorage.getItem("access-token");
   const jwtdecode = jwt(token);
@@ -21,7 +21,7 @@ const EditPassword = (props) => {
     password: "",
   });
   useEffect(() => {
-    const URL = `https://api.indrakawasan.com/user/show/${userProfile}`;
+    const URL = `http://api.mentorinaja.com:8000/user/show/${userProfile}`;
     axios
       .get(URL)
       .then((res) => {
@@ -34,7 +34,7 @@ const EditPassword = (props) => {
   /* errors */
   const { register, handleSubmit /* errors */ } = useForm();
   const onSubmit = (data) => {
-    axios(`https://api.indrakawasan.com/user/editPassword`, {
+    axios(`http://api.mentorinaja.com:8000/user/editPassword`, {
       method: "PUT",
       data: data,
       headers: {

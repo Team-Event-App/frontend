@@ -6,7 +6,7 @@ import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
 
 const card = (props) => {
 	const { item } = props;
-	const URL = `https://api.indrakawasan.com/`;
+	const URL = `http://api.mentorinaja.com:8000/`;
 
 	return (
 		<CardDeck>

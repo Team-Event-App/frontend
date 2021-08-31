@@ -52,7 +52,7 @@ const HistoryBooking = (props) => {
 							formData.append("imageProof", values.imageProof);
 
 							await axios(
-								`https://api.indrakawasan.com/payment/create`,
+								`http://api.mentorinaja.com:8000/payment/create`,
 								{
 									method: "POST",
 									data: formData,
@@ -148,7 +148,7 @@ const HistoryBooking = (props) => {
 	const userName = jwtdecode.fullname;
 
 	useEffect(() => {
-		const URL = `https://api.indrakawasan.com/booking/getName/${userName}`;
+		const URL = `http://api.mentorinaja.com:8000/booking/getName/${userName}`;
 
 		axios
 			.get(URL, {

@@ -53,7 +53,7 @@ class Contact extends Component {
 						}}
 						onSubmit={(values, actions) => {
 
-							axios("https://api.indrakawasan.com/contact/create", {
+							axios("http://api.mentorinaja.com:8000/contact/create", {
 								method: "POST",
 								data: values,
 							})
